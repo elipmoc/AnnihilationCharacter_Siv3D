@@ -259,3 +259,14 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
+# =========================
+# Siv3D
+# =========================
+
+# Siv3D
+[Ee]ngine/
+[Ee]xample/
+[Ss]creenshot/
+*.html
+/AnnihilationCharacter/
