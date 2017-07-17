@@ -1,10 +1,10 @@
-﻿#include "UseSiv3D.hpp"
+﻿#include "TitleScene.hpp"
+
 void Main()
 {
-	siv::Font font(20);
-	siv::String text;
-	while (siv::System::Update()){
-		siv::Input::GetCharsHelper(text);
-		font(text).draw();
-	}
+	siv::Window::SetTitle(L"消滅文字 ver 114524");
+	siv::Window::Resize(700, 480);
+	game::MySceneManager mySceneManager;
+	mySceneManager.add<game::TitleScene>(L"Title");
+	while (siv::System::Update() && mySceneManager.updateAndDraw());
 }
