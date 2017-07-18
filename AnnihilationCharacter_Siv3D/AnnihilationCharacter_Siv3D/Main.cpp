@@ -1,4 +1,5 @@
 ﻿#include "TitleScene.hpp"
+#include "SelectPlayerScene.hpp"
 
 void Main()
 {
@@ -6,5 +7,6 @@ void Main()
 	siv::Window::Resize(700, 480);
 	game::MySceneManager mySceneManager;
 	mySceneManager.add<game::TitleScene>(L"Title");
+	mySceneManager.add<game::SelectPlayerScene>(L"SelectPlayer");
 	while (siv::System::Update() && mySceneManager.updateAndDraw());
 }

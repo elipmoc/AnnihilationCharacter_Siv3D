@@ -13,6 +13,8 @@ namespace game {
 			siv::Graphics::SetBackground(siv::Palette::Black);
 		}
 		virtual void update()override {
+			if (siv::Input::KeyEnter.clicked)
+				changeScene(L"SelectPlayer");
 			angle+=3;
 		}
 		virtual void draw() const override{

@@ -279,7 +279,10 @@
     <Font Include="Example\YomogiFont.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Action.hpp" />
+    <ClInclude Include="FontEx.hpp" />
     <ClInclude Include="SceneBase.hpp" />
+    <ClInclude Include="SelectPlayerScene.hpp" />
     <ClInclude Include="TitleScene.hpp" />
     <ClInclude Include="UseSiv3D.hpp" />
   </ItemGroup>
