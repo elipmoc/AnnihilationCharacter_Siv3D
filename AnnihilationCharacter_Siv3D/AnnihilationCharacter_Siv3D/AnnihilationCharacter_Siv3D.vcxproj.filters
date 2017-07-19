@@ -416,5 +416,8 @@
     <ClInclude Include="ElipmocFrameWork\FontObject.hpp">
       <Filter>ヘッダー ファイル\ElipmocFrameWork</Filter>
     </ClInclude>
+    <ClInclude Include="Game\GameScene.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

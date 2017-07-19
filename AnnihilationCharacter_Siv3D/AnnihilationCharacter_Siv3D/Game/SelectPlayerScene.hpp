@@ -18,6 +18,14 @@ namespace game {
 		virtual void init()override {
 		}
 		virtual void update()override {
+			//enterキーの処理
+			if (siv::Input::KeyEnter.clicked) {
+				//主人公の文字を設定
+				m_data->player=playerFonts[selectIndex].GetText();
+				changeScene(L"Game");
+			}
+
+			//左右キーの処理
 			if ((siv::Input::KeyRight.clicked || siv::Input::KeyLeft.clicked) && actionInterval == 0) {
 				actionInterval = 5;
 				playerFonts[selectIndex].AddAction(elipmocframework::CreateScaleAction(playerFonts[selectIndex], 1, 5));
@@ -29,6 +37,8 @@ namespace game {
 				playerFonts[selectIndex].AddAction(elipmocframework::CreateScaleAction(playerFonts[selectIndex], 10, 5));
 			}
 			if (actionInterval != 0)actionInterval--;
+
+			//拡大縮小アニメーション更新
 			for(auto&& item:playerFonts)
 				item.Update();
 
