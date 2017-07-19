@@ -100,6 +100,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <ForcedIncludeFiles>UseSiv3D.hpp</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\Game;C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\ElipmocFrameWork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -135,6 +136,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <ForcedIncludeFiles>UseSiv3D.hpp</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\Game;C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\ElipmocFrameWork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -279,11 +281,11 @@
     <Font Include="Example\YomogiFont.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Action.hpp" />
-    <ClInclude Include="FontEx.hpp" />
-    <ClInclude Include="SceneBase.hpp" />
-    <ClInclude Include="SelectPlayerScene.hpp" />
-    <ClInclude Include="TitleScene.hpp" />
+    <ClInclude Include="ElipmocFrameWork\Action.hpp" />
+    <ClInclude Include="ElipmocFrameWork\FontObject.hpp" />
+    <ClInclude Include="Game\SceneBase.hpp" />
+    <ClInclude Include="Game\SelectPlayerScene.hpp" />
+    <ClInclude Include="Game\TitleScene.hpp" />
     <ClInclude Include="UseSiv3D.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

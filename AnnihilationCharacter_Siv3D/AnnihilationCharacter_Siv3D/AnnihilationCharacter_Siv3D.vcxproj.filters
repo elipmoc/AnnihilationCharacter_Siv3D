@@ -401,19 +401,19 @@
     <ClInclude Include="UseSiv3D.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="TitleScene.hpp">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneBase.hpp">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SelectPlayerScene.hpp">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="FontEx.hpp">
+    <ClInclude Include="ElipmocFrameWork\Action.hpp">
       <Filter>ヘッダー ファイル\ElipmocFrameWork</Filter>
     </ClInclude>
-    <ClInclude Include="Action.hpp">
+    <ClInclude Include="Game\SceneBase.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\SelectPlayerScene.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\TitleScene.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ElipmocFrameWork\FontObject.hpp">
       <Filter>ヘッダー ファイル\ElipmocFrameWork</Filter>
     </ClInclude>
   </ItemGroup>

@@ -39,7 +39,7 @@ namespace elipmocframework {
 		}
 	};
 	
-	template<class T,class ...Args>
+	template<class T>
 	std::unique_ptr<ActionBase> CreateMoveAction(T&& t,const siv::Vec2& endPos,const int interval) {
 		return std::move(std::unique_ptr<ActionBase>(new MoveAction<T>(std::forward<T>(t),endPos,interval)));
 	}
@@ -70,7 +70,7 @@ namespace elipmocframework {
 		}
 	};
 
-	template<class T, class ...Args>
+	template<class T>
 	std::unique_ptr<ActionBase> CreateScaleAction(T&& t, const double endScale, const int interval) {
 		return std::move(std::unique_ptr<ActionBase>(new ScaleAction<T>(std::forward<T>(t), endScale, interval)));
 	}

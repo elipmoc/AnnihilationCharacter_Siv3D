@@ -1,6 +1,6 @@
 #pragma once
 #include "SceneBase.hpp"
-#include "FontEx.hpp"
+#include "FontObject.hpp"
 namespace game {
 
 	class SelectPlayerScene :public MySceneBase {
@@ -12,7 +12,7 @@ namespace game {
 		SelectPlayerScene() :testFont(20) {
 			using namespace siv::Window;
 			playerFonts[0].SetText(L"éÂ").SetPos({ Center().x - 50, Center().y });
-			playerFonts[1].SetText(L"êl").SetPos(Center()).SetScale(2);
+			playerFonts[1].SetText(L"êl").SetPos(Center()).SetScale(10);
 			playerFonts[2].SetText(L"åˆ").SetPos({Center().x + 50, Center().y});
 		}
 		virtual void init()override {
@@ -26,7 +26,7 @@ namespace game {
 				else 
 					selectIndex = (selectIndex + 2) % 3;
 
-				playerFonts[selectIndex].AddAction(elipmocframework::CreateScaleAction(playerFonts[selectIndex], 2, 5));
+				playerFonts[selectIndex].AddAction(elipmocframework::CreateScaleAction(playerFonts[selectIndex], 10, 5));
 			}
 			if (actionInterval != 0)actionInterval--;
 			for(auto&& item:playerFonts)
