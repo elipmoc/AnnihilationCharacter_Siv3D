@@ -167,6 +167,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Game\GameScene.cpp" />
+    <ClCompile Include="Game\Player.cpp" />
     <ClCompile Include="Game\SelectPlayerScene.cpp" />
     <ClCompile Include="Game\TerrainControl.cpp" />
     <ClCompile Include="Main.cpp" />

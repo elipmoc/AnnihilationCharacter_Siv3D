@@ -17,11 +17,12 @@ namespace game {
 		siv::Circle circle;
 		//文字の高さ補正用（文字は表示位置がずれるため、ギャップを埋めなけらばならぬ）
 		static constexpr size_t FIX_TERRAIN_Y=19;
-		//地形をずらす
+		//地形の座標をずらす
 		double m_offset = 0;
 
 		void NextTerrainLoad();
 	public:
+		double GetTerrainY(size_t lane)const;
 		TerrainControl();
 		void Update();
 	};

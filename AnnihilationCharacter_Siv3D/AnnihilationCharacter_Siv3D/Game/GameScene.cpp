@@ -15,7 +15,7 @@ namespace game {
 	void GameScene::update()
 	{
 	    m_terrainControl->Update();
-		m_player->Update();
+		m_player->Update2(m_terrainControl);
 	}
 	void GameScene::draw() const
 	{

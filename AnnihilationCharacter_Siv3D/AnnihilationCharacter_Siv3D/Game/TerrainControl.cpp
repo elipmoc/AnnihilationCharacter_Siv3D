@@ -22,7 +22,8 @@ namespace game {
 
 
 	//特定のレーンの地形の高さを得る
-	double GetTerrainY(size_t lane){
+	double TerrainControl::GetTerrainY(size_t lane)const{
+		if (lane >= LANE_NUM)throw siv::String(L"無効なレーン番号です");
 		return 425 - lane * 150;
 	}
 
