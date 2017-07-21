@@ -100,7 +100,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <ForcedIncludeFiles>UseSiv3D.hpp</ForcedIncludeFiles>
-      <AdditionalIncludeDirectories>C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\Game;C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\ElipmocFrameWork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\Game;C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\ElipmocFrameWork;C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -166,6 +166,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Game\GameScene.cpp" />
+    <ClCompile Include="Game\SelectPlayerScene.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>

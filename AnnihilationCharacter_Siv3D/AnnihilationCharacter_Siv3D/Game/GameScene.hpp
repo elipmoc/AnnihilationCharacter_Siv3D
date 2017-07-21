@@ -1,21 +1,15 @@
 #pragma once
 #include "SceneBase.hpp"
 #include "FontObject.hpp"
-#include "Player.hpp"
 
 namespace game {
+	class Player;
 	class GameScene :public MySceneBase {
-		 Player player;
+		std::unique_ptr<Player> m_player;
 	public:
-		virtual void init()override {
-			player.SetPos({50, 50}).SetText(m_data->player);
-		}
-		virtual void update()override {
-			player.Update();
-		}
-		virtual void draw() const override {
-
-			player.Draw();
-		}
+		GameScene();
+		virtual void init()override;
+		virtual void update()override;
+		virtual void draw() const override;
 	};
 }

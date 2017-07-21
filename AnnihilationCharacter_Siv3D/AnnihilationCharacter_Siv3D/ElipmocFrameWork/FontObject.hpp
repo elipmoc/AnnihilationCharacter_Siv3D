@@ -1,7 +1,6 @@
 #pragma once
 #include <string>
 #include "Action.hpp"
-
 namespace elipmocframework {
 	//フォントオブジェクト
 	class FontObject {

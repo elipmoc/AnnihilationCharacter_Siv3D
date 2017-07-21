@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <memory>
 namespace elipmocframework {
 
 	//アクション基底クラス-----------------------------------------------------------------
