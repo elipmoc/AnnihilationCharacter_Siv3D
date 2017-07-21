@@ -7,25 +7,26 @@ namespace game {
 
 		static constexpr double speed=3.5;
 		//重力加速度
-		double g=0.3;
+		double m_g=0.3;
 		//Yの速度
-		double yv=0;
-		int jumpCount=0;
+		double m_yv=0;
+		//ジャンプした回数記録
+		int m_jumpCount=0;
 		//デバック用
 		siv::Circle circle;
 
 		//移動アクション
 		void Move() {
-			SetPos({ GetPos().x,GetPos().y + yv });
-			yv += g;
+			SetPos({ GetPos().x,GetPos().y + m_yv });
+			m_yv += m_g;
 			if (GetUnderY() >= 425) {
-				jumpCount = 0;
+				m_jumpCount = 0;
 				SetUnderY(425 );
-				yv = 0;
+				m_yv = 0;
 			}
-			if (siv::Input::KeySpace.clicked &&jumpCount < 2) {
-				yv = -10;
-				jumpCount++;
+			if (siv::Input::KeySpace.clicked &&m_jumpCount < 2) {
+				m_yv = -10;
+				m_jumpCount++;
 			}
 			if (siv::Input::KeyRight.pressed)
 				SetPos({ GetPos().x + speed, GetPos().y });
