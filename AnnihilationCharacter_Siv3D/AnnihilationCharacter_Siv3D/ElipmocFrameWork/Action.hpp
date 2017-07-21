@@ -5,6 +5,7 @@ namespace elipmocframework {
 	//アクション基底クラス-----------------------------------------------------------------
 	class ActionBase {
 	protected:
+		//アクション削除フラグ
 		bool deleteFlag = false;
 	public:
 		virtual ~ActionBase() {};
@@ -27,7 +28,7 @@ namespace elipmocframework {
 		const siv::Vec2 endPos;
 	public:
 		//(_t=アクション対象 , _endPos=終着地点 , _interval=実行時間)
-		MoveAction(T&& _t,const siv::Vec2& _endPos,const int _interval):t(_t),endPos(_endPos),interval(_interval){}
+		MoveAction(T&& _t,const siv::Vec2& _endPos,const int _interval):t(std::forward<T>(_t)),endPos(_endPos),interval(_interval){}
 
 		virtual void Init()override{
 			deltaPos=(endPos - t.GetPos()) / interval;
@@ -58,7 +59,7 @@ namespace elipmocframework {
 		const double endScale;
 	public:
 		//(_t=アクション対象 , _endScale=最終拡大率, _interval=実行時間)
-		ScaleAction(T&& _t, const double _endScale, const int _interval) :t(_t), endScale(_endScale), interval(_interval) {}
+		ScaleAction(T&& _t, const double _endScale, const int _interval) :t(std::forward<T>(_t)), endScale(_endScale), interval(_interval) {}
 
 		virtual void Init()override {
 			deltaScale = (endScale - t.GetScale()) / interval;
@@ -75,14 +76,18 @@ namespace elipmocframework {
 		return std::move(std::unique_ptr<ActionBase>(new ScaleAction<T>(std::forward<T>(t), endScale, interval)));
 	}
 	
+
+	//アクションリスト
 	class ActionList {
 		std::vector<std::unique_ptr<ActionBase>> actions;
 	public:
+		//アクション追加
 		ActionList& push_back(std::unique_ptr<ActionBase> action) {
 			action->Init();
 			actions.push_back(std::move(action));
 			return *this;
 		}
+		//アクション更新
 		void Update() {
 			for(auto it=actions.begin();it!=actions.end();)
 			{ 

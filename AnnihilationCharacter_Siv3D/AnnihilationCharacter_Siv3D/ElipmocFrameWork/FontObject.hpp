@@ -34,11 +34,15 @@ namespace elipmocframework {
 
 		}
 
-		void Update() {
+		FontObject(siv::String _text, int fontsize = 20) :scale(1), font(fontsize),text(_text) {
+
+		}
+
+		virtual void Update() {
 			actionList.Update();
 		}
 
-		void Draw() const{
+		virtual void Draw() const{
 			siv::Mat3x2 mat = siv::Mat3x2::Scale(scale, pos);
 			siv::Transformer2D t(mat, false);
 			font(text).draw(pos,siv::AlphaF(opacity));

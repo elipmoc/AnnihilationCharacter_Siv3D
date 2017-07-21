@@ -284,6 +284,7 @@
     <ClInclude Include="ElipmocFrameWork\Action.hpp" />
     <ClInclude Include="ElipmocFrameWork\FontObject.hpp" />
     <ClInclude Include="Game\GameScene.hpp" />
+    <ClInclude Include="Game\Player.hpp" />
     <ClInclude Include="Game\SceneBase.hpp" />
     <ClInclude Include="Game\SelectPlayerScene.hpp" />
     <ClInclude Include="Game\TitleScene.hpp" />
