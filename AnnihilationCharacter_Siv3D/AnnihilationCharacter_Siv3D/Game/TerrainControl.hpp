@@ -13,6 +13,10 @@ namespace game {
 		std::deque<bool> m_activeTerrains[LANE_NUM];
 		//表示用の地形文字
 		const siv::Font m_terrainFont;
+		//デバック用
+		siv::Circle circle;
+		//文字の高さ補正用（文字は表示位置がずれるため、ギャップを埋めなけらばならぬ）
+		static constexpr size_t FIX_TERRAIN_Y=19;
 		//地形をずらす
 		double m_offset = 0;
 
