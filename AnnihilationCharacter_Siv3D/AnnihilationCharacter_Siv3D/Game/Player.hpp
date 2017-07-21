@@ -15,9 +15,9 @@ namespace game {
 		void Move() {
 			SetPos({ GetPos().x,GetPos().y + yv });
 			yv += g;
-			if (GetPos().y >= siv::Window::Size().y-40) {
+			if (GetPos().y >= siv::Window::Size().y-65) {
 				jumpCount = 0;
-				SetPos({ GetPos().x,siv::Window::Size().y-40 });
+				SetPos({ GetPos().x,siv::Window::Size().y-65 });
 				yv = 0;
 			}
 			if (siv::Input::KeySpace.clicked &&jumpCount < 2) {
