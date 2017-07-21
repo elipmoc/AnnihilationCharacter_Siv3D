@@ -3,10 +3,15 @@
 namespace game {
 	//地形配列を制御するクラス
 	class TerrainControl {
+	public:
 		//地形一つのサイズ
-		static constexpr size_t TERRAIN_SIZE= 40;
+		static constexpr size_t TERRAIN_SIZE = 40;
 		//レーン数
-		static constexpr size_t LANE_NUM=3;
+		static constexpr size_t LANE_NUM = 3;
+		double GetTerrainY(size_t lane)const;
+		TerrainControl();
+		void Update();
+	private:
 		//地形情報のリスト
 		std::deque<bool>m_terrainFlags[LANE_NUM];
 		//現在画面に表示されている地形
@@ -21,9 +26,6 @@ namespace game {
 		double m_offset = 0;
 
 		void NextTerrainLoad();
-	public:
-		double GetTerrainY(size_t lane)const;
-		TerrainControl();
-		void Update();
+
 	};
 }

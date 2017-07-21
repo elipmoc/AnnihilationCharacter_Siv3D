@@ -17,6 +17,9 @@ namespace game {
 		//デバック用
 		siv::Circle circle;
 
+		//自分の足元にある地形レーン
+		int m_underLane = 2;
+
 		//移動アクション
 		void Move(const std::unique_ptr<TerrainControl>&);
 	public:

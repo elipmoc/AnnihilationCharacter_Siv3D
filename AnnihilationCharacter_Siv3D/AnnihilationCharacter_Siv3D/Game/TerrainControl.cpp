@@ -16,7 +16,7 @@ namespace game {
 			//先頭のデータを一つ削除
 			item.pop_front();
 			//最後尾に新しい地形データをセットする
-			item.push_back(siv::Random(0,1));
+			item.push_back(true);
 		}
 	}
 
