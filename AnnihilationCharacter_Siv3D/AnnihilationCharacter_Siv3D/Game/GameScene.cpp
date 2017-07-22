@@ -22,10 +22,12 @@ namespace game {
 	{
 	    m_terrainControl->Update();
 		m_player->Update2(m_terrainControl);
+		m_enemyControl->Update();
 	}
 	void GameScene::draw() const
 	{
 		m_player->Draw();
 		m_hpUi->Draw();
+		m_enemyControl->Draw();
 	}
 }
