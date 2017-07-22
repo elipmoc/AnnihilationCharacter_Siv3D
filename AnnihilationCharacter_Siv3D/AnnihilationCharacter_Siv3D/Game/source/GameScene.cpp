@@ -2,6 +2,7 @@
 #include "Player.hpp"
 #include "TerrainControl.hpp"
 #include "HpUI.hpp"
+#include "BarrierUI.hpp"
 #include "EnemyControl.hpp"
 namespace game {
 	GameScene::GameScene():m_player(nullptr) {
@@ -17,6 +18,7 @@ namespace game {
 		(m_player= std::make_unique<Player>())
 			->SetPos({ 50, 50 }).SetText(m_data->player);
 		m_hpUi = std::make_unique<HpUi>();
+		m_barrierUi = std::make_unique<BarrierUi>();
 	}
 	void GameScene::update()
 	{
@@ -28,6 +30,7 @@ namespace game {
 	{
 		m_player->Draw();
 		m_hpUi->Draw();
+		m_barrierUi->Draw();
 		m_enemyControl->Draw();
 	}
 }

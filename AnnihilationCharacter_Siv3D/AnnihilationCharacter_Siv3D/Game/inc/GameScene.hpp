@@ -4,6 +4,7 @@
 
 namespace game {
 	class HpUi;
+	class BarrierUi;
 	class Player;
 	class TerrainControl;
 	class EnemyControl;
@@ -12,6 +13,7 @@ namespace game {
 		std::unique_ptr<Player> m_player;
 		std::unique_ptr<TerrainControl> m_terrainControl;
 		std::unique_ptr<HpUi> m_hpUi;
+		std::unique_ptr<BarrierUi> m_barrierUi;
 	public:
 		GameScene();
 		~GameScene();

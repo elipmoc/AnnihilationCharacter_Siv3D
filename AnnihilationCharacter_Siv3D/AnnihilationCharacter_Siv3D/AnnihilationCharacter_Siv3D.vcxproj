@@ -166,6 +166,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Game\source\BarrierUI.cpp" />
     <ClCompile Include="Game\source\EnemyBase.cpp" />
     <ClCompile Include="Game\source\EnemyControl.cpp" />
     <ClCompile Include="Game\source\EnemyList.cpp" />
@@ -291,6 +292,7 @@
   <ItemGroup>
     <ClInclude Include="ElipmocFrameWork\Action.hpp" />
     <ClInclude Include="ElipmocFrameWork\FontObject.hpp" />
+    <ClInclude Include="Game\inc\BarrierUI.hpp" />
     <ClInclude Include="Game\inc\EnemyBase.hpp" />
     <ClInclude Include="Game\inc\EnemyControl.hpp" />
     <ClInclude Include="Game\inc\EnemyList.hpp" />
