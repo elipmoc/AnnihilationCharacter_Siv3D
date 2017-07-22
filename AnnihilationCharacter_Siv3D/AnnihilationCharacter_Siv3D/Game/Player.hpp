@@ -9,7 +9,7 @@ namespace game {
 
 		static constexpr double speed=3.5;
 		//重力加速度
-		double m_g=0.3;
+		static constexpr double m_g=0.4;
 		//Yの速度
 		double m_yv=0;
 		//ジャンプした回数記録
@@ -25,9 +25,14 @@ namespace game {
 	public:
 		Player():circle(3){}
 
-		//主人公の足元の高さを得る
+		//主人公の足元のYを得る
 		double GetUnderY() {
 			return GetPos().y + 35 ;
+		}
+
+		//主人公の足元のXを得る
+		double GetUnderX() {
+			return GetPos().x + 15;
 		}
 
 		//主人公の足元の高さをセットする

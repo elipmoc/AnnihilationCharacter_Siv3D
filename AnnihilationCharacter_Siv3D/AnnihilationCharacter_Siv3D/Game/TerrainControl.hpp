@@ -8,7 +8,18 @@ namespace game {
 		static constexpr size_t TERRAIN_SIZE = 40;
 		//レーン数
 		static constexpr size_t LANE_NUM = 3;
-		double GetTerrainY(size_t lane)const;
+
+		//特定のレーンの地形の高さを得る
+		double GetTerrainY(size_t lane)const {
+			if (lane >= LANE_NUM)throw siv::String(L"無効なレーン番号です");
+			return 400 - lane * 150;
+		}
+
+		//あるX座標のあるレーンに地形があるかどうか
+		bool IsExistTerrainFromX(double x, size_t lane) {
+			return m_activeTerrains[lane][(int)(x+m_offset) / TERRAIN_SIZE];
+		}
+
 		TerrainControl();
 		void Update();
 	private:

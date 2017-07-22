@@ -16,15 +16,8 @@ namespace game {
 			//先頭のデータを一つ削除
 			item.pop_front();
 			//最後尾に新しい地形データをセットする
-			item.push_back(true);
+			item.push_back(siv::Random(0,1));
 		}
-	}
-
-
-	//特定のレーンの地形の高さを得る
-	double TerrainControl::GetTerrainY(size_t lane)const{
-		if (lane >= LANE_NUM)throw siv::String(L"無効なレーン番号です");
-		return 425 - lane * 150;
 	}
 
 	void TerrainControl::Update()
