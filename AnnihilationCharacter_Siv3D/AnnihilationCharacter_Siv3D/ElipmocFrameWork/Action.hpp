@@ -83,7 +83,7 @@ namespace elipmocframework {
 		std::vector<std::unique_ptr<ActionBase>> actions;
 	public:
 		//ƒAƒNƒVƒ‡ƒ“’Ç‰Á
-		ActionList& push_back(std::unique_ptr<ActionBase> action) {
+		ActionList& push_back(std::unique_ptr<ActionBase>&& action) {
 			action->Init();
 			actions.push_back(std::move(action));
 			return *this;

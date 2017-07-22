@@ -168,6 +168,7 @@
   <ItemGroup>
     <ClCompile Include="Game\EnemyBase.cpp" />
     <ClCompile Include="Game\EnemyControl.cpp" />
+    <ClCompile Include="Game\EnemyList.cpp" />
     <ClCompile Include="Game\GameScene.cpp" />
     <ClCompile Include="Game\HpUI.cpp" />
     <ClCompile Include="Game\Player.cpp" />
@@ -292,6 +293,7 @@
     <ClInclude Include="ElipmocFrameWork\FontObject.hpp" />
     <ClInclude Include="Game\EnemyBase.hpp" />
     <ClInclude Include="Game\EnemyControl.hpp" />
+    <ClInclude Include="Game\EnemyList.hpp" />
     <ClInclude Include="Game\GameScene.hpp" />
     <ClInclude Include="Game\HpUI.hpp" />
     <ClInclude Include="Game\Player.hpp" />
