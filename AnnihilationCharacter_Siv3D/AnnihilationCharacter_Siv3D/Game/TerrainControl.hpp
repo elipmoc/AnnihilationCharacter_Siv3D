@@ -16,7 +16,7 @@ namespace game {
 		}
 
 		//あるX座標のあるレーンに地形があるかどうか
-		bool IsExistTerrainFromX(double x, size_t lane) {
+		bool IsExistTerrainFromX(double x, size_t lane) const{
 			return m_activeTerrains[lane][(int)(x+m_offset) / TERRAIN_SIZE];
 		}
 

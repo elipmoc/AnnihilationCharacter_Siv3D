@@ -45,6 +45,12 @@ namespace game {
 		if (siv::Input::KeyLeft.pressed)
 			SetPos({ GetPos().x - speed, GetPos().y });
 
+		//å©Ç¶Ç»Ç¢ï«îªíË
+		if (GetUnderX() < 15)
+			SetUnderX(15);
+		else if (GetUnderX() > siv::Window::Size().x-15)
+			SetUnderX(siv::Window::Size().x-15);
+
 		//ç¿ïWçXêV
 		SetPos({ GetPos().x,GetPos().y + m_yv });
 	}

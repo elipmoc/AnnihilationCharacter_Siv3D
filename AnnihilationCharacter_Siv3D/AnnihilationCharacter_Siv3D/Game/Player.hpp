@@ -22,23 +22,31 @@ namespace game {
 
 		//移動アクション
 		void Move(const std::unique_ptr<TerrainControl>&);
-	public:
-		Player():circle(3){}
 
 		//主人公の足元のYを得る
-		double GetUnderY() {
-			return GetPos().y + 35 ;
+		double GetUnderY()const {
+			return GetPos().y + 35;
 		}
 
 		//主人公の足元のXを得る
-		double GetUnderX() {
+		double GetUnderX()const {
 			return GetPos().x + 15;
+		}
+
+		//主人公の足元のXを得る
+		void SetUnderX(double x) {
+			SetPos({ x - 15,GetPos().y });
 		}
 
 		//主人公の足元の高さをセットする
 		void SetUnderY(double y) {
 			SetPos({ GetPos().x,y - 35 });
 		}
+
+	public:
+		Player():circle(3){}
+
+
 
 		void Update2(const std::unique_ptr<TerrainControl>&);
 	};
