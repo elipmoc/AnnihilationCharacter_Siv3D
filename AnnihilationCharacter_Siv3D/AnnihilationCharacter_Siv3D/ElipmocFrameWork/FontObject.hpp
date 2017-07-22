@@ -8,8 +8,9 @@ namespace elipmocframework {
 		const siv::Font m_font;
 		siv::String m_text;
 		siv::Vec2 m_pos;
-		//透明度
-		double m_opacity=255;
+		//文字色
+		siv::Color m_color=siv::Palette::White;
+		//アクションリスト
 		ActionList m_actionList;
 
 	public:
@@ -29,6 +30,10 @@ namespace elipmocframework {
 		siv::String GetText() const { return m_text; }
 		FontObject& SetText(const siv::String& _text) { m_text = _text; return *this; }
 
+		//Colorアクセサ
+		siv::Color GetColor()const { return m_color; }
+		FontObject& SetColor(const siv::Color& color) { m_color = color; return *this; }
+
 		FontObject(int fontsize=20) :m_scale(1),m_font(fontsize) {
 
 		}
@@ -44,12 +49,12 @@ namespace elipmocframework {
 		virtual void Draw() const{
 			siv::Mat3x2 mat = siv::Mat3x2::Scale(m_scale, m_pos);
 			siv::Transformer2D t(mat, false);
-			m_font(m_text).draw(m_pos,siv::AlphaF(m_opacity));
+			m_font(m_text).draw(m_pos,m_color);
 		}
 		void DrawCenter()const {
 			siv::Mat3x2 mat = siv::Mat3x2::Scale(m_scale, m_pos);
 			siv::Transformer2D t(mat, false);
-			m_font(m_text).drawCenter(m_pos,siv::AlphaF(m_opacity));
+			m_font(m_text).drawCenter(m_pos, m_color);
 		}
 
 	};
