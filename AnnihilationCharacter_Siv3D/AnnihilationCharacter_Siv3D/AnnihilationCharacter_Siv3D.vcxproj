@@ -100,7 +100,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <ForcedIncludeFiles>UseSiv3D.hpp</ForcedIncludeFiles>
-      <AdditionalIncludeDirectories>C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\Game;C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\ElipmocFrameWork;C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\Game;C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\ElipmocFrameWork;C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D;%(AdditionalIncludeDirectories);C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\Game\inc;C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\Game\source</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -136,7 +136,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <ForcedIncludeFiles>UseSiv3D.hpp</ForcedIncludeFiles>
-      <AdditionalIncludeDirectories>C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\Game;C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\ElipmocFrameWork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\Game;C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\ElipmocFrameWork;%(AdditionalIncludeDirectories);C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\Game\inc;C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\Game\source</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -166,14 +166,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Game\EnemyBase.cpp" />
-    <ClCompile Include="Game\EnemyControl.cpp" />
-    <ClCompile Include="Game\EnemyList.cpp" />
-    <ClCompile Include="Game\GameScene.cpp" />
-    <ClCompile Include="Game\HpUI.cpp" />
-    <ClCompile Include="Game\Player.cpp" />
-    <ClCompile Include="Game\SelectPlayerScene.cpp" />
-    <ClCompile Include="Game\TerrainControl.cpp" />
+    <ClCompile Include="Game\source\EnemyBase.cpp" />
+    <ClCompile Include="Game\source\EnemyControl.cpp" />
+    <ClCompile Include="Game\source\EnemyList.cpp" />
+    <ClCompile Include="Game\source\GameScene.cpp" />
+    <ClCompile Include="Game\source\HpUI.cpp" />
+    <ClCompile Include="Game\source\Player.cpp" />
+    <ClCompile Include="Game\source\SelectPlayerScene.cpp" />
+    <ClCompile Include="Game\source\TerrainControl.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -291,16 +291,16 @@
   <ItemGroup>
     <ClInclude Include="ElipmocFrameWork\Action.hpp" />
     <ClInclude Include="ElipmocFrameWork\FontObject.hpp" />
-    <ClInclude Include="Game\EnemyBase.hpp" />
-    <ClInclude Include="Game\EnemyControl.hpp" />
-    <ClInclude Include="Game\EnemyList.hpp" />
-    <ClInclude Include="Game\GameScene.hpp" />
-    <ClInclude Include="Game\HpUI.hpp" />
-    <ClInclude Include="Game\Player.hpp" />
-    <ClInclude Include="Game\SceneBase.hpp" />
-    <ClInclude Include="Game\SelectPlayerScene.hpp" />
-    <ClInclude Include="Game\TerrainControl.hpp" />
-    <ClInclude Include="Game\TitleScene.hpp" />
+    <ClInclude Include="Game\inc\EnemyBase.hpp" />
+    <ClInclude Include="Game\inc\EnemyControl.hpp" />
+    <ClInclude Include="Game\inc\EnemyList.hpp" />
+    <ClInclude Include="Game\inc\GameScene.hpp" />
+    <ClInclude Include="Game\inc\HpUI.hpp" />
+    <ClInclude Include="Game\inc\Player.hpp" />
+    <ClInclude Include="Game\inc\SceneBase.hpp" />
+    <ClInclude Include="Game\inc\SelectPlayerScene.hpp" />
+    <ClInclude Include="Game\inc\TerrainControl.hpp" />
+    <ClInclude Include="Game\inc\TitleScene.hpp" />
     <ClInclude Include="UseSiv3D.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

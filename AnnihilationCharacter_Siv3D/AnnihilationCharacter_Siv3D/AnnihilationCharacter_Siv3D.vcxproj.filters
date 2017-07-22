@@ -84,28 +84,28 @@
     <ClCompile Include="Main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Game\GameScene.cpp">
+    <ClCompile Include="Game\source\EnemyBase.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Game\SelectPlayerScene.cpp">
+    <ClCompile Include="Game\source\EnemyControl.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Game\TerrainControl.cpp">
+    <ClCompile Include="Game\source\EnemyList.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Player.cpp">
+    <ClCompile Include="Game\source\GameScene.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Game\HpUI.cpp">
+    <ClCompile Include="Game\source\HpUI.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Game\EnemyControl.cpp">
+    <ClCompile Include="Game\source\Player.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Game\EnemyBase.cpp">
+    <ClCompile Include="Game\source\SelectPlayerScene.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Game\EnemyList.cpp">
+    <ClCompile Include="Game\source\TerrainControl.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -428,37 +428,37 @@
     <ClInclude Include="ElipmocFrameWork\Action.hpp">
       <Filter>ヘッダー ファイル\ElipmocFrameWork</Filter>
     </ClInclude>
-    <ClInclude Include="Game\SceneBase.hpp">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\SelectPlayerScene.hpp">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\TitleScene.hpp">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="ElipmocFrameWork\FontObject.hpp">
       <Filter>ヘッダー ファイル\ElipmocFrameWork</Filter>
     </ClInclude>
-    <ClInclude Include="Game\GameScene.hpp">
+    <ClInclude Include="Game\inc\EnemyBase.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Player.hpp">
+    <ClInclude Include="Game\inc\EnemyControl.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Game\TerrainControl.hpp">
+    <ClInclude Include="Game\inc\EnemyList.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Game\HpUI.hpp">
+    <ClInclude Include="Game\inc\GameScene.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Game\EnemyControl.hpp">
+    <ClInclude Include="Game\inc\HpUI.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Game\EnemyBase.hpp">
+    <ClInclude Include="Game\inc\Player.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Game\EnemyList.hpp">
+    <ClInclude Include="Game\inc\SceneBase.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\inc\SelectPlayerScene.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\inc\TerrainControl.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\inc\TitleScene.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
