@@ -14,10 +14,11 @@ namespace game {
 		EnemyBase(const siv::Vec2& startPos, const siv::Vec2& stopPos,const siv::Vec2& endPos )
 			:FontObject(30),m_startPos(startPos),m_stopPos(stopPos),m_endPos(endPos)
 		{
-			SetText(L"“G");
-			SetPos({ 600, 150 });
-			SetColor(siv::Palette::Purple);
 		};
-		virtual void Update()override;
 	};
 }
+
+#define ENEMYCONSTRUCTER(_NAME_) \
+_NAME_(const siv::Vec2& startPos, const siv::Vec2& stopPos,const siv::Vec2& endPos)\
+	:EnemyBase(startPos, stopPos,endPos)
+

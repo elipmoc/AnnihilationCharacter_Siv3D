@@ -2,7 +2,4 @@
 
 namespace game {
 
-	void EnemyBase::Update()
-	{
-	}
 }
