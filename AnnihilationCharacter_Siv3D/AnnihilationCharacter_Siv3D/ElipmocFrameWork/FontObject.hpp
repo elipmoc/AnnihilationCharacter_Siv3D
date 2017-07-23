@@ -42,6 +42,13 @@ namespace elipmocframework {
 
 		}
 
+		template<template<class> class Action,class ...Args>
+		void AddAction(Args&&...args){
+			m_actionList.push_back(
+				std::unique_ptr<ActionBase>(new Action<FontObject>(*this, std::forward<Args>(args)...))
+			);
+		}
+
 		virtual void Update() {
 			m_actionList.Update();
 		}
