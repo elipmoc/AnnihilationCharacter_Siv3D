@@ -6,11 +6,27 @@ namespace game {
 	using  elipmocframework::MoveAction;
 	using siv::Vec2;
 	ENEMYCONSTRUCTER(TestEnemy) {
-		SetText(L"!(^^)!");
-		SetPos({ 600, 150 });
+		SetText(
+			L"         ÅQÅQÅQ_Å@Å@\n"
+			L"      Å^Å@Å@ Å@ Å_\n"
+			L"    Å^Å@ÑüÅ@Å@ Ñü Å_\n"
+			L"  Å^Å@ (ÅúÅj ÅiÅúÅj Å_\n"
+			L"  |     Åi__êl__Åj      |\n"
+			L"  /        ÅøÉm ÅΩ        Å^\n"
+			L"  (   Å_Å@Å^ ÅQÉm  | |\n"
+			L"   Å_ ÅgÅ@ Å^  ÅQÅQ| |\n"
+			L"      Å_ Å^ ÅQÅQÅQ Å^\n"
+		);
+
+		SetPos( startPos );
 		SetColor(siv::Palette::Yellow);
 		//ÇƒÇ´à⁄ìÆ
-		AddAction(MoveAction::Create({ 400,400 }, 50) <<MoveAction::Create({ -100, GetPos().y + 130 }, 180));
+		AddAction(
+			elipmocframework::ScaleAction::Create(1, 30)<<
+			MoveAction::Create(endPos, 50) <<
+			MoveAction::Create(stopPos, 180) 
+			
+		);
 	}
 
 	void TestEnemy::Update()
