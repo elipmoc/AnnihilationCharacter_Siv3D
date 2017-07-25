@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "Action.hpp"
+#include "ActionList.hpp"
 namespace elipmocframework {
 	//フォントオブジェクト
 	class FontObject {
@@ -34,19 +35,12 @@ namespace elipmocframework {
 		siv::Color GetColor()const { return m_color; }
 		FontObject& SetColor(const siv::Color& color) { m_color = color; return *this; }
 
-		FontObject(int fontsize=20) :m_scale(1),m_font(fontsize) {
+		FontObject(int fontsize=20) :m_scale(1),m_font(fontsize) ,m_actionList(this){
 
 		}
 
-		FontObject(siv::String _text, int fontsize = 20) :m_scale(1), m_font(fontsize),m_text(_text) {
+		FontObject(siv::String _text, int fontsize = 20) :m_scale(1), m_font(fontsize),m_text(_text),m_actionList(this) {
 
-		}
-
-		template<template<class> class Action,class ...Args>
-		void AddAction(Args&&...args){
-			m_actionList.push_back(
-				std::unique_ptr<ActionBase>(new Action<FontObject>(*this, std::forward<Args>(args)...))
-			);
 		}
 
 		virtual void Update() {

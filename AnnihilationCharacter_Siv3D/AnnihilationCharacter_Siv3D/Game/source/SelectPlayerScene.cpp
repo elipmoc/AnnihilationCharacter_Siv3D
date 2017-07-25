@@ -1,9 +1,9 @@
 #include "SelectPlayerScene.hpp"
 #include "FontObject.hpp"
+#include "Actions.hpp"
 
 namespace game {
 	using elipmocframework::FontObject;
-	using elipmocframework::CreateScaleAction;
 	using elipmocframework::ScaleAction;
 
 	void SelectPlayerScene::init() {
@@ -31,13 +31,13 @@ namespace game {
 		//左右キーの処理。押されてたら、文字に拡大縮小アニメーションを設定する
 		if ((siv::Input::KeyRight.clicked || siv::Input::KeyLeft.clicked) && m_actionInterval == 0) {
 			m_actionInterval = 5;
-			m_playerFonts[m_selectIndex]->AddAction<ScaleAction>(1, 5);
+			m_playerFonts[m_selectIndex]->AddAction(ScaleAction::Create(1, 5));
 			if (siv::Input::KeyRight.clicked)
 				m_selectIndex = (m_selectIndex + 1) % 3;
 			else
 				m_selectIndex = (m_selectIndex + 2) % 3;
 
-			m_playerFonts[m_selectIndex]->AddAction<ScaleAction>(10, 5);
+			m_playerFonts[m_selectIndex]->AddAction(ScaleAction::Create(10, 5));
 		}
 		if (m_actionInterval != 0)m_actionInterval--;
 

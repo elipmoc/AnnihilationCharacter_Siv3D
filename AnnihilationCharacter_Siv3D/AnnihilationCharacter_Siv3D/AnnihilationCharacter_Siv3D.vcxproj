@@ -292,6 +292,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ElipmocFrameWork\Action.hpp" />
+    <ClInclude Include="ElipmocFrameWork\ActionList.hpp" />
+    <ClInclude Include="ElipmocFrameWork\Actions.hpp" />
     <ClInclude Include="ElipmocFrameWork\FontObject.hpp" />
     <ClInclude Include="Game\inc\BarrierUI.hpp" />
     <ClInclude Include="Game\inc\EnemyBase.hpp" />

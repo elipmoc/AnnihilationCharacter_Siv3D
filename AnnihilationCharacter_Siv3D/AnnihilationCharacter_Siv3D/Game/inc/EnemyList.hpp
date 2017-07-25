@@ -12,6 +12,5 @@ namespace game {
 		~EnemyList();
 		void Update();
 		void Draw()const;
-
 	};
 }

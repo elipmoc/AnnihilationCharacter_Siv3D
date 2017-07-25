@@ -19,6 +19,8 @@ namespace game {
 }
 
 #define ENEMYCONSTRUCTER(_NAME_) \
-_NAME_(const siv::Vec2& startPos, const siv::Vec2& stopPos,const siv::Vec2& endPos)\
+_NAME_::_NAME_(const siv::Vec2& startPos, const siv::Vec2& stopPos,const siv::Vec2& endPos)\
 	:EnemyBase(startPos, stopPos,endPos)
 
+#define ENEMYCONSTRUCTER_DECL(_NAME_) \
+_NAME_(const siv::Vec2& startPos, const siv::Vec2& stopPos,const siv::Vec2& endPos)
