@@ -7,7 +7,7 @@ namespace game {
 	{
 		m_hpFont->SetPos({ 5, 0 });
 	}
-	void HpUi::Draw()
+	void HpUi::Draw()const
 	{
 		m_hpFont->SetText(L"HP      :ŸŸŸŸ").SetColor(siv::Color(0,200,0)).Draw();
 	}

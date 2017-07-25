@@ -8,7 +8,7 @@ namespace game {
 	{
 		m_barrierFont->SetPos({ 0,40 });
 	}
-	void BarrierUi::Draw()
+	void BarrierUi::Draw()const
 	{
 		m_barrierFont->SetText(L"ƒoƒŠƒA:ŸŸŸ").SetColor(siv::Color(0, 100, 255)).Draw();
 	}

@@ -18,9 +18,12 @@ namespace game {
 	};
 }
 
+
+//継承先のEnemyのコンストラクタ定義用
 #define ENEMYCONSTRUCTER(_NAME_) \
 _NAME_::_NAME_(const siv::Vec2& startPos, const siv::Vec2& stopPos,const siv::Vec2& endPos,const int fontSize)\
 	:EnemyBase(startPos, stopPos,endPos,fontSize)
 
+//継承先のEnemyのコンストラクタ宣言用
 #define ENEMYCONSTRUCTER_DECL(_NAME_) \
 _NAME_(const siv::Vec2& startPos, const siv::Vec2& stopPos,const siv::Vec2& endPos,const int fontSize)

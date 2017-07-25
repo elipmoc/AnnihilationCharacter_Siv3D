@@ -14,7 +14,7 @@ namespace elipmocframework {
 		siv::Vec2 deltaPos;
 		//終着地点
 		const siv::Vec2 endPos;
-		//(_t=アクション対象 , _endPos=終着地点 , _interval=実行時間)
+		//( _endPos=終着地点 , _interval=実行時間)
 		MoveAction(const siv::Vec2& _endPos, const int _interval) :endPos(_endPos), interval(_interval) {}
 	public:
 
@@ -44,7 +44,7 @@ namespace elipmocframework {
 		double deltaScale;
 		//最終拡大率
 		const double endScale;
-		//(_t=アクション対象 , _endScale=最終拡大率, _interval=実行時間)
+		//(_endScale=最終拡大率, _interval=実行時間)
 		ScaleAction(const double _endScale, const int _interval) :endScale(_endScale), interval(_interval) {}
 	public:
 

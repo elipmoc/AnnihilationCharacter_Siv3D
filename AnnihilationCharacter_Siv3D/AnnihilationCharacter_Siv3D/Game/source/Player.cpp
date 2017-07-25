@@ -16,7 +16,7 @@ namespace game {
 			m_jumpCount = 0;
 			SetUnderY(terrainControl->GetTerrainY(m_underLane));
 			m_yv = 0;
-			if (siv::Input::KeyDown.clicked && m_jumpCount == 0 && m_underLane != 0)
+			if (siv::Input::KeyDown.clicked && m_underLane != 0)
 				m_underLane--;
 		}
 

@@ -13,6 +13,6 @@ namespace game {
 		HpUi();
 		size_t GetHp()const { return m_hp; }
 		void SetHp(size_t hp){ m_hp=hp; }
-		void Draw();
+		void Draw()const;
 	};
 }

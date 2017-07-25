@@ -13,6 +13,6 @@ namespace game {
 	public:
 		BarrierUi();
 		size_t GetBarrierCount()const { return m_barrierCount; }
-		void Draw();
+		void Draw()const;
 	};
 }
