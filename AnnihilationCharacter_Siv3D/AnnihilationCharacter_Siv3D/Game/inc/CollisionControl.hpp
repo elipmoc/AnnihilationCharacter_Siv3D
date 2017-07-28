@@ -8,12 +8,12 @@ namespace game {
 	class CollisionControl {
 		CollisionControl()=default;
 		static CollisionControl m_instance;
-		CollisionControl(const CollisionControl&) = delete;
-		CollisionControl(CollisionControl&&) = delete;
 
 		//‚ ‚½‚è”»’è‚ÌƒŠƒXƒg
 		siv::Array<std::unique_ptr<const CollisionData>> m_collisions;
 	public:
+		CollisionControl(const CollisionControl&) = delete;
+		CollisionControl(CollisionControl&&) = delete;
 		static CollisionControl& GetInstance() { return m_instance; }
 
 		void PushCollisionData(const CollisionData& colliData) {
