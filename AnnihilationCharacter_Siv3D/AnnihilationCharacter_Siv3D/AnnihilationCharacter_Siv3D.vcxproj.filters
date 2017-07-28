@@ -527,10 +527,10 @@
     <ClInclude Include="Game\inc\GrazeParticle.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Game\inc\PatyicleBase.hpp">
+    <ClInclude Include="Game\inc\ParticleList.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Game\inc\ParticleList.hpp">
+    <ClInclude Include="Game\inc\ParticleBase.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
