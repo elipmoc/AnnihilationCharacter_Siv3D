@@ -6,17 +6,17 @@ namespace game {
 
 		ParticleBase(int lifeTime=0):m_lifeTime(lifeTime){}
 
-		int GetLifeTime() { return m_lifeTime; }
+		int GetLifeTime() const{ return m_lifeTime; }
 
 		void BaseUpdate() {
 			Update();
 			m_lifeTime--;
 		}
-		void BaseDraw() {
+		void BaseDraw() const{
 			Draw();
 		}
 	protected:
-		virtual void Draw()=0;
+		virtual void Draw()const=0;
 		virtual void Update()=0;
 
 
