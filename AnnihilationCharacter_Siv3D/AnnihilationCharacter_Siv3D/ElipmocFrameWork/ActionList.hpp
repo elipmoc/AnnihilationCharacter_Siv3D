@@ -22,24 +22,25 @@ namespace elipmocframework {
 		void Update() {
 			static std::vector<std::unique_ptr<ActionBase>> nextActions;
 
-			for (auto it = actions.begin(); it != actions.end();)
-			{
-				(*it)->Update();
-				if ((*it)->CanDelete()) {
-					auto nextAction=(*it)->MoveNextAction();
-					it = actions.erase(it);
-					if (nextAction != nullptr) {
+			auto&& tail_itr=std::remove_if(actions.begin(), actions.end(), [](std::unique_ptr<ActionBase>& actionptr) {
+				if (actionptr->CanDelete()) {
+					auto&& nextAction = actionptr->MoveNextAction();
+					if (nextAction) {
 						nextActions.push_back(std::move(nextAction));
 					}
-					
+					return true;
 				}
-				else
-					++it;
-			}
+				return false;
+			});
+			actions.erase(tail_itr, actions.end());
+
 			for (auto&& item : nextActions) {
 				push_back(std::move(item));
 			}
 			nextActions.clear();
+
+			for (auto&& item:actions)
+				item->Update();
 		}
 
 	};
