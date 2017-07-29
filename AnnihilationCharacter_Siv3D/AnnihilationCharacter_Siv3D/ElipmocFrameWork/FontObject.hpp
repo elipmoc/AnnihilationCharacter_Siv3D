@@ -20,26 +20,26 @@ namespace elipmocframework {
 			return *this;
 		}
 		//posアクセサ
-		siv::Vec2 GetPos()const { return m_pos; }
-		FontObject& SetPos(const siv::Vec2& _pos) { m_pos = _pos; return *this; }
+		siv::Vec2 GetPos()const noexcept { return m_pos; }
+		FontObject& SetPos(const siv::Vec2& _pos) noexcept{ m_pos = _pos; return *this; }
 
 		//scaleアクセサ
-		double GetScale() const{ return m_scale; };
-		FontObject& SetScale(double _scale) { m_scale = _scale; return *this; }
+		double GetScale() const noexcept{ return m_scale; };
+		FontObject& SetScale(double _scale)noexcept { m_scale = _scale; return *this; }
 
 		//textアクセサ
-		siv::String GetText() const { return m_text; }
-		FontObject& SetText(const siv::String& _text) { m_text = _text; return *this; }
+		siv::String GetText() const noexcept{ return m_text; }
+		FontObject& SetText(const siv::String& _text) noexcept{ m_text = _text; return *this; }
 
 		//Colorアクセサ
-		siv::Color GetColor()const { return m_color; }
-		FontObject& SetColor(const siv::Color& color) { m_color = color; return *this; }
+		siv::Color GetColor()const noexcept{ return m_color; }
+		FontObject& SetColor(const siv::Color& color) noexcept{ m_color = color; return *this; }
 
 		FontObject(int fontsize=20) :m_scale(1),m_font(fontsize) ,m_actionList(this){
 
 		}
 
-		FontObject(siv::String _text, int fontsize = 20) :m_scale(1), m_font(fontsize),m_text(_text),m_actionList(this) {
+		FontObject(siv::String _text, int fontsize = 20):m_scale(1), m_font(fontsize),m_text(_text),m_actionList(this) {
 
 		}
 
@@ -52,6 +52,7 @@ namespace elipmocframework {
 			siv::Transformer2D t(mat, false);
 			m_font(m_text).draw(m_pos,m_color);
 		}
+
 		void DrawCenter()const {
 			siv::Mat3x2 mat = siv::Mat3x2::Scale(m_scale, m_pos);
 			siv::Transformer2D t(mat, false);

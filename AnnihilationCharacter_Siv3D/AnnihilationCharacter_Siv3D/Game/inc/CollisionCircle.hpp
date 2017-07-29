@@ -14,11 +14,11 @@ namespace game {
 	class CollisionCircle;
 	struct CollisionData {
 		const CollisionCircle& m_collision;
-		CollisionData(const CollisionCircle& collision) :m_collision(collision) {
+		CollisionData(const CollisionCircle& collision) noexcept:m_collision(collision) {
 
 		}
-		bool IsCanDelete()const { return deleteflag; }
-		void EnableDelete() { deleteflag = true; }
+		bool IsCanDelete()const noexcept{ return deleteflag; }
+		void EnableDelete() noexcept{ deleteflag = true; }
 	private:
 		bool deleteflag=false;
 
@@ -44,18 +44,18 @@ namespace game {
 		//CollisionControl‚É“o˜^‚·‚é
 		void RegisterCollision();
 	public:
-		CollisionID GetCollisionID()const { return m_collisionID; }
-		void SetCollisionID(const CollisionID collisionID){ m_collisionID=collisionID; }
+		CollisionID GetCollisionID()const noexcept{ return m_collisionID; }
+		void SetCollisionID(const CollisionID collisionID)noexcept{ m_collisionID=collisionID; }
 
-		siv::Vec2 GetBindPos()const { return bind_pos; }
+		siv::Vec2 GetBindPos()const noexcept{ return bind_pos; }
 
-		siv::Vec2 GetPos()const { return bind_pos+m_offsetPos; }
+		siv::Vec2 GetPos()const noexcept{ return bind_pos+m_offsetPos; }
 
-		siv::Vec2 GetOffsetPos()const { return m_offsetPos; }
-		void SetOffsetPos(const siv::Vec2& offsetPos){ m_offsetPos=offsetPos; }
+		siv::Vec2 GetOffsetPos()const noexcept{ return m_offsetPos; }
+		void SetOffsetPos(const siv::Vec2& offsetPos) noexcept{ m_offsetPos=offsetPos; }
 
-		double GetR()const { return m_r; }
-		void SetR(const double r) { m_r = r; }
+		double GetR()const noexcept{ return m_r; }
+		void SetR(const double r) noexcept{ m_r = r; }
 
 
 		//‚ ‚½‚è”»’èŒvŽZ
@@ -89,7 +89,7 @@ namespace game {
 		}
 
 		//ƒfƒXƒgƒ‰ƒNƒ^
-		~CollisionCircle() {
+		~CollisionCircle() noexcept{
 			m_colliData.EnableDelete();
 		}
 

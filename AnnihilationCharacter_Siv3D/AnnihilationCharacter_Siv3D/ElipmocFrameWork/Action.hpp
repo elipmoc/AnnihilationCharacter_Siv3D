@@ -9,8 +9,8 @@ namespace elipmocframework {
 	class ActionBase {
 		using ActionPtr=std::unique_ptr<ActionBase>;
 		friend ActionList;
-		void SetFontObject(FontObject* f) { m_f = f; }
-		void SetNextAction(ActionPtr&& nextAction) { m_nextAction=std::move(nextAction); }
+		void SetFontObject(FontObject* f)noexcept { m_f = f; }
+		void SetNextAction(ActionPtr&& nextAction)noexcept { m_nextAction=std::move(nextAction); }
 	protected:
 		FontObject* m_f;
 		//アクション削除フラグ
@@ -19,7 +19,7 @@ namespace elipmocframework {
 		ActionPtr m_nextAction=nullptr;
 	public:
 		//次に実行されるアクションをムーブ
-		ActionPtr MoveNextAction() {
+		ActionPtr MoveNextAction()noexcept {
 			return std::move(m_nextAction);
 		}
 		//シーケンス結合
@@ -28,10 +28,10 @@ namespace elipmocframework {
 			return std::move(action);
 		}
 
-		virtual ~ActionBase() {};
-		virtual void Init() {};
-		virtual void Update() {};
-		bool CanDelete() { return m_deleteFlag; }
+		virtual ~ActionBase()noexcept {};
+		virtual void Init() noexcept {};
+		virtual void Update() noexcept {};
+		bool CanDelete()noexcept { return m_deleteFlag; }
 	};
 
 	

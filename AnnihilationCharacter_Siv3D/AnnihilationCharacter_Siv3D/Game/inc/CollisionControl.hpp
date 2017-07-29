@@ -13,9 +13,9 @@ namespace game {
 	public:
 		CollisionControl(const CollisionControl&) = delete;
 		CollisionControl(CollisionControl&&) = delete;
-		~CollisionControl();
+		~CollisionControl()noexcept;
 
-		static CollisionControl& GetInstance() { return m_instance; }
+		static CollisionControl& GetInstance()noexcept{ return m_instance; }
 
 		void PushCollisionData(const CollisionData& colliData);
 

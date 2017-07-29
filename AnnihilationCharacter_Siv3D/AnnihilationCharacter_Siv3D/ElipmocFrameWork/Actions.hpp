@@ -15,7 +15,7 @@ namespace elipmocframework {
 		//終着地点
 		const siv::Vec2 endPos;
 		//( _endPos=終着地点 , _interval=実行時間)
-		MoveAction(const siv::Vec2& _endPos, const int _interval) :endPos(_endPos), interval(_interval) {}
+		MoveAction(const siv::Vec2& _endPos, const int _interval)noexcept :endPos(_endPos), interval(_interval) {}
 	public:
 
 
@@ -23,10 +23,10 @@ namespace elipmocframework {
 			return std::unique_ptr<ActionBase>(new MoveAction(_endPos, _interval));
 		}
 
-		virtual void Init()override {
+		virtual void Init() noexcept override {
 			deltaPos = (endPos - m_f->GetPos()) / interval;
 		}
-		virtual void Update()override {
+		virtual void Update()noexcept override {
 			nowTime++;
 			m_f->SetPos(m_f->GetPos() + deltaPos);
 			if (nowTime >= interval)m_deleteFlag = true;
@@ -45,17 +45,17 @@ namespace elipmocframework {
 		//最終拡大率
 		const double endScale;
 		//(_endScale=最終拡大率, _interval=実行時間)
-		ScaleAction(const double _endScale, const int _interval) :endScale(_endScale), interval(_interval) {}
+		ScaleAction(const double _endScale, const int _interval)noexcept :endScale(_endScale), interval(_interval) {}
 	public:
 
 		static std::unique_ptr<ActionBase> Create(const double _endScale, const int _interval) {
 			return std::unique_ptr<ActionBase>(new ScaleAction(_endScale, _interval));
 		}
 
-		virtual void Init()override {
+		virtual void Init()noexcept override {
 			deltaScale = (endScale - m_f->GetScale()) / interval;
 		}
-		virtual void Update()override {
+		virtual void Update() noexcept override {
 			nowTime++;
 			m_f->SetScale(m_f->GetScale() + deltaScale);
 			if (nowTime >= interval)m_deleteFlag = true;

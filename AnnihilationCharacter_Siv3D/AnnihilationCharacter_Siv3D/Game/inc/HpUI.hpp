@@ -11,8 +11,8 @@ namespace game {
 		std::unique_ptr<elipmocframework::FontObject> m_hpFont;
 	public:
 		HpUi();
-		size_t GetHp()const { return m_hp; }
-		void SetHp(size_t hp){ m_hp=hp; }
+		size_t GetHp()const noexcept{ return m_hp; }
+		void SetHp(size_t hp) noexcept{ m_hp=hp; }
 		void Draw()const;
 	};
 }
