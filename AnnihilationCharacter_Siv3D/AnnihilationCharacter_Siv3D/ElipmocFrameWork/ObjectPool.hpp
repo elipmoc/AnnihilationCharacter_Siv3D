@@ -25,6 +25,7 @@ namespace elipmocframework {
 	template<class Object>
 	class ObjectPoolIterator;
 
+	//メモリプールコンテナ
 	template<class Object>
 	class ObjectPool {
 		const size_t m_maxSize;
