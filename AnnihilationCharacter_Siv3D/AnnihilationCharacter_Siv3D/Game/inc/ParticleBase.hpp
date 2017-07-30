@@ -1,10 +1,12 @@
 #pragma once
 #include <memory>
+#include "ObjectPool.hpp"
+#include "ParticleFontObject.hpp"
 namespace game {
-	class ParticleFontObject;
 	class ParticleBase {
+		elipmocframework::ObjectPool<ParticleFontObject> m_particleFobjList;
+		//siv::Array<std::unique_ptr<ParticleFontObject>> m_particleFobjList;
 
-		siv::Array<std::unique_ptr<ParticleFontObject>> m_particleFobjList;
 
 		const siv::Font m_font;
 		const siv::String m_text;
@@ -54,7 +56,7 @@ namespace game {
 		}
 
 		void Update();
-		void Draw() const;
+		void Draw();
 	private:
 		//”­‰Î
 		virtual void Fire();

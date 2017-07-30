@@ -53,7 +53,10 @@ namespace elipmocframework {
 		size_t Size()const noexcept { return m_size; }
 
 		//添え字でアクセスできる
-		Object& operator[](size_t index)const noexcept {
+		Object& operator[](size_t index)noexcept {
+			return  *reinterpret_cast<Object*>(m_storagePtr[index].ptr.get());
+		}
+		const Object& operator[](size_t index)const noexcept {
 			return  *reinterpret_cast<Object*>(m_storagePtr[index].ptr.get());
 		}
 
@@ -162,14 +165,25 @@ namespace elipmocframework {
 			return (m_index <= it.m_index);
 		}
 	};
+	//条件に合う物を削除
+	template<class Object,class F>
+	void DeleteIf(ObjectPool<Object>& objectPool, F&& pred) {
+		for (size_t i = 0; i < objectPool.Size();) {
+			if (pred(objectPool[i]))
+				objectPool.DeleteAt(i);
+			else
+				++i;
+		}
+	}
+
 
 	template<class Object>
-	typename ObjectPool<Object>::Iterator ObjectPool<Object>::begin()noexcept {
+	inline typename ObjectPool<Object>::Iterator ObjectPool<Object>::begin()noexcept {
 		return Iterator(*this, 0);
 	}
 
 	template<class Object>
-	typename ObjectPool<Object>::Iterator ObjectPool<Object>::end() noexcept{
+	inline typename ObjectPool<Object>::Iterator ObjectPool<Object>::end()noexcept {
 		return Iterator(*this, m_nextIndex);
 	}
 

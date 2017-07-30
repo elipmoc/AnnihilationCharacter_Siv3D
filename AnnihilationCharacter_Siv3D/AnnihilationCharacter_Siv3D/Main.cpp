@@ -19,7 +19,7 @@ void Main()
 	for(auto&& item:o)
 		siv::Println(item);
 	game::ParticleList particleList;
-	particleList.AddParticle(game::ParticleBase::Create(L"破", { 200,200 }, 3000, 200, 20, 1, 0.2, { 255,255,255,255 }, -1, 20, 20, {0,0.23}));
+	particleList.AddParticle(game::ParticleBase::Create(L"破", { 300,300 }, 3000, 120, 20, 1, 0.1, { 255,255,255,255 }, -0.2, 1, 20, {0,0}));
 	siv::Window::SetTitle(L"消滅文字 ver 1919810114514");
 	siv::Window::Resize(700, 580);
 	game::MySceneManager mySceneManager;
