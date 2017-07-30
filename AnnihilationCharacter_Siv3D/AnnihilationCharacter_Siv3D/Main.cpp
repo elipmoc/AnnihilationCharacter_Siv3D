@@ -5,9 +5,19 @@
 #include "ParticleList.hpp"
 #include "ParticleBase.hpp"
 #include "ParticleFontObject.hpp"
+#include "ObjectPool.hpp"
+
 
 void Main()
 {
+	elipmocframework::ObjectPool<int> o(3);
+	o.New(45);
+	o.New(25);
+	o.New(15);
+	o.DeleteAt(1);
+	o.New(25);
+	for(auto&& item:o)
+		siv::Println(item);
 	game::ParticleList particleList;
 	particleList.AddParticle(game::ParticleBase::Create(L"破", { 200,200 }, 3000, 200, 20, 1, 0.2, { 255,255,255,255 }, -1, 20, 20, {0,0.23}));
 	siv::Window::SetTitle(L"消滅文字 ver 1919810114514");

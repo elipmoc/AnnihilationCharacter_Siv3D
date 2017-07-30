@@ -20,7 +20,6 @@ namespace game {
 			return colliData->IsCanDelete();
 		});
 		m_collisions.erase(tail_itr, m_collisions.end());
-
 		//‚ ‚½‚è”»’è‚·‚é
 		for (size_t i = 0; i < m_collisions.size(); i++) {
 			for (size_t j = i + 1; j < m_collisions.size(); j++) {

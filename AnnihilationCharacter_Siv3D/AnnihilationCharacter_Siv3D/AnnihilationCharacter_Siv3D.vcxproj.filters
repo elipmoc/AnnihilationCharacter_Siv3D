@@ -536,5 +536,8 @@
     <ClInclude Include="Game\inc\ParticleFontObject.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="ElipmocFrameWork\ObjectPool.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
