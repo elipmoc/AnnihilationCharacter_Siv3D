@@ -533,5 +533,8 @@
     <ClInclude Include="Game\inc\ParticleBase.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="Game\inc\ParticleFontObject.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
