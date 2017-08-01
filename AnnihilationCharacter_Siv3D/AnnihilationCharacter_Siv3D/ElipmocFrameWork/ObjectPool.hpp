@@ -76,9 +76,26 @@ namespace elipmocframework {
 			return *new(m_storagePtr[m_nextIndex - 1].ptr.get()) Object(std::forward<Args>(args)...);
 		}
 
+		//placement NewしないでメモリをObjectとして渡す
+		Object& NoCallNew() {
+			if (m_nextIndex == m_maxSize)throw std::exception("サイズがいっぱいだよおおお！！");
+			m_nextIndex++;
+			m_size++;
+			return *reinterpret_cast<Object*>(m_storagePtr[m_nextIndex - 1].ptr.get());
+		}
+
 		//メモリリリース
 		void DeleteAt(const size_t at) {
 			(*this)[at].~Object();
+			if (at >= m_size)throw std::exception("範囲外じゃぼけええええ！");
+			if (at != m_size - 1)
+				m_storagePtr[at].Swap(std::move(m_storagePtr[m_size - 1]));
+			m_size--;
+			m_nextIndex--;
+		}
+
+		//デストラクタを呼ばないでメモリリリース
+		void NoCallDeleteAt(const size_t at) {
 			if (at >= m_size)throw std::exception("範囲外じゃぼけええええ！");
 			if (at != m_size - 1)
 				m_storagePtr[at].Swap(std::move(m_storagePtr[m_size - 1]));
