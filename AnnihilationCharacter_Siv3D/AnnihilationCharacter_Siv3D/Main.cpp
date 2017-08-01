@@ -7,6 +7,19 @@
 #include "ParticleFontObject.hpp"
 #include "ObjectPool.hpp"
 
+template<bool Flag>
+class A {
+	template<class E=std::enable_if_t<Flag>>
+	void F() {
+		siv::Println("true");
+	}
+
+	void F() {
+		siv::Println("false");
+	}
+
+
+};
 
 void Main()
 {
@@ -19,7 +32,7 @@ void Main()
 	for(auto&& item:o)
 		siv::Println(item);
 	game::ParticleList particleList;
-	particleList.AddParticle(game::ParticleBase::Create(L"破", { 300,300 }, 3000, 120, 20, 1, 0.1, { 255,255,255,255 }, -0.2, 1, 20, {0,0}));
+	particleList.AddParticle(game::ParticleBase::Create(L"破", { 300,300 }, 3000, 500, 10, 1, 0.001, { 255,255,255,255 }, -0.4, 50, 20, {0,0}));
 	siv::Window::SetTitle(L"消滅文字 ver 1919810114514");
 	siv::Window::Resize(700, 580);
 	game::MySceneManager mySceneManager;

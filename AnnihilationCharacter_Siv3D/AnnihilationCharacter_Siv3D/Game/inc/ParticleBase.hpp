@@ -56,7 +56,7 @@ namespace game {
 		}
 
 		void Update();
-		void Draw();
+		void Draw()const;
 	private:
 		//”­‰Î
 		virtual void Fire();

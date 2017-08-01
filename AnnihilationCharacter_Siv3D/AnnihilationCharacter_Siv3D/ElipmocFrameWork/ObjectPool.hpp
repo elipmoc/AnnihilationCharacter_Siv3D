@@ -1,6 +1,8 @@
 #pragma once
 #include <vector>
 #include <iterator>
+#include <memory>
+#include <type_traits>
 namespace elipmocframework {
 
 	//プールの最小単位
@@ -22,7 +24,7 @@ namespace elipmocframework {
 		}
 	};
 
-	template<class Object>
+	template<class Object, bool ConstFlag>
 	class ObjectPoolIterator;
 
 	//メモリプールコンテナ
@@ -34,7 +36,8 @@ namespace elipmocframework {
 		MemoryBlock<sizeof(Object)>* m_storagePtr;
 	public:
 		//イテレータの型
-		using Iterator = ObjectPoolIterator<Object>;
+		using Iterator = ObjectPoolIterator<Object, false>;
+		using Const_Iterator = ObjectPoolIterator<Object,true>;
 
 		ObjectPool(const size_t maxSize):m_maxSize(maxSize),m_size(0),m_nextIndex(0){
 			m_storagePtr = new MemoryBlock<sizeof(Object)>[m_maxSize];
@@ -47,8 +50,12 @@ namespace elipmocframework {
 		// 開始位置を示すイテレータを取得する。
 		Iterator begin()noexcept;
 
+		Const_Iterator begin()const noexcept;
+
 		// 終了位置を示すイテレータを取得する。
 		Iterator end()noexcept;
+
+		Const_Iterator end()const noexcept;
 
 		size_t Size()const noexcept { return m_size; }
 
@@ -81,38 +88,49 @@ namespace elipmocframework {
 	};
 
 	//ObjectPool用の自作イテレータ
-	template<class Object>
-	class ObjectPoolIterator :public std::iterator<std::random_access_iterator_tag,Object> {
+	//ConstFlagで　const_Iteratorを実現してる
+	template<class Object,bool ConstFlag>
+	class ObjectPoolIterator :public std::iterator<std::random_access_iterator_tag, std::conditional_t<ConstFlag, const Object, Object>> {
+	public:
+		using ObjectType = std::conditional_t<ConstFlag, const Object, Object>;
+		using ObjectPoolType = std::conditional_t<ConstFlag, const ObjectPool<Object>, ObjectPool<Object>>;
+	private:
+		friend ObjectPoolIterator<Object, !ConstFlag>;
 		friend ObjectPool<Object>;
-		ObjectPool<Object>& m_objectPool;
+		ObjectPoolType& m_objectPool;
 		size_t m_index;
-		ObjectPoolIterator(ObjectPool<Object>& objectPool,const size_t index)
+		ObjectPoolIterator(ObjectPoolType& objectPool,const size_t index)
 			:m_objectPool(objectPool),m_index(index){}
 
 	public:
-		using IteratorType = ObjectPoolIterator<Object>;
+		using IteratorType = ObjectPoolIterator<Object,ConstFlag>;
 
 		//コピーコンストラクタ
-		ObjectPoolIterator(const ObjectPoolIterator<Object>& copyitr)
+		ObjectPoolIterator(const ObjectPoolIterator<Object,false>& copyitr)
 			:m_objectPool(copyitr.m_objectPool),m_index(copyitr.m_index) {}
+
+		//コピーコンストラクタ
+		template<class E=std::enable_if_t<ConstFlag>>
+		ObjectPoolIterator(const ObjectPoolIterator<Object, true>& copyitr)
+			:m_objectPool(copyitr.m_objectPool), m_index(copyitr.m_index) {}
 
 		//参照演算子
 		const Object& operator*() const {
 			return m_objectPool[m_index];
 		}
-		Object& operator*() {
+		ObjectType& operator*() {
 			return m_objectPool[m_index];
 		}
 		const Object& operator->() const {
 			return m_objectPool[m_index];
 		}
-		Object& operator->() {
+		ObjectType& operator->() {
 			return m_objectPool[m_index];
 		}
 		const Object& operator[](int n) const {
 			return m_objectPool[m_index + n];
 		};
-		Object& operator[](int n) {
+		ObjectType& operator[](int n) {
 			return m_objectPool[m_index + n];
 		}
 		//移動系演算子
@@ -165,6 +183,9 @@ namespace elipmocframework {
 			return (m_index <= it.m_index);
 		}
 	};
+
+	//ユーティリティ的な
+
 	//条件に合う物を削除
 	template<class Object,class F>
 	void DeleteIf(ObjectPool<Object>& objectPool, F&& pred) {
@@ -177,14 +198,26 @@ namespace elipmocframework {
 	}
 
 
+	//begin　endの定義
+
 	template<class Object>
 	inline typename ObjectPool<Object>::Iterator ObjectPool<Object>::begin()noexcept {
 		return Iterator(*this, 0);
 	}
 
 	template<class Object>
+	inline typename ObjectPool<Object>::Const_Iterator ObjectPool<Object>::begin()const noexcept {
+		return Const_Iterator(*this, 0);
+	}
+
+	template<class Object>
 	inline typename ObjectPool<Object>::Iterator ObjectPool<Object>::end()noexcept {
 		return Iterator(*this, m_nextIndex);
+	}
+
+	template<class Object>
+	inline typename ObjectPool<Object>::Const_Iterator ObjectPool<Object>::end()const noexcept {
+		return Const_Iterator(*this, m_nextIndex);
 	}
 
 }

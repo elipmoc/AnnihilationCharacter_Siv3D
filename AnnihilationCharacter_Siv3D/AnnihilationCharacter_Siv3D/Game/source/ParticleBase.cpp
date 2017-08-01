@@ -33,7 +33,7 @@ namespace game {
 		m_lifeTime--;
 	}
 
-	void ParticleBase::Draw()
+	void ParticleBase::Draw()const
 	{
 		for (const auto& item : m_particleFobjList)
 			item.Draw();
