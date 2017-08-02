@@ -2,11 +2,19 @@
 #include "FontObject.hpp"
 #include <memory>
 
+namespace elipmocframework {
+	class ParticleList;
+}
+
 namespace game {
 
 	class TerrainControl;
 	class Player :public elipmocframework::FontObject {
 
+		//死亡時のパーティクル
+		std::unique_ptr<elipmocframework::ParticleList> m_dedParticle;
+
+		//移動スピード
 		static constexpr double speed=3.5;
 		//重力加速度
 		static constexpr double m_g=0.4;
@@ -44,7 +52,8 @@ namespace game {
 		}
 
 	public:
-		Player():circle(3){}
+		Player();
+		~Player();
 
 
 

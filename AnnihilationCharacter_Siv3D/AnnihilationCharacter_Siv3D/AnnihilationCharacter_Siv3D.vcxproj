@@ -166,6 +166,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Game\source\TitleParticle.cpp" />
     <ClCompile Include="Game\source\Barrage.cpp" />
     <ClCompile Include="Game\source\BarrierUI.cpp" />
     <ClCompile Include="Game\source\Bullet.cpp" />
@@ -179,7 +180,7 @@
     <ClCompile Include="Game\source\GrazeParticle.cpp" />
     <ClCompile Include="Game\source\HpUI.cpp" />
     <ClCompile Include="Game\source\Player.cpp" />
-    <ClCompile Include="Game\source\PlayerDamageParticle.cpp" />
+    <ClCompile Include="Game\source\PlayerDedParticle.cpp" />
     <ClCompile Include="Game\source\SelectPlayerScene.cpp" />
     <ClCompile Include="Game\source\TerrainControl.cpp" />
     <ClCompile Include="Game\source\TestEnemy.cpp" />
@@ -319,11 +320,12 @@
     <ClInclude Include="ElipmocFrameWork\ParticleList.hpp" />
     <ClInclude Include="ElipmocFrameWork\Particle.hpp" />
     <ClInclude Include="Game\inc\Player.hpp" />
-    <ClInclude Include="Game\inc\PlayerDamageParticle.hpp" />
+    <ClInclude Include="Game\inc\PlayerDedParticle.hpp" />
     <ClInclude Include="Game\inc\SceneBase.hpp" />
     <ClInclude Include="Game\inc\SelectPlayerScene.hpp" />
     <ClInclude Include="Game\inc\TerrainControl.hpp" />
     <ClInclude Include="Game\inc\TestEnemy.hpp" />
+    <ClInclude Include="Game\inc\TitleParticle.hpp" />
     <ClInclude Include="Game\inc\TitleScene.hpp" />
     <ClInclude Include="UseSiv3D.hpp" />
   </ItemGroup>

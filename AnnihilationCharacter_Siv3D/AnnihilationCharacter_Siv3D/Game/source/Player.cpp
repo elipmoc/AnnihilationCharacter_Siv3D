@@ -1,11 +1,18 @@
 #include "Player.hpp"
 #include "TerrainControl.hpp"
+#include "ParticleList.hpp"
+#include "PlayerDedParticle.hpp"
 
 namespace game {
 
 
 	//移動アクション
 	void Player::Move(const std::unique_ptr<TerrainControl>& terrainControl) {		
+
+		if (siv::Input::KeyEnter.clicked) {
+			m_dedParticle->Set(GetPos());
+			SetPos({ 0,0 });
+		}
 
 		//着地判定
 		if (
@@ -55,9 +62,17 @@ namespace game {
 		SetPos({ GetPos().x,GetPos().y + m_yv });
 	}
 
+	Player::Player() :circle(3), m_dedParticle(CreatePlayerDedParticleList())
+	{
+	}
+
+	Player::~Player(){}
+
 	void Player::Update2(const std::unique_ptr<TerrainControl>& terrainControl) {
 		elipmocframework::FontObject::Update();
 		Move(terrainControl);
+		m_dedParticle->Update();
+		m_dedParticle->Draw();
 		circle.setPos(GetUnderX(), GetUnderY()).draw(siv::Palette::Red);
 	}
 }
