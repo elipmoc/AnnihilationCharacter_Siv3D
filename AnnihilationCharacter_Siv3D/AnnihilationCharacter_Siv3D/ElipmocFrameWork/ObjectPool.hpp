@@ -58,6 +58,8 @@ namespace elipmocframework {
 		Const_Iterator end()const noexcept;
 
 		size_t Size()const noexcept { return m_size; }
+		//最大サイズ
+		size_t MaxSize()const noexcept { return m_maxSize; }
 
 		//添え字でアクセスできる
 		Object& operator[](size_t index)noexcept {
@@ -101,6 +103,19 @@ namespace elipmocframework {
 				m_storagePtr[at].Swap(std::move(m_storagePtr[m_size - 1]));
 			m_size--;
 			m_nextIndex--;
+		}
+		//すべてメモリリリース
+		void DeleteAll() {
+			for(size_t i=0;i<m_size;i++)
+				(*this)[i].~Object();
+			m_size = 0;
+			m_nextIndex = 0;
+		}
+
+		//デストラクタを呼ばないですべてメモリリリース
+		void NoCallDeleteAll() {
+			m_size = 0;
+			m_nextIndex = 0;
 		}
 	};
 
@@ -209,6 +224,15 @@ namespace elipmocframework {
 		for (size_t i = 0; i < objectPool.Size();) {
 			if (pred(objectPool[i]))
 				objectPool.DeleteAt(i);
+			else
+				++i;
+		}
+	}
+	template<class Object, class F>
+	void NoCallDeleteIf(ObjectPool<Object>& objectPool, F&& pred) {
+		for (size_t i = 0; i < objectPool.Size();) {
+			if (pred(objectPool[i]))
+				objectPool.NoCallDeleteAt(i);
 			else
 				++i;
 		}

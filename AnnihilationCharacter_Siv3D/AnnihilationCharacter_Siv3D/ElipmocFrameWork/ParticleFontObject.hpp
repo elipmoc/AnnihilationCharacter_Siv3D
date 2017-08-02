@@ -1,5 +1,6 @@
 #pragma once
-namespace game {
+namespace elipmocframework {
+	//パーティクル用の文字オブジェクト
 	class ParticleFontObject {
 		const siv::Font& m_font;
 		//表示する文字列

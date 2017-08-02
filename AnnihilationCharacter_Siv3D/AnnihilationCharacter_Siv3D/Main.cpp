@@ -3,15 +3,13 @@
 #include "GameScene.hpp"
 #include "CollisionControl.hpp"
 #include "ParticleList.hpp"
-#include "ParticleBase.hpp"
-#include "ParticleFontObject.hpp"
-#include "ObjectPool.hpp"
+
 
 
 void Main()
 {
-	game::ParticleList particleList;
-	particleList.AddParticle(game::ParticleBase::Create(L"破", { 300,300 }, 3000, 500, 10, 1, 0.001, { 255,255,255,255 }, -0.4, 50, 20, {0,0}));
+	elipmocframework::ParticleList particleList(40, L"消", 200, 200, 10, 2, 0.001, siv::Color{ 255,255,255,255 }, -2.5, 100, 20, siv::Vec2{ 0,0 });
+	elipmocframework::ParticleList particleList2(40,L"滅", 200, 200, 10, 2, 0.001, siv::Color{ 255,255,255,255 }, -2.5, 100, 20, siv::Vec2{0,0});
 	siv::Window::SetTitle(L"消滅文字 ver 1919810114514");
 	siv::Window::Resize(700, 580);
 	game::MySceneManager mySceneManager;
@@ -22,6 +20,13 @@ void Main()
 		game::CollisionControl::GetInstance().Update();
 		game::CollisionControl::GetInstance().DebugDraw();
 		particleList.Update();
+		particleList2.Update();
 		particleList.Draw();
+		particleList2.Draw();
+		if (siv::Random(1, 100) == 5)
+			if(siv::Random(1,2)==1)
+				particleList.Set({siv::Random(0,700),siv::Random(0,580) });
+			else 
+				particleList2.Set({ siv::Random(0,700),siv::Random(0,580) });
 	}
 }
