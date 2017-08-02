@@ -530,7 +530,7 @@
     <ClInclude Include="ElipmocFrameWork\ParticleFontObject.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="ElipmocFrameWork\ParticleBase.hpp">
+    <ClInclude Include="ElipmocFrameWork\Particle.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>

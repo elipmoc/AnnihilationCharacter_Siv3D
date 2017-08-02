@@ -1,16 +1,15 @@
 #pragma once
 #include "ObjectPool.hpp"
-#include "ParticleBase.hpp"
+#include "Particle.hpp"
 
 namespace elipmocframework {
 
 	class ParticleList {
-		ObjectPool<ParticleBase> m_particles;
+		ObjectPool<Particle> m_particles;
 	public:
-		template<class... Args>
-		ParticleList(const size_t size, Args&& ...args) :m_particles(size) {
+		ParticleList(const size_t size,const ParticleState& state) :m_particles(size) {
 			for (size_t i = 0; i < m_particles.MaxSize(); i++)
-				m_particles.New(std::forward<Args>(args)...);
+				m_particles.New(state);
 			for (size_t i = 0; i < m_particles.MaxSize(); i++)
 				m_particles.NoCallDeleteAt(0);
 		}
@@ -22,7 +21,7 @@ namespace elipmocframework {
 
 		void Update() {
 			NoCallDeleteIf(
-				m_particles, [](const ParticleBase& particle) {
+				m_particles, [](const Particle& particle) {
 				return particle.IsCanDelete();
 			});
 			for (auto&& item : m_particles)

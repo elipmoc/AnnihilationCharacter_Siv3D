@@ -8,8 +8,19 @@
 
 void Main()
 {
-	elipmocframework::ParticleList particleList(40, L"消", 200, 200, 10, 2, 0.001, siv::Color{ 255,255,255,255 }, -2.5, 100, 20, siv::Vec2{ 0,0 });
-	elipmocframework::ParticleList particleList2(40,L"滅", 200, 200, 10, 2, 0.001, siv::Color{ 255,255,255,255 }, -2.5, 100, 20, siv::Vec2{0,0});
+	elipmocframework::ParticleState state;
+	state.lifeTime = 200;
+	state.particleLifeTime = 200;
+	state.particleNum = 10;
+	state.particleMaxNum = 10;
+	state.speed = 2;
+	state.vspeed = 0.0001;
+	state.fireInterval = 100;
+	state.text = L"消";
+	state.vopacity = -2.5;
+	elipmocframework::ParticleList particleList(40, state);
+	state.text = L"滅";
+	elipmocframework::ParticleList particleList2(40, state);
 	siv::Window::SetTitle(L"消滅文字 ver 1919810114514");
 	siv::Window::Resize(700, 580);
 	game::MySceneManager mySceneManager;
