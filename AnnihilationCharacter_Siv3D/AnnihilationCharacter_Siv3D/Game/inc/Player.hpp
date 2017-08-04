@@ -31,6 +31,9 @@ namespace game {
 		//移動アクション
 		void Move(const std::unique_ptr<TerrainControl>&);
 
+		//主人公死亡処理
+		void PlayerDead();
+
 		//主人公の足元のYを得る
 		double GetUnderY()const {
 			return GetPos().y + 35;

@@ -12,7 +12,7 @@ namespace game {
 		//特定のレーンの地形の高さを得る
 		double GetTerrainY(size_t lane)const {
 			if (lane >= LANE_NUM)throw siv::String(L"無効なレーン番号です");
-			return 500 - lane * 150;
+			return 450 - lane * 150;
 		}
 
 		//あるX座標のあるレーンに地形があるかどうか

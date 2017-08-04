@@ -9,9 +9,9 @@ namespace game {
 	//移動アクション
 	void Player::Move(const std::unique_ptr<TerrainControl>& terrainControl) {		
 
-		if (siv::Input::KeyEnter.clicked) {
-			m_deadParticle->Set(GetPos());
-			SetPos({ 0,0 });
+		//落下判定
+		if (GetPos().y>siv::Window::Size().y+40) {
+			PlayerDead();
 		}
 
 		//着地判定
@@ -60,6 +60,12 @@ namespace game {
 
 		//座標更新
 		SetPos({ GetPos().x,GetPos().y + m_yv });
+	}
+
+	void Player::PlayerDead(){
+		m_deadParticle->Set(GetPos());
+		SetPos({ 0,0 });
+		m_yv = 0;
 	}
 
 	Player::Player() :circle(3), m_deadParticle(CreatePlayerDeadParticleList())
