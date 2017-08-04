@@ -12,7 +12,7 @@ namespace game {
 	class Player :public elipmocframework::FontObject {
 
 		//死亡時のパーティクル
-		std::unique_ptr<elipmocframework::ParticleList> m_dedParticle;
+		std::unique_ptr<elipmocframework::ParticleList> m_deadParticle;
 
 		//移動スピード
 		static constexpr double speed=3.5;

@@ -1,10 +1,10 @@
-#include "PlayerDedParticle.hpp"
+#include "PlayerDeadParticle.hpp"
 #include "ParticleList.hpp"
 
 using elipmocframework::ParticleList;
 using elipmocframework::ParticleState;
 
-std::unique_ptr<ParticleList> game::CreatePlayerDedParticleList()
+std::unique_ptr<ParticleList> game::CreatePlayerDeadParticleList()
 {
 	ParticleState state;
 	state.color = siv::Palette::Red;

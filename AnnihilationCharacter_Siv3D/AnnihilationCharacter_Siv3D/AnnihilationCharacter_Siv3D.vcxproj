@@ -180,7 +180,7 @@
     <ClCompile Include="Game\source\GrazeParticle.cpp" />
     <ClCompile Include="Game\source\HpUI.cpp" />
     <ClCompile Include="Game\source\Player.cpp" />
-    <ClCompile Include="Game\source\PlayerDedParticle.cpp" />
+    <ClCompile Include="Game\source\PlayerDeadParticle.cpp" />
     <ClCompile Include="Game\source\SelectPlayerScene.cpp" />
     <ClCompile Include="Game\source\TerrainControl.cpp" />
     <ClCompile Include="Game\source\TestEnemy.cpp" />
@@ -320,7 +320,7 @@
     <ClInclude Include="ElipmocFrameWork\ParticleList.hpp" />
     <ClInclude Include="ElipmocFrameWork\Particle.hpp" />
     <ClInclude Include="Game\inc\Player.hpp" />
-    <ClInclude Include="Game\inc\PlayerDedParticle.hpp" />
+    <ClInclude Include="Game\inc\PlayerDeadParticle.hpp" />
     <ClInclude Include="Game\inc\SceneBase.hpp" />
     <ClInclude Include="Game\inc\SelectPlayerScene.hpp" />
     <ClInclude Include="Game\inc\TerrainControl.hpp" />

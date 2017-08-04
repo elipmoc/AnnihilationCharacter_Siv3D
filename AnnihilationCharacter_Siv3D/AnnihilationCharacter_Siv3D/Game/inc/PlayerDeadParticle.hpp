@@ -6,6 +6,6 @@ namespace elipmocframework {
 
 namespace game {
 
-	std::unique_ptr < elipmocframework::ParticleList > CreatePlayerDedParticleList();
+	std::unique_ptr < elipmocframework::ParticleList > CreatePlayerDeadParticleList();
 
 }

@@ -132,10 +132,10 @@
     <ClCompile Include="Game\source\Player.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Game\source\PlayerDedParticle.cpp">
+    <ClCompile Include="Game\source\TitleParticle.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Game\source\TitleParticle.cpp">
+    <ClCompile Include="Game\source\PlayerDeadParticle.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -533,10 +533,10 @@
     <ClInclude Include="ElipmocFrameWork\Particle.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Game\inc\PlayerDedParticle.hpp">
+    <ClInclude Include="Game\inc\TitleParticle.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Game\inc\TitleParticle.hpp">
+    <ClInclude Include="Game\inc\PlayerDeadParticle.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>

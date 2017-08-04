@@ -1,7 +1,7 @@
 #include "Player.hpp"
 #include "TerrainControl.hpp"
 #include "ParticleList.hpp"
-#include "PlayerDedParticle.hpp"
+#include "PlayerDeadParticle.hpp"
 
 namespace game {
 
@@ -10,7 +10,7 @@ namespace game {
 	void Player::Move(const std::unique_ptr<TerrainControl>& terrainControl) {		
 
 		if (siv::Input::KeyEnter.clicked) {
-			m_dedParticle->Set(GetPos());
+			m_deadParticle->Set(GetPos());
 			SetPos({ 0,0 });
 		}
 
@@ -62,7 +62,7 @@ namespace game {
 		SetPos({ GetPos().x,GetPos().y + m_yv });
 	}
 
-	Player::Player() :circle(3), m_dedParticle(CreatePlayerDedParticleList())
+	Player::Player() :circle(3), m_deadParticle(CreatePlayerDeadParticleList())
 	{
 	}
 
@@ -71,8 +71,8 @@ namespace game {
 	void Player::Update2(const std::unique_ptr<TerrainControl>& terrainControl) {
 		elipmocframework::FontObject::Update();
 		Move(terrainControl);
-		m_dedParticle->Update();
-		m_dedParticle->Draw();
+		m_deadParticle->Update();
+		m_deadParticle->Draw();
 		circle.setPos(GetUnderX(), GetUnderY()).draw(siv::Palette::Red);
 	}
 }
