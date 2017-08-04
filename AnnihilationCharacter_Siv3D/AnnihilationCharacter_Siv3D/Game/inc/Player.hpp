@@ -9,10 +9,15 @@ namespace elipmocframework {
 namespace game {
 
 	class TerrainControl;
+	class CollisionCircle;
 	class Player :public elipmocframework::FontObject {
 
 		//死亡時のパーティクル
 		std::unique_ptr<elipmocframework::ParticleList> m_deadParticle;
+
+		//あたり判定object
+		std::unique_ptr<CollisionCircle> m_colliObject;
+
 
 		//移動スピード
 		static constexpr double speed=3.5;

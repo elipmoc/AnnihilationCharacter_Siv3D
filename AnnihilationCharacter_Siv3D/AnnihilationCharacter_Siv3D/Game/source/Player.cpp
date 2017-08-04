@@ -2,6 +2,7 @@
 #include "TerrainControl.hpp"
 #include "ParticleList.hpp"
 #include "PlayerDeadParticle.hpp"
+#include "CollisionCircle.hpp"
 
 namespace game {
 
@@ -68,8 +69,13 @@ namespace game {
 		m_yv = 0;
 	}
 
-	Player::Player() :circle(3), m_deadParticle(CreatePlayerDeadParticleList())
+	Player::Player() :circle(3), m_deadParticle(CreatePlayerDeadParticleList()),
+		m_colliObject(std::make_unique<CollisionCircle>(GetRefPos(), [this](CollisionID id) {if(id==CollisionID::EnemyID)this->PlayerDead(); }))
 	{
+		m_colliObject->SetR(10);
+		m_colliObject->SetCollisionID(CollisionID::PlayerID);
+		m_colliObject->SetOffsetPos({14, 20});
+
 	}
 
 	Player::~Player(){}
@@ -77,6 +83,7 @@ namespace game {
 	void Player::Update2(const std::unique_ptr<TerrainControl>& terrainControl) {
 		elipmocframework::FontObject::Update();
 		Move(terrainControl);
+		m_colliObject->DoColliQueue();
 		m_deadParticle->Update();
 		m_deadParticle->Draw();
 		circle.setPos(GetUnderX(), GetUnderY()).draw(siv::Palette::Red);

@@ -3,12 +3,14 @@
 #include "GameScene.hpp"
 #include "CollisionControl.hpp"
 #include "ParticleList.hpp"
-
+#include "CollisionCircle.hpp"
 
 
 void Main()
 {
-	
+	game::CollisionCircle c({ 300,100 }, [](game::CollisionID) {});
+	c.SetR(50);
+	c.SetCollisionID(game::CollisionID::EnemyID);
 	siv::Window::SetTitle(L"消滅文字 ver 1919810114514");
 	siv::Window::Resize(700, 580);
 	game::MySceneManager mySceneManager;

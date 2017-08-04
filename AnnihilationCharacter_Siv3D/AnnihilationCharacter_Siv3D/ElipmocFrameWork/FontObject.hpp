@@ -14,6 +14,11 @@ namespace elipmocframework {
 		//アクションリスト
 		ActionList m_actionList;
 
+	protected:
+
+		//posの参照を得る
+		const siv::Vec2& GetRefPos() { return m_pos; }
+
 	public:
 		FontObject& AddAction(std::unique_ptr<ActionBase>&& action) {
 			m_actionList.push_back(std::move(action));
