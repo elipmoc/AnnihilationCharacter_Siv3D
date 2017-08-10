@@ -25,23 +25,24 @@ namespace elipmocframework {
 	
 
 	//•¡”‚ÌŒ^‚Ì‚¤‚¿ˆê‚Â‚Å‚àƒ}ƒbƒ`‚·‚ê‚Îture
+	//<”ä‚×‚é‘ÎÛ‚ÌŒ^,”ä‚×‚ç‚ê‚éŒ^...>
 	template<class...>
 	struct is_sames;
 
-	template<class Head,class Head2,class ...Tails >
-	struct is_sames<Head, Head2, Tails...>
+	template<class Target,class Head,class ...Tails >
+	struct is_sames<Target, Head, Tails...>
 		:
 		std::conditional_t<
-			std::is_same<Head,Head2>::value,
+			std::is_same<Target,Head>::value,
 				std::true_type,
-				std::conditional_t<is_sames<Head,Tails...>::value,std::true_type,std::false_type>
+				std::conditional_t<is_sames<Target,Tails...>::value,std::true_type,std::false_type>
 		>
 	{};
 
-	template<class Head>
-	struct is_sames<Head>:std::false_type
+	template<class Target>
+	struct is_sames<Target>:std::false_type
 	{};
 
-	template<class Head,class Head2,class ...Tails>
-	constexpr bool is_sames_v = is_sames<Head,Head2,Tails...>::value;
+	template<class Target,class...Tails>
+	constexpr bool is_sames_v = is_sames<Target,Tails...>::value;
 }
