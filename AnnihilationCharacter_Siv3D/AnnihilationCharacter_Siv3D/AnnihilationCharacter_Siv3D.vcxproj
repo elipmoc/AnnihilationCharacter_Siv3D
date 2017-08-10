@@ -304,6 +304,7 @@
     <ClInclude Include="ElipmocFrameWork\Actions.hpp" />
     <ClInclude Include="ElipmocFrameWork\FontObject.hpp" />
     <ClInclude Include="ElipmocFrameWork\ObjectPool.hpp" />
+    <ClInclude Include="ElipmocFrameWork\type_traits_original.hpp" />
     <ClInclude Include="Game\inc\Barrage.hpp" />
     <ClInclude Include="Game\inc\BarrierUI.hpp" />
     <ClInclude Include="Game\inc\Bullet.hpp" />

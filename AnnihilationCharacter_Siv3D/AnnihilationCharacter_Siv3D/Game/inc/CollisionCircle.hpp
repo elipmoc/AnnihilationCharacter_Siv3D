@@ -78,7 +78,7 @@ namespace game {
 
 		//座標と関数をバインドする
 		template<class F>
-		CollisionCircle(const siv::Vec2& pos,F& func)
+		CollisionCircle(const siv::Vec2& pos,F func)
 			:bind_pos(pos),m_hitFunc(func),m_colliData(*(new CollisionData(*this))){
 			RegisterCollision();
 		}

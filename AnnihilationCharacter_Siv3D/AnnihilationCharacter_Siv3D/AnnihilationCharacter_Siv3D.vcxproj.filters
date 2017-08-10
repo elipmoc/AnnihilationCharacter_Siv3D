@@ -539,5 +539,8 @@
     <ClInclude Include="Game\inc\PlayerDeadParticle.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="ElipmocFrameWork\type_traits_original.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

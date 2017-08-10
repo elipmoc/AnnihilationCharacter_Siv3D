@@ -24,6 +24,7 @@ namespace elipmocframework {
 		}
 	};
 
+
 	template<class Object, bool ConstFlag>
 	class ObjectPoolIterator;
 

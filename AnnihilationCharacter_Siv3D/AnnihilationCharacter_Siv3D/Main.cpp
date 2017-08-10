@@ -4,10 +4,12 @@
 #include "CollisionControl.hpp"
 #include "CollisionCircle.hpp"
 #include "Bullet.hpp"
+#include "type_traits_original.hpp"
 
 
 void Main()
 {
+	siv::Println(elipmocframework::is_sames_v<int, double,bool,unsigned int,float,int16,int>);
 	game::CollisionCircle c({ 300,100 }, [](game::CollisionID) {});
 	c.SetR(50);
 	c.SetCollisionID(game::CollisionID::EnemyID);
