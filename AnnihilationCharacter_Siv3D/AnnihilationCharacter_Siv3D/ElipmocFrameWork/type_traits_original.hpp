@@ -2,6 +2,44 @@
 #include <type_traits>
 
 namespace elipmocframework {
+
+	/*template < bool B >
+	using bool_constant = std::integral_constant<bool, B>;
+
+	template < typename Head, typename ...Tail >
+	struct conj_impl : bool_constant<Head::value && conj_impl<Tail...>::value> {};
+
+	template < typename B >
+	struct conj_impl<B> : bool_constant<B::value> {};
+
+	template < typename ...B >
+	struct conjunction : conj_impl<B...> {};
+
+	template < typename ...B >
+	constexpr bool conjunction_v = conjunction<B...>::value;*/
+
+	//c++17で追加された関数 conjunction
+	template<class...> struct conjunction : std::true_type { };
+	template<class B1> struct conjunction<B1> : B1 { };
+	template<class B1, class... Bn>
+	struct conjunction<B1, Bn...>
+		: std::conditional_t<bool(B1::value), conjunction<Bn...>, B1> {};
+
+	//c++17で追加された関数　disjunction
+	template<class...> struct disjunction : std::false_type { };
+	template<class B1> struct disjunction<B1> : B1 { };
+	template<class B1, class... Bn>
+	struct disjunction<B1, Bn...>
+		: std::conditional_t<bool(B1::value), B1, disjunction<Bn...>> { };
+
+	//Argsの全てががTargetを継承しているオブジェクトであるか判定する
+	template<class Target,class ...Args>
+	constexpr bool variadic_is_all_base_of_v = conjunction<std::is_base_of<Target,Args>...>::value;
+
+	//Argsのうち一つでもTargetと一致しているならtrue
+	template<class Target, class ...Args>
+	constexpr bool variadic_is_sames_v = disjunction<std::is_same<Target, Args>...>::value;
+
 	//templateで指定した型の中で
 	//一番大きいサイズの奴が返るやーつ
 	template<class...>
@@ -23,7 +61,7 @@ namespace elipmocframework {
 		:size_t_constant<(sizeof(Head) > type_max_size_v<Tails...>) ? sizeof(Head) : type_max_size_v<Tails...>>
 	{};
 	
-
+/*
 	//複数の型のうち一つでもマッチすればture
 	//<比べる対象の型,比べられる型...>
 	template<class...>
@@ -44,5 +82,5 @@ namespace elipmocframework {
 	{};
 
 	template<class Target,class...Tails>
-	constexpr bool is_sames_v = is_sames<Target,Tails...>::value;
+	constexpr bool is_sames_v = is_sames<Target,Tails...>::value;*/
 }

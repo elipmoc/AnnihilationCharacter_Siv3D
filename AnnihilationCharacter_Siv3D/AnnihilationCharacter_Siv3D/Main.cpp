@@ -9,7 +9,8 @@
 
 void Main()
 {
-	siv::Println(elipmocframework::is_sames_v<int, double,bool,unsigned int,float,int16>);
+	//siv::Println(elipmocframework::is_sames_v<int, double,bool,unsigned int,float,int16>);
+	siv::Println(elipmocframework::variadic_is_sames_v<int,double,double>);
 	game::CollisionCircle c({ 300,100 }, [](game::CollisionID) {});
 	c.SetR(50);
 	c.SetCollisionID(game::CollisionID::EnemyID);

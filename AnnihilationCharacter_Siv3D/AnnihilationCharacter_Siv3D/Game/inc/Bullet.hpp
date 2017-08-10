@@ -29,7 +29,7 @@ namespace game {
 
 		virtual void Update()override {
 			Bullet::Update();
-			func(*this);
+			m_func(*this);
 		}
 	};
 }
