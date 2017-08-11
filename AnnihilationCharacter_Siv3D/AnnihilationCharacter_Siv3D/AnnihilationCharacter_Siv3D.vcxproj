@@ -321,6 +321,7 @@
     <ClInclude Include="ElipmocFrameWork\ParticleFontObject.hpp" />
     <ClInclude Include="ElipmocFrameWork\ParticleList.hpp" />
     <ClInclude Include="ElipmocFrameWork\Particle.hpp" />
+    <ClInclude Include="Game\inc\Interface.hpp" />
     <ClInclude Include="Game\inc\Player.hpp" />
     <ClInclude Include="Game\inc\PlayerDeadParticle.hpp" />
     <ClInclude Include="Game\inc\SceneBase.hpp" />

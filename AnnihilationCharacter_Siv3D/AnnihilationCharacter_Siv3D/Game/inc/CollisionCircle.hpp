@@ -1,5 +1,6 @@
 #pragma once
 #include <functional>
+#include "Interface.hpp"
 
 namespace game {
 
@@ -12,15 +13,13 @@ namespace game {
 	};
 
 	class CollisionCircle;
-	struct CollisionData {
+	struct CollisionData:public game::has_delete_flag {
 		const CollisionCircle& m_collision;
 		CollisionData(const CollisionCircle& collision) noexcept:m_collision(collision) {
 
 		}
-		bool IsCanDelete()const noexcept{ return deleteflag; }
-		void EnableDelete() noexcept{ deleteflag = true; }
+		void EnableDelete() noexcept{ delete_flag = true; }
 	private:
-		bool deleteflag=false;
 
 	};
 

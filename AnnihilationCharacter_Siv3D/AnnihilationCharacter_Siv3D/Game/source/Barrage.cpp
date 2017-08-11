@@ -16,6 +16,12 @@ namespace game {
 
 	void Barrage::Update()
 	{
+
+		elipmocframework::DeleteIf(
+			*m_bulletPool, [](const Bullet& bullet) {
+			return bullet.IsEnableDelete();
+		});
+
 		for (auto&& item : *m_bulletPool)
 			item.Update();
 	}

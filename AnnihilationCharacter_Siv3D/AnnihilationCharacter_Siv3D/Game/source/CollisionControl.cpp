@@ -17,7 +17,7 @@ namespace game {
 	{
 		//–³Œø‚ÈCollisionData‚ðíœ‚·‚é
 		auto tail_itr = std::remove_if(m_collisions.begin(), m_collisions.end(), [](const auto& colliData) {
-			return colliData->IsCanDelete();
+			return colliData->IsEnableDelete();
 		});
 		m_collisions.erase(tail_itr, m_collisions.end());
 		//‚ ‚½‚è”»’è‚·‚é
@@ -31,7 +31,7 @@ namespace game {
 	void CollisionControl::DebugDraw()
 	{
 		for (const auto& item : m_collisions) {
-			if (item->IsCanDelete() == false)
+			if (item->IsEnableDelete() == false)
 				item->m_collision.DebugDraw();
 		}
 	}

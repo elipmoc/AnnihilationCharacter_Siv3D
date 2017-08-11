@@ -545,5 +545,8 @@
     <ClInclude Include="ElipmocFrameWork\pack_traits_original.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="Game\inc\Interface.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,13 +1,12 @@
 #pragma once
 #include "FontObject.hpp"
+#include"Interface.hpp"
 namespace game {
-	class Bullet :public elipmocframework::FontObject {
+	class Bullet :public elipmocframework::FontObject,public has_delete_flag {
 		//速度ベクトル
 		siv::Vec2 m_speedv;
 		//加速度ベクトル
 		siv::Vec2 m_vspeedv;
-		//削除フラグ
-		bool deleteFlag = false;
 	public:
 
 		Bullet(const siv::Vec2 & pos, const siv::Vec2 & speedv, const siv::Vec2 & vspeedv) 
