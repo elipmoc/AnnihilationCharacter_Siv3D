@@ -13,7 +13,7 @@ namespace game {
 	};
 
 	class CollisionCircle;
-	struct CollisionData:public game::has_delete_flag {
+	struct CollisionData:public elipmocframework::has_delete_flag {
 		const CollisionCircle& m_collision;
 		CollisionData(const CollisionCircle& collision) noexcept:m_collision(collision) {
 

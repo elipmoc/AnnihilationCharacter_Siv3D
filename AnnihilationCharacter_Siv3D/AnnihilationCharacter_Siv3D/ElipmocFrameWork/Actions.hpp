@@ -29,7 +29,7 @@ namespace elipmocframework {
 		virtual void Update()noexcept override {
 			nowTime++;
 			m_f->SetPos(m_f->GetPos() + deltaPos);
-			if (nowTime >= interval)m_deleteFlag = true;
+			if (nowTime >= interval)delete_flag = true;
 		}
 	};
 
@@ -58,7 +58,7 @@ namespace elipmocframework {
 		virtual void Update() noexcept override {
 			nowTime++;
 			m_f->SetScale(m_f->GetScale() + deltaScale);
-			if (nowTime >= interval)m_deleteFlag = true;
+			if (nowTime >= interval)delete_flag = true;
 		}
 	};
 }

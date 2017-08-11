@@ -2,7 +2,7 @@
 #include "FontObject.hpp"
 #include"Interface.hpp"
 namespace game {
-	class Bullet :public elipmocframework::FontObject,public has_delete_flag {
+	class Bullet :public elipmocframework::FontObject,public elipmocframework::has_delete_flag {
 		//速度ベクトル
 		siv::Vec2 m_speedv;
 		//加速度ベクトル

@@ -1,20 +1,19 @@
 #pragma once
 #include <memory>
 #include <functional>
+#include "Interface.hpp"
 namespace elipmocframework {
 
 	class FontObject;
 	class ActionList;
 	//アクション基底クラス-----------------------------------------------------------------
-	class ActionBase {
+	class ActionBase :public has_delete_flag{
 		using ActionPtr=std::unique_ptr<ActionBase>;
 		friend ActionList;
 		void SetFontObject(FontObject* f)noexcept { m_f = f; }
 		void SetNextAction(ActionPtr&& nextAction)noexcept { m_nextAction=std::move(nextAction); }
 	protected:
 		FontObject* m_f;
-		//アクション削除フラグ
-		bool m_deleteFlag = false;
 		//次に実行されるアクション
 		ActionPtr m_nextAction=nullptr;
 	public:
@@ -31,7 +30,6 @@ namespace elipmocframework {
 		virtual ~ActionBase()noexcept {};
 		virtual void Init() noexcept {};
 		virtual void Update() noexcept {};
-		bool CanDelete()noexcept { return m_deleteFlag; }
 	};
 
 	

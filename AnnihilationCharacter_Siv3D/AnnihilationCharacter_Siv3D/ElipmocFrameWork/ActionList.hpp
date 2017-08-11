@@ -23,7 +23,7 @@ namespace elipmocframework {
 			static std::vector<std::unique_ptr<ActionBase>> nextActions;
 
 			auto&& tail_itr=std::remove_if(actions.begin(), actions.end(), [](std::unique_ptr<ActionBase>& actionptr) {
-				if (actionptr->CanDelete()) {
+				if (actionptr->IsEnableDelete()) {
 					auto&& nextAction = actionptr->MoveNextAction();
 					if (nextAction) {
 						nextActions.push_back(std::move(nextAction));

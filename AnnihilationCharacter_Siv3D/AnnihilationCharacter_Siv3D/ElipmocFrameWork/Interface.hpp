@@ -1,6 +1,6 @@
 #pragma once
 
-namespace game {
+namespace elipmocframework {
 	//íœ‚·‚é‚©‚Ç‚¤‚©‚Ìƒtƒ‰ƒO‚ğ‚Âinterface
 	class has_delete_flag {
 	protected:
