@@ -1,22 +1,9 @@
 #pragma once
 #include <type_traits>
+#include "pack_traits_original.hpp"
 
 namespace elipmocframework {
 
-	/*template < bool B >
-	using bool_constant = std::integral_constant<bool, B>;
-
-	template < typename Head, typename ...Tail >
-	struct conj_impl : bool_constant<Head::value && conj_impl<Tail...>::value> {};
-
-	template < typename B >
-	struct conj_impl<B> : bool_constant<B::value> {};
-
-	template < typename ...B >
-	struct conjunction : conj_impl<B...> {};
-
-	template < typename ...B >
-	constexpr bool conjunction_v = conjunction<B...>::value;*/
 
 	//c++17で追加された関数 conjunction
 	template<class...> struct conjunction : std::true_type { };
@@ -40,6 +27,13 @@ namespace elipmocframework {
 	template<class Target, class ...Args>
 	constexpr bool variadic_is_sames_v = disjunction<std::is_same<Target, Args>...>::value;
 
+
+	//全てのArgsが被っていなければtrue
+	template<class...> struct variadic_is_distinct : std::true_type { };
+	template<class B1, class B2,class... Bn>
+	struct variadic_is_distinct<B1,B2,Bn...>
+		: std::conditional_t<!variadic_is_sames_v<B1,B2,Bn...>, variadic_is_distinct<B2,Bn...>, std::false_type> {};
+
 	//templateで指定した型の中で
 	//一番大きいサイズの奴が返るやーつ
 	template<class...>
@@ -60,27 +54,4 @@ namespace elipmocframework {
 	struct type_max_size<Head, Tails...>
 		:size_t_constant<(sizeof(Head) > type_max_size_v<Tails...>) ? sizeof(Head) : type_max_size_v<Tails...>>
 	{};
-	
-/*
-	//複数の型のうち一つでもマッチすればture
-	//<比べる対象の型,比べられる型...>
-	template<class...>
-	struct is_sames;
-
-	template<class Target,class Head,class ...Tails >
-	struct is_sames<Target, Head, Tails...>
-		:
-		std::conditional_t<
-			std::is_same<Target,Head>::value,
-				std::true_type,
-				std::conditional_t<is_sames<Target,Tails...>::value,std::true_type,std::false_type>
-		>
-	{};
-
-	template<class Target>
-	struct is_sames<Target>:std::false_type
-	{};
-
-	template<class Target,class...Tails>
-	constexpr bool is_sames_v = is_sames<Target,Tails...>::value;*/
 }

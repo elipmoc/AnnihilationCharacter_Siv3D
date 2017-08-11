@@ -2,7 +2,7 @@
 #include <memory>
 
 namespace elipmocframework {
-	template<class Object>
+	template<class SuperT>
 	class ObjectPool;
 }
 
