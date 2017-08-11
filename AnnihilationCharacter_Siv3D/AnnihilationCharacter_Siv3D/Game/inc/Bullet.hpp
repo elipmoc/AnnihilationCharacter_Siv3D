@@ -6,9 +6,15 @@ namespace game {
 		siv::Vec2 m_speedv;
 		//加速度ベクトル
 		siv::Vec2 m_vspeedv;
+		//削除フラグ
+		bool deleteFlag = false;
 	public:
 
-		Bullet() :elipmocframework::FontObject(L"弾",20){}
+		Bullet(const siv::Vec2 & pos, const siv::Vec2 & speedv, const siv::Vec2 & vspeedv) 
+			:elipmocframework::FontObject(L"弾",20), m_speedv(speedv), m_vspeedv(vspeedv) 
+		{
+			SetPos(pos);
+		}
 
 		virtual void Update()override{
 			elipmocframework::FontObject::Update();
