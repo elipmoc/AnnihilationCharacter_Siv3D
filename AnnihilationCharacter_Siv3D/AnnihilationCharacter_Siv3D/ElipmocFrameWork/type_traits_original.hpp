@@ -34,6 +34,9 @@ namespace elipmocframework {
 	struct variadic_is_distinct<B1,B2,Bn...>
 		: std::conditional_t<!variadic_is_sames_v<B1,B2,Bn...>, variadic_is_distinct<B2,Bn...>, std::false_type> {};
 
+	template<class ...Args>
+	constexpr bool variadic_is_distinct_v = variadic_is_distinct<Args...>::value;
+
 	//templateで指定した型の中で
 	//一番大きいサイズの奴が返るやーつ
 	template<class...>

@@ -3,6 +3,7 @@
 #include <iterator>
 #include <memory>
 #include <type_traits>
+#include "type_traits_original.hpp"
 namespace elipmocframework {
 
 	//プールの最小単位
@@ -31,17 +32,19 @@ namespace elipmocframework {
 	//メモリプールコンテナ
 	template<class SuperT,class ...SubsT>
 	class ObjectPool {
+		static_assert(variadic_is_all_base_of_v<SuperT,SubsT...>,"SuperTを継承していないSubTがあります！" );
+		static_assert(variadic_is_distinct_v<SuperT, SubsT...>, "重複した項目があります！");
 		const size_t m_maxSize;
 		size_t m_nextIndex;
 		size_t m_size;
-		MemoryBlock<sizeof(SuperT)>* m_storagePtr;
+		MemoryBlock<type_max_size_v<SuperT,SubsT...>>* m_storagePtr;
 	public:
 		//イテレータの型
 		using Iterator = ObjectPoolIterator<false,SuperT,SubsT...>;
 		using Const_Iterator = ObjectPoolIterator<true,SuperT,SubsT...>;
 
 		ObjectPool(const size_t maxSize):m_maxSize(maxSize),m_size(0),m_nextIndex(0){
-			m_storagePtr = new MemoryBlock<sizeof(SuperT)>[m_maxSize];
+			m_storagePtr = new MemoryBlock<type_max_size_v<SuperT, SubsT...>>[m_maxSize];
 		}
 
 		~ObjectPool() {
@@ -71,12 +74,13 @@ namespace elipmocframework {
 		}
 
 		//メモリ確保
-		template<class ...Args>
-		SuperT& New(Args&&... args) {
+		template<class T=SuperT,class ...Args>
+		T& New(Args&&... args) {
+			static_assert(variadic_is_sames_v<T, SuperT, SubsT...>, "生成できない型です");
 			if (m_nextIndex == m_maxSize)throw std::exception("サイズがいっぱいだよおおお！！");
 			m_nextIndex++;
 			m_size++;
-			return *new(m_storagePtr[m_nextIndex - 1].ptr.get()) SuperT(std::forward<Args>(args)...);
+			return *new(m_storagePtr[m_nextIndex - 1].ptr.get()) T(std::forward<Args>(args)...);
 		}
 
 		//placement NewしないでメモリをObjectとして渡す
