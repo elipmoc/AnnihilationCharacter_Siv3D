@@ -18,13 +18,14 @@ namespace game {
 	};
 
 	//ŠÖ”‚ğ‘ã“ü‚·‚é‚±‚Æ‚ÅA“Æ©‚Ì“®ì‚ğ‚½‚¹‚ç‚ê‚é‚æ‚¤‚ÉŠg’£‚µ‚½”Å
-	template<class Func>
 	class BulletEX :public Bullet {
-		const Func m_func;
+		using func_type=void(*)(Bullet&);
+		func_type m_func;
 	public:
 
+		template<class Func>
 		BulletEX(const Func& func) {
-			m_func=func
+			m_func = func;
 		}
 
 		virtual void Update()override {
