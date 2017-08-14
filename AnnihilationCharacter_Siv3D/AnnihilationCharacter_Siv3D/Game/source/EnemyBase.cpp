@@ -15,6 +15,12 @@ namespace game {
 		m_barrage(std::move(barrage))
 	{}
 
+	void EnemyBase::Draw() const
+	{
+		FontObject::Draw();
+		m_barrage->Draw();
+	}
+
 	EnemyBase::~EnemyBase()
 	{
 	}

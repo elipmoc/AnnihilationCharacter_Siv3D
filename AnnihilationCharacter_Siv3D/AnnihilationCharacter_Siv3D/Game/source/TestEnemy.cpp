@@ -1,6 +1,7 @@
 #include "TestEnemy.hpp"
 #include "Action.hpp"
 #include "Actions.hpp"
+#include "BarrageBase.hpp"
 
 namespace game {
 	using  elipmocframework::MoveAction;
@@ -32,5 +33,6 @@ namespace game {
 	void TestEnemy::Update()
 	{
 		FontObject::Update();
+		m_barrage->Update();
 	}
 }

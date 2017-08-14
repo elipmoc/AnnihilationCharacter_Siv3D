@@ -8,9 +8,12 @@ namespace game {
 	class BarrageBase {
 		//’eƒŠƒXƒg
 		std::unique_ptr<BulletList> m_bulletList;
+	protected:
+		BulletList& GetBulletList();
 	public:
 		BarrageBase(const size_t);
 		~BarrageBase();
 		virtual void Update() = 0;
+		void Draw()const;
 	};
 }
