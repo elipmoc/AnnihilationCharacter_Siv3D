@@ -166,6 +166,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Game\source\BarrageBase.cpp" />
     <ClCompile Include="Game\source\TitleParticle.cpp" />
     <ClCompile Include="Game\source\BulletList.cpp" />
     <ClCompile Include="Game\source\BarrierUI.cpp" />
@@ -306,6 +307,7 @@
     <ClInclude Include="ElipmocFrameWork\ObjectPool.hpp" />
     <ClInclude Include="ElipmocFrameWork\pack_traits_original.hpp" />
     <ClInclude Include="ElipmocFrameWork\type_traits_original.hpp" />
+    <ClInclude Include="Game\inc\BarrageBase.hpp" />
     <ClInclude Include="Game\inc\BulletList.hpp" />
     <ClInclude Include="Game\inc\BarrierUI.hpp" />
     <ClInclude Include="Game\inc\Bullet.hpp" />

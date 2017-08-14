@@ -2,7 +2,7 @@
 #include "FontObject.hpp"
 
 namespace game {
-	class BulletList;
+	class BarrageBase;
 	class EnemyBase :public elipmocframework::FontObject{
 	protected:
 		//開始地点
@@ -11,14 +11,16 @@ namespace game {
 		const siv::Vec2 m_stopPos;
 		//退散地点
 		const siv::Vec2 m_endPos;
-		//弾幕リスト
-		std::unique_ptr<BulletList> m_barrage;
-	public:
-		EnemyBase(const size_t barrageSize,const siv::Vec2& startPos, const 
-			
-			
-			siv::Vec2& stopPos, const siv::Vec2& endPos, const int fontSize);
+		//弾幕
+		std::unique_ptr<BarrageBase> m_barrage;
 
+	public:
+		EnemyBase(
+			std::unique_ptr<BarrageBase>&& barrage,
+			const siv::Vec2& startPos, 
+			const siv::Vec2& stopPos,
+			const siv::Vec2& endPos, 
+			const int fontSize);
 		~EnemyBase();
 	};
 }
