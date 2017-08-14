@@ -7,7 +7,7 @@
 #include "type_traits_original.hpp"
 #include "pack_traits_original.hpp"
 #include "ObjectPool.hpp"
-#include "Barrage.hpp"
+#include "BulletList.hpp"
 
 void Main()
 {

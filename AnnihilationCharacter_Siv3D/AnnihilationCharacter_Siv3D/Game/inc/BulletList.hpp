@@ -11,14 +11,20 @@ namespace elipmocframework {
 namespace game {
 	class Bullet;
 	class BulletEX;
-	class Barrage {
+
+	//íeï€éùÉNÉâÉX
+	class BulletList {
 		using BulletPool = elipmocframework::ObjectPool<Bullet, BulletEX>;
+
+		//íeÉvÅ[Éã
 		std::unique_ptr<BulletPool> m_bulletPool;
 	public:
-		Barrage(size_t poolSize);
+		BulletList(size_t poolSize);
 		void Draw()const;
 		void Update();
+
+		//íeê∂ê¨
 		void MakeBullet(const siv::Vec2& pos,const siv::Vec2& speedv,const siv::Vec2& vspeedv);
-		~Barrage();
+		~BulletList();
 	};
 }

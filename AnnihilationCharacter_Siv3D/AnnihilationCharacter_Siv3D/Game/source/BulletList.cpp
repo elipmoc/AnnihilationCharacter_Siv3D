@@ -1,20 +1,20 @@
-#include "Barrage.hpp"
+#include "BulletList.hpp"
 #include "Bullet.hpp"
 #include "ObjectPool.hpp"
 namespace game {
 
-	Barrage::Barrage(size_t poolSize)
+	BulletList::BulletList(size_t poolSize)
 		:m_bulletPool(std::make_unique<BulletPool>(poolSize))
 	{
 	}
 
-	void Barrage::Draw()const
+	void BulletList::Draw()const
 	{
 		for (const auto& item : *m_bulletPool)
 			item.Draw();
 	}
 
-	void Barrage::Update()
+	void BulletList::Update()
 	{
 
 		elipmocframework::DeleteIf(
@@ -26,13 +26,13 @@ namespace game {
 			item.Update();
 	}
 
-	void Barrage::MakeBullet(const siv::Vec2 & pos, const siv::Vec2 & speedv, const siv::Vec2 & vspeedv)
+	void BulletList::MakeBullet(const siv::Vec2 & pos, const siv::Vec2 & speedv, const siv::Vec2 & vspeedv)
 	{
 		m_bulletPool->New(pos,speedv,vspeedv);
 	}
 
 
-	Barrage::~Barrage()
+	BulletList::~BulletList()
 	{
 	}
 }
