@@ -8,7 +8,7 @@ namespace  game{
 		GetBulletList().Update();
 		count++;
 		if (count % 20 == 0) {
-			GetBulletList().MakeBullet({ 100,100 }, { 1,1 }, { 0,0 });
+			GetBulletList().MakeBullet(GetPos(), { 1,1 }, { 0,0 });
 		}
 	}
 }

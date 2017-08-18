@@ -1,10 +1,14 @@
 #pragma once
-#include "EnemyBase.hpp"
+#include "EnemyActionBase.hpp"
 
 namespace game {
-	class TestEnemy :public EnemyBase {
+	class TestEnemyAction :public EnemyActionBase {
 	public:
-		ENEMYCONSTRUCTER_DECL(TestEnemy);
+
+		TestEnemyAction(std::unique_ptr<elipmocframework::FontObject>& enemyFont,
+			const siv::Vec2 & startPos,
+			const siv::Vec2 & stopPos,
+			const siv::Vec2 & endPos);
 
 		virtual void Update()override;
 	};

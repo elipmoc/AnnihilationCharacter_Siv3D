@@ -4,7 +4,6 @@
 
 namespace elipmocframework {
 
-
 	//c++17Ç≈í«â¡Ç≥ÇÍÇΩä÷êî conjunction
 	template<class...> struct conjunction : std::true_type { };
 	template<class B1> struct conjunction<B1> : B1 { };
@@ -49,7 +48,6 @@ namespace elipmocframework {
 	struct type_max_size <T>
 		:size_t_constant<sizeof(T)>
 	{};
-
 	template<class...Types>
 	constexpr size_t type_max_size_v = type_max_size<Types...>::value;
 

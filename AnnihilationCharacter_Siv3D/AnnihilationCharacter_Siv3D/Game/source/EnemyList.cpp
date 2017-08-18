@@ -2,7 +2,7 @@
 #include "EnemyBase.hpp"
 
 namespace game {
-	void EnemyList::push_back(std::unique_ptr<EnemyBase>&& enemy)
+	void EnemyList::push_back(std::unique_ptr<Enemy>&& enemy)
 	{
 		m_enemys.push_back(std::move(enemy));
 	}

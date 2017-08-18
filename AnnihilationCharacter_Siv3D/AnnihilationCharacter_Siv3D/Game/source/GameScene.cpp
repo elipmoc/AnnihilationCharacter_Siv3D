@@ -28,7 +28,7 @@ namespace game {
 	}
 	void GameScene::draw() const
 	{
-		m_player->Draw();
+		m_player->DrawCenter();
 		m_hpUi->Draw();
 		m_barrierUi->Draw();
 		m_enemyControl->Draw();

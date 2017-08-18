@@ -3,11 +3,11 @@
 #include <memory>
 
 namespace game {
-	class EnemyBase;
+	class Enemy;
 	class EnemyList {
-		std::vector<std::unique_ptr<EnemyBase>> m_enemys;
+		std::vector<std::unique_ptr<Enemy>> m_enemys;
 	public:
-		void push_back(std::unique_ptr<EnemyBase>&& enemy);
+		void push_back(std::unique_ptr<Enemy>&& enemy);
 		EnemyList();
 		~EnemyList();
 		void Update();

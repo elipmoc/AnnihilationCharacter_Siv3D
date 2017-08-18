@@ -19,7 +19,7 @@ namespace game {
 		if (
 				m_underLane!=-1 && 
 				GetUnderY() >= terrainControl->GetTerrainY(m_underLane) &&
-				(terrainControl->IsExistTerrainFromX(GetUnderX()-15,m_underLane) || terrainControl->IsExistTerrainFromX(GetUnderX()+15, m_underLane))
+				(terrainControl->IsExistTerrainFromX(GetPos().x-15,m_underLane) || terrainControl->IsExistTerrainFromX(GetPos().x+15, m_underLane))
 			) {
 			m_jumpCount = 0;
 			SetUnderY(terrainControl->GetTerrainY(m_underLane));
@@ -54,10 +54,10 @@ namespace game {
 			SetPos({ GetPos().x - speed, GetPos().y });
 
 		//Œ©‚¦‚È‚¢•Ç”»’è
-		if (GetUnderX() < 15)
-			SetUnderX(15);
-		else if (GetUnderX() > siv::Window::Size().x-15)
-			SetUnderX(siv::Window::Size().x-15);
+		if (GetPos().x < 15)
+			SetPosX(15);
+		else if (GetPos().x > siv::Window::Size().x-15)
+			SetPosX(siv::Window::Size().x-15);
 
 		//À•WXV
 		SetPos({ GetPos().x,GetPos().y + m_yv });
@@ -74,7 +74,7 @@ namespace game {
 	{
 		m_colliObject->SetR(10);
 		m_colliObject->SetCollisionID(CollisionID::PlayerID);
-		m_colliObject->SetOffsetPos({14, 20});
+		m_colliObject->SetOffsetPos({0, 0});
 
 	}
 
@@ -86,6 +86,6 @@ namespace game {
 		m_colliObject->DoColliQueue();
 		m_deadParticle->Update();
 		m_deadParticle->Draw();
-		circle.setPos(GetUnderX(), GetUnderY()).draw(siv::Palette::Red);
+		circle.setPos(GetPos().x,GetUnderY()).draw(siv::Palette::Red);
 	}
 }

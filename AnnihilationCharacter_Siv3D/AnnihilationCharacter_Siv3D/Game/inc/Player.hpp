@@ -41,22 +41,22 @@ namespace game {
 
 		//主人公の足元のYを得る
 		double GetUnderY()const {
-			return GetPos().y + 35;
+			return GetPos().y + 15;
 		}
 
-		//主人公の足元のXを得る
+		/*//主人公の足元のXを得る
 		double GetUnderX()const {
-			return GetPos().x + 15;
-		}
+			return GetPos().x;
+		}*/
 
-		//主人公の足元のXを得る
-		void SetUnderX(double x) {
-			SetPos({ x - 15,GetPos().y });
+		//主人公のXをセットする
+		void SetPosX(double x) {
+			SetPos({ x,GetPos().y });
 		}
 
 		//主人公の足元の高さをセットする
 		void SetUnderY(double y) {
-			SetPos({ GetPos().x,y - 35 });
+			SetPos({ GetPos().x,y - 15 });
 		}
 
 	public:

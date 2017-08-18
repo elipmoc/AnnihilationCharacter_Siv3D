@@ -14,16 +14,18 @@ namespace elipmocframework {
 		//アクションリスト
 		ActionList m_actionList;
 
-	protected:
 
-		//posの参照を得る
-		const siv::Vec2& GetRefPos() { return m_pos; }
+
 
 	public:
 		FontObject& AddAction(std::unique_ptr<ActionBase>&& action) {
 			m_actionList.push_back(std::move(action));
 			return *this;
 		}
+
+		//posの参照を得る
+		const siv::Vec2& GetRefPos() { return m_pos; }
+
 		//posアクセサ
 		siv::Vec2 GetPos()const noexcept { return m_pos; }
 		FontObject& SetPos(const siv::Vec2& _pos) noexcept{ m_pos = _pos; return *this; }
@@ -52,7 +54,7 @@ namespace elipmocframework {
 			m_actionList.Update();
 		}
 
-		virtual void Draw() const{
+		void Draw() const{
 			siv::Mat3x2 mat = siv::Mat3x2::Scale(m_scale, m_pos);
 			siv::Transformer2D t(mat, false);
 			m_font(m_text).draw(m_pos,m_color);

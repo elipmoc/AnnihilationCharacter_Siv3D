@@ -166,6 +166,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Game\source\EnemyActionBase.cpp" />
     <ClCompile Include="Game\source\TestBarrage.cpp" />
     <ClCompile Include="Game\source\BarrageBase.cpp" />
     <ClCompile Include="Game\source\TitleParticle.cpp" />
@@ -314,6 +315,7 @@
     <ClInclude Include="Game\inc\Bullet.hpp" />
     <ClInclude Include="Game\inc\CollisionCircle.hpp" />
     <ClInclude Include="Game\inc\CollisionControl.hpp" />
+    <ClInclude Include="Game\inc\EnemyActionBase.hpp" />
     <ClInclude Include="Game\inc\EnemyBase.hpp" />
     <ClInclude Include="Game\inc\EnemyControl.hpp" />
     <ClInclude Include="Game\inc\EnemyList.hpp" />

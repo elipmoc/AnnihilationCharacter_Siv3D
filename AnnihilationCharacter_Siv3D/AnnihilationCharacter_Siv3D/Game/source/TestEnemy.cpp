@@ -1,13 +1,18 @@
 #include "TestEnemy.hpp"
 #include "Action.hpp"
 #include "Actions.hpp"
-#include "BarrageBase.hpp"
 
 namespace game {
 	using  elipmocframework::MoveAction;
 	using siv::Vec2;
-	ENEMYCONSTRUCTER(TestEnemy) {
-		SetText(
+
+	TestEnemyAction::TestEnemyAction(
+		std::unique_ptr<elipmocframework::FontObject>& enemyFont,
+		const siv::Vec2 & startPos,
+		const siv::Vec2 & stopPos,
+		const siv::Vec2 & endPos):EnemyActionBase(enemyFont,startPos,stopPos,endPos) {
+		GetEnemyFont().SetText(
+			
 			L"         ÅQÅQÅQ_Å@Å@\n"
 			L"      Å^Å@Å@ Å@ Å_\n"
 			L"    Å^Å@ÑüÅ@Å@ Ñü Å_\n"
@@ -19,10 +24,10 @@ namespace game {
 			L"      Å_ Å^ ÅQÅQÅQ Å^\n"
 		);
 
-		SetPos( startPos );
-		SetColor(siv::Palette::Yellow);
+		GetEnemyFont().SetPos( startPos );
+		GetEnemyFont().SetColor(siv::Palette::Yellow);
 		//ÇƒÇ´à⁄ìÆ
-		AddAction(
+		GetEnemyFont().AddAction(
 			elipmocframework::ScaleAction::Create(1, 30)<<
 			MoveAction::Create(endPos, 50) <<
 			MoveAction::Create(stopPos, 180) 
@@ -30,9 +35,7 @@ namespace game {
 		);
 	}
 
-	void TestEnemy::Update()
+	void TestEnemyAction::Update()
 	{
-		FontObject::Update();
-		m_barrage->Update();
 	}
 }

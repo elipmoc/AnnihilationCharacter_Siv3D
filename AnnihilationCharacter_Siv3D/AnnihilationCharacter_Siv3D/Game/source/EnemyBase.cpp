@@ -1,27 +1,35 @@
 #include "EnemyBase.hpp"
 #include "BarrageBase.hpp"
+#include "EnemyActionBase.hpp"
+#include "FontObject.hpp"
 
 namespace game {
-	EnemyBase::EnemyBase(
+	using elipmocframework::FontObject;
+
+	Enemy::Enemy(
 		std::unique_ptr<BarrageBase> &&barrage,
-		const siv::Vec2 & startPos, 
-		const siv::Vec2 & stopPos,
-		const siv::Vec2 & endPos, 
-		const int fontSize)
-		:FontObject(fontSize),
-		m_startPos(startPos),
-		m_stopPos(stopPos),
-		m_endPos(endPos),
-		m_barrage(std::move(barrage))
+		std::unique_ptr<EnemyActionBase> && action,
+		std::unique_ptr<FontObject> && enemyFont
+		)
+		:
+		m_barrage(std::move(barrage)),
+		m_action(std::move(action)),
+		m_enemyFont(std::move(enemyFont))
 	{}
 
-	void EnemyBase::Draw() const
-	{
-		FontObject::Draw();
-		m_barrage->Draw();
+	void Enemy::Update() {
+		m_barrage->Update();
+		m_action->Update();
+		m_enemyFont->Update();
 	}
 
-	EnemyBase::~EnemyBase()
+	void Enemy::Draw() const
+	{
+		m_barrage->Draw();
+		m_enemyFont->Draw();
+	}
+
+	Enemy::~Enemy()
 	{
 	}
 }
