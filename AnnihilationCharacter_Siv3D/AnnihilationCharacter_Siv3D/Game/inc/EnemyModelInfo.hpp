@@ -10,4 +10,11 @@ namespace game {
 		//あたり判定の半径
 		double r;
 	};
+
+	//EnemyModelInfoを生成するビルダークラス用のinterface
+	class EnemyModelInfoGenerator {
+	public:
+		virtual EnemyModelInfo GenerateEnemyModelInfo() = 0;
+	};
+
 }

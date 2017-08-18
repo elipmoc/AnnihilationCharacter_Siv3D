@@ -4,6 +4,7 @@
 #include "TestBarrage.hpp"
 #include "FontObject.hpp"
 #include "EnemyBase.hpp"
+#include "TestEnemyModelInfoGenerator.hpp"
 
 namespace game {
 	using elipmocframework::FontObject;
@@ -12,6 +13,7 @@ namespace game {
 		auto&& enemyFont = std::make_unique < FontObject>();
 		m_enemyList->push_back(
 			std::make_unique<Enemy>(
+				TestEnemyModelInfoGenerator().GenerateEnemyModelInfo(),
 				std::make_unique<TestBarrage>(enemyFont->GetRefPos()),
 				std::make_unique<TestEnemyAction>(enemyFont,siv::Vec2{ 800,500 }, siv::Vec2{ 100,200 }, siv::Vec2{ 400,20 }),
 				std::move(enemyFont)
