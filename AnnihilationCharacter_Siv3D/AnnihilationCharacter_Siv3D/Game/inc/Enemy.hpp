@@ -7,7 +7,7 @@ namespace elipmocframework {
 namespace game {
 	class BarrageBase;
 	class EnemyActionBase;
-	class EnemyModelInfo;
+	struct EnemyModelInfo;
 	class Enemy{
 	protected:
 		//’e–‹

@@ -1,4 +1,4 @@
-#include "EnemyBase.hpp"
+#include "Enemy.hpp"
 #include "BarrageBase.hpp"
 #include "EnemyActionBase.hpp"
 #include "EnemyModelInfo.hpp"

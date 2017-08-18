@@ -1,4 +1,4 @@
-#include "TestEnemy.hpp"
+#include "TestEnemyAction.hpp"
 #include "Action.hpp"
 #include "Actions.hpp"
 
@@ -18,7 +18,7 @@ namespace game {
 		GetEnemyFont().AddAction(
 			elipmocframework::ScaleAction::Create(1, 30)<<
 			MoveAction::Create(endPos, 50) <<
-			MoveAction::Create(stopPos, 180) 
+			MoveAction::Create(stopPos, 180)
 			
 		);
 	}

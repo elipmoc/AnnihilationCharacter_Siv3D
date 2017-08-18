@@ -1,9 +1,9 @@
 #include "EnemyControl.hpp"
 #include "EnemyList.hpp"
-#include "TestEnemy.hpp"
+#include "TestEnemyAction.hpp"
 #include "TestBarrage.hpp"
 #include "FontObject.hpp"
-#include "EnemyBase.hpp"
+#include "Enemy.hpp"
 #include "TestEnemyModelInfoGenerator.hpp"
 
 namespace game {

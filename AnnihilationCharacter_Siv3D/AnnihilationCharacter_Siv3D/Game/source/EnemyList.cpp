@@ -1,5 +1,5 @@
 #include "EnemyList.hpp"
-#include "EnemyBase.hpp"
+#include "Enemy.hpp"
 
 namespace game {
 	void EnemyList::push_back(std::unique_ptr<Enemy>&& enemy)
