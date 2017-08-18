@@ -6,7 +6,7 @@ namespace game {
 	class TestEnemyModelInfoGenerator:public EnemyModelInfoGenerator{
 	
 	public:
-		virtual EnemyModelInfo GenerateEnemyModelInfo() override final{
+		virtual EnemyModelInfo GenerateEnemyModelInfo()const override final{
 
 			EnemyModelInfo info;
 			info.text =
@@ -20,6 +20,7 @@ namespace game {
 				L"   Å_ ÅgÅ@ Å^  ÅQÅQ| |\n"
 				L"      Å_ Å^ ÅQÅQÅQ Å^\n"
 				;
+			info.color = siv::Palette::Yellow;
 			return info;
 		}
 	};

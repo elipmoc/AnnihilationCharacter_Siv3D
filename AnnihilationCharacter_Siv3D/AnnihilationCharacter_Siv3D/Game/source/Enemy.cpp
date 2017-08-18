@@ -10,18 +10,18 @@ namespace game {
 	Enemy::Enemy(
 		const EnemyModelInfo& info,
 		std::unique_ptr<BarrageBase> &&barrage,
-		std::unique_ptr<EnemyActionBase> && action,
 		std::unique_ptr<FontObject> && enemyFont
 		)
 		:
 		m_barrage(std::move(barrage)),
-		m_action(std::move(action)),
 		m_enemyFont(std::move(enemyFont))
-		{ m_enemyFont->SetText(info.text); }
+		{
+		m_enemyFont->SetText(info.text);
+		m_enemyFont->SetColor(info.color);
+	}
 
 	void Enemy::Update() {
 		m_barrage->Update();
-		m_action->Update();
 		m_enemyFont->Update();
 	}
 

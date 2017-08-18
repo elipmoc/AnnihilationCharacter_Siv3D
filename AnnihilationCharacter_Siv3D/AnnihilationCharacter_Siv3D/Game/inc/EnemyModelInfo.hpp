@@ -5,6 +5,8 @@ namespace game {
 	struct EnemyModelInfo {
 		//敵の文字列
 		siv::String text;
+		//敵のカラー
+		siv::Color color;
 		//あたり判定の位置を調整
 		siv::Vec2 collisionOffsetPos;
 		//あたり判定の半径
@@ -14,7 +16,7 @@ namespace game {
 	//EnemyModelInfoを生成するビルダークラス用のinterface
 	class EnemyModelInfoGenerator {
 	public:
-		virtual EnemyModelInfo GenerateEnemyModelInfo() = 0;
+		virtual EnemyModelInfo GenerateEnemyModelInfo()const = 0;
 	};
 
 }

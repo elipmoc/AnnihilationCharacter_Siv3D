@@ -6,21 +6,17 @@ namespace elipmocframework {
 
 namespace game {
 	class BarrageBase;
-	class EnemyActionBase;
 	struct EnemyModelInfo;
 	class Enemy{
 	protected:
 		//’e–‹
 		std::unique_ptr<BarrageBase> m_barrage;
-		//ˆÚ“®
-		std::unique_ptr<EnemyActionBase> m_action;
 		
 		std::unique_ptr<elipmocframework::FontObject> m_enemyFont;
 	public:
 		Enemy(
 			const EnemyModelInfo& info,
 			std::unique_ptr<BarrageBase>&&,
-			std::unique_ptr<EnemyActionBase>&&,
 			std::unique_ptr<elipmocframework::FontObject>&&);
 		void Draw()const;
 		void Update();

@@ -5,11 +5,10 @@ namespace game {
 	class TestEnemyAction :public EnemyActionBase {
 	public:
 
-		TestEnemyAction(std::unique_ptr<elipmocframework::FontObject>& enemyFont,
-			const siv::Vec2 & startPos,
-			const siv::Vec2 & stopPos,
-			const siv::Vec2 & endPos);
-
-		virtual void Update()override;
+		virtual std::unique_ptr<elipmocframework::ActionBase> GenerateEnemyAction(
+			const siv::Vec2&,
+			const siv::Vec2&,
+			const siv::Vec2&
+		) const override final;
 	};
 }

@@ -166,7 +166,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Game\source\EnemyActionBase.cpp" />
     <ClCompile Include="Game\source\TestBarrage.cpp" />
     <ClCompile Include="Game\source\BarrageBase.cpp" />
     <ClCompile Include="Game\source\TitleParticle.cpp" />

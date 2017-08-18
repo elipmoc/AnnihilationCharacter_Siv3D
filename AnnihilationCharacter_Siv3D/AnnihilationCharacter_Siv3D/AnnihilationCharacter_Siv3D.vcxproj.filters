@@ -138,9 +138,6 @@
     <ClCompile Include="Game\source\TestBarrage.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Game\source\EnemyActionBase.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Game\source\Enemy.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
