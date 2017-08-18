@@ -74,7 +74,6 @@ namespace game {
 	{
 		m_colliObject->SetR(10);
 		m_colliObject->SetCollisionID(CollisionID::PlayerID);
-		m_colliObject->SetOffsetPos({0, 0});
 
 	}
 

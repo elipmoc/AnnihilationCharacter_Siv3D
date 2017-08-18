@@ -44,10 +44,6 @@ namespace game {
 			return GetPos().y + 15;
 		}
 
-		/*//主人公の足元のXを得る
-		double GetUnderX()const {
-			return GetPos().x;
-		}*/
 
 		//主人公のXをセットする
 		void SetPosX(double x) {
