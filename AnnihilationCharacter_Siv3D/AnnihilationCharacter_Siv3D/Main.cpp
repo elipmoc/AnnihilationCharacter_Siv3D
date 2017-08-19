@@ -2,12 +2,7 @@
 #include "SelectPlayerScene.hpp"
 #include "GameScene.hpp"
 #include "CollisionControl.hpp"
-#include "CollisionCircle.hpp"
-#include "Bullet.hpp"
-#include "type_traits_original.hpp"
-#include "pack_traits_original.hpp"
-#include "ObjectPool.hpp"
-#include "BulletList.hpp"
+
 
 void Main()
 {

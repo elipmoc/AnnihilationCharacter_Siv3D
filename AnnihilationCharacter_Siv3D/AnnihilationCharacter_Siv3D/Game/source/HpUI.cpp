@@ -7,8 +7,12 @@ namespace game {
 	{
 		m_hpFont->SetPos({ 5, 0 });
 	}
-	void HpUi::Draw()const
+	void HpUi::Draw(const size_t hp)const
 	{
-		m_hpFont->SetText(L"HP      :ŸŸŸŸ").SetColor(siv::Color(0,200,0)).Draw();
+		static siv::String str;
+		str = L"HP      :";
+		for (size_t i = 0; i < hp; i++)
+			str += L"Ÿ";
+		m_hpFont->SetText(str).SetColor(siv::Color(0,200,0)).Draw();
 	}
 }

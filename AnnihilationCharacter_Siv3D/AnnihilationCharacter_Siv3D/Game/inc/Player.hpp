@@ -18,6 +18,9 @@ namespace game {
 		//あたり判定object
 		std::unique_ptr<CollisionCircle> m_colliObject;
 
+		//hp
+		size_t m_hp=6;
+
 
 		//移動スピード
 		static constexpr double speed=3.5;
@@ -56,6 +59,8 @@ namespace game {
 		}
 
 	public:
+
+		size_t GetHp()const noexcept { return m_hp; }
 		Player();
 		~Player();
 

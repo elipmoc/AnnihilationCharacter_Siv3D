@@ -64,6 +64,8 @@ namespace game {
 	}
 
 	void Player::PlayerDead(){
+		if(m_hp!=0)m_hp--;
+		
 		m_deadParticle->Set(GetPos());
 		SetPos({ 0,0 });
 		m_yv = 0;
