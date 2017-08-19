@@ -22,9 +22,22 @@ namespace game {
 		}
 
 	public:
-		BarrageBase(const size_t, const siv::Vec2& bindPos, const siv::Vec2& fixPos = {0,0});
+		BarrageBase(const size_t, const siv::Vec2& bindPos, const siv::Vec2& fixPos);
 		~BarrageBase();
 		virtual void Update() = 0;
 		void Draw()const;
+	};
+
+	//BarrageBaseを生成するビルダークラス用のinterface
+	class BarrageGenerator {
+	public:
+		virtual std::unique_ptr<BarrageBase> GenerateBarrage(const siv::Vec2& bindPos, const siv::Vec2& fixPos = {0,0})const = 0;
+	};
+
+	template<class BarrageT>
+	class MakeBarrageGenerator :public BarrageGenerator {
+		virtual std::unique_ptr<BarrageBase> GenerateBarrage(const siv::Vec2& bindPos, const siv::Vec2& fixPos)const override final {
+			return std::make_unique<BarrageT>(bindPos, fixPos);
+		}
 	};
 }

@@ -3,7 +3,7 @@
 
 namespace game {
 
-	class TestEnemyModelInfoGenerator:public EnemyModelInfoGenerator{
+	class TestEnemyModel:public EnemyModelInfoGenerator{
 	
 	public:
 		virtual EnemyModelInfo GenerateEnemyModelInfo()const override final{
