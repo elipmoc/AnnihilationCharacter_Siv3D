@@ -11,5 +11,4 @@ struct EnemyInfo{
 	std::string barrage;
 	int barrageStartTime;
 	std::string model;
-	int hp;
 };

@@ -464,12 +464,6 @@
     <ClInclude Include="UseSiv3D.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="ElipmocFrameWork\Action.hpp">
-      <Filter>ヘッダー ファイル\ElipmocFrameWork</Filter>
-    </ClInclude>
-    <ClInclude Include="ElipmocFrameWork\FontObject.hpp">
-      <Filter>ヘッダー ファイル\ElipmocFrameWork</Filter>
-    </ClInclude>
     <ClInclude Include="Game\inc\EnemyControl.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -500,12 +494,6 @@
     <ClInclude Include="Game\inc\BarrierUI.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="ElipmocFrameWork\ActionList.hpp">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ElipmocFrameWork\Actions.hpp">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="Game\inc\CollisionCircle.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -521,31 +509,10 @@
     <ClInclude Include="Game\inc\GrazeParticle.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="ElipmocFrameWork\ObjectPool.hpp">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ElipmocFrameWork\ParticleList.hpp">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ElipmocFrameWork\ParticleFontObject.hpp">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ElipmocFrameWork\Particle.hpp">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="Game\inc\TitleParticle.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="Game\inc\PlayerDeadParticle.hpp">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ElipmocFrameWork\type_traits_original.hpp">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ElipmocFrameWork\pack_traits_original.hpp">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ElipmocFrameWork\Interface.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="Game\inc\BulletList.hpp">
