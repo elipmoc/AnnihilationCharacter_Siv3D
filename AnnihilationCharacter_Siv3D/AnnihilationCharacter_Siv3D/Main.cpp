@@ -1,5 +1,6 @@
 ﻿#include "TitleScene.hpp"
 #include "SelectPlayerScene.hpp"
+#include "GameOverScene.hpp"
 #include "GameScene.hpp"
 #include "CollisionControl.hpp"
 
@@ -12,6 +13,8 @@ void Main()
 	mySceneManager.add<game::TitleScene>(L"Title");
 	mySceneManager.add<game::SelectPlayerScene>(L"SelectPlayer");
 	mySceneManager.add<game::GameScene>(L"Game");
+	mySceneManager.add<game::GameOverScene>(L"GameOver");
+
 	while (siv::System::Update() && mySceneManager.updateAndDraw()) {
 		game::CollisionControl::GetInstance().Update();
 		game::CollisionControl::GetInstance().DebugDraw();

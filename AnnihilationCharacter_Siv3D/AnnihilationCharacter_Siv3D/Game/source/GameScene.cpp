@@ -22,6 +22,8 @@ namespace game {
 	}
 	void GameScene::update()
 	{
+		if (m_player->GetHp() == 0)
+			changeScene(L"GameOver");
 	    m_terrainControl->Update();
 		m_player->Update2(m_terrainControl);
 		m_enemyControl->Update();
