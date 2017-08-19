@@ -8,9 +8,9 @@ namespace game {
 		//敵のカラー
 		siv::Color color;
 		//あたり判定の位置を調整
-		siv::Vec2 collisionOffsetPos;
+		siv::Vec2 collisionOffsetPos = {0,0};
 		//あたり判定の半径
-		double r;
+		double r=0;
 	};
 
 	//EnemyModelInfoを生成するビルダークラス用のinterface

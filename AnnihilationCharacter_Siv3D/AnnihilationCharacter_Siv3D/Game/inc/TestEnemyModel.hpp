@@ -21,6 +21,7 @@ namespace game {
 				L"      Å_ Å^ ÅQÅQÅQ Å^\n"
 				;
 			info.color = siv::Palette::Yellow;
+			info.r = 50;
 			return info;
 		}
 	};

@@ -9,7 +9,7 @@ namespace game {
 		EnemyInfo info;
 		info.startPos={ 800,500 };
 		info.stopPos = { 100,200 };
-		info.endPos = { 400,20 };
+		info.endPos = { 400,280 };
 		info.model = "TestModel";
 		info.action = "TestAction";
 		info.barrage = "TestBarrage";

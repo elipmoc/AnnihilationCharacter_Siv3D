@@ -84,7 +84,7 @@ namespace game {
 
 		//デバッグ描画
 		void DebugDraw() const{
-			siv::Circle(GetPos(), m_r).draw(siv::Palette::Red);
+			siv::Circle(GetPos(), m_r).draw({255,0,0,150});
 		}
 
 		//デストラクタ

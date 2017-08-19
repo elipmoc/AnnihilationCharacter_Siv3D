@@ -3,7 +3,7 @@
 #include "EnemyActionBase.hpp"
 #include "EnemyModelInfo.hpp"
 #include "FontObject.hpp"
-
+#include "CollisionCircle.hpp"
 namespace game {
 	using elipmocframework::FontObject;
 
@@ -11,11 +11,15 @@ namespace game {
 		const EnemyModelInfo& info,
 		std::unique_ptr<BarrageBase> &&barrage,
 		std::unique_ptr<FontObject> && enemyFont
-		)
+	)
 		:
 		m_barrage(std::move(barrage)),
-		m_enemyFont(std::move(enemyFont))
-		{
+		m_enemyFont(std::move(enemyFont)),
+		m_collision(std::make_unique<CollisionCircle>(m_enemyFont->GetRefPos(), [](auto) {}))
+	{
+		m_collision->SetCollisionID(CollisionID::EnemyID);
+		m_collision->SetR(info.r);
+		m_collision->SetOffsetPos(info.collisionOffsetPos);
 		m_enemyFont->SetText(info.text);
 		m_enemyFont->SetColor(info.color);
 	}
@@ -28,7 +32,7 @@ namespace game {
 	void Enemy::Draw() const
 	{
 		m_barrage->Draw();
-		m_enemyFont->Draw();
+		m_enemyFont->DrawCenter();
 	}
 
 	Enemy::~Enemy()
