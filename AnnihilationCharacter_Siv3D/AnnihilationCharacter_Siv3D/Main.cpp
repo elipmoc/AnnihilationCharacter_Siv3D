@@ -2,7 +2,11 @@
 #include "SelectPlayerScene.hpp"
 #include "GameOverScene.hpp"
 #include "GameScene.hpp"
+#include "ObjectPool.hpp"
+#include "PreObjectPool.hpp"
 #include "CollisionControl.hpp"
+
+int elipmocframework::ObjectPoolCount::count=0;
 
 
 void Main()
@@ -16,6 +20,7 @@ void Main()
 	mySceneManager.add<game::GameOverScene>(L"GameOver");
 
 	while (siv::System::Update() && mySceneManager.updateAndDraw()) {
+		siv::Println(elipmocframework::ObjectPoolCount::count);
 		game::CollisionControl::GetInstance().Update();
 		game::CollisionControl::GetInstance().DebugDraw();
 	}

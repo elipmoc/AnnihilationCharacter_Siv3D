@@ -11,7 +11,8 @@ namespace game {
 		double m_angle=0;
 		TitleParticle m_titleParticle;
 	public:
-		TitleScene():m_titleFont(40),m_subTitleFont(20),m_guideFont(15){}
+		TitleScene():m_titleFont(40),m_subTitleFont(20),m_guideFont(15){
+		}
 
 		virtual void init()override {
 			siv::Graphics::SetBackground(siv::Palette::Black);

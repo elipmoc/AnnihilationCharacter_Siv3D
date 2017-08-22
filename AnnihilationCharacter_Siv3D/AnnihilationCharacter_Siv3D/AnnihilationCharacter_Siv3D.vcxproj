@@ -308,10 +308,12 @@
     <ClInclude Include="ElipmocFrameWork\FontObject.hpp" />
     <ClInclude Include="ElipmocFrameWork\Interface.hpp" />
     <ClInclude Include="ElipmocFrameWork\ObjectPool.hpp" />
+    <ClInclude Include="ElipmocFrameWork\ObjectPoolUtil.hpp" />
     <ClInclude Include="ElipmocFrameWork\pack_traits_original.hpp" />
     <ClInclude Include="ElipmocFrameWork\Particle.hpp" />
     <ClInclude Include="ElipmocFrameWork\ParticleFontObject.hpp" />
     <ClInclude Include="ElipmocFrameWork\ParticleList.hpp" />
+    <ClInclude Include="ElipmocFrameWork\PreObjectPool.hpp" />
     <ClInclude Include="ElipmocFrameWork\type_traits_original.hpp" />
     <ClInclude Include="Game\inc\BarrageBase.hpp" />
     <ClInclude Include="Game\inc\BulletList.hpp" />
