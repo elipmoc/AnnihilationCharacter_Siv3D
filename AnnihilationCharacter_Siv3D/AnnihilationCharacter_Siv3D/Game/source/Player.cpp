@@ -3,6 +3,7 @@
 #include "ParticleList.hpp"
 #include "PlayerDeadParticle.hpp"
 #include "CollisionCircle.hpp"
+#include "define.hpp"
 
 namespace game {
 
@@ -31,7 +32,7 @@ namespace game {
 		else {
 			//Ÿ‚Ì‘«Œ³‚É‚È‚éƒŒ[ƒ“‚ğŒˆ’è
 			int i;
-			for (i = TerrainControl::LANE_NUM - 1; i >= 0; i--)
+			for (i = LANE_NUM - 1; i >= 0; i--)
 				if (GetUnderY() <= terrainControl->GetTerrainY(i)) {
 					m_underLane = i;
 					break;

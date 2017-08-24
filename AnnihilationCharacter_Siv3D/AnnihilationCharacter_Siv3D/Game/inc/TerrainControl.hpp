@@ -1,13 +1,12 @@
 #pragma once
 #include <deque>
+#include "define.hpp"
 namespace game {
 	//地形配列を制御するクラス
 	class TerrainControl {
 	public:
 		//地形一つのサイズ
 		static constexpr size_t TERRAIN_SIZE = 40;
-		//レーン数
-		static constexpr size_t LANE_NUM = 3;
 
 		//特定のレーンの地形の高さを得る
 		double GetTerrainY(size_t lane)const {

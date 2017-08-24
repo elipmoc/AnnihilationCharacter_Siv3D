@@ -321,6 +321,7 @@
     <ClInclude Include="Game\inc\Bullet.hpp" />
     <ClInclude Include="Game\inc\CollisionCircle.hpp" />
     <ClInclude Include="Game\inc\CollisionControl.hpp" />
+    <ClInclude Include="Game\inc\define.hpp" />
     <ClInclude Include="Game\inc\EnemyActionBase.hpp" />
     <ClInclude Include="Game\inc\Enemy.hpp" />
     <ClInclude Include="Game\inc\EnemyBuilder.hpp" />
@@ -332,6 +333,7 @@
     <ClInclude Include="Game\inc\GameScene.hpp" />
     <ClInclude Include="Game\inc\GrazeParticle.hpp" />
     <ClInclude Include="Game\inc\HpUI.hpp" />
+    <ClInclude Include="Game\inc\LoadFileTerrainData.hpp" />
     <ClInclude Include="Game\inc\Player.hpp" />
     <ClInclude Include="Game\inc\PlayerDeadParticle.hpp" />
     <ClInclude Include="Game\inc\SceneBase.hpp" />
