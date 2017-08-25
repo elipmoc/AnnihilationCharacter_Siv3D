@@ -1,4 +1,5 @@
 #include "TerrainControl.hpp"
+#include "GameMaster.hpp"
 
 namespace game {
 	TerrainControl::TerrainControl() :m_terrainFont(TERRAIN_SIZE), circle(3)
@@ -25,9 +26,9 @@ namespace game {
 			//先頭のデータを一つ削除
 			m_activeTerrains[i].pop_front();
 			//最後尾に新しい地形データをセットする
-			m_activeTerrains[i].push_back(m_terrainFlags[i][index]);
+			m_activeTerrains[i].push_back(GameMaster::GetInstance().GetTerrainData(i)[index]);
 		}
-		index = (index+1)%m_terrainFlags[0].size();
+		index = (index+1)% GameMaster::GetInstance().GetTerrainData(0).size();
 	}
 
 	void TerrainControl::Update()

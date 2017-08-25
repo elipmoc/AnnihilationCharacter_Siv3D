@@ -18,12 +18,18 @@ namespace game {
 	GameMaster GameMaster::instance;
 
 	GameMaster::GameMaster()
-		:mySceneManager(std::make_unique<MySceneManager>())
+		:m_mySceneManager(std::make_unique<MySceneManager>()),
+		m_loadFileTerrainData(std::make_unique<LoadFileTerrainData>())
 	{
 	}
 
 	GameMaster::~GameMaster()
 	{
+	}
+
+	const std::vector<bool>& GameMaster::GetTerrainData(size_t lane)
+	{
+		return m_loadFileTerrainData->GetTerrainData(lane);
 	}
 
 	//初期化処理
@@ -34,16 +40,15 @@ namespace game {
 		siv::Window::Resize(700, 580);
 
 		//シーンセット
-		mySceneManager->add<TitleScene>(L"Title");
-		mySceneManager->add<SelectPlayerScene>(L"SelectPlayer");
-		mySceneManager->add<GameScene>(L"Game");
-		mySceneManager->add<GameOverScene>(L"GameOver");
+		m_mySceneManager->add<TitleScene>(L"Title");
+		m_mySceneManager->add<SelectPlayerScene>(L"SelectPlayer");
+		m_mySceneManager->add<GameScene>(L"Game");
+		m_mySceneManager->add<GameOverScene>(L"GameOver");
 
 		//地形データロード
-		LoadFileTerrainData terrainData;
 		try
 		{
-			terrainData.LoadFile();
+			m_loadFileTerrainData->LoadFile();
 		}
 		catch (const siv::String& str)
 		{
@@ -55,7 +60,7 @@ namespace game {
 	//ゲームループスタート
 	void GameMaster::Start()
 	{
-		while (siv::System::Update() && mySceneManager->updateAndDraw()) {
+		while (siv::System::Update() && m_mySceneManager->updateAndDraw()) {
 			siv::Println(elipmocframework::ObjectPoolCount::count);
 			game::CollisionControl::GetInstance().Update();
 			game::CollisionControl::GetInstance().DebugDraw();

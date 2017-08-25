@@ -19,10 +19,18 @@ namespace game {
 			std::string buf;
 			for (size_t i = 0; i < LANE_NUM; i++) {
 				if (!std::getline(ifs, buf))
-					throw siv::String(L"s”‚ª‘«‚è‚Ü‚¹‚ñ");
-				for (auto&& c : buf)
-					terrainData[i].push_back(c);
+					throw siv::String(L"terrain.txts”‚ª‘«‚è‚Ü‚¹‚ñ");
+				for (auto&& c : buf) {
+					if (c == '0' || c == '1')
+						terrainData[i].push_back(c == '0' ? false : true);
+					else
+						throw siv::String(L"terrain.txt•s³‚È•¶Žš‚ª‚ ‚è‚Ü‚·");
+				}
 			}
+		}
+
+		const std::vector<bool>& GetTerrainData(size_t lane) {
+			return terrainData[lane];
 		}
 	};
 }
