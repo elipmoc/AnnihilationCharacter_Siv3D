@@ -30,7 +30,7 @@ namespace game {
 		}
 
 		const std::vector<bool>& GetTerrainData(size_t lane) {
-			return terrainData[lane];
+			return terrainData[LANE_NUM-lane-1];
 		}
 	};
 }
