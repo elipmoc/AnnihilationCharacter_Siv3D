@@ -33,7 +33,7 @@ namespace game {
 	}
 
 	//初期化処理
-	void GameMaster::Init()
+	bool GameMaster::Init()
 	{
 		//ウインドウ設定
 		siv::Window::SetTitle(L"消滅文字 ver 1919810114514");
@@ -53,8 +53,9 @@ namespace game {
 		catch (const siv::String& str)
 		{
 			siv::MessageBox::Show(str);
-			return;
+			return false;
 		}
+		return true;
 	}
 
 	//ゲームループスタート

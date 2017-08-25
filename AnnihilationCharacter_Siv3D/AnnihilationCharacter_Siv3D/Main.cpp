@@ -5,7 +5,6 @@
 
 void Main()
 {
-	game::GameMaster::GetInstance().Init();
+	if(game::GameMaster::GetInstance().Init()==false)return;
 	game::GameMaster::GetInstance().Start();
-
 }

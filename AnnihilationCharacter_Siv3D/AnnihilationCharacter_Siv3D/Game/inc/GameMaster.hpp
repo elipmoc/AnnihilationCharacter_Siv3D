@@ -19,7 +19,7 @@ namespace game {
 		static GameMaster& GetInstance() {
 			return instance;
 		};
-		void Init();
+		bool Init();
 		void Start();
 		void End();
 	};
