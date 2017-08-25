@@ -11,7 +11,7 @@ namespace game {
 	void BulletList::Draw()const
 	{
 		for (const auto& item : *m_bulletPool)
-			item.Draw();
+			item.DrawCenter();
 	}
 
 	void BulletList::Update()

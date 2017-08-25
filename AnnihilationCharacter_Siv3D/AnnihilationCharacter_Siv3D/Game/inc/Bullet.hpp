@@ -1,19 +1,24 @@
 #pragma once
+#include <memory>
 #include "FontObject.hpp"
 #include"Interface.hpp"
 namespace game {
+
+	class CollisionCircle;
+
 	class Bullet :public elipmocframework::FontObject,public elipmocframework::has_delete_flag {
 		//速度ベクトル
 		siv::Vec2 m_speedv;
 		//加速度ベクトル
 		siv::Vec2 m_vspeedv;
+
+		//あたり判定
+		std::unique_ptr<CollisionCircle> m_colli;
+
 	public:
 
-		Bullet(const siv::Vec2 & pos, const siv::Vec2 & speedv, const siv::Vec2 & vspeedv) 
-			:elipmocframework::FontObject(L"弾",20), m_speedv(speedv), m_vspeedv(vspeedv) 
-		{
-			SetPos(pos);
-		}
+		Bullet(const siv::Vec2 & pos, const siv::Vec2 & speedv, const siv::Vec2 & vspeedv);
+		~Bullet();
 
 		virtual void Update()override{
 			elipmocframework::FontObject::Update();

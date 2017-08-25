@@ -72,7 +72,9 @@ namespace game {
 	}
 
 	Player::Player() :circle(3), m_deadParticle(CreatePlayerDeadParticleList()),
-		m_colliObject(std::make_unique<CollisionCircle>(GetRefPos(), [this](CollisionID id) {if(id==CollisionID::EnemyID)this->PlayerDead(); }))
+		m_colliObject(
+			std::make_unique<CollisionCircle>(GetRefPos(), [this](CollisionID id) {if(id==CollisionID::EnemyID || id==CollisionID::EnemyBulletID)this->PlayerDead(); })
+		)
 	{
 		m_colliObject->SetR(10);
 		m_colliObject->SetCollisionID(CollisionID::PlayerID);
