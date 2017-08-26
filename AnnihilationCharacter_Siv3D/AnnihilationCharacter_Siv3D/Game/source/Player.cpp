@@ -78,7 +78,6 @@ namespace game {
 	{
 		m_colliObject->SetR(10);
 		m_colliObject->SetCollisionID(CollisionID::PlayerID);
-
 	}
 
 	Player::~Player(){}

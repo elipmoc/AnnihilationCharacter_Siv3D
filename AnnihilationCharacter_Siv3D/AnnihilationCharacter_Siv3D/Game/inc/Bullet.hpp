@@ -17,14 +17,15 @@ namespace game {
 
 	public:
 
+		void Delete() {
+			delete_flag = true;
+		}
+
 		Bullet(const siv::Vec2 & pos, const siv::Vec2 & speedv, const siv::Vec2 & vspeedv);
 		~Bullet();
 
-		virtual void Update()override{
-			elipmocframework::FontObject::Update();
-			SetPos(GetPos() + m_speedv);
-			m_speedv += m_vspeedv;
-		}
+		virtual void Update()override;
+
 	};
 
 	//ŠÖ”‚ğ‘ã“ü‚·‚é‚±‚Æ‚ÅA“Æ©‚Ì“®ì‚ğ‚½‚¹‚ç‚ê‚é‚æ‚¤‚ÉŠg’£‚µ‚½”Å
