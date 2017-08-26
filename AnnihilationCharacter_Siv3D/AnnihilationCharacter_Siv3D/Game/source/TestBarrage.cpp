@@ -4,7 +4,6 @@
 namespace  game{
 	void TestBarrage::Update()
 	{
-		static int count = 0;
 		GetBulletList().Update();
 		count++;
 		if (count % 20 == 0) {
