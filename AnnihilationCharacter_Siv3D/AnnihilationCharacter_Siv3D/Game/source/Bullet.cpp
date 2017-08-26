@@ -18,6 +18,15 @@ namespace game {
 
 	void Bullet::Update()
 	{
+		//‰æ–ÊŠO‚Éo‚½‚çíœ
+		if (
+			GetPos().x<-10 ||
+			GetPos().x>siv::Window::Size().x + 10 ||
+			GetPos().y<-10 ||
+			GetPos().y>siv::Window::Size().y + 10
+			)
+			Delete();
+
 		m_colli->DoColliQueue();
 		elipmocframework::FontObject::Update();
 		SetPos(GetPos() + m_speedv);
