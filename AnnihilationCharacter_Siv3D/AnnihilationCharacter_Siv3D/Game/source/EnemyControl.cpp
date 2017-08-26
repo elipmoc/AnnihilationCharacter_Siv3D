@@ -9,7 +9,7 @@ namespace game {
 	{
 
 		auto info=std::make_unique<EnemyInfo>();
-		info->waitTime = 120;
+		info->bornTime = 120;
 		info->lifeTime = 300;
 		info->barrageStartTime = 220;
 		info->startPos={ 800,500 };
@@ -19,7 +19,7 @@ namespace game {
 		info->action = "TestAction";
 		info->barrage = "TestBarrage";
 		auto info2 = std::make_unique<EnemyInfo>();
-		info2->waitTime = 120;
+		info2->bornTime = 120;
 		info2->lifeTime = 400;
 		info2->barrageStartTime = 220;
 		info2->startPos = { 800,500 };
@@ -29,7 +29,7 @@ namespace game {
 		info2->action = "TestAction";
 		info2->barrage = "TestBarrage";
 		auto info3 = std::make_unique<EnemyInfo>();
-		info3->waitTime = 120;
+		info3->bornTime = 120;
 		info3->lifeTime = 500;
 		info3->barrageStartTime = 220;
 		info3->startPos = { 800,500 };
@@ -54,7 +54,7 @@ namespace game {
 	{
 		while(
 			index < m_enemyInfoList.size() &&
-			m_enemyInfoList[index]->waitTime==count
+			m_enemyInfoList[index]->bornTime==count
 			)
 		{
 			m_enemyList->push_back(
