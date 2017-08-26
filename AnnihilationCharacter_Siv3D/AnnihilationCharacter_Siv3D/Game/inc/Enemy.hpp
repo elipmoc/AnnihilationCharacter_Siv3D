@@ -1,4 +1,5 @@
 #pragma once
+#include "Interface.hpp"
 
 namespace elipmocframework {
 	class FontObject;
@@ -8,7 +9,7 @@ namespace game {
 	class CollisionCircle;
 	class BarrageBase;
 	struct EnemyModelInfo;
-	class Enemy{
+	class Enemy:public elipmocframework::has_delete_flag{
 	protected:
 		//íeñã
 		std::unique_ptr<BarrageBase> m_barrage;
@@ -16,8 +17,11 @@ namespace game {
 		std::unique_ptr<elipmocframework::FontObject> m_enemyFont;
 		//ìGÇ†ÇΩÇËîªíË
 		std::unique_ptr<CollisionCircle> m_collision;
+		//ê∂ë∂éûä‘
+		int m_lifeTime;
 	public:
 		Enemy(
+			int lifeTime,
 			const EnemyModelInfo& info,
 			std::unique_ptr<BarrageBase>&&,
 			std::unique_ptr<elipmocframework::FontObject>&&);

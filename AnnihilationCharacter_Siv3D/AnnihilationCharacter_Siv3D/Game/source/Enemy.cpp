@@ -8,11 +8,13 @@ namespace game {
 	using elipmocframework::FontObject;
 
 	Enemy::Enemy(
+		int lifeTime,
 		const EnemyModelInfo& info,
 		std::unique_ptr<BarrageBase> &&barrage,
 		std::unique_ptr<FontObject> && enemyFont
 	)
 		:
+		m_lifeTime(lifeTime),
 		m_barrage(std::move(barrage)),
 		m_enemyFont(std::move(enemyFont)),
 		m_collision(std::make_unique<CollisionCircle>(m_enemyFont->GetRefPos(), [](auto) {}))
@@ -25,6 +27,8 @@ namespace game {
 	}
 
 	void Enemy::Update() {
+		if (m_lifeTime == 0)delete_flag = true;
+		m_lifeTime--;
 		m_barrage->Update();
 		m_enemyFont->Update();
 	}

@@ -10,6 +10,7 @@ namespace game {
 
 		auto info=std::make_unique<EnemyInfo>();
 		info->waitTime = 120;
+		info->lifeTime = 300;
 		info->startPos={ 800,500 };
 		info->stopPos = { 100,200 };
 		info->endPos = { 400,280 };
@@ -18,6 +19,7 @@ namespace game {
 		info->barrage = "TestBarrage";
 		auto info2 = std::make_unique<EnemyInfo>();
 		info2->waitTime = 120;
+		info2->lifeTime = 400;
 		info2->startPos = { 800,500 };
 		info2->stopPos = { 100,200 };
 		info2->endPos = { 200,280 };
@@ -26,6 +28,7 @@ namespace game {
 		info2->barrage = "TestBarrage";
 		auto info3 = std::make_unique<EnemyInfo>();
 		info3->waitTime = 120;
+		info3->lifeTime = 500;
 		info3->startPos = { 800,500 };
 		info3->stopPos = { 100,200 };
 		info3->endPos = { 0,280 };

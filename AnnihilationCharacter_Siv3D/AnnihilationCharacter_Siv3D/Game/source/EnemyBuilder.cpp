@@ -33,6 +33,7 @@ namespace game {
 		enemyFont->AddAction(m_actionMap[info.action]->GenerateEnemyAction(info.startPos,info.stopPos,info.endPos));
 		return
 			std::make_unique<Enemy>(
+				info.lifeTime,
 				m_modelMap[info.model]->GenerateEnemyModelInfo(),
 				m_barrageMap[info.barrage]->GenerateBarrage(enemyFont->GetRefPos()),
 				std::move(enemyFont)

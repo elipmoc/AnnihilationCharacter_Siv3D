@@ -1,5 +1,6 @@
 #include "EnemyList.hpp"
 #include "Enemy.hpp"
+#include "ObjectPool.hpp"
 
 namespace game {
 	void EnemyList::push_back(std::unique_ptr<Enemy>&& enemy)
@@ -14,6 +15,14 @@ namespace game {
 
 	void EnemyList::Update()
 	{
+		auto itr=std::remove_if(
+			m_enemys.begin(),m_enemys.end(),
+			[](const std::unique_ptr<Enemy>& enemy) {
+			return enemy->IsEnableDelete();
+		});
+
+		m_enemys.erase(itr, m_enemys.end());
+
 		for (auto&& item : m_enemys)
 			item->Update();
 	}

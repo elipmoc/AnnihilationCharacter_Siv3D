@@ -9,6 +9,7 @@ namespace game {
 		siv::Vec2 stopPos;
 		siv::Vec2 endPos;
 		int waitTime;
+		int lifeTime;
 		int bornTime;
 		std::string barrage;
 		int barrageStartTime;
