@@ -9,12 +9,14 @@ namespace game {
 
 	Enemy::Enemy(
 		int lifeTime,
+		int barrageStartTime,
 		const EnemyModelInfo& info,
 		std::unique_ptr<BarrageBase> &&barrage,
 		std::unique_ptr<FontObject> && enemyFont
 	)
 		:
 		m_lifeTime(lifeTime),
+		m_barrageStartTime(barrageStartTime),
 		m_barrage(std::move(barrage)),
 		m_enemyFont(std::move(enemyFont)),
 		m_collision(std::make_unique<CollisionCircle>(m_enemyFont->GetRefPos(), [](auto) {}))
@@ -29,7 +31,10 @@ namespace game {
 	void Enemy::Update() {
 		if (m_lifeTime == 0)delete_flag = true;
 		m_lifeTime--;
-		m_barrage->Update();
+		if (m_barrageStartTime == 0)
+			m_barrage->Update();
+		else
+			m_barrageStartTime--;
 		m_enemyFont->Update();
 	}
 

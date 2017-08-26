@@ -34,6 +34,7 @@ namespace game {
 		return
 			std::make_unique<Enemy>(
 				info.lifeTime,
+				info.barrageStartTime,
 				m_modelMap[info.model]->GenerateEnemyModelInfo(),
 				m_barrageMap[info.barrage]->GenerateBarrage(enemyFont->GetRefPos()),
 				std::move(enemyFont)
