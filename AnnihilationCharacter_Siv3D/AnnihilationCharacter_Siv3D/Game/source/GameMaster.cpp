@@ -6,6 +6,8 @@
 #include "ObjectPoolUtil.hpp"
 #include "CollisionControl.hpp"
 #include "LoadFileTerrainData.hpp"
+#include "LoadFileEnemyInfo.hpp"
+#include "EnemyInfo.hpp"
 
 
 
@@ -19,7 +21,8 @@ namespace game {
 
 	GameMaster::GameMaster()
 		:m_mySceneManager(std::make_unique<MySceneManager>()),
-		m_loadFileTerrainData(std::make_unique<LoadFileTerrainData>())
+		m_loadFileTerrainData(std::make_unique<LoadFileTerrainData>()),
+		m_loadFileEnemyInfo(std::make_unique<LoadFileEnemyInfo>())
 	{
 	}
 
@@ -45,10 +48,11 @@ namespace game {
 		m_mySceneManager->add<GameScene>(L"Game");
 		m_mySceneManager->add<GameOverScene>(L"GameOver");
 
-		//地形データロード
+		//ファイルデータロード
 		try
 		{
 			m_loadFileTerrainData->LoadFile();
+			m_loadFileEnemyInfo->LoadFile();
 		}
 		catch (const siv::String& str)
 		{

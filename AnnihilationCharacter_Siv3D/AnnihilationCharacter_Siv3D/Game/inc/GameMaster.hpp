@@ -6,6 +6,7 @@
 namespace game {
 
 	class LoadFileTerrainData;
+	class LoadFileEnemyInfo;
 	class GameMaster {
 		GameMaster();
 		~GameMaster();
@@ -14,6 +15,8 @@ namespace game {
 		std::unique_ptr<MySceneManager> m_mySceneManager;
 		//地形データ保持
 		std::unique_ptr<LoadFileTerrainData> m_loadFileTerrainData;
+		//敵データ保持
+		std::unique_ptr<LoadFileEnemyInfo> m_loadFileEnemyInfo;
 	public:
 		const std::vector<bool>& GetTerrainData(size_t lane);
 		static GameMaster& GetInstance() {

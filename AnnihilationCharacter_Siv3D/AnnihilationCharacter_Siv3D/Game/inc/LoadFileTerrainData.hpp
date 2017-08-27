@@ -5,9 +5,9 @@
 #include "define.hpp"
 
 namespace game {
-	//ファイルから地形データを読み込む
+	//ファイルから地形データを読み込むクラス
 	class LoadFileTerrainData {
-		std::vector<bool> terrainData[LANE_NUM];
+		std::vector<bool> m_terrainData[LANE_NUM];
 	public:
 		LoadFileTerrainData() {
 
@@ -22,7 +22,7 @@ namespace game {
 					throw siv::String(L"terrain.txt行数が足りません");
 				for (auto&& c : buf) {
 					if (c == '0' || c == '1')
-						terrainData[i].push_back(c == '0' ? false : true);
+						m_terrainData[i].push_back(c == '0' ? false : true);
 					else
 						throw siv::String(L"terrain.txt不正な文字があります");
 				}
@@ -30,7 +30,7 @@ namespace game {
 		}
 
 		const std::vector<bool>& GetTerrainData(size_t lane) {
-			return terrainData[LANE_NUM-lane-1];
+			return m_terrainData[LANE_NUM-lane-1];
 		}
 	};
 }
