@@ -30,10 +30,16 @@ namespace game {
 	{
 	}
 
-	const std::vector<bool>& GameMaster::GetTerrainData(size_t lane)
+	const std::vector<bool>& GameMaster::GetTerrainData(size_t lane)const noexcept
 	{
 		return m_loadFileTerrainData->GetTerrainData(lane);
 	}
+
+	const std::vector<std::unique_ptr<EnemyInfo>>& GameMaster::GetEnemyInfoList()const noexcept
+	{
+		return m_loadFileEnemyInfo->GetEnemyInfoList();
+	}
+
 
 	//‰Šú‰»ˆ—
 	bool GameMaster::Init()

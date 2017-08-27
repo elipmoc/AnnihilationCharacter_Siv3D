@@ -7,6 +7,7 @@ namespace game {
 
 	class LoadFileTerrainData;
 	class LoadFileEnemyInfo;
+	class EnemyInfo;
 	class GameMaster {
 		GameMaster();
 		~GameMaster();
@@ -18,7 +19,8 @@ namespace game {
 		//ìGÉfÅ[É^ï€éù
 		std::unique_ptr<LoadFileEnemyInfo> m_loadFileEnemyInfo;
 	public:
-		const std::vector<bool>& GetTerrainData(size_t lane);
+		const std::vector<bool>& GetTerrainData(size_t lane)const noexcept;
+		const std::vector<std::unique_ptr<EnemyInfo>>& GetEnemyInfoList()const noexcept;
 		static GameMaster& GetInstance() {
 			return instance;
 		};

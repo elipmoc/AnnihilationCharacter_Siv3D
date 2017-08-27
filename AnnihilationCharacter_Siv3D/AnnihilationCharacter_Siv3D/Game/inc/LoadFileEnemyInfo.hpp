@@ -15,7 +15,7 @@ namespace game {
 		~LoadFileEnemyInfo();
 		void LoadFile();
 
-		const std::vector<std::unique_ptr<EnemyInfo>>& GetEnemyInfoList() {
+		const std::vector<std::unique_ptr<EnemyInfo>>& GetEnemyInfoList()const noexcept {
 			return m_enemyInfoList;
 		}
 	};

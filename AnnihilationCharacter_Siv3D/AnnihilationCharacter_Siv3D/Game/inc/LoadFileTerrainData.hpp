@@ -29,7 +29,7 @@ namespace game {
 			}
 		}
 
-		const std::vector<bool>& GetTerrainData(size_t lane) {
+		const std::vector<bool>& GetTerrainData(size_t lane) const noexcept{
 			return m_terrainData[LANE_NUM-lane-1];
 		}
 	};
