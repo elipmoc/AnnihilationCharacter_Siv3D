@@ -2,13 +2,14 @@
 #include "EnemyList.hpp"
 #include "EnemyBuilder.hpp"
 #include "Enemy.hpp"
+#include "GameMaster.hpp"
 
 namespace game {
 	EnemyControl::EnemyControl():
 		m_enemyList(std::make_unique<EnemyList>())
 	{
 
-		auto info=std::make_unique<EnemyInfo>();
+		/*auto info=std::make_unique<EnemyInfo>();
 		info->bornTime = 120;
 		info->lifeTime = 300;
 		info->barrageStartTime = 220;
@@ -40,7 +41,7 @@ namespace game {
 		info3->barrage = "TestBarrage";
 		m_enemyInfoList.push_back(std::move(info));
 		m_enemyInfoList.push_back(std::move(info2));
-		m_enemyInfoList.push_back(std::move(info3));
+		m_enemyInfoList.push_back(std::move(info3));*/
 	}
 
 	EnemyControl::~EnemyControl() = default;
@@ -53,12 +54,12 @@ namespace game {
 	void EnemyControl::Update()
 	{
 		while(
-			index < m_enemyInfoList.size() &&
-			m_enemyInfoList[index]->bornTime==count
+			index < GameMaster::GetInstance().GetEnemyInfoList().size() &&
+			GameMaster::GetInstance().GetEnemyInfoList()[index]->bornTime==count
 			)
 		{
 			m_enemyList->push_back(
-				EnemyBuilder::EnemyBuild(*m_enemyInfoList[index])
+				EnemyBuilder::EnemyBuild(*GameMaster::GetInstance().GetEnemyInfoList()[index])
 			);
 			index++;
 		}

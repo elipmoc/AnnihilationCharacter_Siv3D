@@ -7,7 +7,7 @@ namespace game {
 
 	class LoadFileTerrainData;
 	class LoadFileEnemyInfo;
-	class EnemyInfo;
+	struct EnemyInfo;
 	class GameMaster {
 		GameMaster();
 		~GameMaster();
