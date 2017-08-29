@@ -7,6 +7,7 @@
 #include "TestBarrage.hpp"
 #include "TestEnemyAction.hpp"
 #include "TestEnemyModel.hpp"
+#include "EnemyModel\Model01.hpp"
 
 namespace game {
 	class EnemyBuilder::EnemyBuilderImpl {
@@ -22,6 +23,7 @@ namespace game {
 		m_barrageMap["TestBarrage"] = std::make_unique<MakeBarrageGenerator<TestBarrage>>();
 		m_actionMap["TestAction"] = std::make_unique<TestEnemyAction>();
 		m_modelMap["TestModel"] = std::make_unique<TestEnemyModel>();
+		m_modelMap["Model01"] = std::make_unique<Model01>();
 	}
 
 

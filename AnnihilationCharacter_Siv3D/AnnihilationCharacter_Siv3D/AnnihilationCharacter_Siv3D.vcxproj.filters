@@ -602,5 +602,8 @@
     <ClInclude Include="Game\inc\LoadFileEnemyInfo.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="Game\inc\EnemyModel\Model01.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
