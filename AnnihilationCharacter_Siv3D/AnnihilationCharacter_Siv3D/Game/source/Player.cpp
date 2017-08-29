@@ -65,10 +65,22 @@ namespace game {
 	}
 
 	void Player::PlayerDead(){
+		if (m_mutekiCount != 0)return;
 		if(m_hp!=0)m_hp--;
 		m_deadParticle->Set(GetPos());
 		SetPos({ 0,0 });
 		m_yv = 0;
+		m_mutekiCount = MUTEKI_TIME;
+	}
+
+	void Player::PlayerFallDead()
+	{
+		if (m_hp != 0)m_hp--;
+		m_deadParticle->Set(GetPos());
+		SetPos({ 0,0 });
+		m_yv = 0;
+		m_mutekiCount = MUTEKI_TIME;
+
 	}
 
 	Player::Player() :circle(3), m_deadParticle(CreatePlayerDeadParticleList()),
@@ -83,6 +95,7 @@ namespace game {
 	Player::~Player(){}
 
 	void Player::Update2(const std::unique_ptr<TerrainControl>& terrainControl) {
+		if (m_mutekiCount != 0)m_mutekiCount--;
 		elipmocframework::FontObject::Update();
 		Move(terrainControl);
 		m_colliObject->DoColliQueue();

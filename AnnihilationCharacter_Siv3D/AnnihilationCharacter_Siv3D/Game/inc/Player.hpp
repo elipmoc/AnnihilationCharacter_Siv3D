@@ -11,6 +11,11 @@ namespace game {
 	class TerrainControl;
 	class CollisionCircle;
 	class Player :public elipmocframework::FontObject {
+		//無敵時間
+		static constexpr int MUTEKI_TIME = 100;
+
+		//無敵時間カウント
+		int m_mutekiCount=0;
 
 		//死亡時のパーティクル
 		std::unique_ptr<elipmocframework::ParticleList> m_deadParticle;
@@ -20,7 +25,6 @@ namespace game {
 
 		//hp
 		size_t m_hp=6;
-
 
 		//移動スピード
 		static constexpr double speed=3.5;
@@ -41,6 +45,9 @@ namespace game {
 
 		//主人公死亡処理
 		void PlayerDead();
+
+		//主人公落下死亡処理
+		void PlayerFallDead();
 
 		//主人公の足元のYを得る
 		double GetUnderY()const {
