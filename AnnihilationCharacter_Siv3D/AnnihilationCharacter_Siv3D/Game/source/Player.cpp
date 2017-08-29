@@ -13,7 +13,7 @@ namespace game {
 
 		//—Ž‰º”»’è
 		if (GetPos().y>siv::Window::Size().y+40) {
-			PlayerDead();
+			PlayerFallDead();
 		}
 
 		//’…’n”»’è
