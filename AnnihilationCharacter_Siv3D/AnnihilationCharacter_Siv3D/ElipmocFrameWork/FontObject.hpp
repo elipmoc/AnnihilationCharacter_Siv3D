@@ -46,6 +46,10 @@ namespace elipmocframework {
 
 		}
 
+		FontObject(int fontsize,const siv::String& fontType) :m_scale(1), m_font(fontsize,fontType), m_actionList(this) {
+
+		}
+
 		FontObject(siv::String _text, int fontsize = 20):m_scale(1), m_font(fontsize),m_text(_text),m_actionList(this) {
 
 		}

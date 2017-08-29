@@ -28,7 +28,7 @@ namespace game {
 	std::unique_ptr<Enemy> EnemyBuilder::EnemyBuilderImpl::EnemyBuild(const EnemyInfo& info)
 	{
 		using elipmocframework::FontObject;
-		auto&& enemyFont = std::make_unique<FontObject>();
+		auto&& enemyFont = std::make_unique<FontObject>(12,L"‚l‚r ‚oƒSƒVƒbƒN");
 		enemyFont->SetPos(info.startPos);
 		enemyFont->AddAction(m_actionMap[info.action]->GenerateEnemyAction(info.startPos,info.stopPos,info.endPos));
 		return
