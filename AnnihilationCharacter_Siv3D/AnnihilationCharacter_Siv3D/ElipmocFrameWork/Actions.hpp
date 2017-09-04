@@ -61,4 +61,24 @@ namespace elipmocframework {
 			if (nowTime >= interval)delete_flag = true;
 		}
 	};
+
+	//待機アクション-----------------------------------------------------------------------------------------
+	class WaitAction :public ActionBase {
+
+		//アクションの待機時間
+		int m_waitTime;
+		WaitAction(const int waitTime)noexcept :m_waitTime(waitTime) {}
+	public:
+
+
+		static std::unique_ptr<ActionBase> Create(const int waitTime) {
+			return std::unique_ptr<ActionBase>(new WaitAction(waitTime));
+		}
+
+		virtual void Init() noexcept override {}
+		virtual void Update()noexcept override {
+			if (m_waitTime <= 0)delete_flag = true;
+			m_waitTime--;
+		}
+	};
 }

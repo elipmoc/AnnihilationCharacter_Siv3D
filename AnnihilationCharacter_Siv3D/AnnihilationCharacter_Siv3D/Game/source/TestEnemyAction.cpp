@@ -4,7 +4,7 @@
 
 namespace game {
 	using  elipmocframework::MoveAction;
-	using siv::Vec2;
+	using  elipmocframework::WaitAction;
 
 	std::unique_ptr<elipmocframework::ActionBase> TestEnemyAction::GenerateEnemyAction(
 		//開始地点
@@ -17,6 +17,7 @@ namespace game {
 	)const{
 		return elipmocframework::ScaleAction::Create(1, 30) <<
 			MoveAction::Create(endPos, 50) <<
+			WaitAction::Create(waitTime)<<
 			MoveAction::Create(stopPos, 180);
 	}
 }

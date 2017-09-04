@@ -1,2 +1,2 @@
-{"TestAction",{800,500},{100,200},{500,280},0,120,3000,"TestBarrage",200,"Model01"}
+{"TestAction",{800,500},{100,200},{500,280},120,120,3000,"TestBarrage",200,"Model01"}
 {"TestAction",{800,500},{100,200},{100,280},0,120,3000,"TestBarrage",200,"TestModel"}
