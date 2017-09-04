@@ -32,7 +32,7 @@ namespace game {
 		using elipmocframework::FontObject;
 		auto&& enemyFont = std::make_unique<FontObject>(12,L"‚l‚r ‚oƒSƒVƒbƒN");
 		enemyFont->SetPos(info.startPos);
-		enemyFont->AddAction(m_actionMap[info.action]->GenerateEnemyAction(info.startPos,info.stopPos,info.endPos));
+		enemyFont->AddAction(m_actionMap[info.action]->GenerateEnemyAction(info.startPos,info.stopPos,info.endPos,info.waitTime));
 		return
 			std::make_unique<Enemy>(
 				info.lifeTime,

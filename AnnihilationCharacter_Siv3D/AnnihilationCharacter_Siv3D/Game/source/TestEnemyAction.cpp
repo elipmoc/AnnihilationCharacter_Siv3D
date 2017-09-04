@@ -12,7 +12,8 @@ namespace game {
 		//中間地点
 		const siv::Vec2& stopPos,
 		//退散地点
-		const siv::Vec2& endPos
+		const siv::Vec2& endPos,
+		const int waitTime
 	)const{
 		return elipmocframework::ScaleAction::Create(1, 30) <<
 			MoveAction::Create(endPos, 50) <<

@@ -14,7 +14,9 @@ namespace game {
 			//中間地点
 			const siv::Vec2& stopPos,
 			//退散地点
-			const siv::Vec2& endPos
+			const siv::Vec2& endPos,
+			//中間待機地点
+			const int waitTime
 		) const= 0;
 	};
 

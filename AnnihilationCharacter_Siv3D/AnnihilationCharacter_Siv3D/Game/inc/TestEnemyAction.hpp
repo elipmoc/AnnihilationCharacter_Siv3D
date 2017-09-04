@@ -8,7 +8,8 @@ namespace game {
 		virtual std::unique_ptr<elipmocframework::ActionBase> GenerateEnemyAction(
 			const siv::Vec2&,
 			const siv::Vec2&,
-			const siv::Vec2&
+			const siv::Vec2&,
+			const int
 		) const override final;
 	};
 }
