@@ -166,6 +166,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Game\source\EnemyBarrage\HorizontalShot3Way.cpp" />
+    <ClCompile Include="Game\source\EnemyBarrage\HorizontalShotOne.cpp" />
     <ClCompile Include="Game\source\EnemyBuilder.cpp" />
     <ClCompile Include="Game\source\GameMaster.cpp" />
     <ClCompile Include="Game\source\LoadFileEnemyInfo.cpp" />
@@ -326,6 +328,7 @@
     <ClInclude Include="Game\inc\define.hpp" />
     <ClInclude Include="Game\inc\EnemyActionBase.hpp" />
     <ClInclude Include="Game\inc\Enemy.hpp" />
+    <ClInclude Include="Game\inc\EnemyBarrage\HorizontalShot3Way.hpp" />
     <ClInclude Include="Game\inc\EnemyBuilder.hpp" />
     <ClInclude Include="Game\inc\EnemyControl.hpp" />
     <ClInclude Include="Game\inc\EnemyInfo.hpp" />
@@ -349,6 +352,7 @@
     <ClInclude Include="Game\inc\TestEnemyModel.hpp" />
     <ClInclude Include="Game\inc\TitleParticle.hpp" />
     <ClInclude Include="Game\inc\TitleScene.hpp" />
+    <ClInclude Include="Game\inc\EnemyBarrage\HorizontalShotOne.hpp" />
     <ClInclude Include="UseSiv3D.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

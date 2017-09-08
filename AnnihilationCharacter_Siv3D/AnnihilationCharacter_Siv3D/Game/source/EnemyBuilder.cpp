@@ -5,9 +5,11 @@
 #include "BarrageBase.hpp"
 #include "FontObject.hpp"
 #include "TestBarrage.hpp"
-#include "TestEnemyAction.hpp"
+#include "EnemyAction\TestEnemyAction.hpp"
 #include "TestEnemyModel.hpp"
 #include "EnemyModel\Model01.hpp"
+#include "EnemyBarrage\HorizontalShotOne.hpp"
+#include "EnemyBarrage\HorizontalShot3Way.hpp"
 
 namespace game {
 	class EnemyBuilder::EnemyBuilderImpl {
@@ -21,6 +23,8 @@ namespace game {
 
 	EnemyBuilder::EnemyBuilderImpl::EnemyBuilderImpl() {
 		m_barrageMap["TestBarrage"] = std::make_unique<MakeBarrageGenerator<TestBarrage>>();
+		m_barrageMap["HorizontalShotOne"] = std::make_unique<MakeBarrageGenerator<HorizontalShotOne>>();
+		m_barrageMap["HorizontalShot3Way"] = std::make_unique<MakeBarrageGenerator<HorizontalShot3Way>>();
 		m_actionMap["TestAction"] = std::make_unique<TestEnemyAction>();
 		m_modelMap["TestModel"] = std::make_unique<TestEnemyModel>();
 		m_modelMap["Model01"] = std::make_unique<Model01>();
