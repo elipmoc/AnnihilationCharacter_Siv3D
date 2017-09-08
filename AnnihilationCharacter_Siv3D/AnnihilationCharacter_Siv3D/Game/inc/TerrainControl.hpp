@@ -23,9 +23,6 @@ namespace game {
 		void Update();
 	private:
 
-		//地形情報のリスト
-		std::vector<bool>m_terrainFlags[LANE_NUM];
-
 		//現在画面に表示されている地形
 		std::deque<bool> m_activeTerrains[LANE_NUM];
 

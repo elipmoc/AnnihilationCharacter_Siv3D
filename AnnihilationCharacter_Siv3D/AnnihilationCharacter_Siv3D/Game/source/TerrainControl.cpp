@@ -4,24 +4,15 @@
 namespace game {
 	TerrainControl::TerrainControl() :m_terrainFont(TERRAIN_SIZE), circle(3)
 	{
-		m_terrainFlags[0] = { 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1};
-		m_terrainFlags[1] = { 1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1};
-		m_terrainFlags[2] = { 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
-		for (auto & item : m_activeTerrains)
-			item.resize(siv::Window::Size().x / TERRAIN_SIZE + 2, true);
+		for (size_t lane = 0; lane < LANE_NUM; lane++)
+			for (size_t i = 0; i < siv::Window::Size().x / TERRAIN_SIZE + 2; i++)
+				m_activeTerrains[lane].push_back(GameMaster::GetInstance().GetTerrainData(lane)[i]);
 	}
 
 	//次の地形をセットする
 	void TerrainControl::NextTerrainLoad() {
 		static size_t index = 0;
 		m_offset = 0;
-
-		/*for (auto & item : m_activeTerrains) {
-			//先頭のデータを一つ削除
-			item.pop_front();
-			//最後尾に新しい地形データをセットする
-			item.push_back(siv::Random(0,1));
-		}*/
 		for (size_t i = 0; i < LANE_NUM; i++) {
 			//先頭のデータを一つ削除
 			m_activeTerrains[i].pop_front();
@@ -33,7 +24,7 @@ namespace game {
 
 	void TerrainControl::Update()
 	{
-		m_offset += 2;
+		m_offset += 4;
 		if (m_offset >= TERRAIN_SIZE)
 			NextTerrainLoad();
 		for (size_t i = 0; i < m_activeTerrains[0].size(); i++) {
