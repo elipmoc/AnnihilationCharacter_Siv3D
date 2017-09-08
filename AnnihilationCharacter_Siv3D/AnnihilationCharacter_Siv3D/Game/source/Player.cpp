@@ -40,8 +40,8 @@ namespace game {
 			if (i == -1)m_underLane = -1;
 		}
 		//ƒWƒƒƒ“ƒv
-		if (siv::Input::KeySpace.clicked &&m_jumpCount < 2) {
-			m_yv = -10;
+		if (siv::Input::KeySpace.clicked &&m_jumpCount < 3) {
+			m_yv = -7;
 			m_jumpCount++;
 		}
 
@@ -88,7 +88,7 @@ namespace game {
 			std::make_unique<CollisionCircle>(GetRefPos(), [this](CollisionID id) {if(id==CollisionID::EnemyID || id==CollisionID::EnemyBulletID)this->PlayerDead(); })
 		)
 	{
-		m_colliObject->SetR(10);
+		m_colliObject->SetR(5);
 		m_colliObject->SetCollisionID(CollisionID::PlayerID);
 	}
 

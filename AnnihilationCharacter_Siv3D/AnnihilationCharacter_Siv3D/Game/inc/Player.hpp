@@ -29,7 +29,7 @@ namespace game {
 		//移動スピード
 		static constexpr double speed=3.5;
 		//重力加速度
-		static constexpr double m_g=0.4;
+		static constexpr double m_g=0.3;
 		//Yの速度
 		double m_yv=0;
 		//ジャンプした回数記録
