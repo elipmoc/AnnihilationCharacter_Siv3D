@@ -8,6 +8,7 @@ namespace elipmocframework {
 
 namespace game {
 
+	class Barrier;
 	class TerrainControl;
 	class CollisionCircle;
 	class Player :public elipmocframework::FontObject {
@@ -22,6 +23,9 @@ namespace game {
 
 		//‚ ‚½‚è”»’èobject
 		std::unique_ptr<CollisionCircle> m_colliObject;
+
+		//ƒoƒŠƒA
+		std::unique_ptr<Barrier> m_barrier;
 
 		//hp
 		size_t m_hp=6;

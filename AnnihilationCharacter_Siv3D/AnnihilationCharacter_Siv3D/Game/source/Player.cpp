@@ -4,6 +4,7 @@
 #include "PlayerDeadParticle.hpp"
 #include "CollisionCircle.hpp"
 #include "define.hpp"
+#include "Barrier.hpp"
 
 namespace game {
 
@@ -86,7 +87,8 @@ namespace game {
 	Player::Player() :circle(3), m_deadParticle(CreatePlayerDeadParticleList()),
 		m_colliObject(
 			std::make_unique<CollisionCircle>(GetRefPos(), [this](CollisionID id) {if(id==CollisionID::EnemyID || id==CollisionID::EnemyBulletID)this->PlayerDead(); })
-		)
+		),
+		m_barrier(std::make_unique<Barrier>(GetRefPos()))
 	{
 		m_colliObject->SetR(5);
 		m_colliObject->SetCollisionID(CollisionID::PlayerID);
@@ -98,6 +100,8 @@ namespace game {
 		if (m_mutekiCount != 0)m_mutekiCount--;
 		elipmocframework::FontObject::Update();
 		Move(terrainControl);
+		m_barrier->Update();
+		m_barrier->Draw();
 		m_colliObject->DoColliQueue();
 		m_deadParticle->Update();
 		m_deadParticle->Draw();

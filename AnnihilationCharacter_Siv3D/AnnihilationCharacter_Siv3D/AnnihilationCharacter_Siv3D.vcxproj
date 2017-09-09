@@ -166,6 +166,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Game\source\Barrier.cpp" />
     <ClCompile Include="Game\source\EnemyBarrage\HorizontalShot3Way.cpp" />
     <ClCompile Include="Game\source\EnemyBarrage\HorizontalShotOne.cpp" />
     <ClCompile Include="Game\source\EnemyBuilder.cpp" />
@@ -310,6 +311,7 @@
     <ClInclude Include="ElipmocFrameWork\ActionList.hpp" />
     <ClInclude Include="ElipmocFrameWork\Actions.hpp" />
     <ClInclude Include="ElipmocFrameWork\FontObject.hpp" />
+    <ClInclude Include="ElipmocFrameWork\GlowText.hpp" />
     <ClInclude Include="ElipmocFrameWork\Interface.hpp" />
     <ClInclude Include="ElipmocFrameWork\ObjectPool.hpp" />
     <ClInclude Include="ElipmocFrameWork\ObjectPoolUtil.hpp" />
@@ -320,6 +322,7 @@
     <ClInclude Include="ElipmocFrameWork\PreObjectPool.hpp" />
     <ClInclude Include="ElipmocFrameWork\type_traits_original.hpp" />
     <ClInclude Include="Game\inc\BarrageBase.hpp" />
+    <ClInclude Include="Game\inc\Barrier.hpp" />
     <ClInclude Include="Game\inc\BulletList.hpp" />
     <ClInclude Include="Game\inc\BarrierUI.hpp" />
     <ClInclude Include="Game\inc\Bullet.hpp" />
