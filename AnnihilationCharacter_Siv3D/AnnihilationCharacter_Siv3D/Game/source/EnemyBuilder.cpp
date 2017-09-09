@@ -8,6 +8,7 @@
 #include "EnemyAction\TestEnemyAction.hpp"
 #include "TestEnemyModel.hpp"
 #include "EnemyModel\Model01.hpp"
+#include "EnemyModel\Model02.hpp"
 #include "EnemyBarrage\HorizontalShotOne.hpp"
 #include "EnemyBarrage\HorizontalShot3Way.hpp"
 
@@ -28,6 +29,7 @@ namespace game {
 		m_actionMap["TestAction"] = std::make_unique<TestEnemyAction>();
 		m_modelMap["TestModel"] = std::make_unique<TestEnemyModel>();
 		m_modelMap["Model01"] = std::make_unique<Model01>();
+		m_modelMap["Model02"] = std::make_unique<Model02>();
 	}
 
 

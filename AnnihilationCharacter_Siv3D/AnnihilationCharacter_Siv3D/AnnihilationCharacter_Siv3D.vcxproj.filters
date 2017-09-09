@@ -617,5 +617,8 @@
     <ClInclude Include="Game\inc\EnemyBarrage\HorizontalShot3Way.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="Game\inc\EnemyModel\Model02.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
