@@ -9,6 +9,7 @@ namespace game {
 		EnemyID,
 		EnemyBulletID,
 		PlayerID,
+		BarrierID,
 		ItemID
 	};
 

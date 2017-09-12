@@ -1,10 +1,16 @@
 #include "Barrier.hpp"
 #include "ElipmocFrameWork\GlowText.hpp"
+#include "CollisionCircle.hpp"
 
 namespace game {
 	Barrier::Barrier(const siv::Vec2 & playerPos)
-		:bind_playerPos(playerPos)
+		:bind_playerPos(playerPos),
+		m_colliObject(
+			std::make_unique<CollisionCircle>(bind_playerPos, [this](CollisionID){})
+		)
 	{
+		m_colliObject->SetCollisionID(CollisionID::BarrierID);
+		m_colliObject->SetR(60);
 		m_offsetpos[0] = { DISTANCE,0 };
 		m_offsetpos[1] = { DISTANCE,DISTANCE };
 		m_offsetpos[2] = { 0,DISTANCE };
@@ -15,8 +21,6 @@ namespace game {
 		m_offsetpos[7] = { DISTANCE,-DISTANCE };
 		for (size_t i = 0; i < WALL_NUM; i++) {
 			walls[i] = std::make_unique<elipmocframework::GlowText>(siv::Font(),L"•Ç",40);
-			//walls[i].SetText(L"•Ç");
-			//walls[i].SetColor({ 40,120,200 });
 		}
 	}
 	Barrier::~Barrier()
@@ -29,7 +33,5 @@ namespace game {
 	}
 	void Barrier::Update()
 	{
-		/*for (size_t i = 0; i < WALL_NUM; i++)
-			walls[i].SetPos();*/
 	}
 }
