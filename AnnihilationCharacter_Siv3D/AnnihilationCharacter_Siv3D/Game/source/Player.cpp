@@ -12,6 +12,11 @@ namespace game {
 	//移動アクション
 	void Player::Move(const std::unique_ptr<TerrainControl>& terrainControl) {		
 
+		//バリア起動
+		if (siv::Input::KeyShift.clicked) {
+			m_barrier->SetBarrier();
+		}
+
 		//落下判定
 		if (GetPos().y>siv::Window::Size().y+40) {
 			PlayerFallDead();

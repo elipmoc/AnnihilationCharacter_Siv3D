@@ -27,12 +27,24 @@ namespace game {
 	Barrier::~Barrier()
 	{
 	}
+	void Barrier::SetBarrier()
+	{
+		count = 0;
+		m_colliObject->Enable();
+	}
 	void Barrier::Draw() const
 	{
-		for (size_t i = 0; i < WALL_NUM; i++)
-			walls[i]->drawCenter(bind_playerPos + m_offsetpos[i], { 40,120,200 }, siv::Palette::Lightpink);// DrawCenter();
+		if (count != ENABLE_TIME) {
+			for (size_t i = 0; i < WALL_NUM; i++)
+				walls[i]->drawCenter(bind_playerPos + m_offsetpos[i], { 40,120,200 }, siv::Palette::Lightpink);// DrawCenter();
+		}
 	}
 	void Barrier::Update()
 	{
+		if (count != ENABLE_TIME) {
+			count++;
+			if (count == ENABLE_TIME)
+				m_colliObject->Disable();
+		}
 	}
 }

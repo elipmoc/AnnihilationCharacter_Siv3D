@@ -9,6 +9,10 @@ namespace game {
 
 	class CollisionCircle;
 	class Barrier {
+		//バリア有効時間
+		static constexpr size_t ENABLE_TIME = 180;
+		//バリア有効時間カウント
+		size_t count=ENABLE_TIME;
 		//壁の数
 		static constexpr size_t WALL_NUM = 8;
 		//壁の距離
@@ -24,6 +28,10 @@ namespace game {
 	public:
 		Barrier(const siv::Vec2& playerPos);
 		~Barrier();
+		void SetBarrier();
+		bool IsBarrier() {
+			return count != ENABLE_TIME;
+		}
 		void Draw()const;
 		void Update();
 	};
