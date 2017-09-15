@@ -13,8 +13,9 @@ namespace game {
 	void Player::Move(const std::unique_ptr<TerrainControl>& terrainControl) {		
 
 		//ƒoƒŠƒA‹N“®
-		if (siv::Input::KeyShift.clicked) {
+		if (siv::Input::KeyShift.clicked && m_barrier->IsBarrier()==false && m_barrierCount!=0) {
 			m_barrier->SetBarrier();
+			m_barrierCount--;
 		}
 
 		//—Ž‰º”»’è

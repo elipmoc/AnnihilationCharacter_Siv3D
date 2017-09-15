@@ -32,7 +32,7 @@ namespace game {
 	{
 		m_player->DrawCenter();
 		m_hpUi->Draw(m_player->GetHp());
-		m_barrierUi->Draw();
+		m_barrierUi->Draw(m_player->GetBarrierCount());
 		m_enemyControl->Draw();
 	}
 }

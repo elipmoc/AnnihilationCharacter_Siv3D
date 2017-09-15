@@ -30,6 +30,9 @@ namespace game {
 		//hp
 		size_t m_hp=6;
 
+		//バリア展開回数
+		size_t m_barrierCount=3;
+
 		//移動スピード
 		static constexpr double speed=3.5;
 		//重力加速度
@@ -72,6 +75,7 @@ namespace game {
 	public:
 
 		size_t GetHp()const noexcept { return m_hp; }
+		size_t GetBarrierCount()const noexcept { return m_barrierCount; }
 		Player();
 		~Player();
 
