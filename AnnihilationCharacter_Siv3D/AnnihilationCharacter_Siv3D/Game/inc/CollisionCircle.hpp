@@ -16,12 +16,21 @@ namespace game {
 	class CollisionCircle;
 	struct CollisionData:public elipmocframework::has_delete_flag {
 		const CollisionCircle& m_collision;
+		
 		CollisionData(const CollisionCircle& collision) noexcept:m_collision(collision) {
 
 		}
+		//あたり判定有効かどうか
+		bool IsEnable()const noexcept{ return m_enableFlag; }
+		//あたり判定有効化する
+		void Enable()noexcept { m_enableFlag = true; };
+		//あたり判定無効化する
+		void Disable()noexcept { m_enableFlag = false; };
+		//削除要求をだす
 		void EnableDelete() noexcept{ delete_flag = true; }
 	private:
-
+		//あたり判定有効フラグ
+		bool m_enableFlag = true;
 	};
 
 	//円のあたり判定
@@ -57,6 +66,12 @@ namespace game {
 		double GetR()const noexcept{ return m_r; }
 		void SetR(const double r) noexcept{ m_r = r; }
 
+		//あたり判定有効かどうか
+		bool IsEnable()const noexcept { return m_colliData.IsEnable(); }
+		//あたり判定有効化する
+		void Enable()noexcept { m_colliData.Enable(); };
+		//あたり判定無効化する
+		void Disable()noexcept { m_colliData.Disable(); };
 
 		//あたり判定計算
 		void HitCheck(const CollisionCircle& cc)const {

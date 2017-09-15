@@ -11,6 +11,7 @@ namespace game {
 	{
 		m_colliObject->SetCollisionID(CollisionID::BarrierID);
 		m_colliObject->SetR(60);
+		m_colliObject->Disable();
 		m_offsetpos[0] = { DISTANCE,0 };
 		m_offsetpos[1] = { DISTANCE,DISTANCE };
 		m_offsetpos[2] = { 0,DISTANCE };

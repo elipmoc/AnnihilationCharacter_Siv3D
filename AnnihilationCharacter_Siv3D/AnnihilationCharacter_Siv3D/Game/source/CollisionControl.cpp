@@ -23,7 +23,8 @@ namespace game {
 		//‚ ‚½‚è”»’è‚·‚é
 		for (size_t i = 0; i < m_collisions.size(); i++) {
 			for (size_t j = i + 1; j < m_collisions.size(); j++) {
-				m_collisions[i]->m_collision.HitCheck(m_collisions[j]->m_collision);
+				if(m_collisions[i]->IsEnable()&& m_collisions[j]->IsEnable())
+					m_collisions[i]->m_collision.HitCheck(m_collisions[j]->m_collision);
 			}
 		}
 	}
