@@ -11,7 +11,6 @@ namespace game {
 
 	//次の地形をセットする
 	void TerrainControl::NextTerrainLoad() {
-		static size_t index = 0;
 		m_offset = 0;
 		for (size_t i = 0; i < LANE_NUM; i++) {
 			//先頭のデータを一つ削除

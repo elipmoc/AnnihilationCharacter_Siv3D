@@ -24,6 +24,8 @@ namespace game {
 		bool IsFinished() { return finishedFlag; }
 		void Update();
 	private:
+		//地形のインデックス
+		size_t index = 0;
 
 		//エリア終了フラグ
 		bool finishedFlag = false;
