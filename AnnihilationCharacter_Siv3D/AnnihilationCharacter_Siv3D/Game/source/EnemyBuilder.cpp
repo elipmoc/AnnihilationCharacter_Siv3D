@@ -9,7 +9,9 @@
 #include "TestEnemyModel.hpp"
 #include "EnemyModel\Model01.hpp"
 #include "EnemyModel\Model02.hpp"
+#include "EnemyModel\Model03.hpp"
 #include "EnemyBarrage\HorizontalShotOne.hpp"
+#include "EnemyBarrage\HorizontalShotOnes.hpp"
 #include "EnemyBarrage\HorizontalShot3Way.hpp"
 
 namespace game {
@@ -25,11 +27,13 @@ namespace game {
 	EnemyBuilder::EnemyBuilderImpl::EnemyBuilderImpl() {
 		m_barrageMap["TestBarrage"] = std::make_unique<MakeBarrageGenerator<TestBarrage>>();
 		m_barrageMap["HorizontalShotOne"] = std::make_unique<MakeBarrageGenerator<HorizontalShotOne>>();
+		m_barrageMap["HorizontalShotOnes"] = std::make_unique<MakeBarrageGenerator<HorizontalShotOnes>>();
 		m_barrageMap["HorizontalShot3Way"] = std::make_unique<MakeBarrageGenerator<HorizontalShot3Way>>();
 		m_actionMap["TestAction"] = std::make_unique<TestEnemyAction>();
 		m_modelMap["TestModel"] = std::make_unique<TestEnemyModel>();
 		m_modelMap["Model01"] = std::make_unique<Model01>();
 		m_modelMap["Model02"] = std::make_unique<Model02>();
+		m_modelMap["Model03"] = std::make_unique<Model03>();
 	}
 
 
