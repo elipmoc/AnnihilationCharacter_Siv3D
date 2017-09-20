@@ -13,7 +13,7 @@ namespace game {
 	void Player::Move(const std::unique_ptr<TerrainControl>& terrainControl) {		
 
 		//バリア起動
-		if (siv::Input::KeyShift.clicked && m_barrier->IsBarrier()==false && m_barrierCount!=0) {
+		if (siv::Input::KeyX.clicked && m_barrier->IsBarrier()==false && m_barrierCount!=0) {
 			m_barrier->SetBarrier();
 			m_barrierCount--;
 		}
@@ -47,7 +47,7 @@ namespace game {
 			if (i == -1)m_underLane = -1;
 		}
 		//ジャンプ
-		if (siv::Input::KeySpace.clicked &&m_jumpCount < 3) {
+		if (siv::Input::KeyZ.clicked &&m_jumpCount < 3) {
 			m_yv = -7;
 			m_jumpCount++;
 		}
