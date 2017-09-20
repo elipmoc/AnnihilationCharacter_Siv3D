@@ -20,8 +20,13 @@ namespace game {
 		}
 
 		TerrainControl();
+		//エリアの末端まで行ったかどうか
+		bool IsFinished() { return finishedFlag; }
 		void Update();
 	private:
+
+		//エリア終了フラグ
+		bool finishedFlag = false;
 
 		//現在画面に表示されている地形
 		std::deque<bool> m_activeTerrains[LANE_NUM];

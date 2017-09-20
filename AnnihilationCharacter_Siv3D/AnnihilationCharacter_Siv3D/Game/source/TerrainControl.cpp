@@ -19,7 +19,9 @@ namespace game {
 			//最後尾に新しい地形データをセットする
 			m_activeTerrains[i].push_back(GameMaster::GetInstance().GetTerrainData(i)[index]);
 		}
-		index = (index+1)% GameMaster::GetInstance().GetTerrainData(0).size();
+		index++;
+		if (index == GameMaster::GetInstance().GetTerrainData(0).size())
+			finishedFlag = true;
 	}
 
 	void TerrainControl::Update()
