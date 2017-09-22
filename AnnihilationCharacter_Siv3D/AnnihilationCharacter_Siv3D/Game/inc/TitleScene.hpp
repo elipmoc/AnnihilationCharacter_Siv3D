@@ -21,7 +21,7 @@ namespace game {
 		virtual void update()override {
 			m_titleParticle.Update();
 			if (siv::Input::KeyEnter.clicked)
-				changeScene(L"SelectPlayer");
+				changeScene(L"LevelSelect");
 			m_angle+=3;
 		}
 

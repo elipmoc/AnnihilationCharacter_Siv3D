@@ -10,6 +10,7 @@
 #include "EnemyModel\Model01.hpp"
 #include "EnemyModel\Model02.hpp"
 #include "EnemyModel\Model03.hpp"
+#include "EnemyModel\Model04.hpp"
 #include "EnemyBarrage\HorizontalShotOne.hpp"
 #include "EnemyBarrage\HorizontalShotOnes.hpp"
 #include "EnemyBarrage\HorizontalShot3Way.hpp"
@@ -34,6 +35,7 @@ namespace game {
 		m_modelMap["Model01"] = std::make_unique<Model01>();
 		m_modelMap["Model02"] = std::make_unique<Model02>();
 		m_modelMap["Model03"] = std::make_unique<Model03>();
+		m_modelMap["Model04"] = std::make_unique<Model04>();
 	}
 
 

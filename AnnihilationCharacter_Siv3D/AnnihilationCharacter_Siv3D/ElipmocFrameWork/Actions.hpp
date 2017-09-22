@@ -1,6 +1,6 @@
 #pragma once
 #include "Action.hpp"
-#include "FontObject.hpp"
+#include "FontObjectBase.hpp"
 namespace elipmocframework {
 
 	//ˆÚ“®ƒAƒNƒVƒ‡ƒ“-----------------------------------------------------------------------------------------

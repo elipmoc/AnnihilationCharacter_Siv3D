@@ -4,16 +4,16 @@
 #include "Interface.hpp"
 namespace elipmocframework {
 
-	class FontObject;
+	class FontObjectBase;
 	class ActionList;
 	//アクション基底クラス-----------------------------------------------------------------
 	class ActionBase :public has_delete_flag{
 		using ActionPtr=std::unique_ptr<ActionBase>;
 		friend ActionList;
-		void SetFontObject(FontObject* f)noexcept { m_f = f; }
+		void SetFontObject(FontObjectBase* f)noexcept { m_f = f; }
 		void SetNextAction(ActionPtr&& nextAction)noexcept { m_nextAction=std::move(nextAction); }
 	protected:
-		FontObject* m_f;
+		FontObjectBase* m_f;
 		//次に実行されるアクション
 		ActionPtr m_nextAction=nullptr;
 	public:

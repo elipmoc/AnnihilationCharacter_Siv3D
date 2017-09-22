@@ -1,10 +1,11 @@
 #pragma once
 #include <string>
+#include "FontObjectBase.hpp"
 #include "Action.hpp"
 #include "ActionList.hpp"
 namespace elipmocframework {
 	//フォントオブジェクト
-	class FontObject {
+	class FontObject:public FontObjectBase {
 		double m_scale=1;
 		const siv::Font m_font;
 		siv::String m_text;
@@ -18,29 +19,30 @@ namespace elipmocframework {
 
 
 	public:
-		FontObject& AddAction(std::unique_ptr<ActionBase>&& action) {
+		virtual FontObject& AddAction(std::unique_ptr<ActionBase>&& action)
+		override final{
 			m_actionList.push_back(std::move(action));
 			return *this;
 		}
 
 		//posの参照を得る
-		const siv::Vec2& GetRefPos() { return m_pos; }
+		virtual const siv::Vec2& GetRefPos() override final{ return m_pos; }
 
 		//posアクセサ
-		siv::Vec2 GetPos()const noexcept { return m_pos; }
-		FontObject& SetPos(const siv::Vec2& _pos) noexcept{ m_pos = _pos; return *this; }
+		virtual siv::Vec2 GetPos()const noexcept override final{ return m_pos; }
+		virtual FontObject& SetPos(const siv::Vec2& _pos) noexcept override final{ m_pos = _pos; return *this; }
 
 		//scaleアクセサ
-		double GetScale() const noexcept{ return m_scale; };
-		FontObject& SetScale(double _scale)noexcept { m_scale = _scale; return *this; }
+		virtual double GetScale() const noexcept override final{ return m_scale; };
+		virtual FontObject& SetScale(double _scale)noexcept override final{ m_scale = _scale; return *this; }
 
 		//textアクセサ
-		siv::String GetText() const noexcept{ return m_text; }
-		FontObject& SetText(const siv::String& _text) noexcept{ m_text = _text; return *this; }
+		virtual siv::String GetText() const noexcept override final{ return m_text; }
+		virtual FontObject& SetText(const siv::String& _text) noexcept override final{ m_text = _text; return *this; }
 
 		//Colorアクセサ
-		siv::Color GetColor()const noexcept{ return m_color; }
-		FontObject& SetColor(const siv::Color& color) noexcept{ m_color = color; return *this; }
+		virtual siv::Color GetColor()const noexcept override final{ return m_color; }
+		virtual FontObject& SetColor(const siv::Color& color) noexcept override final{ m_color = color; return *this; }
 
 		FontObject(int fontsize=20) :m_scale(1),m_font(fontsize) ,m_actionList(this){
 
@@ -54,17 +56,17 @@ namespace elipmocframework {
 
 		}
 
-		virtual void Update() {
+		virtual void Update() override {
 			m_actionList.Update();
 		}
 
-		void Draw() const{
+		virtual void Draw() const override final{
 			siv::Mat3x2 mat = siv::Mat3x2::Scale(m_scale, m_pos);
 			siv::Transformer2D t(mat, false);
 			m_font(m_text).draw(m_pos,m_color);
 		}
 
-		void DrawCenter()const {
+		virtual void DrawCenter()const  override final{
 			siv::Mat3x2 mat = siv::Mat3x2::Scale(m_scale, m_pos);
 			siv::Transformer2D t(mat, false);
 			m_font(m_text).drawCenter(m_pos, m_color);

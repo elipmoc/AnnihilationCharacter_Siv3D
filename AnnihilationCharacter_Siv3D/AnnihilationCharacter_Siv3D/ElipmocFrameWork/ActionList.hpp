@@ -6,10 +6,10 @@ namespace elipmocframework {
 	//アクションリスト
 	class ActionList {
 		std::vector<std::unique_ptr<ActionBase>> actions;
-		FontObject* m_f;
+		FontObjectBase* m_f;
 	public:
 
-		ActionList(FontObject* f) :m_f(f) {};
+		ActionList(FontObjectBase* f) :m_f(f) {};
 
 		//アクション追加
 		ActionList& push_back(std::unique_ptr<ActionBase>&& action) {

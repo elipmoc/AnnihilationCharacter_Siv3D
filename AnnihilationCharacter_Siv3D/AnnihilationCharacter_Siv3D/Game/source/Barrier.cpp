@@ -22,6 +22,8 @@ namespace game {
 		m_offsetpos[7] = { DISTANCE,-DISTANCE };
 		for (size_t i = 0; i < WALL_NUM; i++) {
 			walls[i] = std::make_unique<elipmocframework::GlowText>(siv::Font(),L"•Ç",40);
+			walls[i]->SetGlowColor({ 40,120,200 });
+			walls[i]->SetColor(siv::Palette::Lightpink);
 		}
 	}
 	Barrier::~Barrier()
@@ -36,11 +38,13 @@ namespace game {
 	{
 		if (count != ENABLE_TIME) {
 			for (size_t i = 0; i < WALL_NUM; i++)
-				walls[i]->drawCenter(bind_playerPos + m_offsetpos[i], { 40,120,200 }, siv::Palette::Lightpink);// DrawCenter();
+				walls[i]->DrawCenter();
 		}
 	}
 	void Barrier::Update()
 	{
+		for (size_t i = 0; i < WALL_NUM; i++)
+			walls[i]->SetPos(bind_playerPos + m_offsetpos[i]);
 		if (count != ENABLE_TIME) {
 			count++;
 			if (count == ENABLE_TIME)

@@ -172,6 +172,7 @@
     <ClCompile Include="Game\source\EnemyBarrage\HorizontalShotOnes.cpp" />
     <ClCompile Include="Game\source\EnemyBuilder.cpp" />
     <ClCompile Include="Game\source\GameMaster.cpp" />
+    <ClCompile Include="Game\source\LevelSelectScene.cpp" />
     <ClCompile Include="Game\source\LoadFileEnemyInfo.cpp" />
     <ClCompile Include="Game\source\TestBarrage.cpp" />
     <ClCompile Include="Game\source\BarrageBase.cpp" />
@@ -312,6 +313,7 @@
     <ClInclude Include="ElipmocFrameWork\ActionList.hpp" />
     <ClInclude Include="ElipmocFrameWork\Actions.hpp" />
     <ClInclude Include="ElipmocFrameWork\FontObject.hpp" />
+    <ClInclude Include="ElipmocFrameWork\FontObjectBase.hpp" />
     <ClInclude Include="ElipmocFrameWork\GlowText.hpp" />
     <ClInclude Include="ElipmocFrameWork\Interface.hpp" />
     <ClInclude Include="ElipmocFrameWork\ObjectPool.hpp" />
@@ -342,6 +344,7 @@
     <ClInclude Include="Game\inc\EnemyModel\Model01.hpp" />
     <ClInclude Include="Game\inc\EnemyModel\Model02.hpp" />
     <ClInclude Include="Game\inc\EnemyModel\Model03.hpp" />
+    <ClInclude Include="Game\inc\EnemyModel\Model04.hpp" />
     <ClInclude Include="Game\inc\GameMaster.hpp" />
     <ClInclude Include="Game\inc\GameOverScene.hpp" />
     <ClInclude Include="Game\inc\GameScene.hpp" />
@@ -360,6 +363,7 @@
     <ClInclude Include="Game\inc\TitleParticle.hpp" />
     <ClInclude Include="Game\inc\TitleScene.hpp" />
     <ClInclude Include="Game\inc\EnemyBarrage\HorizontalShotOne.hpp" />
+    <ClInclude Include="Game\inc\LevelSelectScene.hpp" />
     <ClInclude Include="UseSiv3D.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

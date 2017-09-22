@@ -9,4 +9,4 @@
 {"TestAction",{800,250},{600,400},{800,300},120,700,400,"HorizontalShot3Way",200,"Model02"}
 {"TestAction",{800,250},{600,100},{800,480},120,720,400,"HorizontalShot3Way",200,"Model02"}
 {"TestAction",{800,250},{600,100},{600,600},120,800,400,"HorizontalShotOnes",200,"Model03"}
-{"TestAction",{800,100},{600,400},{800,100},250,850,600,"HorizontalShotOnes",200,"Model03"}
+{"TestAction",{800,100},{600,400},{800,100},280,850,600,"HorizontalShotOnes",200,"Model03"}

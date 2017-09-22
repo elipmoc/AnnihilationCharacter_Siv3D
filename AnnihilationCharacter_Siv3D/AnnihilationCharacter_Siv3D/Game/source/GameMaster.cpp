@@ -1,5 +1,6 @@
 #include "GameMaster.hpp"
 #include "TitleScene.hpp"
+#include "LevelSelectScene.hpp"
 #include "SelectPlayerScene.hpp"
 #include "GameOverScene.hpp"
 #include "GameScene.hpp"
@@ -51,6 +52,7 @@ namespace game {
 		//シーンセット
 		m_mySceneManager->add<TitleScene>(L"Title");
 		m_mySceneManager->add<SelectPlayerScene>(L"SelectPlayer");
+		m_mySceneManager->add<LevelSelectScene>(L"LevelSelect");
 		m_mySceneManager->add<GameScene>(L"Game");
 		m_mySceneManager->add<GameOverScene>(L"GameOver");
 
