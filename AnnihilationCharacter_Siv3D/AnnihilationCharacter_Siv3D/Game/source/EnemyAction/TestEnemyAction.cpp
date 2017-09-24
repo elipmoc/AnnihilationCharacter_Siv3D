@@ -15,7 +15,7 @@ namespace game {
 		const siv::Vec2& endPos,
 		const int waitTime
 	)const{
-		return elipmocframework::ScaleAction::Create(1, 30) <<
+		return 
 			MoveAction::Create(endPos, 50) <<
 			WaitAction::Create(waitTime)<<
 			MoveAction::Create(stopPos, 180);

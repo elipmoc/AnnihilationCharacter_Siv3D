@@ -44,6 +44,7 @@ namespace game {
 		m_enemyInfoList.push_back(std::move(info3));*/
 	}
 
+
 	EnemyControl::~EnemyControl() = default;
 
 	void EnemyControl::Draw() const

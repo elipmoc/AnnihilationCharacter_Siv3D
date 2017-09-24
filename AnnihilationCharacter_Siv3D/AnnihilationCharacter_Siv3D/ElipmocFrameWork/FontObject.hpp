@@ -7,7 +7,7 @@ namespace elipmocframework {
 	//フォントオブジェクト
 	class FontObject:public FontObjectBase {
 		double m_scale=1;
-		const siv::Font m_font;
+		siv::Font m_font;
 		siv::String m_text;
 		siv::Vec2 m_pos;
 		//文字色
@@ -34,7 +34,12 @@ namespace elipmocframework {
 
 		//scaleアクセサ
 		virtual double GetScale() const noexcept override final{ return m_scale; };
-		virtual FontObject& SetScale(double _scale)noexcept override final{ m_scale = _scale; return *this; }
+		virtual FontObject& SetScale(double _scale)noexcept override final{ 
+			//if (m_scale == _scale)return *this;
+			m_scale = _scale;
+			m_font = siv::Font(m_scale);
+			return *this;
+		}
 
 		//textアクセサ
 		virtual siv::String GetText() const noexcept override final{ return m_text; }
@@ -61,14 +66,15 @@ namespace elipmocframework {
 		}
 
 		virtual void Draw() const override final{
-			siv::Mat3x2 mat = siv::Mat3x2::Scale(m_scale, m_pos);
-			siv::Transformer2D t(mat, false);
+			//siv::Mat3x2 mat = siv::Mat3x2::Scale(m_scale, m_pos);
+			//siv::Transformer2D t(mat, false);
 			m_font(m_text).draw(m_pos,m_color);
 		}
-
+		
 		virtual void DrawCenter()const  override final{
-			siv::Mat3x2 mat = siv::Mat3x2::Scale(m_scale, m_pos);
-			siv::Transformer2D t(mat, false);
+			//siv::Mat3x2 mat = siv::Mat3x2::Scale(m_scale, m_pos);
+			//siv::Transformer2D t(mat, false);
+			//siv::Graphics2D::SetTransform(siv::Mat3x2::Scale(m_scale, m_pos));
 			m_font(m_text).drawCenter(m_pos, m_color);
 		}
 

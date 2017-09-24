@@ -30,12 +30,12 @@ namespace game {
 		//enterキーの処理
 		if (siv::Input::KeyEnter.clicked) {
 
-			//主人公の文字を設定してシーンを遷移する
-		//	m_data->player = m_playerFonts[m_selectIndex]->GetText();
+			//難易度を設定してシーンを遷移する
+			m_data->level = static_cast<Level>(m_selectIndex);
 			changeScene(L"SelectPlayer");
 		}
 
-		//左右キーの処理。押されてたら、文字に拡大縮小アニメーションを設定する
+		//上下キーの処理。押されてたら、文字に拡大縮小アニメーションを設定する
 		if ((siv::Input::KeyUp.clicked || siv::Input::KeyDown.clicked) && m_actionInterval == 0) {
 			m_actionInterval = 5;
 			auto pos=m_levelFonts[m_selectIndex]->GetPos();
