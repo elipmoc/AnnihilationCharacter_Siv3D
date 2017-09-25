@@ -24,6 +24,10 @@ namespace game {
 
 	int GetNum(int& index, const std::string& buf) {
 		std::string numstr = "";
+		if (index < buf.size() && buf[index] == '-') {
+			numstr += buf[index];
+			index++;
+		}
 		while (index < buf.size() && isdigit(buf[index])) {
 			numstr += buf[index];
 			index++;

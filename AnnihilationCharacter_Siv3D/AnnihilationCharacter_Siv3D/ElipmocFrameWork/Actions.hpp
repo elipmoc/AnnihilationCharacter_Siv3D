@@ -33,6 +33,28 @@ namespace elipmocframework {
 		}
 	};
 
+	//移動アクション2-----------------------------------------------------------------------------------------
+	//ずっと移動量を加算し続けるだけ
+	class Move2Action :public ActionBase {
+
+		//変化量
+		const siv::Vec2 deltaPos;
+		//( _endPos=終着地点 , _interval=実行時間)
+		Move2Action(const siv::Vec2& _deltaPos)noexcept :deltaPos(_deltaPos) {}
+	public:
+
+
+		static std::unique_ptr<ActionBase> Create(const siv::Vec2& _deltaPos) {
+			return std::unique_ptr<ActionBase>(new Move2Action(_deltaPos));
+		}
+
+		virtual void Init() noexcept override {
+		}
+		virtual void Update()noexcept override {
+			m_f->SetPos(m_f->GetPos() + deltaPos);
+		}
+	};
+
 
 	//拡大縮小アクション-----------------------------------------------------
 	class ScaleAction :public ActionBase {

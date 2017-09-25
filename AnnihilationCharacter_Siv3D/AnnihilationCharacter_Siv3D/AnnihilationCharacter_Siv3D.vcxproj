@@ -167,9 +167,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Game\source\Barrier.cpp" />
+    <ClCompile Include="Game\source\EnemyAction\EnemyAction2.cpp" />
     <ClCompile Include="Game\source\EnemyBarrage\HorizontalShot3Way.cpp" />
     <ClCompile Include="Game\source\EnemyBarrage\HorizontalShotOne.cpp" />
     <ClCompile Include="Game\source\EnemyBarrage\HorizontalShotOnes.cpp" />
+    <ClCompile Include="Game\source\EnemyBarrage\UpShot.cpp" />
     <ClCompile Include="Game\source\EnemyBuilder.cpp" />
     <ClCompile Include="Game\source\GameMaster.cpp" />
     <ClCompile Include="Game\source\LevelSelectScene.cpp" />
@@ -334,8 +336,10 @@
     <ClInclude Include="Game\inc\define.hpp" />
     <ClInclude Include="Game\inc\EnemyActionBase.hpp" />
     <ClInclude Include="Game\inc\Enemy.hpp" />
+    <ClInclude Include="Game\inc\EnemyAction\EnemyAction2.hpp" />
     <ClInclude Include="Game\inc\EnemyBarrage\HorizontalShot3Way.hpp" />
     <ClInclude Include="Game\inc\EnemyBarrage\HorizontalShotOnes.hpp" />
+    <ClInclude Include="Game\inc\EnemyBarrage\UpShot.hpp" />
     <ClInclude Include="Game\inc\EnemyBuilder.hpp" />
     <ClInclude Include="Game\inc\EnemyControl.hpp" />
     <ClInclude Include="Game\inc\EnemyInfo.hpp" />
