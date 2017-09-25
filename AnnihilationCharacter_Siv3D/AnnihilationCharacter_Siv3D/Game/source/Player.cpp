@@ -77,12 +77,14 @@ namespace game {
 		m_deadParticle->Set(GetPos());
 		SetPos({ 0,0 });
 		m_yv = 0;
+		m_jumpCount = 0;
 		m_mutekiCount = MUTEKI_TIME;
 	}
 
 	void Player::PlayerFallDead()
 	{
 		if (m_hp != 0)m_hp--;
+		m_jumpCount = 0;
 		m_deadParticle->Set(GetPos());
 		SetPos({ 0,0 });
 		m_yv = 0;

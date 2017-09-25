@@ -4,7 +4,7 @@
 #include "EnemyActionBase.hpp"
 #include "BarrageBase.hpp"
 #include "FontObject.hpp"
-#include "TestBarrage.hpp"
+//#include "TestBarrage.hpp"
 #include "EnemyAction\TestEnemyAction.hpp"
 #include "TestEnemyModel.hpp"
 #include "EnemyModel\Model01.hpp"
@@ -21,12 +21,12 @@ namespace game {
 		std::map<std::string, std::unique_ptr<EnemyActionBase>> m_actionMap;
 		std::map<std::string, std::unique_ptr<EnemyModelInfoGenerator>> m_modelMap;
 	public:
-		std::unique_ptr<Enemy> EnemyBuild(const EnemyInfo&);
+		std::unique_ptr<Enemy> EnemyBuild(const EnemyInfo&,const Level);
 		EnemyBuilderImpl();
 	};
 
 	EnemyBuilder::EnemyBuilderImpl::EnemyBuilderImpl() {
-		m_barrageMap["TestBarrage"] = std::make_unique<MakeBarrageGenerator<TestBarrage>>();
+		//m_barrageMap["TestBarrage"] = std::make_unique<MakeBarrageGenerator<TestBarrage>>();
 		m_barrageMap["HorizontalShotOne"] = std::make_unique<MakeBarrageGenerator<HorizontalShotOne>>();
 		m_barrageMap["HorizontalShotOnes"] = std::make_unique<MakeBarrageGenerator<HorizontalShotOnes>>();
 		m_barrageMap["HorizontalShot3Way"] = std::make_unique<MakeBarrageGenerator<HorizontalShot3Way>>();
@@ -39,7 +39,7 @@ namespace game {
 	}
 
 
-	std::unique_ptr<Enemy> EnemyBuilder::EnemyBuilderImpl::EnemyBuild(const EnemyInfo& info)
+	std::unique_ptr<Enemy> EnemyBuilder::EnemyBuilderImpl::EnemyBuild(const EnemyInfo& info, const Level level)
 	{
 		using elipmocframework::FontObject;
 		auto&& enemyFont = std::make_unique<FontObject>(12,L"‚l‚r ‚oƒSƒVƒbƒN");
@@ -50,14 +50,14 @@ namespace game {
 				info.lifeTime,
 				info.barrageStartTime,
 				m_modelMap[info.model]->GenerateEnemyModelInfo(),
-				m_barrageMap[info.barrage]->GenerateBarrage(enemyFont->GetRefPos()),
+				m_barrageMap[info.barrage]->GenerateBarrage(level,enemyFont->GetRefPos()),
 				std::move(enemyFont)
 				);
 	}
 
-	std::unique_ptr<Enemy> EnemyBuilder::EnemyBuild(const EnemyInfo& info)
+	std::unique_ptr<Enemy> EnemyBuilder::EnemyBuild(const EnemyInfo& info,const Level level)
 	{
-		return impl.EnemyBuild(info);
+		return impl.EnemyBuild(info,level);
 	}	
 	
 	//ƒCƒ“ƒXƒ^ƒ“ƒX‰»

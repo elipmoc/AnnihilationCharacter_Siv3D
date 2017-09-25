@@ -35,7 +35,6 @@ namespace elipmocframework {
 		//scaleアクセサ
 		virtual double GetScale() const noexcept override final{ return m_scale; };
 		virtual FontObject& SetScale(double _scale)noexcept override final{ 
-			//if (m_scale == _scale)return *this;
 			m_scale = _scale;
 			m_font = siv::Font(m_scale);
 			return *this;

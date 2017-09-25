@@ -1,5 +1,6 @@
 #pragma once
 #include "EnemyInfo.hpp"
+#include "SceneBase.hpp"
 
 namespace game {
 	class Enemy;
@@ -8,6 +9,6 @@ namespace game {
 		class EnemyBuilderImpl;
 		static EnemyBuilderImpl impl;
 	public:
-		static std::unique_ptr<Enemy> EnemyBuild(const EnemyInfo&);
+		static std::unique_ptr<Enemy> EnemyBuild(const EnemyInfo&,const Level level);
 	};
 }

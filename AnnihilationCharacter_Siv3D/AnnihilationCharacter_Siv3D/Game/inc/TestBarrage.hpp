@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include "BarrageBase.hpp"
 
 namespace game {
@@ -9,4 +9,4 @@ namespace game {
 		TestBarrage(Args&&...args):BarrageBase(100,std::forward<Args>(args)...) {}
 		virtual void Update()override final;
 	};
-}
+}*/

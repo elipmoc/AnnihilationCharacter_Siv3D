@@ -6,7 +6,8 @@ namespace game {
 		int count = 0;
 	public:
 		template<class... Args>
-		HorizontalShotOne(Args&&...args) :BarrageBase(1, std::forward<Args>(args)...) {}
-		virtual void Update()override final;
+		HorizontalShotOne(Args&&...args) :BarrageBase(5, std::forward<Args>(args)...) {}
+		virtual void NormalUpdate()override final;
+		virtual void RengokuUpdate()override final;
 	};
 }
