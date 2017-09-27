@@ -76,7 +76,7 @@ namespace game {
 		while (siv::System::Update() && m_mySceneManager->updateAndDraw()) {
 			siv::Println(elipmocframework::ObjectPoolCount::count);
 			game::CollisionControl::GetInstance().Update();
-		//	game::CollisionControl::GetInstance().DebugDraw();
+			//game::CollisionControl::GetInstance().DebugDraw();
 		}
 	}
 

@@ -16,6 +16,7 @@
 #include "EnemyBarrage\HorizontalShotOne.hpp"
 #include "EnemyBarrage\HorizontalShotOnes.hpp"
 #include "EnemyBarrage\HorizontalShot3Way.hpp"
+#include "EnemyBarrage\HomingShot.hpp"
 
 namespace game {
 
@@ -26,6 +27,7 @@ namespace game {
 		m_barrageMap["HorizontalShotOne"] = std::make_unique<MakeBarrageGenerator<HorizontalShotOne>>();
 		m_barrageMap["HorizontalShotOnes"] = std::make_unique<MakeBarrageGenerator<HorizontalShotOnes>>();
 		m_barrageMap["HorizontalShot3Way"] = std::make_unique<MakeBarrageGenerator<HorizontalShot3Way>>();
+		m_barrageMap["HomingShot"] = std::make_unique<MakeBarrageGenerator<HomingShot>>();
 		m_barrageMap["UpShot"] = std::make_unique<MakeBarrageGenerator<UpShot>>();
 		m_actionMap["Action1"] = std::make_unique<TestEnemyAction>();
 		m_actionMap["Action2"] = std::make_unique<EnemyAction2>();
