@@ -5,9 +5,10 @@
 #include "GameMaster.hpp"
 
 namespace game {
-	EnemyControl::EnemyControl(const Level level):
+	EnemyControl::EnemyControl(const Level level,const siv::Vec2& playerBindPos):
 		m_level(level),
-		m_enemyList(std::make_unique<EnemyList>())
+		m_enemyList(std::make_unique<EnemyList>()),
+		m_enemyBuilder(std::make_unique<EnemyBuilder>(playerBindPos))
 	{
 
 		
@@ -29,7 +30,7 @@ namespace game {
 			)
 		{
 			m_enemyList->push_back(
-				EnemyBuilder::EnemyBuild(*GameMaster::GetInstance().GetEnemyInfoList()[index],m_level)
+				m_enemyBuilder->EnemyBuild(*GameMaster::GetInstance().GetEnemyInfoList()[index],m_level)
 			);
 			index++;
 		}

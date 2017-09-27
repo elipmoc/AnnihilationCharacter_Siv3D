@@ -2,11 +2,10 @@
 #include "BarrageBase.hpp"
 
 namespace game {
-	class UpShot :public BarrageBase {
-		int count = 0;
+	class HomingShot :public BarrageBase {
 	public:
 		template<class... Args>
-		UpShot(Args&&...args) :BarrageBase(30, std::forward<Args>(args)...) {}
+		HomingShot(Args&&...args) :BarrageBase(30, std::forward<Args>(args)...) {}
 		virtual void NormalUpdate()override final;
 		virtual void RengokuUpdate()override final;
 	};

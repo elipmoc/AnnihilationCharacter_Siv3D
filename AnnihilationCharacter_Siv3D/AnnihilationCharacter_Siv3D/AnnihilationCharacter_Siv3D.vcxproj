@@ -168,6 +168,7 @@
   <ItemGroup>
     <ClCompile Include="Game\source\Barrier.cpp" />
     <ClCompile Include="Game\source\EnemyAction\EnemyAction2.cpp" />
+    <ClCompile Include="Game\source\EnemyBarrage\HomingShot.cpp" />
     <ClCompile Include="Game\source\EnemyBarrage\HorizontalShot3Way.cpp" />
     <ClCompile Include="Game\source\EnemyBarrage\HorizontalShotOne.cpp" />
     <ClCompile Include="Game\source\EnemyBarrage\HorizontalShotOnes.cpp" />
@@ -337,6 +338,7 @@
     <ClInclude Include="Game\inc\EnemyActionBase.hpp" />
     <ClInclude Include="Game\inc\Enemy.hpp" />
     <ClInclude Include="Game\inc\EnemyAction\EnemyAction2.hpp" />
+    <ClInclude Include="Game\inc\EnemyBarrage\HomingShot.hpp" />
     <ClInclude Include="Game\inc\EnemyBarrage\HorizontalShot3Way.hpp" />
     <ClInclude Include="Game\inc\EnemyBarrage\HorizontalShotOnes.hpp" />
     <ClInclude Include="Game\inc\EnemyBarrage\UpShot.hpp" />

@@ -18,16 +18,10 @@
 #include "EnemyBarrage\HorizontalShot3Way.hpp"
 
 namespace game {
-	class EnemyBuilder::EnemyBuilderImpl {
-		std::map<std::string, std::unique_ptr<BarrageGenerator>> m_barrageMap;
-		std::map<std::string, std::unique_ptr<EnemyActionBase>> m_actionMap;
-		std::map<std::string, std::unique_ptr<EnemyModelInfoGenerator>> m_modelMap;
-	public:
-		std::unique_ptr<Enemy> EnemyBuild(const EnemyInfo&,const Level);
-		EnemyBuilderImpl();
-	};
 
-	EnemyBuilder::EnemyBuilderImpl::EnemyBuilderImpl() {
+	EnemyBuilder::EnemyBuilder(const siv::Vec2& playerBindPos)
+		:m_playerBindPos(playerBindPos)
+	{
 		//m_barrageMap["TestBarrage"] = std::make_unique<MakeBarrageGenerator<TestBarrage>>();
 		m_barrageMap["HorizontalShotOne"] = std::make_unique<MakeBarrageGenerator<HorizontalShotOne>>();
 		m_barrageMap["HorizontalShotOnes"] = std::make_unique<MakeBarrageGenerator<HorizontalShotOnes>>();
@@ -42,8 +36,12 @@ namespace game {
 		m_modelMap["Model04"] = std::make_unique<Model04>();
 	}
 
+	EnemyBuilder::~EnemyBuilder()
+	{
+	}
 
-	std::unique_ptr<Enemy> EnemyBuilder::EnemyBuilderImpl::EnemyBuild(const EnemyInfo& info, const Level level)
+
+	std::unique_ptr<Enemy> EnemyBuilder::EnemyBuild(const EnemyInfo& info, const Level level)
 	{
 		using elipmocframework::FontObject;
 		auto&& enemyFont = std::make_unique<FontObject>(12,L"‚l‚r ‚oƒSƒVƒbƒN");
@@ -54,16 +52,8 @@ namespace game {
 				info.lifeTime,
 				info.barrageStartTime,
 				m_modelMap[info.model]->GenerateEnemyModelInfo(),
-				m_barrageMap[info.barrage]->GenerateBarrage(level,enemyFont->GetRefPos()),
+				m_barrageMap[info.barrage]->GenerateBarrage(level,enemyFont->GetRefPos(),m_playerBindPos),
 				std::move(enemyFont)
 				);
 	}
-
-	std::unique_ptr<Enemy> EnemyBuilder::EnemyBuild(const EnemyInfo& info,const Level level)
-	{
-		return impl.EnemyBuild(info,level);
-	}	
-	
-	//ƒCƒ“ƒXƒ^ƒ“ƒX‰»
-	EnemyBuilder::EnemyBuilderImpl EnemyBuilder::impl;
 }

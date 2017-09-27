@@ -8,9 +8,10 @@ namespace game {
 		return *m_bulletList.get();
 	}
 
-	BarrageBase::BarrageBase(const size_t bulletSize,const Level level, const siv::Vec2& bindPos, const siv::Vec2& fixPos)
+	BarrageBase::BarrageBase(const size_t bulletSize,const Level level, const siv::Vec2& bindPos,const siv::Vec2& playerBindPos, const siv::Vec2& fixPos)
 		:m_bulletList(std::make_unique<BulletList>(bulletSize)),m_bindPos(bindPos),m_fixPos(fixPos),
-		m_level(level)
+		m_level(level),
+		m_playerBindPos(playerBindPos)
 	{}
 
 	BarrageBase::~BarrageBase()
