@@ -45,6 +45,10 @@ namespace game {
 					break;
 				}
 			if (i == -1)m_underLane = -1;
+			//‹}‘¬—Ž‰º
+			if (siv::Input::KeyDown.pressed)
+				//SetPos({ GetPos().x , GetPos().y+2 });
+				m_yv += 0.2;
 		}
 		//ƒWƒƒƒ“ƒv
 		if (siv::Input::KeyZ.clicked &&m_jumpCount < 3) {

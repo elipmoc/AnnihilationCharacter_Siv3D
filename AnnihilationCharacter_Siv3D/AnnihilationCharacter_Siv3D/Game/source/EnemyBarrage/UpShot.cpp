@@ -17,7 +17,7 @@ void game::UpShot::RengokuUpdate()
 		GetBulletList().MakeBullet(GetPos(), { 0,-3.2 }, { 0,0 });
 		double angle = siv::Random(-30, 30);
 		GetBulletList().MakeBullet(GetPos(), { -2*Cos(Radians(90 + angle)),-2*Sin(Radians(90 + angle)) }, { 0,0 });
-		GetBulletList().MakeBullet(GetPos(), { -2*Cos(Radians(90+angle)),-2*Sin(Radians(90+angle)) }, { 0,0 });
+		GetBulletList().MakeBullet(GetPos(), { -2*Cos(Radians(90-angle)),-2*Sin(Radians(90-angle)) }, { 0,0 });
 
 	}
 	count++;
