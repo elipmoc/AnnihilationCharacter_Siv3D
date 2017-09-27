@@ -28,7 +28,7 @@ namespace game {
 	void LevelSelectScene::update() {
 
 		//enterキーの処理
-		if (siv::Input::KeyEnter.clicked) {
+		if (siv::Input::KeyZ.clicked) {
 
 			//難易度を設定してシーンを遷移する
 			m_data->level = static_cast<Level>(m_selectIndex);

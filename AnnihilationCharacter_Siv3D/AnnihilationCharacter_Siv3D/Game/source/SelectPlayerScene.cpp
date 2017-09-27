@@ -22,7 +22,7 @@ namespace game {
 	void SelectPlayerScene::update() {
 
 		//enterキーの処理
-		if (siv::Input::KeyEnter.clicked) {
+		if (siv::Input::KeyZ.clicked) {
 
 			//主人公の文字を設定してシーンを遷移する
 			m_data->player = m_playerFonts[m_selectIndex]->GetText();

@@ -168,6 +168,7 @@
   <ItemGroup>
     <ClCompile Include="Game\source\Barrier.cpp" />
     <ClCompile Include="Game\source\EnemyAction\EnemyAction2.cpp" />
+    <ClCompile Include="Game\source\EnemyBarrage\GuruGuruShot.cpp" />
     <ClCompile Include="Game\source\EnemyBarrage\HomingShot.cpp" />
     <ClCompile Include="Game\source\EnemyBarrage\HorizontalShot3Way.cpp" />
     <ClCompile Include="Game\source\EnemyBarrage\HorizontalShotOne.cpp" />
@@ -338,6 +339,7 @@
     <ClInclude Include="Game\inc\EnemyActionBase.hpp" />
     <ClInclude Include="Game\inc\Enemy.hpp" />
     <ClInclude Include="Game\inc\EnemyAction\EnemyAction2.hpp" />
+    <ClInclude Include="Game\inc\EnemyBarrage\GuruGuruShot.hpp" />
     <ClInclude Include="Game\inc\EnemyBarrage\HomingShot.hpp" />
     <ClInclude Include="Game\inc\EnemyBarrage\HorizontalShot3Way.hpp" />
     <ClInclude Include="Game\inc\EnemyBarrage\HorizontalShotOnes.hpp" />
@@ -351,6 +353,7 @@
     <ClInclude Include="Game\inc\EnemyModel\Model02.hpp" />
     <ClInclude Include="Game\inc\EnemyModel\Model03.hpp" />
     <ClInclude Include="Game\inc\EnemyModel\Model04.hpp" />
+    <ClInclude Include="Game\inc\EnemyModel\Model05.hpp" />
     <ClInclude Include="Game\inc\GameMaster.hpp" />
     <ClInclude Include="Game\inc\GameOverScene.hpp" />
     <ClInclude Include="Game\inc\GameScene.hpp" />
