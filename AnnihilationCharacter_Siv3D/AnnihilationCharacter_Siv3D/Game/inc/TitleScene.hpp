@@ -30,7 +30,7 @@ namespace game {
 			using namespace siv::Window;
 			m_titleFont(L"Á–Å•¶š").drawCenter(Center().x, Center().y - 70);
 			m_subTitleFont(L"`AnnihilationCharacter`").drawCenter(Center().x,Center().y, siv::Palette::Gold);
-			m_guideFont(L"Start EnterKey").drawCenter(Center().x, Center().y + 40, { 0,100,255,static_cast<uint32>(128 - 127 * Sin(Radians(m_angle))) });
+			m_guideFont(L"Start ZKey").drawCenter(Center().x, Center().y + 40, { 0,100,255,static_cast<uint32>(128 - 127 * Sin(Radians(m_angle))) });
 			m_titleParticle.Draw();
 		}
 	};

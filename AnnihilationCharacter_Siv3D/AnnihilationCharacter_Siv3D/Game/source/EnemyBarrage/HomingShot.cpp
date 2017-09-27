@@ -9,7 +9,7 @@ void game::HomingShot::NormalUpdate() {
 }
 
 void game::HomingShot::RengokuUpdate(){
-	if (count%20== 0 && count <=20*3) {
+	if (count%25== 0 && count <=25*3) {
 		siv::Vec2 addPos = (GetPlayerPos() - GetPos()) / GetPos().distanceFrom(GetPlayerPos());
 		GetBulletList().MakeBullet(GetPos(), addPos * 6, { 0,0 });
 	}
