@@ -7,7 +7,7 @@ namespace game {
 		double angle = 0;
 	public:
 		template<class... Args>
-		GuruGuruShot(Args&&...args) :BarrageBase(500, std::forward<Args>(args)...) {}
+		GuruGuruShot(Args&&...args) :BarrageBase(200, std::forward<Args>(args)...) {}
 		virtual void NormalUpdate()override final;
 		virtual void RengokuUpdate()override final;
 	};

@@ -34,7 +34,7 @@ namespace game {
 		size_t m_barrierCount=3;
 
 		//移動スピード
-		static constexpr double speed=3.5;
+		static constexpr double m_speed=4;
 		//重力加速度
 		static constexpr double m_g=0.3;
 		//Yの速度
@@ -42,7 +42,7 @@ namespace game {
 		//ジャンプした回数記録
 		int m_jumpCount=0;
 		//デバック用
-		siv::Circle circle;
+		siv::Circle circle;		
 
 		//自分の足元にある地形レーン
 		int m_underLane = 2;

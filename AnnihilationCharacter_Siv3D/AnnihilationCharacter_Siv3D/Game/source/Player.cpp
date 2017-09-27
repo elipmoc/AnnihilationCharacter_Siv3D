@@ -47,7 +47,6 @@ namespace game {
 			if (i == -1)m_underLane = -1;
 			//‹}‘¬—‰º
 			if (siv::Input::KeyDown.pressed)
-				//SetPos({ GetPos().x , GetPos().y+2 });
 				m_yv += 0.2;
 		}
 		//ƒWƒƒƒ“ƒv
@@ -61,9 +60,9 @@ namespace game {
 
 		//¶‰EˆÚ“®
 		if (siv::Input::KeyRight.pressed)
-			SetPos({ GetPos().x + speed, GetPos().y });
+			SetPos({ GetPos().x + m_speed, GetPos().y });
 		if (siv::Input::KeyLeft.pressed)
-			SetPos({ GetPos().x - speed, GetPos().y });
+			SetPos({ GetPos().x - m_speed, GetPos().y });
 
 		//Œ©‚¦‚È‚¢•Ç”»’è
 		if (GetPos().x < 15)
