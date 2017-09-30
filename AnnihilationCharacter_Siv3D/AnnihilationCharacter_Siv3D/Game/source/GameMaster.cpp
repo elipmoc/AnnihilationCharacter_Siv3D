@@ -60,6 +60,10 @@ namespace game {
 			L"shot",
 			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/SE/shot.wav")
 		);
+		siv::SoundAsset::Register(
+			L"バリア",
+			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/SE/バリア.wav")
+		);
 
 		//ウインドウ設定
 		siv::Window::SetTitle(L"消滅文字 ver 1919810114514");

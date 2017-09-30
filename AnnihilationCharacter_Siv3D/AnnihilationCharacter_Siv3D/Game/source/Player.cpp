@@ -16,6 +16,7 @@ namespace game {
 		if (siv::Input::KeyX.clicked && m_barrier->IsBarrier()==false && m_barrierCount!=0) {
 			m_barrier->SetBarrier();
 			m_barrierCount--;
+			siv::SoundAsset(L"ƒoƒŠƒA").play();
 		}
 
 		//—‰º”»’è

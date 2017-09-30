@@ -63,3 +63,7 @@ ESCキー(戦闘中のみ)ポーズ
 【サイト名】フリー効果音素材 くらげ工匠
 【管理者】くらげ
 【アドレス】http://www.kurage-kosho.info/index.html
+
+【サイト名】THE MATCH-MAKERS
+【管理者】OSA
+【アドレス】http://osabisi.sakura.ne.jp/m2/

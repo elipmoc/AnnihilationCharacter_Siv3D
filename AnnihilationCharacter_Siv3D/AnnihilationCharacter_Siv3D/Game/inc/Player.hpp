@@ -13,7 +13,7 @@ namespace game {
 	class CollisionCircle;
 	class Player :public elipmocframework::FontObject {
 		//–³“GŽžŠÔ
-		static constexpr int MUTEKI_TIME = 100;
+		static constexpr int MUTEKI_TIME = 150;
 
 		//–³“GŽžŠÔƒJƒEƒ“ƒg
 		int m_mutekiCount=0;
