@@ -34,6 +34,8 @@ namespace game {
 		if ((siv::Input::KeyRight.clicked || siv::Input::KeyLeft.clicked) && m_actionInterval == 0) {
 			m_actionInterval = 5;
 			m_playerFonts[m_selectIndex]->AddAction(ScaleAction::Create(25, 5));
+			siv::SoundAsset(L"カーソル音").stop();
+			siv::SoundAsset(L"カーソル音").play();
 			if (siv::Input::KeyRight.clicked)
 				m_selectIndex = (m_selectIndex + 1) % 3;
 			else

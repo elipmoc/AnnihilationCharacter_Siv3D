@@ -38,6 +38,8 @@ namespace game {
 
 		//上下キーの処理。押されてたら、文字に拡大縮小アニメーションを設定する
 		if ((siv::Input::KeyUp.clicked || siv::Input::KeyDown.clicked) && m_actionInterval == 0) {
+			siv::SoundAsset(L"カーソル音").stop();
+			siv::SoundAsset(L"カーソル音").play();
 			m_actionInterval = 5;
 			auto pos=m_levelFonts[m_selectIndex]->GetPos();
 			m_levelFonts[m_selectIndex]->AddAction(MoveAction::Create(pos + siv::Vec2{-50,0}, 10));

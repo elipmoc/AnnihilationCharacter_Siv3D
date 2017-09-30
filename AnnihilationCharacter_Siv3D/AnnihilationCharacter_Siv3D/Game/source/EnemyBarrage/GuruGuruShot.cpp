@@ -12,6 +12,7 @@ void game::GuruGuruShot::NormalUpdate()
 			siv::Vec2 tmp = { Cos(angle + Radians(i)),Sin(angle + Radians(i)) };
 			GetBulletList().MakeBullet(GetPos(), tmp*2, -tmp*0.04);
 		}
+		siv::SoundAsset(L"shot").playMulti();
 		angle += Radians(20);
 	}
 	count++;
@@ -26,6 +27,7 @@ void game::GuruGuruShot::RengokuUpdate()
 			GetBulletList().MakeBullet(GetPos(), tmp * 2, -tmp*0.04);
 			GetBulletList().MakeBullet(GetPos(), tmp2 * 2, -tmp2*0.04);
 		}
+		siv::SoundAsset(L"shot").playMulti();
 		angle += Radians(20);
 	}
 	count++;

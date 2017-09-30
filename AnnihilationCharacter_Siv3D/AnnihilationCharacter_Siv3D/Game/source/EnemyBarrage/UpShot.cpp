@@ -3,8 +3,10 @@
 
 void game::UpShot::NormalUpdate()
 {
-	if (count%50== 0)
+	if (count % 50 == 0) {
 		GetBulletList().MakeBullet(GetPos(), { 0,-3 }, { 0,0 });
+		siv::SoundAsset(L"shot").playMulti();
+	}
 	count++;
 }
 
@@ -18,7 +20,7 @@ void game::UpShot::RengokuUpdate()
 		double angle = siv::Random(-30, 30);
 		GetBulletList().MakeBullet(GetPos(), { -2*Cos(Radians(90 + angle)),-2*Sin(Radians(90 + angle)) }, { 0,0 });
 		GetBulletList().MakeBullet(GetPos(), { -2*Cos(Radians(90-angle)),-2*Sin(Radians(90-angle)) }, { 0,0 });
-
+		siv::SoundAsset(L"shot").playMulti();
 	}
 	count++;
 }

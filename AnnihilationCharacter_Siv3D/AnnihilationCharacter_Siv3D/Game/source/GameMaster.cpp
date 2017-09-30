@@ -51,6 +51,16 @@ namespace game {
 			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/SE/決定音.wav")
 		);
 
+		siv::SoundAsset::Register(
+			L"カーソル音",
+			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/SE/カーソル音.mp3")
+		);
+		siv::SoundAsset(L"カーソル音").setVolume(0.5, 0.5);
+		siv::SoundAsset::Register(
+			L"shot",
+			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/SE/shot.wav")
+		);
+
 		//ウインドウ設定
 		siv::Window::SetTitle(L"消滅文字 ver 1919810114514");
 		siv::Window::Resize(700, 580);
