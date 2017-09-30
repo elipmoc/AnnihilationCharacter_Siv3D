@@ -45,6 +45,12 @@ namespace game {
 	//初期化処理
 	bool GameMaster::Init()
 	{
+		//アセット用意
+		siv::SoundAsset::Register(
+			L"決定音",
+			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/SE/決定音.wav")
+		);
+
 		//ウインドウ設定
 		siv::Window::SetTitle(L"消滅文字 ver 1919810114514");
 		siv::Window::Resize(700, 580);

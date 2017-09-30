@@ -52,3 +52,6 @@
 // App Resource
 100		ICON	"Icon.ico"
 101		FILE	"Engine/Splash.png"
+
+//â‰ÇÃëfçﬁ
+810	FILE	"Resource.Archive"

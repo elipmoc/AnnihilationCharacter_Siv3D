@@ -26,6 +26,7 @@ namespace game {
 
 			//ŽålŒö‚Ì•¶Žš‚ðÝ’è‚µ‚ÄƒV[ƒ“‚ð‘JˆÚ‚·‚é
 			m_data->player = m_playerFonts[m_selectIndex]->GetText();
+			siv::SoundAsset(L"Œˆ’è‰¹").play();
 			changeScene(L"Game");
 		}
 

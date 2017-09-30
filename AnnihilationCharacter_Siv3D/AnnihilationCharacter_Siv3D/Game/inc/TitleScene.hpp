@@ -20,8 +20,10 @@ namespace game {
 
 		virtual void update()override {
 			m_titleParticle.Update();
-			if (siv::Input::KeyZ.clicked)
+			if (siv::Input::KeyZ.clicked) {
+				siv::SoundAsset(L"Œˆ’è‰¹").play();
 				changeScene(L"LevelSelect");
+			}
 			m_angle+=3;
 		}
 

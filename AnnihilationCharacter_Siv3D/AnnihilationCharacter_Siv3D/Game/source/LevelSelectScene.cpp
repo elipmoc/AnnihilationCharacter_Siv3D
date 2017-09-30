@@ -32,6 +32,7 @@ namespace game {
 
 			//“ïˆÕ“x‚ðÝ’è‚µ‚ÄƒV[ƒ“‚ð‘JˆÚ‚·‚é
 			m_data->level = static_cast<Level>(m_selectIndex);
+			siv::SoundAsset(L"Œˆ’è‰¹").play();
 			changeScene(L"SelectPlayer");
 		}
 
