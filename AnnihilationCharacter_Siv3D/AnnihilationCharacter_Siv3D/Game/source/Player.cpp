@@ -54,6 +54,7 @@ namespace game {
 		if (siv::Input::KeyZ.clicked &&m_jumpCount < 3) {
 			m_yv = -7;
 			m_jumpCount++;
+			siv::SoundAsset(L"jump").playMulti();
 		}
 
 		//d—Í‚Ì‰e‹¿
