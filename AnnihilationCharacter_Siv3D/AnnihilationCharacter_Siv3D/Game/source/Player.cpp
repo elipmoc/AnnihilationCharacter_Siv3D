@@ -48,7 +48,7 @@ namespace game {
 			if (i == -1)m_underLane = -1;
 			//‹}‘¬—Ž‰º
 			if (siv::Input::KeyDown.pressed)
-				m_yv += 0.2;
+				m_yv += 0.3;
 		}
 		//ƒWƒƒƒ“ƒv
 		if (siv::Input::KeyZ.clicked &&m_jumpCount < 3) {

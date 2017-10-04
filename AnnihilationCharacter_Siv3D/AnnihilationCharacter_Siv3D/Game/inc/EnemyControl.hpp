@@ -7,10 +7,12 @@ namespace game {
 	class EnemyList;
 	struct EnemyInfo;
 	class EnemyBuilder;
+	class BulletList;
 
 	class EnemyControl {
 		std::unique_ptr<EnemyBuilder> m_enemyBuilder;
 		std::unique_ptr<EnemyList> m_enemyList;
+		std::unique_ptr<BulletList> m_bulletList;
 		int count=0;
 		int index = 0;
 		const Level m_level;

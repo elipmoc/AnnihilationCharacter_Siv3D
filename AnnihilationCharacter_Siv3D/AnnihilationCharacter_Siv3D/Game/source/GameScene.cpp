@@ -13,7 +13,9 @@ namespace game {
 
 	void GameScene::init()
 	{
-		
+		siv::SoundAsset(L"bgm").setLoop(true);
+		siv::SoundAsset(L"bgm").setVolume(0.1);
+		siv::SoundAsset(L"bgm").play();
 		m_terrainControl = std::make_unique<TerrainControl>();
 		(m_player= std::make_unique<Player>())
 			->SetPos({ 50, 50 }).SetText(m_data->player);

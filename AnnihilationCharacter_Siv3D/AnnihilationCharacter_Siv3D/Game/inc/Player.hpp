@@ -34,7 +34,7 @@ namespace game {
 		size_t m_barrierCount=3;
 
 		//移動スピード
-		static constexpr double m_speed=4;
+		static constexpr double m_speed=4.3;
 		//重力加速度
 		static constexpr double m_g=0.3;
 		//Yの速度

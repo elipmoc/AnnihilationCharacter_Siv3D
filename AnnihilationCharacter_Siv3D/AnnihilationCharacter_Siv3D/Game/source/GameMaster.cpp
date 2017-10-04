@@ -45,7 +45,13 @@ namespace game {
 	//初期化処理
 	bool GameMaster::Init()
 	{
+		siv::MasterVoice::SetVolume(0.5);
+
 		//アセット用意
+		siv::SoundAsset::Register(
+			L"bgm",
+			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/MUSIC/bgm.mp3")
+		);
 		siv::SoundAsset::Register(
 			L"決定音",
 			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/SE/決定音.wav")
@@ -55,12 +61,10 @@ namespace game {
 			L"カーソル音",
 			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/SE/カーソル音.mp3")
 		);
-		siv::SoundAsset(L"カーソル音").setVolume(0.5, 0.5);
 		siv::SoundAsset::Register(
 			L"shot",
 			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/SE/shot.wav")
 		);
-		siv::SoundAsset(L"shot").setVolume(0.3, 0.3);
 		siv::SoundAsset::Register(
 			L"バリア",
 			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/SE/バリア.wav")
@@ -69,7 +73,6 @@ namespace game {
 			L"jump",
 			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/SE/jump.wav")
 		);
-		siv::SoundAsset(L"jump").setVolume(0.3, 0.3);
 
 		//ウインドウ設定
 		siv::Window::SetTitle(L"消滅文字 ver 1919810114514");

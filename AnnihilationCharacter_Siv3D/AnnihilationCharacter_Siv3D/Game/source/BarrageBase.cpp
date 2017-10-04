@@ -5,11 +5,11 @@ namespace game {
 
 	BulletList & BarrageBase::GetBulletList()
 	{
-		return *m_bulletList.get();
+		return m_bulletList;
 	}
 
-	BarrageBase::BarrageBase(const size_t bulletSize,const Level level, const siv::Vec2& bindPos,const siv::Vec2& playerBindPos, const siv::Vec2& fixPos)
-		:m_bulletList(std::make_unique<BulletList>(bulletSize)),m_bindPos(bindPos),m_fixPos(fixPos),
+	BarrageBase::BarrageBase(BulletList& bulletList,const Level level, const siv::Vec2& bindPos,const siv::Vec2& playerBindPos, const siv::Vec2& fixPos)
+		:m_bulletList(bulletList),m_bindPos(bindPos),m_fixPos(fixPos),
 		m_level(level),
 		m_playerBindPos(playerBindPos)
 	{}
@@ -24,11 +24,10 @@ namespace game {
 			NormalUpdate();
 		else
 			RengokuUpdate();
-		m_bulletList->Update();
 	}
 
 	void BarrageBase::Draw()const
 	{
-		m_bulletList->Draw();
+		m_bulletList.Draw();
 	}
 }
