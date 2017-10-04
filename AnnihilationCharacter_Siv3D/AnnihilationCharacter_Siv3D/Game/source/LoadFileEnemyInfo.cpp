@@ -62,7 +62,31 @@ namespace game {
 	}
 	void LoadFileEnemyInfo::LoadFile()
 	{
-		std::ifstream ifs("enemy.txt");
+		try {
+			const siv::JSONReader json(L"enemy.json");
+			const auto enemyArray = json[L"EnemyList"].getArray();
+			for (auto& enemy : enemyArray) {
+				auto info_ptr = std::make_unique<EnemyInfo>();
+				info_ptr->action = enemy[L"Action"].getString().narrow();
+				info_ptr->startPos.x = enemy[L"StartPos"][L"x"].getNumber();
+				info_ptr->startPos.y = enemy[L"StartPos"][L"y"].getNumber();
+				info_ptr->stopPos.x = enemy[L"StopPos"][L"x"].getNumber();
+				info_ptr->stopPos.y = enemy[L"StopPos"][L"y"].getNumber();
+				info_ptr->endPos.x = enemy[L"EndPos"][L"x"].getNumber();
+				info_ptr->endPos.y = enemy[L"EndPos"][L"y"].getNumber();
+				info_ptr->waitTime = enemy[L"WaitTime"].getNumber();
+				info_ptr->bornTime = enemy[L"BornTime"].getNumber();
+				info_ptr->lifeTime = enemy[L"LifeTime"].getNumber();
+				info_ptr->barrage = enemy[L"Barrage"].getString().narrow();
+				info_ptr->barrageStartTime = enemy[L"BarrageStartTime"].getNumber();
+				info_ptr->model = enemy[L"Model"].getString().narrow();
+				m_enemyInfoList.push_back(std::move(info_ptr));
+			}
+		}
+		catch (...) {
+			throw siv::String(L"enemy.jsonÇ≈ÉGÉâÅ[Ç™î≠ê∂ÇµÇ‹ÇµÇΩ");
+		}
+		/*std::ifstream ifs("enemy.txt");
 		if (!ifs.is_open())
 			throw siv::String(L"enemy.txtì«Ç›çûÇ›Ç…é∏îsÇµÇ‹ÇµÇΩ");
 		std::string buf;
@@ -114,7 +138,7 @@ namespace game {
 			if ((index<buf.size() && buf[index++] == '}') == false)
 				throw siv::String(L"enemy.txtÇ…åÎÇËÇ™Ç†ÇËÇ‹Ç∑");
 			m_enemyInfoList.push_back(std::move(info_ptr));
-		}
+		}*/
 	}
 
 	

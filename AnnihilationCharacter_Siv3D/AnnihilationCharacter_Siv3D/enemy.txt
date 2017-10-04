@@ -8,8 +8,8 @@
 {"Action1",{800,250},{600,280},{800,250},120,580,400,"HorizontalShot3Way",200,"Model02"}
 {"Action1",{800,250},{600,400},{800,300},120,700,400,"HorizontalShot3Way",200,"Model02"}
 {"Action1",{800,250},{600,100},{800,480},120,720,400,"HorizontalShot3Way",200,"Model02"}
-{"Action1",{800,250},{600,100},{600,600},120,800,600,"HorizontalShotOnes",200,"Model03"}
-{"Action1",{800,100},{600,400},{800,100},280,850,800,"HorizontalShotOnes",200,"Model03"}
+{"Action1",{800,250},{600,100},{600,600},120,800,500,"HorizontalShotOnes",200,"Model03"}
+{"Action1",{800,100},{600,400},{800,100},280,850,500,"HorizontalShotOnes",200,"Model03"}
 {"Action2",{800,480},{-4,0},{0,0},280,1600,600,"UpShot",40,"Model04"}
 {"Action1",{800,200},{600,200},{800,200},120,1700,400,"HorizontalShotOne",200,"Model01"}
 {"Action1",{800,180},{600,180},{800,180},120,1750,400,"HorizontalShotOne",200,"Model01"}
