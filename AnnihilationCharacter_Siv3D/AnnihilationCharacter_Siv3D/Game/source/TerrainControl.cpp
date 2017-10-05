@@ -2,11 +2,15 @@
 #include "GameMaster.hpp"
 
 namespace game {
-	TerrainControl::TerrainControl() :m_terrainFont(TERRAIN_SIZE), circle(3)
+	TerrainControl::TerrainControl(const size_t startPos) :m_terrainFont(TERRAIN_SIZE), circle(3)
 	{
+		size_t offset = startPos * 4;
+		index = offset / TERRAIN_SIZE;
+		m_offset = offset - index*TERRAIN_SIZE;
 		for (size_t lane = 0; lane < LANE_NUM; lane++)
 			for (size_t i = 0; i < siv::Window::Size().x / TERRAIN_SIZE + 2; i++)
-				m_activeTerrains[lane].push_back(GameMaster::GetInstance().GetTerrainData(lane)[i]);
+				m_activeTerrains[lane].push_back(GameMaster::GetInstance().GetTerrainData(lane)[index+i]);
+		index += siv::Window::Size().x / TERRAIN_SIZE + 2;
 	}
 
 	//次の地形をセットする

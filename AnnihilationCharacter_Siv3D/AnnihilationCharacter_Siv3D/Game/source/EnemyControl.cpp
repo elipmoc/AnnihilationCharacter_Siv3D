@@ -6,17 +6,21 @@
 #include "BulletList.hpp"
 
 namespace game {
-	EnemyControl::EnemyControl(const Level level,const siv::Vec2& playerBindPos):
+	EnemyControl::EnemyControl(const Level level,const siv::Vec2& playerBindPos,const int startCount):
 		m_level(level),
 		m_enemyList(std::make_unique<EnemyList>()),
 		m_enemyBuilder(std::make_unique<EnemyBuilder>(playerBindPos)),
-		m_bulletList(std::make_unique<BulletList>(1000))
+		m_bulletList(std::make_unique<BulletList>(1000)),
+		m_count(startCount)
 	{
-
+		while (index < GameMaster::GetInstance().GetEnemyInfoList().size() &&
+			GameMaster::GetInstance().GetEnemyInfoList()[index]->bornTime <m_count)
+		{
+			index++;
+		}
 		
 	}
-
-
+	
 	EnemyControl::~EnemyControl() = default;
 
 	void EnemyControl::Draw() const
@@ -29,7 +33,7 @@ namespace game {
 	{
 		while(
 			index < GameMaster::GetInstance().GetEnemyInfoList().size() &&
-			GameMaster::GetInstance().GetEnemyInfoList()[index]->bornTime==count
+			GameMaster::GetInstance().GetEnemyInfoList()[index]->bornTime==m_count
 			)
 		{
 			m_enemyList->push_back(
@@ -37,7 +41,7 @@ namespace game {
 			);
 			index++;
 		}
-		count++;
+		m_count++;
 		m_enemyList->Update();
 		m_bulletList->Update();
 	}

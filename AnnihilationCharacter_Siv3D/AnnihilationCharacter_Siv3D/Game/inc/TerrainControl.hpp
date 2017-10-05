@@ -19,7 +19,7 @@ namespace game {
 			return m_activeTerrains[lane][(int)(x+m_offset) / TERRAIN_SIZE];
 		}
 
-		TerrainControl();
+		TerrainControl(const size_t startPos=0);
 		//エリアの末端まで行ったかどうか
 		bool IsFinished() { return finishedFlag; }
 		void Update();
