@@ -677,5 +677,8 @@
     <ClInclude Include="Game\inc\EnemyBarrage\GuruGuruShot.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="Game\inc\LoadFileConfig.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

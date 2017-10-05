@@ -4,6 +4,7 @@
 #include "HpUI.hpp"
 #include "BarrierUI.hpp"
 #include "EnemyControl.hpp"
+#include "GameMaster.hpp"
 namespace game {
 	GameScene::GameScene():m_player(nullptr) {
 
@@ -16,10 +17,10 @@ namespace game {
 		siv::SoundAsset(L"bgm").setLoop(true);
 		siv::SoundAsset(L"bgm").setVolume(0.1);
 		siv::SoundAsset(L"bgm").play();
-		m_terrainControl = std::make_unique<TerrainControl>();
+		m_terrainControl = std::make_unique<TerrainControl>(GameMaster::GetInstance().GetStartTime());
 		(m_player= std::make_unique<Player>())
 			->SetPos({ 50, 50 }).SetText(m_data->player);
-		m_enemyControl = std::make_unique<EnemyControl>(m_data->level,m_player->GetRefPos());
+		m_enemyControl = std::make_unique<EnemyControl>(m_data->level,m_player->GetRefPos(), GameMaster::GetInstance().GetStartTime());
 		m_hpUi = std::make_unique<HpUi>();
 		m_barrierUi = std::make_unique<BarrierUi>();
 	}

@@ -8,6 +8,7 @@
 #include "CollisionControl.hpp"
 #include "LoadFileTerrainData.hpp"
 #include "LoadFileEnemyInfo.hpp"
+#include "LoadFileConfig.hpp"
 #include "EnemyInfo.hpp"
 
 
@@ -23,7 +24,8 @@ namespace game {
 	GameMaster::GameMaster()
 		:m_mySceneManager(std::make_unique<MySceneManager>()),
 		m_loadFileTerrainData(std::make_unique<LoadFileTerrainData>()),
-		m_loadFileEnemyInfo(std::make_unique<LoadFileEnemyInfo>())
+		m_loadFileEnemyInfo(std::make_unique<LoadFileEnemyInfo>()),
+		m_loadFileConfig(std::make_unique<LoadFileConfig>())
 	{
 	}
 
@@ -39,6 +41,11 @@ namespace game {
 	const std::vector<std::unique_ptr<EnemyInfo>>& GameMaster::GetEnemyInfoList()const noexcept
 	{
 		return m_loadFileEnemyInfo->GetEnemyInfoList();
+	}
+
+	const size_t GameMaster::GetStartTime() const noexcept
+	{
+		return m_loadFileConfig->GetStartTime();
 	}
 
 
@@ -90,6 +97,7 @@ namespace game {
 		{
 			m_loadFileTerrainData->LoadFile();
 			m_loadFileEnemyInfo->LoadFile();
+			m_loadFileConfig->LoadFile();
 		}
 		catch (const siv::String& str)
 		{

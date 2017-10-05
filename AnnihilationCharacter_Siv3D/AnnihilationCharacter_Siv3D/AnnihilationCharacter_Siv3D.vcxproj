@@ -359,6 +359,7 @@
     <ClInclude Include="Game\inc\GameScene.hpp" />
     <ClInclude Include="Game\inc\GrazeParticle.hpp" />
     <ClInclude Include="Game\inc\HpUI.hpp" />
+    <ClInclude Include="Game\inc\LoadFileConfig.hpp" />
     <ClInclude Include="Game\inc\LoadFileEnemyInfo.hpp" />
     <ClInclude Include="Game\inc\LoadFileTerrainData.hpp" />
     <ClInclude Include="Game\inc\Player.hpp" />
