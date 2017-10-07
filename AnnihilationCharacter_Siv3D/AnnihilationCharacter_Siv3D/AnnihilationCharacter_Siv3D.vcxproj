@@ -354,6 +354,7 @@
     <ClInclude Include="Game\inc\EnemyModel\Model03.hpp" />
     <ClInclude Include="Game\inc\EnemyModel\Model04.hpp" />
     <ClInclude Include="Game\inc\EnemyModel\Model05.hpp" />
+    <ClInclude Include="Game\inc\GameCounter.hpp" />
     <ClInclude Include="Game\inc\GameMaster.hpp" />
     <ClInclude Include="Game\inc\GameOverScene.hpp" />
     <ClInclude Include="Game\inc\GameScene.hpp" />

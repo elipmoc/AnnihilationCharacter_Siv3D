@@ -48,6 +48,11 @@ namespace game {
 		return m_loadFileConfig->GetStartTime();
 	}
 
+	const bool GameMaster::GetShowTimeFlag() const noexcept
+	{
+		return m_loadFileConfig->GetShowTimeFlag();
+	}
+
 
 	//‰Šú‰»ˆ—
 	bool GameMaster::Init()

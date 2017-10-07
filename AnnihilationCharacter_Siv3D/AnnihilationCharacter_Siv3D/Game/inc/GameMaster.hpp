@@ -25,6 +25,7 @@ namespace game {
 		const std::vector<bool>& GetTerrainData(size_t lane)const noexcept;
 		const std::vector<std::unique_ptr<EnemyInfo>>& GetEnemyInfoList()const noexcept;
 		const size_t GetStartTime()const noexcept;
+		const bool GetShowTimeFlag()const noexcept;
 		static GameMaster& GetInstance() {
 			return instance;
 		};

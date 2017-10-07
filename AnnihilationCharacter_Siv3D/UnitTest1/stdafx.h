@@ -13,4 +13,4 @@
 // TODO: プログラムに必要な追加ヘッダーをここで参照してください
 
 #include <iostream>
-#include "../AnnihilationCharacter_Siv3D/ElipmocFrameWork/ObjectPool.hpp"
+#include "../AnnihilationCharacter_Siv3D/Game/inc/GameCounter.hpp"

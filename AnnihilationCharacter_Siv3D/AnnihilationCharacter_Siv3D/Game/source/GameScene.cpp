@@ -4,6 +4,7 @@
 #include "HpUI.hpp"
 #include "BarrierUI.hpp"
 #include "EnemyControl.hpp"
+#include "GameCounter.hpp"
 #include "GameMaster.hpp"
 namespace game {
 	GameScene::GameScene():m_player(nullptr) {
@@ -17,10 +18,11 @@ namespace game {
 		siv::SoundAsset(L"bgm").setLoop(true);
 		siv::SoundAsset(L"bgm").setVolume(0.1);
 		siv::SoundAsset(L"bgm").play();
-		m_terrainControl = std::make_unique<TerrainControl>(GameMaster::GetInstance().GetStartTime());
+		m_gameCounter = std::make_unique<GameCounter>(GameMaster::GetInstance().GetStartTime());
+		m_terrainControl = std::make_unique<TerrainControl>(m_gameCounter->GetCount());
 		(m_player= std::make_unique<Player>())
 			->SetPos({ 50, 50 }).SetText(m_data->player);
-		m_enemyControl = std::make_unique<EnemyControl>(m_data->level,m_player->GetRefPos(), GameMaster::GetInstance().GetStartTime());
+		m_enemyControl = std::make_unique<EnemyControl>(m_data->level,m_player->GetRefPos(), *m_gameCounter);
 		m_hpUi = std::make_unique<HpUi>();
 		m_barrierUi = std::make_unique<BarrierUi>();
 	}
@@ -33,6 +35,7 @@ namespace game {
 	    m_terrainControl->Update();
 		m_player->Update2(m_terrainControl);
 		m_enemyControl->Update();
+		m_gameCounter->CountDown();
 	}
 	void GameScene::draw() const
 	{
@@ -40,5 +43,7 @@ namespace game {
 		m_hpUi->Draw(m_player->GetHp());
 		m_barrierUi->Draw(m_player->GetBarrierCount());
 		m_enemyControl->Draw();
+		if(GameMaster::GetInstance().GetShowTimeFlag())
+		siv::PutText(L"Time:", m_gameCounter->GetCount()).from(siv::Window::Width()-100, 0);
 	}
 }

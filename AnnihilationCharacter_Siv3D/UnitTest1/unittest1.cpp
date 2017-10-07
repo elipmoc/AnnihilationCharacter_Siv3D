@@ -12,30 +12,17 @@ namespace UnitTest1
 		TEST_METHOD(TestMethod1)
 		{
 			// TODO: テスト コードをここに挿入します
-
-			struct Animal {
-				virtual void Action() const{
-					std::cout << "動物です" << std::endl;
-				}
-			};
-
-			struct Pig:Animal {
-				int a[100];
-				virtual void Action()const override{
-					std::cout << "ぶひー！" << std::endl;
-				}
-
-			};
-
-			using elipmocframework::ObjectPool;
-
-			ObjectPool<Animal, Pig> hoge_pool(10);
-			hoge_pool.New<Animal>();
-			hoge_pool.New<Pig>();
-			hoge_pool.New<Pig>();
-			for (const auto& item : hoge_pool) {
-				item.Action();
-			}
+			auto gc =std::make_shared<game::GameCounter>(0);
+			std::weak_ptr<game::GameCounterReader> gcr = gc;
+			std::weak_ptr<game::GameCounterReader> gcr2=gcr;
+			gc->CountDown();
+			Assert::IsTrue(gc->GetCount() == 1,L"gc");
+			Assert::IsTrue(gcr.lock()->GetCount() == 1, L"gcr");
+			Assert::IsTrue(gcr2.lock()->GetCount() == 1,L"gcr2");
+			gc->CountDown();
+			Assert::IsTrue(gc->GetCount() == 2, L"gc");
+			Assert::IsTrue(gcr.lock()->GetCount() == 2, L"gcr");
+			Assert::IsTrue(gcr2.lock()->GetCount() == 2, L"gcr2");
 
 		}
 
