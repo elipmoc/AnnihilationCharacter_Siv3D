@@ -2,6 +2,11 @@
 #include "BulletList.hpp"
 
 namespace  game {
+
+	void HorizontalShotOne::YawarakaUpdate() {
+
+	}
+
 	void HorizontalShotOne::NormalUpdate()
 	{
 		if (count++ == 0) {
@@ -9,6 +14,7 @@ namespace  game {
 			siv::SoundAsset(L"shot").playMulti();
 		}
 	}
+
 	void HorizontalShotOne::RengokuUpdate()
 	{
 		if (count == 0 || count == 20) {

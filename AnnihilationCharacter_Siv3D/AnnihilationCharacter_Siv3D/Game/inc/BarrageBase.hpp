@@ -35,6 +35,7 @@ namespace game {
 		BarrageBase(BulletList&,const Level level, const siv::Vec2& bindPos,const siv::Vec2&playerBindPos, const siv::Vec2& fixPos);
 		~BarrageBase();
 		void Update();
+		virtual void YawarakaUpdate() = 0;
 		virtual void NormalUpdate()=0;
 		virtual void RengokuUpdate()=0;
 		void Draw()const;

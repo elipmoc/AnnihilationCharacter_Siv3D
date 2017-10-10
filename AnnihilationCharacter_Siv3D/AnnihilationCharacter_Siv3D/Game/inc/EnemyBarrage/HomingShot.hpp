@@ -7,6 +7,7 @@ namespace game {
 	public:
 		template<class... Args>
 		HomingShot(Args&&...args) :BarrageBase(std::forward<Args>(args)...) {}
+		virtual void YawarakaUpdate()override final;
 		virtual void NormalUpdate()override final;
 		virtual void RengokuUpdate()override final;
 	};

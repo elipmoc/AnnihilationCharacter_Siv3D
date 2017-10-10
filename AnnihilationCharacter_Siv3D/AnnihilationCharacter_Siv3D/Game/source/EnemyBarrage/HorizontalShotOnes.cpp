@@ -2,6 +2,11 @@
 #include "BulletList.hpp"
 
 namespace  game {
+
+	void HorizontalShotOnes::YawarakaUpdate() {
+
+	}
+
 	void HorizontalShotOnes::NormalUpdate()
 	{
 		if (count % 50 == 0) {
@@ -10,6 +15,7 @@ namespace  game {
 		}
 		count++;
 	}
+
 	void HorizontalShotOnes::RengokuUpdate()
 	{
 		if (count % 40 == 0) {

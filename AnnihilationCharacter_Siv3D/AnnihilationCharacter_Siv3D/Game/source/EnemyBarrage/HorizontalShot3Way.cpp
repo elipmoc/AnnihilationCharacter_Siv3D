@@ -2,6 +2,11 @@
 #include "BulletList.hpp"
 
 namespace  game {
+
+	void HorizontalShot3Way::YawarakaUpdate() {
+
+	}
+
 	void HorizontalShot3Way::NormalUpdate()
 	{
 		if (count++ == 0) {

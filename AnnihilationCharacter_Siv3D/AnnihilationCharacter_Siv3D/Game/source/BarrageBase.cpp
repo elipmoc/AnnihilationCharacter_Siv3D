@@ -22,8 +22,10 @@ namespace game {
 	{
 		if (m_level == Level::Normal)
 			NormalUpdate();
-		else
+		else if (m_level == Level::Rengoku)
 			RengokuUpdate();
+		else 
+			YawarakaUpdate();
 	}
 
 	void BarrageBase::Draw()const

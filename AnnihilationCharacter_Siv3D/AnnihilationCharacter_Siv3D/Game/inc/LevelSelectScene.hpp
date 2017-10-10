@@ -12,7 +12,7 @@ namespace game {
 		const siv::Font m_guideFont;
 
 		//“ïˆÕ“x‚Ì•¶Žš
-		std::unique_ptr<elipmocframework::GlowText> m_levelFonts[2];
+		std::unique_ptr<elipmocframework::GlowText> m_levelFonts[3];
 		int m_actionInterval = 0;
 		int m_selectIndex = 0;
 	public:

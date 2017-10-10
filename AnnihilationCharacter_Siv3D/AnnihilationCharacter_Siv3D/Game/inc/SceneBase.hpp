@@ -4,8 +4,9 @@ namespace game {
 
 	//難易度
 	enum class Level {
-		Normal=0,
-		Rengoku=1
+		yawaraka=0,
+		Normal=1,
+		Rengoku=2
 	};
 	//シーン間で共有するデータ
 	struct ShareGameData { siv::String player; Level level; };

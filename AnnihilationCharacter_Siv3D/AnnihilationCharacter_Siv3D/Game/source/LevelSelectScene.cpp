@@ -18,9 +18,11 @@ namespace game {
 	void LevelSelectScene::init() {
 		using namespace siv::Window;
 		//FontObject実体生成してパラメータを設定
-		(m_levelFonts[0] = std::make_unique<GlowText>(siv::Font(25),L"のーまる",20,1))
-			->SetPos({ Center().x, Center().y }).SetColor(siv::Palette::Green).SetGlowColor({ 120,238,120 });
-		(m_levelFonts[1] = std::make_unique<GlowText>(siv::Font(25), L"れんごく", 20))
+		(m_levelFonts[0] = std::make_unique<GlowText>(siv::Font(25), L"やわらか", 20, 1))
+			->SetPos({ Center().x, Center().y-60 }).SetColor(siv::Palette::Lightblue).SetGlowColor({ 120,120,255 });
+		(m_levelFonts[1] = std::make_unique<GlowText>(siv::Font(25),L"のーまる",20,1))
+			->SetPos({ Center().x-50, Center().y }).SetColor(siv::Palette::Green).SetGlowColor({ 120,238,120 });
+		(m_levelFonts[2] = std::make_unique<GlowText>(siv::Font(25), L"れんごく", 20))
 			->SetPos({Center().x-50,Center().y+60}).SetColor(siv::Palette::Red).SetGlowColor(siv::Palette::Darkred);
 	}
 
@@ -43,7 +45,10 @@ namespace game {
 			m_actionInterval = 5;
 			auto pos=m_levelFonts[m_selectIndex]->GetPos();
 			m_levelFonts[m_selectIndex]->AddAction(MoveAction::Create(pos + siv::Vec2{-50,0}, 10));
-			m_selectIndex = (m_selectIndex + 1) % 2;
+			if(siv::Input::KeyDown.clicked)
+				m_selectIndex = (m_selectIndex + 1) % 3;
+			else 
+				m_selectIndex = (m_selectIndex + 2) % 3;
 			pos = m_levelFonts[m_selectIndex]->GetPos();
 			m_levelFonts[m_selectIndex]->AddAction(MoveAction::Create(pos + siv::Vec2{ 50,0 }, 10));
 		}
@@ -60,9 +65,11 @@ namespace game {
 	void LevelSelectScene::draw() const {
 
 		if(m_selectIndex==0)
-			siv::Rect(0, m_levelFonts[0]->GetPos().y - 14, siv::Window::Width(), 30).draw({0,200,50,20});
+			siv::Rect(0, m_levelFonts[0]->GetPos().y - 14, siv::Window::Width(), 30).draw({ 120,100,250,20 });
+		else if(m_selectIndex==1)
+			siv::Rect(0, m_levelFonts[1]->GetPos().y - 14, siv::Window::Width(), 30).draw({ 0,200,50,20 });
 		else
-			siv::Rect(0, m_levelFonts[1]->GetPos().y - 14, siv::Window::Width(), 30).draw({ 200,0,50,20 });
+			siv::Rect(0, m_levelFonts[2]->GetPos().y - 14, siv::Window::Width(), 30).draw({ 200,0,50,20 });
 		for (const auto& item : m_levelFonts)
 			item->DrawCenter();
 		m_guideFont(L"難易度を選んでください").draw({ 50,50 });
