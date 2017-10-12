@@ -167,6 +167,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Game\source\Barrier.cpp" />
+    <ClCompile Include="Game\source\BossPhase.cpp" />
     <ClCompile Include="Game\source\EnemyAction\EnemyAction2.cpp" />
     <ClCompile Include="Game\source\EnemyBarrage\GuruGuruShot.cpp" />
     <ClCompile Include="Game\source\EnemyBarrage\HomingShot.cpp" />
