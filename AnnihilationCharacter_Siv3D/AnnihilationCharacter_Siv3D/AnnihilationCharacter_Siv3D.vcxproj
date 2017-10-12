@@ -198,6 +198,7 @@
     <ClCompile Include="Game\source\SelectPlayerScene.cpp" />
     <ClCompile Include="Game\source\TerrainControl.cpp" />
     <ClCompile Include="Game\source\EnemyAction\TestEnemyAction.cpp" />
+    <ClCompile Include="Game\source\ZakoEnemyPhase.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>

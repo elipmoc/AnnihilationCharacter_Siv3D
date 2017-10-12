@@ -4,20 +4,19 @@
 #include "SceneBase.hpp"
 
 namespace game {
-	class EnemyList;
-	struct EnemyInfo;
-	class EnemyBuilder;
+	class ZakoEnemyPhase;
 	class BulletList;
 	class GameCounterReader;
 
 	class EnemyControl {
-		std::unique_ptr<EnemyBuilder> m_enemyBuilder;
-		std::unique_ptr<EnemyList> m_enemyList;
+		const Level m_level;
 		std::unique_ptr<BulletList> m_bulletList;
 		const GameCounterReader& m_count;
+		std::unique_ptr<ZakoEnemyPhase> m_zakoEnemyPhase;
+		
 		
 		int index = 0;
-		const Level m_level;
+
 	public:
 		/*
 		param:
