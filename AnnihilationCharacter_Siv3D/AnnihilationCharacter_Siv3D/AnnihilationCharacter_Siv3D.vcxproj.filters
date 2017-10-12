@@ -695,5 +695,8 @@
     <ClInclude Include="Game\inc\ZakoEnemyPhase.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="Game\inc\BasePhase.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -332,6 +332,7 @@
     <ClInclude Include="ElipmocFrameWork\type_traits_original.hpp" />
     <ClInclude Include="Game\inc\BarrageBase.hpp" />
     <ClInclude Include="Game\inc\Barrier.hpp" />
+    <ClInclude Include="Game\inc\BasePhase.hpp" />
     <ClInclude Include="Game\inc\BossPhase.hpp" />
     <ClInclude Include="Game\inc\BulletList.hpp" />
     <ClInclude Include="Game\inc\BarrierUI.hpp" />

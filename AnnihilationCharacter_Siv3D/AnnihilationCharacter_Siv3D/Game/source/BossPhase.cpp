@@ -5,5 +5,13 @@ namespace game {
 		m_level(level),
 		m_bulletList(bulletList)
 	{}
+
 	BossPhase::~BossPhase() = default;
+
+	void BossPhase::Draw() const
+	{
+	}
+	void BossPhase::Update()
+	{
+	}
 }

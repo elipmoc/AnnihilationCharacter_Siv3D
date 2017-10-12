@@ -9,7 +9,7 @@ namespace game {
 		m_level(level),
 		m_bulletList(std::make_unique<BulletList>(1000)),
 		m_count(count),
-		m_zakoEnemyPhase(std::make_unique<ZakoEnemyPhase>(level,playerBindPos,count,*m_bulletList))
+		m_phase(std::make_unique<ZakoEnemyPhase>(level,playerBindPos,count,*m_bulletList))
 
 	{
 		
@@ -19,13 +19,13 @@ namespace game {
 
 	void EnemyControl::Draw() const
 	{
-		m_zakoEnemyPhase->Draw();
+		m_phase->Draw();
 		m_bulletList->Draw();
 	}
 
 	void EnemyControl::Update()
 	{
-		m_zakoEnemyPhase->Update();
+		m_phase->Update();
 		m_bulletList->Update();
 	}
 }

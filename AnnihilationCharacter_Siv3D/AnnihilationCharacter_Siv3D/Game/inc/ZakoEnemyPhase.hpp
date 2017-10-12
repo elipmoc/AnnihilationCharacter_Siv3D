@@ -2,6 +2,8 @@
 #include <vector>
 #include <memory>
 #include "SceneBase.hpp"
+#include "BasePhase.hpp"
+
 namespace game {
 	class EnemyList;
 	struct EnemyInfo;
@@ -9,7 +11,7 @@ namespace game {
 	class BulletList;
 	class GameCounterReader;
 
-	class ZakoEnemyPhase {
+	class ZakoEnemyPhase :public BasePhase{
 		std::unique_ptr<EnemyBuilder> m_enemyBuilder;
 		std::unique_ptr<EnemyList> m_enemyList;
 		BulletList& m_bulletList;
@@ -24,7 +26,7 @@ namespace game {
 		*/
 		ZakoEnemyPhase(const Level level, const siv::Vec2&, const GameCounterReader&,BulletList&);
 		~ZakoEnemyPhase();
-		void Draw()const;
-		void Update();
+		virtual void Draw()const override final;
+		virtual void Update() override final;
 	};
 }

@@ -4,7 +4,7 @@
 #include "SceneBase.hpp"
 
 namespace game {
-	class ZakoEnemyPhase;
+	class BasePhase;
 	class BulletList;
 	class GameCounterReader;
 
@@ -12,7 +12,7 @@ namespace game {
 		const Level m_level;
 		std::unique_ptr<BulletList> m_bulletList;
 		const GameCounterReader& m_count;
-		std::unique_ptr<ZakoEnemyPhase> m_zakoEnemyPhase;
+		std::unique_ptr<BasePhase> m_phase;
 		
 		
 		int index = 0;
