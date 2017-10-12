@@ -330,6 +330,7 @@
     <ClInclude Include="ElipmocFrameWork\type_traits_original.hpp" />
     <ClInclude Include="Game\inc\BarrageBase.hpp" />
     <ClInclude Include="Game\inc\Barrier.hpp" />
+    <ClInclude Include="Game\inc\BossPhase.hpp" />
     <ClInclude Include="Game\inc\BulletList.hpp" />
     <ClInclude Include="Game\inc\BarrierUI.hpp" />
     <ClInclude Include="Game\inc\Bullet.hpp" />
@@ -375,6 +376,7 @@
     <ClInclude Include="Game\inc\TitleScene.hpp" />
     <ClInclude Include="Game\inc\EnemyBarrage\HorizontalShotOne.hpp" />
     <ClInclude Include="Game\inc\LevelSelectScene.hpp" />
+    <ClInclude Include="Game\inc\ZakoEnemyPhase.hpp" />
     <ClInclude Include="UseSiv3D.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
