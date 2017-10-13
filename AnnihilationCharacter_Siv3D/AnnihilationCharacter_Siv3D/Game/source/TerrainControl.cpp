@@ -23,8 +23,10 @@ namespace game {
 			m_activeTerrains[i].push_back(GameMaster::GetInstance().GetTerrainData(i)[index]);
 		}
 		index++;
-		if (index == GameMaster::GetInstance().GetTerrainData(0).size())
+		if (index == GameMaster::GetInstance().GetTerrainData(0).size()) {
 			finishedFlag = true;
+			index = 0;
+		}
 	}
 
 	void TerrainControl::Update()

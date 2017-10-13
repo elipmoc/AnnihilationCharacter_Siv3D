@@ -13,6 +13,7 @@ namespace game {
 		std::unique_ptr<BulletList> m_bulletList;
 		const GameCounterReader& m_count;
 		std::unique_ptr<BasePhase> m_phase;
+		const siv::Vec2& m_playerRefPos;
 		
 		
 		int index = 0;
@@ -24,6 +25,8 @@ namespace game {
 		*/
 		EnemyControl(const Level level,const siv::Vec2&,const GameCounterReader&);
 		~EnemyControl();
+		//ボスフェーズに切り替え
+		void SwitchBossPhase();
 		void Draw()const;
 		void Update();
 	};

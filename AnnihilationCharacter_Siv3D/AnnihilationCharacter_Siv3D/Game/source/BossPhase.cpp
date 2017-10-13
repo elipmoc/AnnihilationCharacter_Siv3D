@@ -1,7 +1,7 @@
 #include "BossPhase.hpp"
 
 namespace game {
-	BossPhase::BossPhase(int level, const siv::Vec2 & playerRefPos, BulletList & bulletList):
+	BossPhase::BossPhase(Level level, const siv::Vec2 & playerRefPos, BulletList & bulletList):
 		m_level(level),
 		m_bulletList(bulletList)
 	{}
@@ -10,6 +10,7 @@ namespace game {
 
 	void BossPhase::Draw() const
 	{
+		siv::Println(L"BossPhase");
 	}
 	void BossPhase::Update()
 	{

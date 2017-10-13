@@ -17,7 +17,7 @@ namespace game {
 		BulletList& m_bulletList;
 		const GameCounterReader& m_count;
 
-		int index = 0;
+		size_t index = 0;
 		const Level m_level;
 	public:
 		/*
