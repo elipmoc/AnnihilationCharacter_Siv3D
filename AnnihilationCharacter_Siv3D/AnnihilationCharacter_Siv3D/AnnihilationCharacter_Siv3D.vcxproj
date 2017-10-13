@@ -167,6 +167,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Game\source\Barrier.cpp" />
+    <ClCompile Include="Game\source\BossEnemyTalk.cpp" />
     <ClCompile Include="Game\source\BossPhase.cpp" />
     <ClCompile Include="Game\source\EnemyAction\EnemyAction2.cpp" />
     <ClCompile Include="Game\source\EnemyBarrage\GuruGuruShot.cpp" />
@@ -333,6 +334,8 @@
     <ClInclude Include="Game\inc\BarrageBase.hpp" />
     <ClInclude Include="Game\inc\Barrier.hpp" />
     <ClInclude Include="Game\inc\BasePhase.hpp" />
+    <ClInclude Include="Game\inc\BossEnemy.hpp" />
+    <ClInclude Include="Game\inc\BossEnemyTalk.hpp" />
     <ClInclude Include="Game\inc\BossPhase.hpp" />
     <ClInclude Include="Game\inc\BulletList.hpp" />
     <ClInclude Include="Game\inc\BarrierUI.hpp" />

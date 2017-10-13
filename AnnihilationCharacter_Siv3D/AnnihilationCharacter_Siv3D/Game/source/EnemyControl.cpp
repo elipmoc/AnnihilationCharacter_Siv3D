@@ -20,6 +20,9 @@ namespace game {
 
 	void EnemyControl::SwitchBossPhase()
 	{
+		static bool hoge = false;
+		if (hoge)return;
+		hoge = true;
 		m_phase = std::make_unique<BossPhase>(m_level, m_playerRefPos, *m_bulletList);
 	}
 

@@ -42,7 +42,7 @@ namespace elipmocframework {
 
 		//textアクセサ
 		virtual siv::String GetText() const noexcept override final{ return m_text; }
-		virtual FontObject& SetText(const siv::String& _text) noexcept override final{ m_text = _text; return *this; }
+		virtual FontObject& SetText(const siv::String& _text) noexcept override final {m_text = _text; return *this; }
 
 		//Colorアクセサ
 		virtual siv::Color GetColor()const noexcept override final{ return m_color; }
