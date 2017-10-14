@@ -23,7 +23,6 @@ namespace game {
 
 	GameMaster::GameMaster()
 		:m_mySceneManager(std::make_unique<MySceneManager>()),
-		m_loadFileTerrainData(std::make_unique<LoadFileTerrainData>()),
 		m_loadFileEnemyInfo(std::make_unique<LoadFileEnemyInfo>()),
 		m_loadFileConfig(std::make_unique<LoadFileConfig>())
 	{
@@ -33,9 +32,9 @@ namespace game {
 	{
 	}
 
-	const std::vector<bool>& GameMaster::GetTerrainData(size_t lane)const noexcept
+	const TerrainData& GameMaster::GetTerrainData()const noexcept
 	{
-		return m_loadFileTerrainData->GetTerrainData(lane);
+		return *m_terrainData;
 	}
 
 	const std::vector<std::unique_ptr<EnemyInfo>>& GameMaster::GetEnemyInfoList()const noexcept
@@ -100,7 +99,7 @@ namespace game {
 		//ファイルデータロード
 		try
 		{
-			m_loadFileTerrainData->LoadFile();
+			m_terrainData=LoadFileTerrainData("terrain.txt");
 			m_loadFileEnemyInfo->LoadFile();
 			m_loadFileConfig->LoadFile();
 		}

@@ -1,10 +1,18 @@
 #pragma once
 #include <deque>
 #include "define.hpp"
+
 namespace game {
+
+	class TerrainData;
+
 	//地形配列を制御するクラス
 	class TerrainControl {
 	public:
+
+		//地形データ
+		const TerrainData& m_terrainData;
+
 		//地形一つのサイズ
 		static constexpr size_t TERRAIN_SIZE = 40;
 
@@ -20,7 +28,7 @@ namespace game {
 		}
 
 		//param: 始める位置
-		TerrainControl(const size_t startPos=0);
+		TerrainControl(const TerrainData& terrainData,const size_t startPos=0);
 		//エリアの末端まで行ったかどうか
 		bool IsFinished() { return finishedFlag; }
 		void Update();

@@ -1,15 +1,16 @@
 #include "TerrainControl.hpp"
-#include "GameMaster.hpp"
+#include "TerrainData.hpp"
 
 namespace game {
-	TerrainControl::TerrainControl(const size_t startPos) :m_terrainFont(TERRAIN_SIZE), circle(3)
+	TerrainControl::TerrainControl(const TerrainData& terrainData,const size_t startPos) :
+		m_terrainData(terrainData),m_terrainFont(TERRAIN_SIZE), circle(3)
 	{
 		size_t offset = startPos * 4;
 		index = offset / TERRAIN_SIZE;
 		m_offset = offset - index*TERRAIN_SIZE;
 		for (size_t lane = 0; lane < LANE_NUM; lane++)
 			for (size_t i = 0; i < siv::Window::Size().x / TERRAIN_SIZE + 2; i++)
-				m_activeTerrains[lane].push_back(GameMaster::GetInstance().GetTerrainData(lane)[index+i]);
+				m_activeTerrains[lane].push_back(m_terrainData(lane)[index+i]);
 		index += siv::Window::Size().x / TERRAIN_SIZE + 2;
 	}
 
@@ -20,10 +21,10 @@ namespace game {
 			//先頭のデータを一つ削除
 			m_activeTerrains[i].pop_front();
 			//最後尾に新しい地形データをセットする
-			m_activeTerrains[i].push_back(GameMaster::GetInstance().GetTerrainData(i)[index]);
+			m_activeTerrains[i].push_back(m_terrainData(i)[index]);
 		}
 		index++;
-		if (index == GameMaster::GetInstance().GetTerrainData(0).size()) {
+		if (index == m_terrainData(0).size()) {
 			finishedFlag = true;
 			index = 0;
 		}

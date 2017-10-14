@@ -5,7 +5,7 @@
 
 namespace game {
 
-	class LoadFileTerrainData;
+	class TerrainData;
 	class LoadFileEnemyInfo;
 	class LoadFileConfig;
 	struct EnemyInfo;
@@ -16,13 +16,13 @@ namespace game {
 		//myシーン
 		std::unique_ptr<MySceneManager> m_mySceneManager;
 		//地形データ保持
-		std::unique_ptr<LoadFileTerrainData> m_loadFileTerrainData;
+		std::unique_ptr<TerrainData> m_terrainData;
 		//敵データ保持
 		std::unique_ptr<LoadFileEnemyInfo> m_loadFileEnemyInfo;
 		//configデータ保持
 		std::unique_ptr<LoadFileConfig> m_loadFileConfig;
 	public:
-		const std::vector<bool>& GetTerrainData(size_t lane)const noexcept;
+		const TerrainData& GetTerrainData()const noexcept;
 		const std::vector<std::unique_ptr<EnemyInfo>>& GetEnemyInfoList()const noexcept;
 		const size_t GetStartTime()const noexcept;
 		const bool GetShowTimeFlag()const noexcept;

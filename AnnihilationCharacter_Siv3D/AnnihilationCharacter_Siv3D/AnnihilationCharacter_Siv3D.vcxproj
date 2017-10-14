@@ -375,6 +375,7 @@
     <ClInclude Include="Game\inc\SceneBase.hpp" />
     <ClInclude Include="Game\inc\SelectPlayerScene.hpp" />
     <ClInclude Include="Game\inc\TerrainControl.hpp" />
+    <ClInclude Include="Game\inc\TerrainData.hpp" />
     <ClInclude Include="Game\inc\TestBarrage.hpp" />
     <ClInclude Include="Game\inc\EnemyAction\TestEnemyAction.hpp" />
     <ClInclude Include="Game\inc\TestEnemyModel.hpp" />

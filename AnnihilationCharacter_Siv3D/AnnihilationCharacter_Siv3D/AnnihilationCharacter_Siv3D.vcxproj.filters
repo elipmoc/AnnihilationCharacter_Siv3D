@@ -707,5 +707,8 @@
     <ClInclude Include="Game\inc\BossEnemyTalk.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="Game\inc\TerrainData.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
