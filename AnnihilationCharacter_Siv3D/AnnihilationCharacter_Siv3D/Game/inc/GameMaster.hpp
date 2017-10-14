@@ -1,6 +1,7 @@
 #pragma once
 #include <memory>
 #include <vector>
+#include <unordered_map>
 #include "SceneBase.hpp"
 
 namespace game {
@@ -16,13 +17,13 @@ namespace game {
 		//myシーン
 		std::unique_ptr<MySceneManager> m_mySceneManager;
 		//地形データ保持
-		std::unique_ptr<TerrainData> m_terrainData;
+		std::unordered_map<std::string,std::unique_ptr<TerrainData>> m_terrainDataMap;
 		//敵データ保持
 		std::unique_ptr<LoadFileEnemyInfo> m_loadFileEnemyInfo;
 		//configデータ保持
 		std::unique_ptr<LoadFileConfig> m_loadFileConfig;
 	public:
-		const TerrainData& GetTerrainData()const noexcept;
+		const TerrainData& GetTerrainData(const std::string& terrainName)const;
 		const std::vector<std::unique_ptr<EnemyInfo>>& GetEnemyInfoList()const noexcept;
 		const size_t GetStartTime()const noexcept;
 		const bool GetShowTimeFlag()const noexcept;

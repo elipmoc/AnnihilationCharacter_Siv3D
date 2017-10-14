@@ -32,9 +32,9 @@ namespace game {
 	{
 	}
 
-	const TerrainData& GameMaster::GetTerrainData()const noexcept
+	const TerrainData& GameMaster::GetTerrainData(const std::string& terrainName)const
 	{
-		return *m_terrainData;
+		return *m_terrainDataMap.at(terrainName);
 	}
 
 	const std::vector<std::unique_ptr<EnemyInfo>>& GameMaster::GetEnemyInfoList()const noexcept
@@ -99,7 +99,8 @@ namespace game {
 		//ファイルデータロード
 		try
 		{
-			m_terrainData=LoadFileTerrainData("terrain.txt");
+			m_terrainDataMap["ZakoEnemy"] = LoadFileTerrainData("terrain.txt");
+			m_terrainDataMap["Boss1"]=LoadFileTerrainData("BossTerrain1.txt");
 			m_loadFileEnemyInfo->LoadFile();
 			m_loadFileConfig->LoadFile();
 		}

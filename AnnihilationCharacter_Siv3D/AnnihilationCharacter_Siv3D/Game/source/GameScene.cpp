@@ -19,7 +19,7 @@ namespace game {
 		siv::SoundAsset(L"bgm").setVolume(0.1);
 		siv::SoundAsset(L"bgm").play();
 		m_gameCounter = std::make_unique<GameCounter>(GameMaster::GetInstance().GetStartTime());
-		m_terrainControl = std::make_unique<TerrainControl>(GameMaster::GetInstance().GetTerrainData(),m_gameCounter->GetCount());
+		m_terrainControl = std::make_unique<TerrainControl>(GameMaster::GetInstance().GetTerrainData("ZakoEnemy"),m_gameCounter->GetCount());
 		(m_player= std::make_unique<Player>())
 			->SetPos({ 50, 50 }).SetText(m_data->player);
 		m_enemyControl = std::make_unique<EnemyControl>(m_data->level,m_player->GetRefPos(), *m_gameCounter);
