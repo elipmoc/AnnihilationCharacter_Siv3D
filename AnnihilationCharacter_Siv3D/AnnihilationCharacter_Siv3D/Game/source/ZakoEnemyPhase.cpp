@@ -5,14 +5,18 @@
 #include "GameMaster.hpp"
 #include "BulletList.hpp"
 #include "GameCounter.hpp"
+#include "EnemyControl.hpp"
+#include "TerrainControl.hpp"
 
 namespace game {
-	ZakoEnemyPhase::ZakoEnemyPhase(const Level level, const siv::Vec2& playerBindPos, const GameCounterReader& count,BulletList& bulletList):
+	ZakoEnemyPhase::ZakoEnemyPhase(const Level level, const siv::Vec2& playerBindPos, const GameCounterReader& count,BulletList& bulletList,EnemyControl& enemyControl,TerrainControl& terrainControl):
 		m_level(level),
 		m_enemyList(std::make_unique<EnemyList>()),
 		m_enemyBuilder(std::make_unique<EnemyBuilder>(playerBindPos)),
 		m_count(count),
-		m_bulletList(bulletList)
+		m_bulletList(bulletList),
+		m_enemyControl(enemyControl),
+		m_terrainControl(terrainControl)
 	{
 		while (index < GameMaster::GetInstance().GetEnemyInfoList().size() &&
 			GameMaster::GetInstance().GetEnemyInfoList()[index]->bornTime <m_count.GetCount())
@@ -39,6 +43,8 @@ namespace game {
 			index++;
 		}
 		m_enemyList->Update();
+		if (m_terrainControl.IsFinished())
+			m_enemyControl.SwitchBossPhase();
 	}
 
 	ZakoEnemyPhase::~ZakoEnemyPhase() = default;
