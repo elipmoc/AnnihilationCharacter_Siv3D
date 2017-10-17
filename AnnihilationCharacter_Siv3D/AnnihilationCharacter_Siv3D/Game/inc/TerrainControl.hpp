@@ -11,10 +11,17 @@ namespace game {
 	public:
 
 		//地形データ
-		const TerrainData& m_terrainData;
+		const TerrainData* m_terrainData;
 
 		//地形一つのサイズ
 		static constexpr size_t TERRAIN_SIZE = 40;
+
+		//地形データを切り替え
+		void SetTerrainData(const TerrainData& terrainData) {
+			index=0;
+			finishedFlag = false;
+			m_terrainData = &terrainData;
+		}
 
 		//特定のレーンの地形の高さを得る
 		double GetTerrainY(size_t lane)const {

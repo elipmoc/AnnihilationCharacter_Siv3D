@@ -4,9 +4,11 @@
 #include "BossPhase.hpp"
 #include "BulletList.hpp"
 #include "GameCounter.hpp"
+#include "TerrainControl.hpp"
 
 namespace game {
-	EnemyControl::EnemyControl(const Level level,const siv::Vec2& playerRefPos,const GameCounterReader& count):
+	EnemyControl::EnemyControl(const Level level,const siv::Vec2& playerRefPos,const GameCounterReader& count,TerrainControl& terrainControl):
+		m_terrainControl(terrainControl),
 		m_level(level),
 		m_bulletList(std::make_unique<BulletList>(1000)),
 		m_count(count),
