@@ -9,7 +9,7 @@ namespace game {
 	class GameCounterReader;
 	class TerrainControl;
 
-	class EnemyControl {
+	class EnemyPhaseControl {
 		TerrainControl& m_terrainControl;
 		const Level m_level;
 		std::unique_ptr<BulletList> m_bulletList;
@@ -25,8 +25,8 @@ namespace game {
 		param:
 			難易度,主人公のRef座標,スタートするタイミング
 		*/
-		EnemyControl(const Level level,const siv::Vec2&,const GameCounterReader&,TerrainControl&);
-		~EnemyControl();
+		EnemyPhaseControl(const Level level,const siv::Vec2&,const GameCounterReader&,TerrainControl&);
+		~EnemyPhaseControl();
 		//ボスフェーズに切り替え
 		void SwitchBossPhase();
 		void Draw()const;

@@ -7,10 +7,10 @@ namespace game {
 	class BarrierUi;
 	class Player;
 	class TerrainControl;
-	class EnemyControl;
+	class EnemyPhaseControl;
 	class GameCounter;
 	class GameScene :public MySceneBase {
-		std::unique_ptr<EnemyControl> m_enemyControl;
+		std::unique_ptr<EnemyPhaseControl> m_enemyControl;
 		std::unique_ptr<Player> m_player;
 		std::unique_ptr<TerrainControl> m_terrainControl;
 		std::unique_ptr<HpUi> m_hpUi;

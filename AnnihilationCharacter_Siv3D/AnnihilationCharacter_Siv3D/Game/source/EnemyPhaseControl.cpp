@@ -1,4 +1,4 @@
-#include "EnemyControl.hpp"
+#include "EnemyPhaseControl.hpp"
 #include "EnemyBuilder.hpp"
 #include "ZakoEnemyPhase.hpp"
 #include "BossPhase.hpp"
@@ -6,9 +6,10 @@
 #include "GameCounter.hpp"
 #include "TerrainControl.hpp"
 #include "GameMaster.hpp"
+#include "Enemy.hpp"
 
 namespace game {
-	EnemyControl::EnemyControl(const Level level,const siv::Vec2& playerRefPos,const GameCounterReader& count,TerrainControl& terrainControl):
+	EnemyPhaseControl::EnemyPhaseControl(const Level level,const siv::Vec2& playerRefPos,const GameCounterReader& count,TerrainControl& terrainControl):
 		m_terrainControl(terrainControl),
 		m_level(level),
 		m_bulletList(std::make_unique<BulletList>(1000)),
@@ -19,21 +20,21 @@ namespace game {
 		
 	}
 	
-	EnemyControl::~EnemyControl() = default;
+	EnemyPhaseControl::~EnemyPhaseControl() = default;
 
-	void EnemyControl::SwitchBossPhase()
+	void EnemyPhaseControl::SwitchBossPhase()
 	{
 		m_phase = std::make_unique<BossPhase>(m_level, m_playerRefPos, *m_bulletList);
 		m_terrainControl.SetTerrainData(GameMaster::GetInstance().GetTerrainData("Boss1"));
 	}
 
-	void EnemyControl::Draw() const
+	void EnemyPhaseControl::Draw() const
 	{
 		m_phase->Draw();
 		m_bulletList->Draw();
 	}
 
-	void EnemyControl::Update()
+	void EnemyPhaseControl::Update()
 	{
 		m_phase->Update();
 		m_bulletList->Update();

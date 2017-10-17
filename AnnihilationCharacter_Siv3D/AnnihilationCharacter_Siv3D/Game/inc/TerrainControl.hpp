@@ -10,8 +10,7 @@ namespace game {
 	class TerrainControl {
 	public:
 
-		//地形データ
-		const TerrainData* m_terrainData;
+
 
 		//地形一つのサイズ
 		static constexpr size_t TERRAIN_SIZE = 40;
@@ -40,6 +39,10 @@ namespace game {
 		bool IsFinished() { return finishedFlag; }
 		void Update();
 	private:
+
+		//地形データ
+		const TerrainData* m_terrainData;
+
 		//地形のインデックス
 		size_t index = 0;
 

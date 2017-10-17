@@ -189,7 +189,7 @@
     <ClCompile Include="Game\source\CollisionCircle.cpp" />
     <ClCompile Include="Game\source\CollisionControl.cpp" />
     <ClCompile Include="Game\source\Enemy.cpp" />
-    <ClCompile Include="Game\source\EnemyControl.cpp" />
+    <ClCompile Include="Game\source\EnemyPhaseControl.cpp" />
     <ClCompile Include="Game\source\EnemyList.cpp" />
     <ClCompile Include="Game\source\GameOverScene.cpp" />
     <ClCompile Include="Game\source\GameScene.cpp" />
@@ -200,6 +200,7 @@
     <ClCompile Include="Game\source\SelectPlayerScene.cpp" />
     <ClCompile Include="Game\source\TerrainControl.cpp" />
     <ClCompile Include="Game\source\EnemyAction\TestEnemyAction.cpp" />
+    <ClCompile Include="Game\source\ZakoEnemyListControl.cpp" />
     <ClCompile Include="Game\source\ZakoEnemyPhase.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
@@ -352,7 +353,7 @@
     <ClInclude Include="Game\inc\EnemyBarrage\HorizontalShotOnes.hpp" />
     <ClInclude Include="Game\inc\EnemyBarrage\UpShot.hpp" />
     <ClInclude Include="Game\inc\EnemyBuilder.hpp" />
-    <ClInclude Include="Game\inc\EnemyControl.hpp" />
+    <ClInclude Include="Game\inc\EnemyPhaseControl.hpp" />
     <ClInclude Include="Game\inc\EnemyInfo.hpp" />
     <ClInclude Include="Game\inc\EnemyList.hpp" />
     <ClInclude Include="Game\inc\EnemyModelInfo.hpp" />
@@ -383,6 +384,7 @@
     <ClInclude Include="Game\inc\TitleScene.hpp" />
     <ClInclude Include="Game\inc\EnemyBarrage\HorizontalShotOne.hpp" />
     <ClInclude Include="Game\inc\LevelSelectScene.hpp" />
+    <ClInclude Include="Game\inc\ZakoEnemyListControl.hpp" />
     <ClInclude Include="Game\inc\ZakoEnemyPhase.hpp" />
     <ClInclude Include="UseSiv3D.hpp" />
   </ItemGroup>

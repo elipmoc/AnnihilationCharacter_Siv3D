@@ -3,7 +3,7 @@
 #include "TerrainControl.hpp"
 #include "HpUI.hpp"
 #include "BarrierUI.hpp"
-#include "EnemyControl.hpp"
+#include "EnemyPhaseControl.hpp"
 #include "GameCounter.hpp"
 #include "GameMaster.hpp"
 namespace game {
@@ -22,7 +22,7 @@ namespace game {
 		m_terrainControl = std::make_unique<TerrainControl>(GameMaster::GetInstance().GetTerrainData("ZakoEnemy"),m_gameCounter->GetCount());
 		(m_player= std::make_unique<Player>())
 			->SetPos({ 50, 50 }).SetText(m_data->player);
-		m_enemyControl = std::make_unique<EnemyControl>(m_data->level,m_player->GetRefPos(), *m_gameCounter,*m_terrainControl);
+		m_enemyControl = std::make_unique<EnemyPhaseControl>(m_data->level,m_player->GetRefPos(), *m_gameCounter,*m_terrainControl);
 		m_hpUi = std::make_unique<HpUi>();
 		m_barrierUi = std::make_unique<BarrierUi>();
 	}
