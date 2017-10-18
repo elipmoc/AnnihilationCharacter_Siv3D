@@ -335,6 +335,7 @@
     <ClInclude Include="Game\inc\BarrageBase.hpp" />
     <ClInclude Include="Game\inc\Barrier.hpp" />
     <ClInclude Include="Game\inc\BasePhase.hpp" />
+    <ClInclude Include="Game\inc\Boss.hpp" />
     <ClInclude Include="Game\inc\BossEnemy.hpp" />
     <ClInclude Include="Game\inc\BossEnemyTalk.hpp" />
     <ClInclude Include="Game\inc\BossPhase.hpp" />
