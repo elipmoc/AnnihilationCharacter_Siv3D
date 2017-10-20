@@ -167,6 +167,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Game\source\Barrier.cpp" />
+    <ClCompile Include="Game\source\Boss.cpp" />
     <ClCompile Include="Game\source\BossEnemyTalk.cpp" />
     <ClCompile Include="Game\source\BossPhase.cpp" />
     <ClCompile Include="Game\source\EnemyAction\EnemyAction2.cpp" />
@@ -380,7 +381,7 @@
     <ClInclude Include="Game\inc\TerrainData.hpp" />
     <ClInclude Include="Game\inc\TestBarrage.hpp" />
     <ClInclude Include="Game\inc\EnemyAction\TestEnemyAction.hpp" />
-    <ClInclude Include="Game\inc\TestEnemyModel.hpp" />
+    <ClInclude Include="Game\inc\EnemyModel\BossModel.hpp" />
     <ClInclude Include="Game\inc\TitleParticle.hpp" />
     <ClInclude Include="Game\inc\TitleScene.hpp" />
     <ClInclude Include="Game\inc\EnemyBarrage\HorizontalShotOne.hpp" />

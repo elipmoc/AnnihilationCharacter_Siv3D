@@ -7,7 +7,7 @@
 //#include "TestBarrage.hpp"
 #include "EnemyAction\EnemyAction2.hpp"
 #include "EnemyAction\TestEnemyAction.hpp"
-#include "TestEnemyModel.hpp"
+#include "EnemyModel\BossModel.hpp"
 #include "EnemyModel\Model01.hpp"
 #include "EnemyModel\Model02.hpp"
 #include "EnemyModel\Model03.hpp"
@@ -35,7 +35,7 @@ namespace game {
 		m_barrageMap["GuruGuruShot"] = std::make_unique<MakeBarrageGenerator<GuruGuruShot>>();
 		m_actionMap["Action1"] = std::make_unique<TestEnemyAction>();
 		m_actionMap["Action2"] = std::make_unique<EnemyAction2>();
-		m_modelMap["TestModel"] = std::make_unique<TestEnemyModel>();
+		m_modelMap["BossModel"] = std::make_unique<BossModel>();
 		m_modelMap["Model01"] = std::make_unique<Model01>();
 		m_modelMap["Model02"] = std::make_unique<Model02>();
 		m_modelMap["Model03"] = std::make_unique<Model03>();

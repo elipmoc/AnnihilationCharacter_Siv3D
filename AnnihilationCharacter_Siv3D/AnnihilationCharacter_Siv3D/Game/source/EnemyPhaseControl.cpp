@@ -24,7 +24,7 @@ namespace game {
 
 	void EnemyPhaseControl::SwitchBossPhase()
 	{
-		m_phase = std::make_unique<BossPhase>(m_level, m_playerRefPos, *m_bulletList);
+		m_phase = std::make_unique<BossPhase>(m_level, m_playerRefPos, *m_bulletList,m_terrainControl);
 		m_terrainControl.SetTerrainData(GameMaster::GetInstance().GetTerrainData("Boss1"));
 	}
 
