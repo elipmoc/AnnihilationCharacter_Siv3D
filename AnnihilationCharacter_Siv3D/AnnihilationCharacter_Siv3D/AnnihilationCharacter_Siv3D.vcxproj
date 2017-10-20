@@ -170,6 +170,8 @@
     <ClCompile Include="Game\source\Boss.cpp" />
     <ClCompile Include="Game\source\BossEnemyTalk.cpp" />
     <ClCompile Include="Game\source\BossPhase.cpp" />
+    <ClCompile Include="Game\source\BulletListCreator.cpp" />
+    <ClCompile Include="Game\source\BulletListUpdator.cpp" />
     <ClCompile Include="Game\source\EnemyAction\EnemyAction2.cpp" />
     <ClCompile Include="Game\source\EnemyBarrage\GuruGuruShot.cpp" />
     <ClCompile Include="Game\source\EnemyBarrage\HomingShot.cpp" />
@@ -337,12 +339,13 @@
     <ClInclude Include="Game\inc\Barrier.hpp" />
     <ClInclude Include="Game\inc\BasePhase.hpp" />
     <ClInclude Include="Game\inc\Boss.hpp" />
-    <ClInclude Include="Game\inc\BossEnemy.hpp" />
     <ClInclude Include="Game\inc\BossEnemyTalk.hpp" />
     <ClInclude Include="Game\inc\BossPhase.hpp" />
     <ClInclude Include="Game\inc\BulletList.hpp" />
     <ClInclude Include="Game\inc\BarrierUI.hpp" />
     <ClInclude Include="Game\inc\Bullet.hpp" />
+    <ClInclude Include="Game\inc\BulletListCreator.hpp" />
+    <ClInclude Include="Game\inc\BulletListUpdator.hpp" />
     <ClInclude Include="Game\inc\CollisionCircle.hpp" />
     <ClInclude Include="Game\inc\CollisionControl.hpp" />
     <ClInclude Include="Game\inc\define.hpp" />

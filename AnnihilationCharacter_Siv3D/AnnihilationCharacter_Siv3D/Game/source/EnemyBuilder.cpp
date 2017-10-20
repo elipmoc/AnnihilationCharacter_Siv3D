@@ -48,7 +48,7 @@ namespace game {
 	}
 
 
-	std::unique_ptr<Enemy> EnemyBuilder::EnemyBuild(const EnemyInfo& info, const Level level,BulletList& bulletList)
+	std::unique_ptr<Enemy> EnemyBuilder::EnemyBuild(const EnemyInfo& info, const Level level,BulletListCreator& bulletListCreator)
 	{
 		using elipmocframework::FontObject;
 		auto&& enemyFont = std::make_unique<FontObject>(12,L"‚l‚r ‚oƒSƒVƒbƒN");
@@ -59,7 +59,7 @@ namespace game {
 				info.lifeTime,
 				info.barrageStartTime,
 				m_modelMap[info.model]->GenerateEnemyModelInfo(),
-				m_barrageMap[info.barrage]->GenerateBarrage(bulletList,level,enemyFont->GetRefPos(),m_playerBindPos),
+				m_barrageMap[info.barrage]->GenerateBarrage(bulletListCreator,level,enemyFont->GetRefPos(),m_playerBindPos),
 				std::move(enemyFont)
 				);
 	}

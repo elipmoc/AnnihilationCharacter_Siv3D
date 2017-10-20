@@ -5,10 +5,7 @@
 #include "BasePhase.hpp"
 
 namespace game {
-	class EnemyList;
-	struct EnemyInfo;
-	class EnemyBuilder;
-	class BulletList;
+	class BulletListCreator;
 	class GameCounterReader;
 	class EnemyPhaseControl;
 	class TerrainControl;
@@ -23,7 +20,7 @@ namespace game {
 		param:
 		難易度,主人公のRef座標,スタートするタイミング
 		*/
-		ZakoEnemyPhase(const Level, const siv::Vec2&, const GameCounterReader&,BulletList&,EnemyPhaseControl&,TerrainControl&);
+		ZakoEnemyPhase(const Level, const siv::Vec2&, const GameCounterReader&,const BulletListCreator&,EnemyPhaseControl&,TerrainControl&);
 		~ZakoEnemyPhase();
 		virtual void Draw()const override final;
 		virtual void Update() override final;

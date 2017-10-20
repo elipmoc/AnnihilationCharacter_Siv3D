@@ -5,13 +5,18 @@
 #include "EnemyInfo.hpp"
 #include "GameCounter.hpp"
 #include "Enemy.hpp"
+#include "BulletListCreator.hpp"
+
 
 namespace game {
 
-	ZakoEnemyListControl::ZakoEnemyListControl(const Level level, const GameCounterReader& counter, BulletList& bulletList,std::unique_ptr<EnemyBuilder> enemyBuilder)
+	ZakoEnemyListControl::ZakoEnemyListControl(
+		const Level level, const GameCounterReader& counter,
+		const BulletListCreator& bulletListCreator,std::unique_ptr<EnemyBuilder> enemyBuilder)
+
 		:m_enemyBuilder(std::move(enemyBuilder)),
 		m_enemyList(std::make_unique<EnemyList>()),
-		m_bulletList(bulletList),
+		m_bulletListCreator(std::make_unique<BulletListCreator>(bulletListCreator)),
 		m_counter(counter),
 		m_level(level)
 	{
@@ -32,7 +37,7 @@ namespace game {
 			)
 		{
 			m_enemyList->push_back(
-				m_enemyBuilder->EnemyBuild(*GameMaster::GetInstance().GetEnemyInfoList()[index], m_level, m_bulletList)
+				m_enemyBuilder->EnemyBuild(*GameMaster::GetInstance().GetEnemyInfoList()[index], m_level, *m_bulletListCreator)
 			);
 			index++;
 		}

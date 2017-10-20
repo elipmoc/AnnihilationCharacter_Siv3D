@@ -4,10 +4,10 @@
 #include "TerrainControl.hpp"
 
 namespace game {
-	BossPhase::BossPhase(Level level, const siv::Vec2 & playerRefPos, BulletList & bulletList,TerrainControl& terrainControl):
+	BossPhase::BossPhase(Level level, const siv::Vec2 & playerRefPos, BulletListCreator & bulletListCreator,TerrainControl& terrainControl):
 		m_test(std::make_unique<BossEnemyTalk>(siv::Vec2(160,70))),
 		m_terrainControl(terrainControl),
-		m_boss(std::make_unique<Boss>(level,playerRefPos,bulletList))
+		m_boss(std::make_unique<Boss>(level,playerRefPos,bulletListCreator))
 	{}
 
 	BossPhase::~BossPhase() = default;

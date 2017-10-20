@@ -1,15 +1,18 @@
 #include "BarrageBase.hpp"
-#include "BulletList.hpp"
+#include "BulletListCreator.hpp"
 
 namespace game {
 
-	BulletList & BarrageBase::GetBulletList()
+	BulletListCreator & BarrageBase::GetBulletListCreator()
 	{
-		return m_bulletList;
+		return m_bulletListCreator;
 	}
 
-	BarrageBase::BarrageBase(BulletList& bulletList,const Level level, const siv::Vec2& bindPos,const siv::Vec2& playerBindPos, const siv::Vec2& fixPos)
-		:m_bulletList(bulletList),m_bindPos(bindPos),m_fixPos(fixPos),
+	BarrageBase::BarrageBase(
+		BulletListCreator& bulletListCreator,const Level level, 
+		const siv::Vec2& bindPos,const siv::Vec2& playerBindPos, const siv::Vec2& fixPos)
+
+		:m_bulletListCreator(bulletListCreator),m_bindPos(bindPos),m_fixPos(fixPos),
 		m_level(level),
 		m_playerBindPos(playerBindPos)
 	{}
@@ -28,8 +31,8 @@ namespace game {
 			YawarakaUpdate();
 	}
 
-	void BarrageBase::Draw()const
+	/*void BarrageBase::Draw()const
 	{
-		m_bulletList.Draw();
-	}
+		m_bulletListCreator.Draw();
+	}*/
 }

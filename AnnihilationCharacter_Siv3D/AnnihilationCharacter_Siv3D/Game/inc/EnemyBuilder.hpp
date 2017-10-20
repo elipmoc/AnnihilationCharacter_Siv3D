@@ -7,7 +7,7 @@ namespace game {
 	class BarrageGenerator;
 	class EnemyActionBase;
 	class EnemyModelInfoGenerator;
-	class BulletList;
+	class BulletListCreator;
 
 	//敵を生成するビルダークラス
 	class EnemyBuilder {
@@ -19,6 +19,6 @@ namespace game {
 	public:
 		EnemyBuilder(const siv::Vec2& playerBindPos);
 		~EnemyBuilder();
-		std::unique_ptr<Enemy> EnemyBuild(const EnemyInfo&,const Level level,BulletList&);
+		std::unique_ptr<Enemy> EnemyBuild(const EnemyInfo&,const Level level,BulletListCreator&);
 	};
 }

@@ -40,7 +40,7 @@ namespace game {
 
 	void Enemy::Draw() const
 	{
-		m_barrage->Draw();
+		//m_barrage->Draw();
 		m_enemyFont->DrawCenter();
 	}
 

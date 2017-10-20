@@ -6,10 +6,12 @@
 #include "ZakoEnemyListControl.hpp"
 
 namespace game {
-	ZakoEnemyPhase::ZakoEnemyPhase(const Level level, const siv::Vec2& playerBindPos, const GameCounterReader& counter,BulletList& bulletList,EnemyPhaseControl& enemyControl,TerrainControl& terrainControl):
+	ZakoEnemyPhase::ZakoEnemyPhase(
+		const Level level, const siv::Vec2& playerBindPos, const GameCounterReader& counter,
+		const BulletListCreator& bulletListCreator,EnemyPhaseControl& enemyControl,TerrainControl& terrainControl):
 		m_enemyControl(enemyControl),
 		m_terrainControl(terrainControl),
-		m_zakoEnemyListControl(std::make_unique<ZakoEnemyListControl>(level,counter,bulletList,std::make_unique<EnemyBuilder>(playerBindPos)))
+		m_zakoEnemyListControl(std::make_unique<ZakoEnemyListControl>(level,counter,bulletListCreator,std::make_unique<EnemyBuilder>(playerBindPos)))
 	{
 
 	}

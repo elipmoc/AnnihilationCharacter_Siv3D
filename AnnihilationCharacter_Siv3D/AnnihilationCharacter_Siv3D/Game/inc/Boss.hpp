@@ -7,15 +7,15 @@ namespace elipmocframework {
 }
 
 namespace game {
-	class BulletList;
+	class BulletListCreator;
 	//ボスクラス
 	class Boss {
 		const Level m_level;
-		BulletList& m_bulletList;
+		BulletListCreator& m_bulletListCreator;
 		const siv::Vec2& m_playerRefPos;
 		std::unique_ptr<elipmocframework::FontObject> m_fontObject;
 	public:
-		Boss(Level level,const siv::Vec2& playerRefPos, BulletList&);
+		Boss(Level level,const siv::Vec2& playerRefPos, BulletListCreator&);
 		~Boss();
 		void Update();
 		void Draw()const;

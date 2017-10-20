@@ -5,8 +5,8 @@
 
 
 namespace game {
-	Boss::Boss(Level level, const siv::Vec2 & playerRefPos, BulletList& bulletList):
-		m_level(level),m_playerRefPos(playerRefPos),m_bulletList(bulletList),
+	Boss::Boss(Level level, const siv::Vec2 & playerRefPos, BulletListCreator& bulletListCreator):
+		m_level(level),m_playerRefPos(playerRefPos),m_bulletListCreator(bulletListCreator),
 		m_fontObject(std::make_unique<elipmocframework::FontObject>(12, L"‚l‚r ‚oƒSƒVƒbƒN"))
 	{
 		BossModel b;

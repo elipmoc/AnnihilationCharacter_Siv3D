@@ -3,12 +3,12 @@
 #include "SceneBase.hpp"
 
 namespace game {
-	class BulletList;
+	class BulletListCreator;
 
 	//弾幕クラス
 	class BarrageBase {
 		//弾リスト
-		BulletList& m_bulletList;
+		BulletListCreator& m_bulletListCreator;
 
 		//主人公の参照座標
 		const siv::Vec2& m_playerBindPos;
@@ -21,7 +21,7 @@ namespace game {
 		const Level m_level;
 	protected:
 
-		BulletList& GetBulletList();
+		BulletListCreator& GetBulletListCreator();
 
 		siv::Vec2 GetPlayerPos() {
 			return m_playerBindPos;
@@ -32,25 +32,25 @@ namespace game {
 		}
 
 	public:
-		BarrageBase(BulletList&,const Level level, const siv::Vec2& bindPos,const siv::Vec2&playerBindPos, const siv::Vec2& fixPos);
+		BarrageBase(BulletListCreator&,const Level level, const siv::Vec2& bindPos,const siv::Vec2&playerBindPos, const siv::Vec2& fixPos);
 		~BarrageBase();
 		void Update();
 		virtual void YawarakaUpdate() = 0;
 		virtual void NormalUpdate()=0;
 		virtual void RengokuUpdate()=0;
-		void Draw()const;
+		//void Draw()const;
 	};
 
 	//BarrageBaseを生成するビルダークラス用のinterface
 	class BarrageGenerator {
 	public:
-		virtual std::unique_ptr<BarrageBase> GenerateBarrage(BulletList& ,const Level level,const siv::Vec2& bindPos, const siv::Vec2&playerBindPos, const siv::Vec2& fixPos = {0,0})const = 0;
+		virtual std::unique_ptr<BarrageBase> GenerateBarrage(BulletListCreator& ,const Level level,const siv::Vec2& bindPos, const siv::Vec2&playerBindPos, const siv::Vec2& fixPos = {0,0})const = 0;
 	};
 
 	template<class BarrageT>
 	class MakeBarrageGenerator :public BarrageGenerator {
-		virtual std::unique_ptr<BarrageBase> GenerateBarrage(BulletList& bulletList,const Level level, const siv::Vec2& bindPos, const siv::Vec2&playerBindPos, const siv::Vec2& fixPos)const override final {
-			return std::make_unique<BarrageT>(bulletList,level,bindPos,playerBindPos, fixPos);
+		virtual std::unique_ptr<BarrageBase> GenerateBarrage(BulletListCreator& bulletListCreator,const Level level, const siv::Vec2& bindPos, const siv::Vec2&playerBindPos, const siv::Vec2& fixPos)const override final {
+			return std::make_unique<BarrageT>(bulletListCreator,level,bindPos,playerBindPos, fixPos);
 		}
 	};
 }
