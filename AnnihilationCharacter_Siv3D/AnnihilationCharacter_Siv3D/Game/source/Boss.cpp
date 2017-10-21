@@ -2,6 +2,7 @@
 #include "BulletList.hpp"
 #include "FontObject.hpp"
 #include "EnemyModel\BossModel.hpp"
+#include "BossBehavior.hpp"
 
 
 namespace game {
@@ -13,8 +14,17 @@ namespace game {
 		m_fontObject->SetText(b.GenerateEnemyModelInfo().text);
 	}
 	Boss::~Boss() = default;
+
+	void Boss::SetBossBehavior(std::unique_ptr<BossBehavior> bossBehavior)
+	{
+		m_bossBehavior = std::move(bossBehavior);
+	}
+
 	void Boss::Update()
 	{
+		if (m_bossBehavior != nullptr) {
+			m_bossBehavior->Update();
+		}
 	}
 	void Boss::Draw() const
 	{
