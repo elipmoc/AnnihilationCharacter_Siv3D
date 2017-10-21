@@ -3,6 +3,7 @@
 #include "FontObject.hpp"
 #include "EnemyModel\BossModel.hpp"
 #include "BossBehavior.hpp"
+#include "BulletListCreator.hpp"
 
 
 namespace game {
