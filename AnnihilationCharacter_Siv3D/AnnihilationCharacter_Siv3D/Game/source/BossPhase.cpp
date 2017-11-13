@@ -2,7 +2,6 @@
 #include "BossEnemyTalk.hpp"
 #include "Boss.hpp"
 #include "TerrainControl.hpp"
-#include "BossBehavior01.hpp"
 #include "BossPhase.hpp"
 #include "BulletListCreator.hpp"
 
@@ -12,19 +11,26 @@ namespace game {
 		m_terrainControl(terrainControl),
 		m_boss(std::make_unique<Boss>(level,playerRefPos,bulletListCreator))
 	{
-		m_boss->SetBossBehavior(std::make_unique<BossBehavior01>(bulletListCreator));
+		//m_boss->SetBossBehavior(std::make_unique<BossBehavior01>(bulletListCreator));
 	}
 
 	BossPhase::~BossPhase() = default;
 
 	void BossPhase::Draw() const
 	{
-		m_test->Draw();
+		if (m_test != nullptr)
+			m_test->Draw();
 		m_boss->Draw();
 	}
 	void BossPhase::Update()
 	{
-		m_test->Update();
+		if (m_test != nullptr) {
+			m_test->Update();
+			if (m_test->IsFinished()) {
+				m_test = nullptr;
+				m_boss->SetBossBehavior();
+			}
+		}
 		m_boss->Update();
 	}
 }

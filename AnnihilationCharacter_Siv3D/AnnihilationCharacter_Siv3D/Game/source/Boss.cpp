@@ -4,11 +4,12 @@
 #include "EnemyModel\BossModel.hpp"
 #include "BossBehavior.hpp"
 #include "BulletListCreator.hpp"
+#include "BossBehavior01.hpp"
 
 
 namespace game {
 	Boss::Boss(Level level, const siv::Vec2 & playerRefPos, BulletListCreator& bulletListCreator):
-		m_level(level),m_playerRefPos(playerRefPos),m_bulletListCreator(bulletListCreator),
+		m_level(level),m_playerRefPos(playerRefPos),m_bulletListCreator(std::make_unique<BulletListCreator>(bulletListCreator)),
 		m_fontObject(std::make_unique<elipmocframework::FontObject>(12, L"‚l‚r ‚oƒSƒVƒbƒN"))
 	{
 		BossModel b;
@@ -16,9 +17,9 @@ namespace game {
 	}
 	Boss::~Boss() = default;
 
-	void Boss::SetBossBehavior(std::unique_ptr<BossBehavior> bossBehavior)
+	void Boss::SetBossBehavior()
 	{
-		m_bossBehavior = std::move(bossBehavior);
+		m_bossBehavior =std::make_unique<BossBehavior01>(*m_bulletListCreator);
 	}
 
 	void Boss::Update()

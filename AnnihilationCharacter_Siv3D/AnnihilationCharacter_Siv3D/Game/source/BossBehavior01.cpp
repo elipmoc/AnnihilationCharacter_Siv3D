@@ -8,6 +8,8 @@ namespace game {
 	}
 	void BossBehavior01::Update()
 	{
-		GetBulletListCreator().MakeBullet({ 50 ,50 }, { 1,1 }, { 0,0 });
+		if(count%20==0)
+			GetBulletListCreator().MakeBullet({ 50 ,50 }, { 1,1 }, { 0,0 });
+		count++;
 	}
 }

@@ -27,9 +27,13 @@ namespace game {
 	BossEnemyTalk::~BossEnemyTalk()
 	{
 	}
+
+	bool BossEnemyTalk::IsFinished() const noexcept{
+		return count / 180 >= 5;
+	}
+
 	void BossEnemyTalk::Update()
 	{
-		static size_t count = 0;
 		if (count % 180 == 0 && count / 180 < 5)
 			m_talkFont->SetText(str[count / 180]);
 		count++;

@@ -15,9 +15,11 @@ namespace game {
 		//•\Ž¦ˆÊ’u
 		const siv::Vec2 m_pos;
 		siv::String str[50];
+		size_t count = 0;
 	public:
 		BossEnemyTalk(const siv::Vec2& pos);
 		~BossEnemyTalk();
+		bool IsFinished()const noexcept;
 		void Update();
 		void Draw()const;
 	};
