@@ -1,5 +1,4 @@
 #pragma once
-#include <vector>
 #include <memory>
 #include "SceneBase.hpp"
 
@@ -13,7 +12,6 @@ namespace game {
 		TerrainControl& m_terrainControl;
 		const Level m_level;
 		std::unique_ptr<BulletList> m_bulletList;
-		const GameCounterReader& m_count;
 		std::unique_ptr<BasePhase> m_phase;
 		const siv::Vec2& m_playerRefPos;
 		

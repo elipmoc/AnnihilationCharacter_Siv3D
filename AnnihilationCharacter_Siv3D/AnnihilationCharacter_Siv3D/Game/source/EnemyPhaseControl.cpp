@@ -1,12 +1,9 @@
 #include "EnemyPhaseControl.hpp"
-#include "EnemyBuilder.hpp"
 #include "ZakoEnemyPhase.hpp"
 #include "BossPhase.hpp"
 #include "BulletList.hpp"
-#include "GameCounter.hpp"
 #include "TerrainControl.hpp"
 #include "GameMaster.hpp"
-#include "Enemy.hpp"
 #include "BulletListCreator.hpp"
 
 namespace game {
@@ -14,7 +11,6 @@ namespace game {
 		m_terrainControl(terrainControl),
 		m_level(level),
 		m_bulletList(std::make_unique<BulletList>(1000)),
-		m_count(count),
 		m_phase(std::make_unique<ZakoEnemyPhase>(level,playerRefPos,count,BulletListCreator(*m_bulletList),*this,m_terrainControl)),
 		m_playerRefPos(playerRefPos)
 	{
