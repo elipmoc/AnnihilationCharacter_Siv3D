@@ -22,6 +22,7 @@ namespace game {
 			delete_flag = true;
 		}
 
+		Power(Power&&);
 		Power(const siv::Vec2 & pos, const siv::Vec2 & speedv);
 		~Power();
 

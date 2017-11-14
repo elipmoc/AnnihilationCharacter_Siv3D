@@ -2,6 +2,7 @@
 #include "CollisionCircle.hpp"
 
 namespace game {
+	Power::Power(Power &&) = default;
 
 	Power::Power(const siv::Vec2 & pos, const siv::Vec2 & speedv)
 		:elipmocframework::FontObject(L"—Í", 17), m_speedv(speedv),

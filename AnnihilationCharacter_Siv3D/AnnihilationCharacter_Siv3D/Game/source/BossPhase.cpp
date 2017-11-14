@@ -22,6 +22,7 @@ namespace game {
 		if (m_test != nullptr)
 			m_test->Draw();
 		m_boss->Draw();
+		m_powerSpawn->Draw();
 	}
 	void BossPhase::Update()
 	{
@@ -33,5 +34,6 @@ namespace game {
 			}
 		}
 		m_boss->Update();
+		m_powerSpawn->Update();
 	}
 }

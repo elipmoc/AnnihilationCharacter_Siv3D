@@ -6,8 +6,9 @@ namespace game {
 	class Power;
 	//フィールドに力を生成するクラス
 	class PowerSpawn {
-	
 		std::unique_ptr<std::vector<Power>> m_powerList;
+		//カウント用
+		size_t count = 0;
 	public:
 
 		PowerSpawn();
