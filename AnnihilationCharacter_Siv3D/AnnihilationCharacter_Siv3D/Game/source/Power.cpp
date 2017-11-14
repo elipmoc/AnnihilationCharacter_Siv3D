@@ -2,16 +2,19 @@
 #include "CollisionCircle.hpp"
 
 namespace game {
+
+	Power& Power::operator=(Power&&) = default;
+
 	Power::Power(Power &&) = default;
 
 	Power::Power(const siv::Vec2 & pos, const siv::Vec2 & speedv)
-		:elipmocframework::FontObject(L"—Í", 17), m_speedv(speedv),
+		:elipmocframework::FontObject(L"—Í", 30), m_speedv(speedv),
 		m_colli(std::make_unique<CollisionCircle>(GetRefPos(),
 			[this](const CollisionID id) {
 		if (id == CollisionID::PlayerID)this->Delete();
 	}))
 	{
-		m_colli->SetR(9);
+		m_colli->SetR(40);
 		m_colli->SetCollisionID(CollisionID::PowerID);
 		SetPos(pos);
 	}

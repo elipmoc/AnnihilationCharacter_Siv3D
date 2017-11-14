@@ -22,6 +22,8 @@ namespace game {
 			delete_flag = true;
 		}
 
+
+		Power& operator= (Power&&);
 		Power(Power&&);
 		Power(const siv::Vec2 & pos, const siv::Vec2 & speedv);
 		~Power();
