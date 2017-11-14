@@ -7,7 +7,9 @@ namespace game {
 	class BossEnemyTalk;
 	class BulletListCreator;
 	class Boss;
+	class PowerSpawn;
 	class BossPhase :public BasePhase{
+		std::unique_ptr<PowerSpawn> m_powerSpawn;
 		std::unique_ptr<Boss> m_boss;
 		std::unique_ptr<BossEnemyTalk> m_test;
 		TerrainControl& m_terrainControl;
