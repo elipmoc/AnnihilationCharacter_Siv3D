@@ -33,7 +33,9 @@ namespace game {
 				m_boss->SetBossBehavior();
 			}
 		}
-		m_boss->Update();
-		m_powerSpawn->Update();
+		if (m_test == nullptr) {
+			m_boss->Update();
+			m_powerSpawn->Update();
+		}
 	}
 }
