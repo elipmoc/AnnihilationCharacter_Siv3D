@@ -10,7 +10,7 @@ namespace game {
 		EnemyBulletID,
 		PlayerID,
 		BarrierID,
-		ItemID
+		PowerID
 	};
 
 	class CollisionCircle;

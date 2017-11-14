@@ -11,7 +11,6 @@ namespace game {
 		m_terrainControl(terrainControl),
 		m_boss(std::make_unique<Boss>(level,playerRefPos,bulletListCreator))
 	{
-		//m_boss->SetBossBehavior(std::make_unique<BossBehavior01>(bulletListCreator));
 	}
 
 	BossPhase::~BossPhase() = default;

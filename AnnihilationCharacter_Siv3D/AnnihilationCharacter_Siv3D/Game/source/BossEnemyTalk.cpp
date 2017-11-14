@@ -19,10 +19,10 @@ namespace game {
 		m_frameFont->SetPos(pos);
 		m_talkFont->SetPos(pos + siv::Vec2{10,20});
 		str[0] = L"よくぞここまでたどり着いた。";
-		str[1] = L"まあ、それはそれとして・・・";
-		str[2] = L"基本情報勉強やだああああ\nああああ！！！！！！";
-		str[3] = L"あああああああああああ！\nうわあああああ！！\nんほおおおお！！！";
-		str[4] = L"ぶちちちちｔ！！";
+		str[1] = L"だがしょせんお前も文字だ";
+		str[2] = L"最強の文字である私には勝てまい";
+		str[3] = L"お前も消滅させてやろう！";
+		str[4] = L"いくぞ！";
 	}
 	BossEnemyTalk::~BossEnemyTalk()
 	{

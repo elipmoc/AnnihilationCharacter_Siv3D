@@ -185,6 +185,7 @@
     <ClCompile Include="Game\source\GameMaster.cpp" />
     <ClCompile Include="Game\source\LevelSelectScene.cpp" />
     <ClCompile Include="Game\source\LoadFileEnemyInfo.cpp" />
+    <ClCompile Include="Game\source\Power.cpp" />
     <ClCompile Include="Game\source\TestBarrage.cpp" />
     <ClCompile Include="Game\source\BarrageBase.cpp" />
     <ClCompile Include="Game\source\TitleParticle.cpp" />
@@ -382,6 +383,8 @@
     <ClInclude Include="Game\inc\LoadFileTerrainData.hpp" />
     <ClInclude Include="Game\inc\Player.hpp" />
     <ClInclude Include="Game\inc\PlayerDeadParticle.hpp" />
+    <ClInclude Include="Game\inc\Power.hpp" />
+    <ClInclude Include="Game\inc\PowerSpawn.hpp" />
     <ClInclude Include="Game\inc\SceneBase.hpp" />
     <ClInclude Include="Game\inc\SelectPlayerScene.hpp" />
     <ClInclude Include="Game\inc\TerrainControl.hpp" />
