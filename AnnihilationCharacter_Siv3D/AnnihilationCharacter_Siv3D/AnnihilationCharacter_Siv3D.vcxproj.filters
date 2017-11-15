@@ -183,9 +183,6 @@
     <ClCompile Include="Game\source\BossPhase.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Game\source\BossEnemyTalk.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Game\source\EnemyPhaseControl.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -211,6 +208,9 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Game\source\PowerSpawn.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\source\BossTalk.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -719,9 +719,6 @@
     <ClInclude Include="Game\inc\BasePhase.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Game\inc\BossEnemyTalk.hpp">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="Game\inc\TerrainData.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -753,6 +750,9 @@
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="Game\inc\Power.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\inc\BossTalk.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>

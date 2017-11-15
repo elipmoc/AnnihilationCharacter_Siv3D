@@ -7,7 +7,7 @@ namespace elipmocframework {
 namespace game {
 
 	//ボスが会話するためのクラス
-	class BossEnemyTalk {
+	class BossTalk {
 		//外枠
 		std::unique_ptr<elipmocframework::FontObject> m_frameFont;
 		//会話内容
@@ -17,8 +17,8 @@ namespace game {
 		siv::String str[50];
 		size_t count = 0;
 	public:
-		BossEnemyTalk(const siv::Vec2& pos);
-		~BossEnemyTalk();
+		BossTalk(const siv::Vec2& pos);
+		~BossTalk();
 		bool IsFinished()const noexcept;
 		void Update();
 		void Draw()const;

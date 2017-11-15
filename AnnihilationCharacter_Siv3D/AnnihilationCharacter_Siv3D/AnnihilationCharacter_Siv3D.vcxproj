@@ -170,7 +170,7 @@
     <ClCompile Include="Game\source\Boss.cpp" />
     <ClCompile Include="Game\source\BossBehavior.cpp" />
     <ClCompile Include="Game\source\BossBehavior01.cpp" />
-    <ClCompile Include="Game\source\BossEnemyTalk.cpp" />
+    <ClCompile Include="Game\source\BossTalk.cpp" />
     <ClCompile Include="Game\source\BossPhase.cpp" />
     <ClCompile Include="Game\source\BulletListCreator.cpp" />
     <ClCompile Include="Game\source\BulletListUpdator.cpp" />
@@ -345,7 +345,7 @@
     <ClInclude Include="Game\inc\Boss.hpp" />
     <ClInclude Include="Game\inc\BossBehavior.hpp" />
     <ClInclude Include="Game\inc\BossBehavior01.hpp" />
-    <ClInclude Include="Game\inc\BossEnemyTalk.hpp" />
+    <ClInclude Include="Game\inc\BossTalk.hpp" />
     <ClInclude Include="Game\inc\BossPhase.hpp" />
     <ClInclude Include="Game\inc\BulletList.hpp" />
     <ClInclude Include="Game\inc\BarrierUI.hpp" />

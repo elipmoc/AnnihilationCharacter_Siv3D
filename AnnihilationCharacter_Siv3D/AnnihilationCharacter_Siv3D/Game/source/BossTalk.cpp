@@ -1,8 +1,8 @@
-#include "BossEnemyTalk.hpp"
+#include "BossTalk.hpp"
 #include "FontObject.hpp"
 
 namespace game {
-	BossEnemyTalk::BossEnemyTalk(const siv::Vec2& pos):
+	BossTalk::BossTalk(const siv::Vec2& pos):
 		m_frameFont(std::make_unique<elipmocframework::FontObject>(12, L"‚l‚r ‚oƒSƒVƒbƒN")),
 		m_talkFont(std::make_unique<elipmocframework::FontObject>(16, L"‚l‚r ‚oƒSƒVƒbƒN")),
 		m_pos(pos)
@@ -24,21 +24,21 @@ namespace game {
 		str[3] = L"‚¨‘O‚àÁ–Å‚³‚¹‚Ä‚â‚ë‚¤I";
 		str[4] = L"‚¢‚­‚¼I";
 	}
-	BossEnemyTalk::~BossEnemyTalk()
+	BossTalk::~BossTalk()
 	{
 	}
 
-	bool BossEnemyTalk::IsFinished() const noexcept{
+	bool BossTalk::IsFinished() const noexcept{
 		return count / 180 >= 5;
 	}
 
-	void BossEnemyTalk::Update()
+	void BossTalk::Update()
 	{
 		if (count % 180 == 0 && count / 180 < 5)
 			m_talkFont->SetText(str[count / 180]);
 		count++;
 	}
-	void BossEnemyTalk::Draw() const
+	void BossTalk::Draw() const
 	{
 		m_frameFont->Draw();
 		m_talkFont->Draw();

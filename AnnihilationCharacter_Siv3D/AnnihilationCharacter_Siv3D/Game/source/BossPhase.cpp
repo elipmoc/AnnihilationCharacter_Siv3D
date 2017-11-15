@@ -1,5 +1,5 @@
 #include "BossPhase.hpp"
-#include "BossEnemyTalk.hpp"
+#include "BossTalk.hpp"
 #include "Boss.hpp"
 #include "TerrainControl.hpp"
 #include "BossPhase.hpp"
@@ -8,7 +8,7 @@
 
 namespace game {
 	BossPhase::BossPhase(Level level, const siv::Vec2 & playerRefPos, BulletListCreator & bulletListCreator,TerrainControl& terrainControl):
-		m_test(std::make_unique<BossEnemyTalk>(siv::Vec2(130,70))),
+		m_test(std::make_unique<BossTalk>(siv::Vec2(130,70))),
 		m_terrainControl(terrainControl),
 		m_boss(std::make_unique<Boss>(level,playerRefPos,bulletListCreator)),
 		m_powerSpawn(std::make_unique<PowerSpawn>())
