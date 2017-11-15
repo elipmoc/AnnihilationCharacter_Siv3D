@@ -14,6 +14,7 @@ namespace game {
 	{
 		BossModel b;
 		m_fontObject->SetText(b.GenerateEnemyModelInfo().text);
+		m_fontObject->SetPos({ 500, 80 });
 	}
 	Boss::~Boss() = default;
 
