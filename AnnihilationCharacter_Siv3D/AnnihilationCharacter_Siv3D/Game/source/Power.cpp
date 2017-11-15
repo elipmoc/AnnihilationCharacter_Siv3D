@@ -14,6 +14,7 @@ namespace game {
 		if (id == CollisionID::PlayerID)this->Delete();
 	}))
 	{
+		SetColor(siv::Palette::Orange);
 		m_colli->SetR(40);
 		m_colli->SetCollisionID(CollisionID::PowerID);
 		SetPos(pos);
