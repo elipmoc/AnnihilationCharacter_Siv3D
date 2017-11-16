@@ -30,6 +30,9 @@ namespace game {
 		//hp
 		size_t m_hp=6;
 
+		//poweræ“¾”
+		size_t m_powerNum = 0;
+
 		//ƒoƒŠƒA“WŠJ‰ñ”
 		size_t m_barrierCount=3;
 
@@ -74,6 +77,7 @@ namespace game {
 
 	public:
 
+		size_t GetPowerNum()const noexcept { return m_powerNum; }
 		size_t GetHp()const noexcept { return m_hp; }
 		size_t GetBarrierCount()const noexcept { return m_barrierCount; }
 		Player();
