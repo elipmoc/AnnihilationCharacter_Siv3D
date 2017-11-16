@@ -97,16 +97,18 @@ namespace game {
 
 	}
 
+	void Player::CollisionCheck(const CollisionID& id)
+	{
+		if (id == CollisionID::EnemyID || id == CollisionID::EnemyBulletID)
+			PlayerDead();
+		else if (id == CollisionID::PowerID)
+			m_powerNum++;
+	}
+
 	Player::Player() :circle(3), m_deadParticle(CreatePlayerDeadParticleList()),
 		m_colliObject(
 			std::make_unique<CollisionCircle>(GetRefPos(), 
-				[this](CollisionID id) {
-					if(id==CollisionID::EnemyID || id==CollisionID::EnemyBulletID)
-						this->PlayerDead(); 
-					else if(id==CollisionID::PowerID)
-						//ToDo ‚±‚±‚Ém_powerNum‚Ì‘Œ¸ˆ—‚ð‘‚­
-						;
-				}
+				[this](CollisionID id) {this->CollisionCheck(id);}
 			)
 		),
 		m_barrier(std::make_unique<Barrier>(GetRefPos()))

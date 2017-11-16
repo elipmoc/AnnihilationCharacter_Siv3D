@@ -11,6 +11,7 @@ namespace game {
 	class Barrier;
 	class TerrainControl;
 	class CollisionCircle;
+	enum class CollisionID;
 	class Player :public elipmocframework::FontObject {
 		//無敵時間
 		static constexpr int MUTEKI_TIME = 150;
@@ -74,6 +75,9 @@ namespace game {
 		void SetUnderY(double y) {
 			SetPos({ GetPos().x,y - 15 });
 		}
+
+		//あたり判定を処理するオブジェクト
+		void CollisionCheck(const CollisionID&);
 
 	public:
 
