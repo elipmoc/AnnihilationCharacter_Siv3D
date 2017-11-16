@@ -6,8 +6,12 @@ namespace game {
 	class PowerGage {
 
 	public:
-		PowerGage(size_t maxPowerNum);
-		void Draw(size_t powerNum);
+		PowerGage(size_t maxPowerNum) {
+			//‚Ü‚¾ŽÀ‘•‚µ‚Ä‚¢‚È‚¢
+		}
+		void Draw(size_t powerNum) {
+			//‚Ü‚¾ŽÀ‘•‚µ‚Ä‚¢‚È‚¢
+		}
 
 	};
 

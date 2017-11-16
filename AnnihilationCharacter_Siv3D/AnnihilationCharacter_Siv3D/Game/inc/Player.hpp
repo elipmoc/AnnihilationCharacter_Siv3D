@@ -81,6 +81,8 @@ namespace game {
 
 	public:
 
+		static constexpr size_t MAX_POWERNUM = 15;
+
 		size_t GetPowerNum()const noexcept { return m_powerNum; }
 		size_t GetHp()const noexcept { return m_hp; }
 		size_t GetBarrierCount()const noexcept { return m_barrierCount; }

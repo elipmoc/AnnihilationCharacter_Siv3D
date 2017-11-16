@@ -6,6 +6,7 @@
 #include "EnemyPhaseControl.hpp"
 #include "GameCounter.hpp"
 #include "GameMaster.hpp"
+#include "PowerGage.hpp"
 namespace game {
 	GameScene::GameScene():m_player(nullptr) {
 
@@ -25,6 +26,7 @@ namespace game {
 		m_enemyControl = std::make_unique<EnemyPhaseControl>(m_data->level,m_player->GetRefPos(), *m_gameCounter,*m_terrainControl);
 		m_hpUi = std::make_unique<HpUi>();
 		m_barrierUi = std::make_unique<BarrierUi>();
+		m_powerGage = std::make_unique<PowerGage>(Player::MAX_POWERNUM);
 	}
 	void GameScene::update()
 	{
@@ -40,6 +42,7 @@ namespace game {
 	void GameScene::draw() const
 	{
 		m_player->DrawCenter();
+		m_powerGage->Draw(m_player->GetPowerNum());
 		m_hpUi->Draw(m_player->GetHp());
 		m_barrierUi->Draw(m_player->GetBarrierCount());
 		m_enemyControl->Draw();
