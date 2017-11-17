@@ -102,7 +102,8 @@ namespace game {
 		if (id == CollisionID::EnemyID || id == CollisionID::EnemyBulletID)
 			PlayerDead();
 		else if (id == CollisionID::PowerID)
-			m_powerNum++;//取得した力をカウント
+			if(m_powerNum<MAX_POWERNUM)
+				m_powerNum++;//取得した力をカウント
 	}
 
 	Player::Player() :circle(3), m_deadParticle(CreatePlayerDeadParticleList()),

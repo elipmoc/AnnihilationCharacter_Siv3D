@@ -14,8 +14,6 @@ namespace game {
 			
 		}
 		void Draw(size_t powerNum) {
-			if (powerNum > m_maxPowerNum)
-				powerNum = m_maxPowerNum;
 			m_rect.setSize(250*powerNum /m_maxPowerNum, 20);
 			m_rect.draw(siv::Palette::Orange);
 			m_font(L"ÉpÉèÅ[  :").draw({ 290, 0 }, siv::Palette::Orange);
