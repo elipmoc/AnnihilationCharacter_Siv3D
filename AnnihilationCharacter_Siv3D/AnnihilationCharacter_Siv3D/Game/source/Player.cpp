@@ -51,10 +51,15 @@ namespace game {
 				m_yv += 0.3;
 		}
 		//ƒWƒƒƒ“ƒv
-		if (siv::Input::KeyZ.clicked &&m_jumpCount < 3) {
-			m_yv = -7;
-			m_jumpCount++;
-			siv::SoundAsset(L"jump").playMulti();
+		if (m_jumpCount < 3) {
+			if (
+				(siv::Input::KeyZ.clicked)
+				|| (siv::Input::KeyZ.pressed && m_yv >= 0)
+				) {
+				m_yv = -7;
+				m_jumpCount++;
+				siv::SoundAsset(L"jump").playMulti();
+			}
 		}
 
 		//d—Í‚Ì‰e‹¿
