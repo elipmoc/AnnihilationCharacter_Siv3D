@@ -27,7 +27,7 @@ namespace game {
 		m_boss->Draw();
 		m_powerSpawn->Draw();
 		if (m_test == nullptr)
-			m_bossHpGage->Draw(50);
+			m_bossHpGage->Draw();
 	}
 	void BossPhase::Update()
 	{
@@ -39,6 +39,7 @@ namespace game {
 			}
 		}
 		if (m_test == nullptr) {
+			m_bossHpGage->SetSizeFromHp(50);
 			m_boss->Update();
 			m_powerSpawn->Update();
 		}
