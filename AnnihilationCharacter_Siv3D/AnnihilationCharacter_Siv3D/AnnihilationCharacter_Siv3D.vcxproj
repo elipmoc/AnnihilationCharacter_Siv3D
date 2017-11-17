@@ -345,6 +345,7 @@
     <ClInclude Include="Game\inc\Boss.hpp" />
     <ClInclude Include="Game\inc\BossBehavior.hpp" />
     <ClInclude Include="Game\inc\BossBehavior01.hpp" />
+    <ClInclude Include="Game\inc\BossHpGage.hpp" />
     <ClInclude Include="Game\inc\BossTalk.hpp" />
     <ClInclude Include="Game\inc\BossPhase.hpp" />
     <ClInclude Include="Game\inc\BulletList.hpp" />
