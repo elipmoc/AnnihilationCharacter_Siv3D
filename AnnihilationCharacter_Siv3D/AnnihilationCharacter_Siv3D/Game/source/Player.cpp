@@ -102,7 +102,7 @@ namespace game {
 		if (id == CollisionID::EnemyID || id == CollisionID::EnemyBulletID)
 			PlayerDead();
 		else if (id == CollisionID::PowerID)
-			m_powerNum++;
+			m_powerNum++;//Žæ“¾‚µ‚½—Í‚ðƒJƒEƒ“ƒg
 	}
 
 	Player::Player() :circle(3), m_deadParticle(CreatePlayerDeadParticleList()),
