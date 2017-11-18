@@ -386,6 +386,7 @@
     <ClInclude Include="Game\inc\Player.hpp" />
     <ClInclude Include="Game\inc\PlayerDeadParticle.hpp" />
     <ClInclude Include="Game\inc\Power.hpp" />
+    <ClInclude Include="Game\inc\PowerBlast.hpp" />
     <ClInclude Include="Game\inc\PowerGage.hpp" />
     <ClInclude Include="Game\inc\PowerSpawn.hpp" />
     <ClInclude Include="Game\inc\SceneBase.hpp" />

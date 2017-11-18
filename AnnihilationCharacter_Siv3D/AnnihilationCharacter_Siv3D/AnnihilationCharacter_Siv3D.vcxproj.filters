@@ -761,5 +761,8 @@
     <ClInclude Include="Game\inc\BossHpGage.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="Game\inc\PowerBlast.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
