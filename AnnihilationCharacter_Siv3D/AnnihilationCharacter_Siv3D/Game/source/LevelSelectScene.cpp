@@ -65,11 +65,11 @@ namespace game {
 	void LevelSelectScene::draw() const {
 
 		if(m_selectIndex==0)
-			siv::Rect(0, m_levelFonts[0]->GetPos().y - 14, siv::Window::Width(), 30).draw({ 120,100,250,20 });
+			siv::Rect(0, m_levelFonts[0]->GetPos().y -24- 14, siv::Window::Width(), 30).draw({ 120,100,250,20 });
 		else if(m_selectIndex==1)
-			siv::Rect(0, m_levelFonts[1]->GetPos().y - 14, siv::Window::Width(), 30).draw({ 0,200,50,20 });
+			siv::Rect(0, m_levelFonts[1]->GetPos().y -24- 14, siv::Window::Width(), 30).draw({ 0,200,50,20 });
 		else
-			siv::Rect(0, m_levelFonts[2]->GetPos().y - 14, siv::Window::Width(), 30).draw({ 200,0,50,20 });
+			siv::Rect(0, m_levelFonts[2]->GetPos().y -24- 14, siv::Window::Width(), 30).draw({ 200,0,50,20 });
 		for (const auto& item : m_levelFonts)
 			item->DrawCenter();
 		m_guideFont(L"“ïˆÕ“x‚ð‘I‚ñ‚Å‚­‚¾‚³‚¢").draw({ 50,50 });
