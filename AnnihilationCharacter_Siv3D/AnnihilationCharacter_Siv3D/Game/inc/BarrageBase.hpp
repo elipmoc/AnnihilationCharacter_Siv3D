@@ -8,7 +8,7 @@ namespace game {
 	//弾幕クラス
 	class BarrageBase {
 		//弾リスト
-		BulletListCreator& m_bulletListCreator;
+		std::unique_ptr<BulletListCreator> m_bulletListCreator;
 
 		//主人公の参照座標
 		const siv::Vec2& m_playerBindPos;

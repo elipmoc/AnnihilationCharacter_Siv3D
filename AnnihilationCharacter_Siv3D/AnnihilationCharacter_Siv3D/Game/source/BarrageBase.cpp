@@ -5,14 +5,14 @@ namespace game {
 
 	BulletListCreator & BarrageBase::GetBulletListCreator()
 	{
-		return m_bulletListCreator;
+		return *m_bulletListCreator;
 	}
 
 	BarrageBase::BarrageBase(
 		BulletListCreator& bulletListCreator,const Level level, 
 		const siv::Vec2& bindPos,const siv::Vec2& playerBindPos, const siv::Vec2& fixPos)
 
-		:m_bulletListCreator(bulletListCreator),m_bindPos(bindPos),m_fixPos(fixPos),
+		:m_bulletListCreator(std::make_unique<BulletListCreator>(bulletListCreator)),m_bindPos(bindPos),m_fixPos(fixPos),
 		m_level(level),
 		m_playerBindPos(playerBindPos)
 	{}
