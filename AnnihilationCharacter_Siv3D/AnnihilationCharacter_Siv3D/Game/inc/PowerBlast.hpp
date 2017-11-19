@@ -2,17 +2,20 @@
 
 namespace game {
 
-	class BulletListCreator;
+	class BulletList;
 
 	//—Í‚ğ—­‚ß‚Ä•ú‚ÂålŒö‚Ì‘å‹Z
 	class PowerBlast {
 		//’eƒŠƒXƒg
-		std::unique_ptr<BulletListCreator> m_bulletListCreator;
+		std::unique_ptr<BulletList> m_bulletList;
 		int count = 0;
-		const siv::Vec2 m_pos;
+		siv::Vec2 m_pos;
 	public:
-		PowerBlast(const BulletListCreator&,const siv::Vec2);
+		PowerBlast();
 		~PowerBlast();
+		void Start(const siv::Vec2&);
+		void Update();
+		void Draw()const;
 	};
 
 }

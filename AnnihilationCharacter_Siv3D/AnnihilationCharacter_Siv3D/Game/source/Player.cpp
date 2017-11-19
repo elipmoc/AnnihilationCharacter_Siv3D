@@ -5,6 +5,7 @@
 #include "CollisionCircle.hpp"
 #include "define.hpp"
 #include "Barrier.hpp"
+#include "PowerBlast.hpp"
 
 namespace game {
 
@@ -110,6 +111,7 @@ namespace game {
 			if(m_powerNum<MAX_POWERNUM)
 				m_powerNum++;
 			else {
+				m_powerBlast->Start(GetPos());
 				m_powerNum=0;
 			}
 	}
@@ -120,7 +122,8 @@ namespace game {
 				[this](CollisionID id) {this->CollisionCheck(id);}
 			)
 		),
-		m_barrier(std::make_unique<Barrier>(GetRefPos()))
+		m_barrier(std::make_unique<Barrier>(GetRefPos())),
+		m_powerBlast(std::make_unique<PowerBlast>())
 	{
 		m_colliObject->SetR(5);
 		m_colliObject->SetCollisionID(CollisionID::PlayerID);
@@ -137,6 +140,8 @@ namespace game {
 		m_colliObject->DoColliQueue();
 		m_deadParticle->Update();
 		m_deadParticle->Draw();
+		m_powerBlast->Update();
+		m_powerBlast->Draw();
 		circle.setPos(GetPos().x,GetUnderY()).draw(siv::Palette::Red);
 	}
 }

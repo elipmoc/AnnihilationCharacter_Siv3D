@@ -11,6 +11,7 @@ namespace game {
 	class Barrier;
 	class TerrainControl;
 	class CollisionCircle;
+	class PowerBlast;
 	enum class CollisionID;
 	class Player :public elipmocframework::FontObject {
 		//–³“GŽžŠÔ
@@ -24,6 +25,8 @@ namespace game {
 
 		//‚ ‚½‚è”»’èobject
 		std::unique_ptr<CollisionCircle> m_colliObject;
+
+		std::unique_ptr<PowerBlast> m_powerBlast;
 
 		//ƒoƒŠƒA
 		std::unique_ptr<Barrier> m_barrier;

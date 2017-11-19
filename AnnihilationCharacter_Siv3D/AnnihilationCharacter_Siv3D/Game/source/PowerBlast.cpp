@@ -1,12 +1,21 @@
 #include "PowerBlast.hpp"
-#include"BulletListCreator.hpp"
+#include"BulletList.hpp"
 
 namespace game {
-	PowerBlast::PowerBlast(const BulletListCreator & bulletListCreator,const siv::Vec2 pos)
-		:m_bulletListCreator(std::make_unique<BulletListCreator>(bulletListCreator)),
-		m_pos(pos)
+	PowerBlast::PowerBlast()
+		:m_bulletList(std::make_unique<BulletList>(30))
 	{
 	}
 
 	PowerBlast::~PowerBlast() = default;
+
+	void PowerBlast::Start(const siv::Vec2& pos)
+	{
+	}
+	void PowerBlast::Update()
+	{
+	}
+	void PowerBlast::Draw() const
+	{
+	}
 }
