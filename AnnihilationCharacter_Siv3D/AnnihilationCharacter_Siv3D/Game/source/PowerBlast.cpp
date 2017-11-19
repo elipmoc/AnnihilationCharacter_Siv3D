@@ -1,5 +1,6 @@
 #include "PowerBlast.hpp"
 #include"BulletList.hpp"
+#include "BulletInfo.hpp"
 
 namespace game {
 	PowerBlast::PowerBlast()
@@ -20,7 +21,7 @@ namespace game {
 	{
 		if (m_startFlag) {
 			if (count % 30 == 0) {
-				m_bulletList->MakeBullet(m_pos, { 2,0 }, { 0.1,0 });
+				m_bulletList->MakeBullet(BulletInfo{ m_pos, { 2,0 }, { 0.1,0 } });
 			}
 			count++;
 		}

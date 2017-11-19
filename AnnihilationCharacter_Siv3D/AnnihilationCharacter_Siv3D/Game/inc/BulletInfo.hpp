@@ -10,7 +10,7 @@ namespace game {
 		//’e‘¬“x
 		siv::Vec2 speed;
 		//’e‰Á‘¬“x
-		siv::Vec2 vspeedv;
+		siv::Vec2 vspeed;
 	};
 
 }

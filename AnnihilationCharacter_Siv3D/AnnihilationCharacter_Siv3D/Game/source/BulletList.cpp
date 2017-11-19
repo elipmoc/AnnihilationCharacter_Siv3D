@@ -1,6 +1,8 @@
 #include "BulletList.hpp"
 #include "Bullet.hpp"
 #include "ObjectPool.hpp"
+#include "BulletInfo.hpp"
+
 namespace game {
 
 	BulletList::BulletList(size_t poolSize)
@@ -24,9 +26,9 @@ namespace game {
 			item.Update();
 	}
 
-	void BulletList::MakeBullet(const siv::Vec2 & pos, const siv::Vec2 & speedv, const siv::Vec2 & vspeedv)
+	void BulletList::MakeBullet(const BulletInfo& bInfo)
 	{
-		m_bulletPool->New(pos,speedv,vspeedv);
+		m_bulletPool->New(bInfo.pos,bInfo.speed,bInfo.vspeed);
 	}
 
 

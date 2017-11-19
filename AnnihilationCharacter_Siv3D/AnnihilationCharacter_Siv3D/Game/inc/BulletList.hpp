@@ -10,6 +10,7 @@ namespace elipmocframework {
 
 namespace game {
 	class Bullet;
+	class BulletInfo;
 
 	//íeï€éùÉNÉâÉX
 	class BulletList {
@@ -23,7 +24,7 @@ namespace game {
 		void Update();
 
 		//íeê∂ê¨
-		void MakeBullet(const siv::Vec2& pos,const siv::Vec2& speedv,const siv::Vec2& vspeedv);
+		void MakeBullet(const BulletInfo&);
 		~BulletList();
 	};
 }
