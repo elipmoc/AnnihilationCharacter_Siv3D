@@ -186,6 +186,7 @@
     <ClCompile Include="Game\source\LevelSelectScene.cpp" />
     <ClCompile Include="Game\source\LoadFileEnemyInfo.cpp" />
     <ClCompile Include="Game\source\Power.cpp" />
+    <ClCompile Include="Game\source\PowerBlast.cpp" />
     <ClCompile Include="Game\source\PowerSpawn.cpp" />
     <ClCompile Include="Game\source\TestBarrage.cpp" />
     <ClCompile Include="Game\source\BarrageBase.cpp" />
