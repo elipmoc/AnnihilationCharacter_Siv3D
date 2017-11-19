@@ -10,6 +10,7 @@ namespace game {
 		std::unique_ptr<BulletList> m_bulletList;
 		int count = 0;
 		siv::Vec2 m_pos;
+		bool m_startFlag=false;
 	public:
 		PowerBlast();
 		~PowerBlast();
