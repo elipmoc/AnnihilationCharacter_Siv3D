@@ -31,6 +31,8 @@ namespace game {
 			Delete();
 
 		m_colli->DoColliQueue();
+		if (m_func != nullptr)
+			m_func(*this);
 		elipmocframework::FontObject::Update();
 		SetPos(GetPos() + m_speedv);
 		m_speedv += m_vspeedv;
