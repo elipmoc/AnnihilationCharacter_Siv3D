@@ -764,5 +764,8 @@
     <ClInclude Include="Game\inc\PowerBlast.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="ElipmocFrameWork\GlowTextImage.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

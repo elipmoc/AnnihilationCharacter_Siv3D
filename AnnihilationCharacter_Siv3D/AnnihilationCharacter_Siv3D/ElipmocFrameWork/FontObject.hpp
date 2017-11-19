@@ -3,7 +3,11 @@
 #include "FontObjectBase.hpp"
 #include "Action.hpp"
 #include "ActionList.hpp"
+#include "GlowTextImage.hpp"
 namespace elipmocframework {
+
+	
+
 	//フォントオブジェクト
 	class FontObject:public FontObjectBase {
 		double m_scale=1;
@@ -15,7 +19,8 @@ namespace elipmocframework {
 		//アクションリスト
 		ActionList m_actionList;
 
-
+		//光らせる用の画像
+		std::unique_ptr<GlowTextImage> m_glowTextImage;
 
 
 	public:
@@ -23,6 +28,10 @@ namespace elipmocframework {
 		override final{
 			m_actionList.push_back(std::move(action));
 			return *this;
+		}
+
+		void SetGlow(int32 blur, double gamma = 2.0) {
+			m_glowTextImage=std::make_unique<GlowTextImage>(m_font,m_text,blur,gamma);
 		}
 
 		//posの参照を得る
@@ -67,6 +76,9 @@ namespace elipmocframework {
 		virtual void Draw() const override final{
 			//siv::Mat3x2 mat = siv::Mat3x2::Scale(m_scale, m_pos);
 			//siv::Transformer2D t(mat, false);
+			if (m_glowTextImage != nullptr) {
+				m_glowTextImage->Draw(m_pos);
+			}
 			m_font(m_text).draw(m_pos,m_color);
 		}
 		
@@ -74,6 +86,9 @@ namespace elipmocframework {
 			//siv::Mat3x2 mat = siv::Mat3x2::Scale(m_scale, m_pos);
 			//siv::Transformer2D t(mat, false);
 			//siv::Graphics2D::SetTransform(siv::Mat3x2::Scale(m_scale, m_pos));
+			if (m_glowTextImage != nullptr) {
+				m_glowTextImage->DrawCenter(m_pos);
+			}
 			m_font(m_text).drawCenter(m_pos, m_color);
 		}
 
