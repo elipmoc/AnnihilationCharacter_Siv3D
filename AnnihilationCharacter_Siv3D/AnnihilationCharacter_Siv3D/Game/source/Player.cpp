@@ -108,7 +108,10 @@ namespace game {
 			PlayerDead();
 		else if (id == CollisionID::PowerID)
 			if(m_powerNum<MAX_POWERNUM)
-				m_powerNum++;//Žæ“¾‚µ‚½—Í‚ðƒJƒEƒ“ƒg
+				m_powerNum++;
+			else {
+				m_powerNum=0;
+			}
 	}
 
 	Player::Player() :circle(3), m_deadParticle(CreatePlayerDeadParticleList()),

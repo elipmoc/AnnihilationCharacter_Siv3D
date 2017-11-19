@@ -28,7 +28,7 @@ namespace game {
 
 	void BulletList::MakeBullet(const siv::Vec2 & pos, const siv::Vec2 & speedv, const siv::Vec2 & vspeedv)
 	{
-		m_bulletPool->New(pos,speedv,vspeedv).SetGlow(20,1.0);
+		m_bulletPool->New(pos,speedv,vspeedv);
 	}
 
 
