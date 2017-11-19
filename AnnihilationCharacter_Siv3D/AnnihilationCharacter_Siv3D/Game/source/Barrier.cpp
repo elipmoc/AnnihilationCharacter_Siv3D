@@ -12,14 +12,14 @@ namespace game {
 		m_colliObject->SetCollisionID(CollisionID::BarrierID);
 		m_colliObject->SetR(60);
 		m_colliObject->Disable();
-		m_offsetpos[0] = { DISTANCE,0 };
-		m_offsetpos[1] = { DISTANCE,DISTANCE };
-		m_offsetpos[2] = { 0,DISTANCE };
-		m_offsetpos[3] = { -DISTANCE,DISTANCE };
-		m_offsetpos[4] = { -DISTANCE,0 };
-		m_offsetpos[5] = { -DISTANCE,-DISTANCE };
-		m_offsetpos[6] = { 0,-DISTANCE };
-		m_offsetpos[7] = { DISTANCE,-DISTANCE };
+		m_offsetpos[0] = { DISTANCE + 44,0 + 44 };
+		m_offsetpos[1] = { DISTANCE+44,DISTANCE+44 };
+		m_offsetpos[2] = { 0+44,DISTANCE+44 };
+		m_offsetpos[3] = { -DISTANCE + 44,DISTANCE+44 };
+		m_offsetpos[4] = { -DISTANCE + 44,0 + 44 };
+		m_offsetpos[5] = { -DISTANCE + 44,-DISTANCE + 44 };
+		m_offsetpos[6] = { 0 + 44,-DISTANCE + 44 };
+		m_offsetpos[7] = { DISTANCE + 44,-DISTANCE + 44 };
 		for (size_t i = 0; i < WALL_NUM; i++) {
 			walls[i] = std::make_unique<elipmocframework::GlowText>(siv::Font(),L"•Ç",40);
 			walls[i]->SetGlowColor({ 40,120,200 });
