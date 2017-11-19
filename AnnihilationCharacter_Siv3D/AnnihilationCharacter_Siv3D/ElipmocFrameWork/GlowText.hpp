@@ -4,6 +4,28 @@
 #include "ActionList.hpp"
 
 namespace elipmocframework {
+
+
+	//フォントを光らせるためのテクスチャを生成
+	inline std::unique_ptr<siv::Texture> CreateGlowFontTexture(const siv::Font& font, const siv::String& text, int32 blur, double gamma = 2.0){
+		const siv::Size region = font(text).region().stretched(blur + 4).size;
+
+		siv::Image image(region, siv::Color(0, 0));
+
+		font(text).write(image, { blur+4,blur+4}, siv::Palette::White);
+
+		image.gaussianBlur(blur, blur).gammaCorrect(gamma);
+
+		for (auto& pixel : image)
+		{
+			pixel.a = pixel.r;
+
+			pixel.r = pixel.g = pixel.b = 255;
+		}
+
+		return std::make_unique<siv::Texture>(image);
+	}
+
 	class GlowText:public FontObjectBase
 	{
 	private:
@@ -47,7 +69,6 @@ namespace elipmocframework {
 			for (auto& pixel : image)
 			{
 				pixel.a = pixel.r;
-
 				pixel.r = pixel.g = pixel.b = 255;
 			}
 
@@ -95,17 +116,17 @@ namespace elipmocframework {
 		virtual void Draw() 
 			const override final
 		{
-			m_texture.draw(m_pos, m_glowColor);
+			m_texture.draw(m_pos- m_offset, m_glowColor);
 
-			m_font(m_text).draw(m_pos + m_offset, m_color);
+			m_font(m_text).draw(m_pos , m_color);
 		}
 
 		void DrawCenter() 
 			const override final
 		{
-			m_texture.draw(m_pos - m_texture.size / 2, m_glowColor);
+			m_texture.draw(m_pos - m_texture.size / 2-m_offset, m_glowColor);
 
-			m_font(m_text).draw(m_pos - m_texture.size / 2 + m_offset, m_color);
+			m_font(m_text).draw(m_pos - m_texture.size / 2 , m_color);
 		}
 	};
 }
