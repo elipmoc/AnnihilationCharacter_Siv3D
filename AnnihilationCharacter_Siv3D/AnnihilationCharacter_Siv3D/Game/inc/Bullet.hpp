@@ -34,21 +34,4 @@ namespace game {
 		virtual void Update()override;
 
 	};
-
-	//ŠÖ”‚ğ‘ã“ü‚·‚é‚±‚Æ‚ÅA“Æ©‚Ì“®ì‚ğ‚½‚¹‚ç‚ê‚é‚æ‚¤‚ÉŠg’£‚µ‚½”Å
-	class BulletEX :public Bullet {
-		using func_type=void(*)(Bullet&);
-		func_type m_func;
-	public:
-
-		template<class Func>
-		BulletEX(const Func& func) {
-			m_func = func;
-		}
-
-		virtual void Update()override {
-			Bullet::Update();
-			m_func(*this);
-		}
-	};
 }

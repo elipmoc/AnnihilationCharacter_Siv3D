@@ -10,11 +10,10 @@ namespace elipmocframework {
 
 namespace game {
 	class Bullet;
-	class BulletEX;
 
 	//弾保持クラス
 	class BulletList {
-		using BulletPool = elipmocframework::ObjectPool<Bullet, BulletEX>;
+		using BulletPool = elipmocframework::ObjectPool<Bullet>;
 
 		//弾プール
 		std::unique_ptr<BulletPool> m_bulletPool;
