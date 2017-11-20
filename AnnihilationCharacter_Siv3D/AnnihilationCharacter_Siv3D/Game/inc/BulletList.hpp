@@ -10,7 +10,7 @@ namespace elipmocframework {
 
 namespace game {
 	class Bullet;
-	class BulletInfo;
+	struct BulletInfo;
 
 	//’e•ÛƒNƒ‰ƒX
 	class BulletList {

@@ -2,7 +2,7 @@
 #pragma once
 namespace game {
 	class BulletList;
-	class BulletInfo;
+	struct BulletInfo;
 
 	class BulletListCreator {
 		BulletList& m_bulletList;

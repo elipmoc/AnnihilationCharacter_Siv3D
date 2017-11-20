@@ -17,7 +17,7 @@ namespace  game {
 	void HorizontalShot3Way::NormalUpdate()
 	{
 		if (count++ == 0) {
-			GetBulletListCreator().MakeBullet(BulletInfo{ GetPos(), { -3.5,0 }, { 0,0 }});
+			GetBulletListCreator().MakeBullet(BulletInfo{ GetPos(), { -3.5,0 }, { 0,0 } });
 			GetBulletListCreator().MakeBullet(BulletInfo{ GetPos(), { -3.5 * siv::Math::Cos(siv::Math::Radians(30)),-3.5 * siv::Math::Sin(siv::Math::Radians(30)) }, { 0,0 } });
 			GetBulletListCreator().MakeBullet(BulletInfo{ GetPos(), { -3.5 * siv::Math::Cos(siv::Math::Radians(-30)),-3.5 * siv::Math::Sin(siv::Math::Radians(-30)) }, { 0,0 } });
 			siv::SoundAsset(L"shot").playMulti();

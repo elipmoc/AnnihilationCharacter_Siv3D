@@ -11,6 +11,15 @@ namespace game {
 		siv::Vec2 speed;
 		//’e‰Á‘¬“x
 		siv::Vec2 vspeed;
+		//’eF
+		siv::Color color=siv::Palette::White;
+
+
+		BulletInfo(const siv::Vec2& pos, const siv::Vec2& speed, const siv::Vec2& vspeed) {
+			this->pos = pos;
+			this->speed = speed;
+			this->vspeed = vspeed;
+		}
 	};
 
 }

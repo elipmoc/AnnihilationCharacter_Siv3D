@@ -21,7 +21,9 @@ namespace game {
 	{
 		if (m_startFlag) {
 			if (count % 30 == 0) {
-				m_bulletList->MakeBullet(BulletInfo{ m_pos, { 2,0 }, { 0.1,0 } });
+				BulletInfo bInfo{ m_pos,{ 2,0 },{ 0.1,0 } };
+				bInfo.color = siv::Palette::Orangered;
+				m_bulletList->MakeBullet(bInfo);
 			}
 			count++;
 		}
