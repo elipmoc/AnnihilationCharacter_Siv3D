@@ -13,6 +13,12 @@ namespace game {
 		siv::Vec2 vspeed;
 		//弾色
 		siv::Color color=siv::Palette::White;
+		//ブラー
+		int32 blur = 10;
+		//ガンマ
+		double gamma = 2.0;
+		//光らせるかどうかのフラグ
+		bool glowFlag = false;
 
 
 		BulletInfo(const siv::Vec2& pos, const siv::Vec2& speed, const siv::Vec2& vspeed) {

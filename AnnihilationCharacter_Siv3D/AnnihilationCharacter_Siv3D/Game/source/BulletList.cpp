@@ -28,7 +28,9 @@ namespace game {
 
 	void BulletList::MakeBullet(const BulletInfo& bInfo)
 	{
-		m_bulletPool->New(bInfo.pos,bInfo.speed,bInfo.vspeed).SetColor(bInfo.color);
+		auto& bullet= m_bulletPool->New(bInfo.pos,bInfo.speed,bInfo.vspeed).SetColor(bInfo.color);
+		if (bInfo.glowFlag)
+			bullet.SetGlow(bInfo.blur, bInfo.gamma);
 	}
 
 
