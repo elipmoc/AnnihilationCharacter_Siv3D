@@ -17,6 +17,8 @@ namespace game {
 		int32 blur = 10;
 		//ガンマ
 		double gamma = 2.0;
+		//光らせる色
+		siv::Color glowColor = siv::Palette::White;
 		//光らせるかどうかのフラグ
 		bool glowFlag = false;
 

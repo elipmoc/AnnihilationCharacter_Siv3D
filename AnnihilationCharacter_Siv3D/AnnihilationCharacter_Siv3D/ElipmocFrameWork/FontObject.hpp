@@ -34,6 +34,11 @@ namespace elipmocframework {
 			m_glowTextImage=std::make_unique<GlowTextImage>(m_font,m_text,blur,gamma);
 		}
 
+		void SetGlowColor(const siv::Color color) {
+			if (m_glowTextImage)
+				m_glowTextImage->SetColor(color);
+		}
+
 		//pos‚ÌQÆ‚ğ“¾‚é
 		virtual const siv::Vec2& GetRefPos() override final{ return m_pos; }
 

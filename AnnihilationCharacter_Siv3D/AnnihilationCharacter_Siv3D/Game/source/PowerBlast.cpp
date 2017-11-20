@@ -25,6 +25,7 @@ namespace game {
 				bInfo.color = siv::Palette::Orangered;
 				bInfo.blur = 10;
 				bInfo.glowFlag = true;
+				bInfo.glowColor = siv::Palette::Yellow;
 				m_bulletList->MakeBullet(bInfo);
 			}
 			count++;
