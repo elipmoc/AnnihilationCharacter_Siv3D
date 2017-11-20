@@ -77,9 +77,9 @@ namespace elipmocframework {
 			//siv::Mat3x2 mat = siv::Mat3x2::Scale(m_scale, m_pos);
 			//siv::Transformer2D t(mat, false);
 			if (m_glowTextImage != nullptr) {
-				m_glowTextImage->Draw(m_pos);
+				m_glowTextImage->Draw({ (int)m_pos.x,(int)m_pos.y });
 			}
-			m_font(m_text).draw(m_pos,m_color);
+			m_font(m_text).draw({ (int)m_pos.x,(int)m_pos.y },m_color);
 		}
 		
 		virtual void DrawCenter()const  override final{
@@ -87,9 +87,9 @@ namespace elipmocframework {
 			//siv::Transformer2D t(mat, false);
 			//siv::Graphics2D::SetTransform(siv::Mat3x2::Scale(m_scale, m_pos));
 			if (m_glowTextImage != nullptr) {
-				m_glowTextImage->DrawCenter(m_pos);
+				m_glowTextImage->DrawCenter({ (int)m_pos.x,(int)m_pos.y });
 			}
-			m_font(m_text).drawCenter(m_pos, m_color);
+			m_font(m_text).drawCenter({ (int)m_pos.x,(int)m_pos.y }, m_color);
 		}
 
 	};
