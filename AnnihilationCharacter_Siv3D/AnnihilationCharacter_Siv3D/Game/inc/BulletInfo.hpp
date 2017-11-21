@@ -2,6 +2,8 @@
 
 namespace game {
 
+	class Bullet;
+
 	//弾作成に使用する情報
 	struct BulletInfo
 	{
@@ -21,6 +23,8 @@ namespace game {
 		siv::Color glowColor = siv::Palette::White;
 		//光らせるかどうかのフラグ
 		bool glowFlag = false;
+		//埋め込む関数
+		void(*func)(Bullet&)=nullptr;
 
 
 		BulletInfo(const siv::Vec2& pos, const siv::Vec2& speed, const siv::Vec2& vspeed) {
