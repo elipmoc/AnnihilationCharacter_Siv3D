@@ -11,7 +11,8 @@ namespace game {
 		siv::Vec2 m_speedv;
 		//加速度ベクトル
 		siv::Vec2 m_vspeedv;
-
+		//カウンター
+		size_t m_counter=0;
 		//あたり判定
 		std::unique_ptr<CollisionCircle> m_colli;
 

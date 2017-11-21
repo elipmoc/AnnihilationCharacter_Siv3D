@@ -36,6 +36,8 @@ namespace game {
 		elipmocframework::FontObject::Update();
 		SetPos(GetPos() + m_speedv);
 		m_speedv += m_vspeedv;
+		m_counter++;
+
 	}
 
 }
