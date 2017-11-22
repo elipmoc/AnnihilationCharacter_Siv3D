@@ -5,6 +5,7 @@
 namespace game {
 
 	class CollisionCircle;
+	enum class CollisionID;
 
 	class Bullet :public elipmocframework::FontObject,public elipmocframework::has_delete_flag {
 		//速度ベクトル
@@ -25,7 +26,7 @@ namespace game {
 			delete_flag = true;
 		}
 
-		Bullet(const siv::Vec2 & pos, const siv::Vec2 & speedv, const siv::Vec2 & vspeedv);
+		Bullet(const siv::Vec2 & pos, const siv::Vec2 & speedv, const siv::Vec2 & vspeedv,const CollisionID&);
 		~Bullet();
 
 		void SetFunc(func_type func) {
