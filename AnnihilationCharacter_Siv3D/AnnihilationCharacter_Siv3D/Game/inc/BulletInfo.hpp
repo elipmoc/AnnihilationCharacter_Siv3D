@@ -1,4 +1,5 @@
 #pragma once
+#include "CollisionCircle.hpp"
 
 namespace game {
 
@@ -25,7 +26,8 @@ namespace game {
 		bool glowFlag = false;
 		//–„‚ßž‚ÞŠÖ”
 		void(*func)(Bullet&)=nullptr;
-
+		//’e‚Ì“–‚½‚è”»’èID
+		CollisionID colliID=CollisionID::EnemyBulletID;
 
 		BulletInfo(const siv::Vec2& pos, const siv::Vec2& speed, const siv::Vec2& vspeed) {
 			this->pos = pos;
