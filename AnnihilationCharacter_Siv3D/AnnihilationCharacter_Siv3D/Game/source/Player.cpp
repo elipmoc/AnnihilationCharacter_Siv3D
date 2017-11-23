@@ -15,7 +15,7 @@ namespace game {
 
 		//デバッグ用
 		if (siv::Input::KeyC.clicked) {
-			m_powerBlast->Start(GetPos());
+			m_powerBlast->Start();
 		}
 
 		//バリア起動
@@ -116,7 +116,7 @@ namespace game {
 			if(m_powerNum<MAX_POWERNUM)
 				m_powerNum++;
 			else {
-				m_powerBlast->Start(GetPos());
+				m_powerBlast->Start();
 				m_powerNum=0;
 			}
 	}
@@ -128,7 +128,7 @@ namespace game {
 			)
 		),
 		m_barrier(std::make_unique<Barrier>(GetRefPos())),
-		m_powerBlast(std::make_unique<PowerBlast>())
+		m_powerBlast(std::make_unique<PowerBlast>(GetRefPos()))
 	{
 		m_colliObject->SetR(5);
 		m_colliObject->SetCollisionID(CollisionID::PlayerID);

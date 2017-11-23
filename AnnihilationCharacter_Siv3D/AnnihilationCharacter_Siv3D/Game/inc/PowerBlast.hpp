@@ -9,12 +9,13 @@ namespace game {
 		//弾リスト
 		std::unique_ptr<BulletList> m_bulletList;
 		int count = 0;
-		siv::Vec2 m_pos;
+		//主人公座標の参照
+		const siv::Vec2& m_playerPosRef;
 		bool m_startFlag=false;
 	public:
-		PowerBlast();
+		PowerBlast(const siv::Vec2& playerPosRef);
 		~PowerBlast();
-		void Start(const siv::Vec2&);
+		void Start();
 		void Update();
 		void Draw()const;
 	};
