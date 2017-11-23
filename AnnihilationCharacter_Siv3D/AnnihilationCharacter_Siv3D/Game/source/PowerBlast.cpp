@@ -34,22 +34,21 @@ namespace game {
 					if (bullet.GetCounter() == 50) {
 						siv::Vec2 addPos = 
 							(Boss::BOSS_POS - bullet.GetPos()) / bullet.GetPos().distanceFrom(Boss::BOSS_POS);
-						//どこにむかっているのか。それはわたしにもわからない。
-						//しっくりこないいいい
-						//イメージは霊夢のボムです
-						//これはこれで、ありだな・・・・・
 						bullet.SetSpeed({ 0,0 });
 						bullet.SetVspeed(addPos/5);
 						
 					}
 				};
-				if (count % 10 == 0 && count < 10 * 18) {
-					bInfo.pos = m_playerPosRef;
-					double angle = 20 * count / 10 / 180.0*math::Pi;
-					bInfo.speed = { math::Cos(angle) * 3,math::Sin(angle) * 3 };
-					m_bulletList->MakeBullet(bInfo);
+
+				if (count < 10 * 18) {
+					if (count % 10 == 0) {
+						bInfo.pos = m_playerPosRef;
+						double angle = 20 * count / 10 / 180.0*math::Pi;
+						bInfo.speed = { math::Cos(angle) * 3,math::Sin(angle) * 3 };
+						m_bulletList->MakeBullet(bInfo);
+					}
 				}
-				else if(count >=10 * 18) {
+				else {
 					m_startFlag = false;
 					count = 0;
 				}
