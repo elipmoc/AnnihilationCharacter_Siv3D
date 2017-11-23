@@ -22,6 +22,7 @@ namespace game {
 		const siv::Vec2& m_playerRefPos;
 		
 	public:
+		static constexpr siv::Vec2 BOSS_POS = { 570, 160 };
 		Boss(Level level,const siv::Vec2& playerRefPos, BulletListCreator&);
 		~Boss();
 		size_t GetHp() { return m_hp; }

@@ -21,7 +21,7 @@ namespace game {
 		m_collision->SetCollisionID(CollisionID::EnemyID);
 		BossModel b;
 		m_fontObject->SetText(b.GenerateEnemyModelInfo().text);
-		m_fontObject->SetPos({ 570, 160 });
+		m_fontObject->SetPos(BOSS_POS);
 	}
 	Boss::~Boss() = default;
 
