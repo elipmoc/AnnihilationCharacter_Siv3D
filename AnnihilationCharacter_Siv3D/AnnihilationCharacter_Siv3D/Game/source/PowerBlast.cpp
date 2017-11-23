@@ -6,7 +6,7 @@
 
 namespace game {
 	PowerBlast::PowerBlast(const siv::Vec2& playerPosRef)
-		:m_bulletList(std::make_unique<BulletList>(600)),
+		:m_bulletList(std::make_unique<BulletList>(30)),
 		m_playerPosRef(playerPosRef)
 	{
 	}
