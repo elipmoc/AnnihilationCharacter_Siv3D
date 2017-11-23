@@ -6,9 +6,11 @@ namespace game {
 	Bullet::Bullet(const siv::Vec2 & pos, const siv::Vec2 & speedv, const siv::Vec2 & vspeedv,const CollisionID& colliID)
 		:elipmocframework::FontObject(L"’e", 17), m_speedv(speedv), m_vspeedv(vspeedv),
 		m_colli(std::make_unique<CollisionCircle>(GetRefPos(), 
-			[this](const CollisionID id) {
-				if (id == CollisionID::PlayerID || id == CollisionID::BarrierID)this->Delete();
-			}))
+			[this,colliID](const CollisionID id) {
+				if (colliID==CollisionID::EnemyBulletID 
+					&&(id == CollisionID::PlayerID || id == CollisionID::BarrierID))this->Delete();
+				else if (colliID == CollisionID::PowerBlastID && id == CollisionID::EnemyID)this->Delete();
+	}))
 	{
 		m_colli->SetR(9);
 		m_colli->SetCollisionID(colliID);
