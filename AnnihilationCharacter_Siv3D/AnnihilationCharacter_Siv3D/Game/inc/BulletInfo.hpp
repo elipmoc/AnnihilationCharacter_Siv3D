@@ -9,11 +9,11 @@ namespace game {
 	struct BulletInfo
 	{
 		//’eˆÊ’u
-		siv::Vec2 pos;
+		siv::Vec2 pos = {0,0};
 		//’e‘¬“x
-		siv::Vec2 speed;
+		siv::Vec2 speed = {0,0};
 		//’e‰Á‘¬“x
-		siv::Vec2 vspeed;
+		siv::Vec2 vspeed = {0,0};
 		//’eF
 		siv::Color color=siv::Palette::White;
 		//ƒuƒ‰[
@@ -34,6 +34,7 @@ namespace game {
 			this->speed = speed;
 			this->vspeed = vspeed;
 		}
+		BulletInfo() = default;
 	};
 
 }

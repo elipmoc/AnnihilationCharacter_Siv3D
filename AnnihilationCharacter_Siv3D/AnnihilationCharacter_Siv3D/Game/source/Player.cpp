@@ -13,6 +13,11 @@ namespace game {
 	//移動アクション
 	void Player::Move(const std::unique_ptr<TerrainControl>& terrainControl) {		
 
+		//デバッグ用
+		if (siv::Input::KeyC.clicked) {
+			m_powerBlast->Start(GetPos());
+		}
+
 		//バリア起動
 		if (siv::Input::KeyX.clicked && m_barrier->IsBarrier()==false && m_barrierCount!=0) {
 			m_barrier->SetBarrier();

@@ -4,7 +4,7 @@
 
 namespace game {
 	PowerBlast::PowerBlast()
-		:m_bulletList(std::make_unique<BulletList>(30))
+		:m_bulletList(std::make_unique<BulletList>(600))
 	{
 	}
 
@@ -19,16 +19,21 @@ namespace game {
 
 	void PowerBlast::Update()
 	{
+		namespace math=siv::Math;
 		if (m_startFlag) {
-			if (count % 30 == 0) {
-				BulletInfo bInfo{ m_pos,{ 2,0 },{ 0.1,0 } };
+				BulletInfo bInfo;
+				bInfo.pos = m_pos;
 				bInfo.color = siv::Palette::Orangered;
 				bInfo.colliID = CollisionID::PowerBlastID;
 				bInfo.blur = 10;
 				bInfo.glowFlag = true;
 				bInfo.glowColor = siv::Palette::Yellow;
-				m_bulletList->MakeBullet(bInfo);
-			}
+				for (size_t i = 0; i < 18; i++) {
+					double angle = 20 * i / 180.0*math::Pi;
+					bInfo.speed = { math::Cos(angle)*3,math::Sin(angle)*3 };
+					m_bulletList->MakeBullet(bInfo);
+				}
+				m_startFlag = false;
 			count++;
 		}
 		m_bulletList->Update();
@@ -39,3 +44,6 @@ namespace game {
 		m_bulletList->Draw();
 	}
 }
+//設定でかえられますよ
+//ちくしょおおお！
+//？？！！？！？！
