@@ -38,8 +38,8 @@ namespace game {
 				m_boss->SetBossBehavior();
 			}
 		}
-		if (m_test == nullptr) {
-			m_bossHpGage->SetSizeFromHp(50);
+		else{
+			m_bossHpGage->SetSizeFromHp(m_boss->GetHp());
 			m_boss->Update();
 			m_powerSpawn->Update();
 		}
