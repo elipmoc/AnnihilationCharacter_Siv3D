@@ -9,9 +9,9 @@ namespace game {
 
 	class Bullet :public elipmocframework::FontObject,public elipmocframework::has_delete_flag {
 		//速度ベクトル
-		siv::Vec2 m_speedv;
+		siv::Vec2 m_speed;
 		//加速度ベクトル
-		siv::Vec2 m_vspeedv;
+		siv::Vec2 m_vspeed;
 		//カウンター
 		size_t m_counter=0;
 		//あたり判定
@@ -21,6 +21,12 @@ namespace game {
 		func_type m_func=nullptr;
 
 	public:
+
+		Bullet& SetSpeed(const siv::Vec2& speed) { m_speed = speed; return *this; };
+		siv::Vec2 GetSpeed()const noexcept { return m_speed; }
+
+		Bullet& SetVspeed(const siv::Vec2& vspeed) { m_vspeed = vspeed; return *this; };
+		siv::Vec2 GetVspeed()const noexcept { return m_vspeed; }
 
 		void Delete() {
 			delete_flag = true;

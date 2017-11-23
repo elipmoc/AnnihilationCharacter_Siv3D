@@ -1,6 +1,7 @@
 #include "PowerBlast.hpp"
 #include"BulletList.hpp"
 #include "BulletInfo.hpp"
+#include "Bullet.hpp"
 
 namespace game {
 	PowerBlast::PowerBlast()
@@ -28,6 +29,7 @@ namespace game {
 				bInfo.blur = 10;
 				bInfo.glowFlag = true;
 				bInfo.glowColor = siv::Palette::Yellow;
+				//bInfo.func = [](Bullet& bullet) {};
 				for (size_t i = 0; i < 18; i++) {
 					double angle = 20 * i / 180.0*math::Pi;
 					bInfo.speed = { math::Cos(angle)*3,math::Sin(angle)*3 };
@@ -44,6 +46,3 @@ namespace game {
 		m_bulletList->Draw();
 	}
 }
-//設定でかえられますよ
-//ちくしょおおお！
-//？？！！？！？！

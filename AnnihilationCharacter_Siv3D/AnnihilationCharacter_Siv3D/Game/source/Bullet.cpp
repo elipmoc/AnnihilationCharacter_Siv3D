@@ -4,7 +4,7 @@
 namespace game {
 
 	Bullet::Bullet(const siv::Vec2 & pos, const siv::Vec2 & speedv, const siv::Vec2 & vspeedv,const CollisionID& colliID)
-		:elipmocframework::FontObject(L"’e", 17), m_speedv(speedv), m_vspeedv(vspeedv),
+		:elipmocframework::FontObject(L"’e", 17), m_speed(speedv), m_vspeed(vspeedv),
 		m_colli(std::make_unique<CollisionCircle>(GetRefPos(), 
 			[this,colliID](const CollisionID id) {
 				if (colliID==CollisionID::EnemyBulletID 
@@ -36,8 +36,8 @@ namespace game {
 		if (m_func != nullptr)
 			m_func(*this);
 		elipmocframework::FontObject::Update();
-		SetPos(GetPos() + m_speedv);
-		m_speedv += m_vspeedv;
+		SetPos(GetPos() + m_speed);
+		m_speed += m_vspeed;
 		m_counter++;
 
 	}
