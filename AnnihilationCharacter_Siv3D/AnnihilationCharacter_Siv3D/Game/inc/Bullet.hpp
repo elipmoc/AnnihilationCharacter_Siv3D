@@ -28,6 +28,8 @@ namespace game {
 		Bullet& SetVspeed(const siv::Vec2& vspeed) { m_vspeed = vspeed; return *this; };
 		siv::Vec2 GetVspeed()const noexcept { return m_vspeed; }
 
+		size_t GetCounter() { return m_counter; }
+
 		void Delete() {
 			delete_flag = true;
 		}
