@@ -34,7 +34,7 @@ namespace game {
 			delete_flag = true;
 		}
 
-		Bullet(const siv::Vec2 & pos, const siv::Vec2 & speedv, const siv::Vec2 & vspeedv,const CollisionID&);
+		Bullet(const siv::Vec2 & pos, const siv::Vec2 & speedv, const siv::Vec2 & vspeedv,const CollisionID&,size_t fontSize);
 		~Bullet();
 
 		void SetFunc(func_type func) {

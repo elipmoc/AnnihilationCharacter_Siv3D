@@ -24,6 +24,7 @@ namespace game {
 		namespace math=siv::Math;
 		if (m_startFlag) {
 				BulletInfo bInfo;
+				bInfo.fontSize = 30;
 				bInfo.color = siv::Palette::Orangered;
 				bInfo.colliID = CollisionID::PowerBlastID;
 				bInfo.blur = 10;

@@ -3,8 +3,8 @@
 
 namespace game {
 
-	Bullet::Bullet(const siv::Vec2 & pos, const siv::Vec2 & speedv, const siv::Vec2 & vspeedv,const CollisionID& colliID)
-		:elipmocframework::FontObject(L"’e", 17), m_speed(speedv), m_vspeed(vspeedv),
+	Bullet::Bullet(const siv::Vec2 & pos, const siv::Vec2 & speedv, const siv::Vec2 & vspeedv,const CollisionID& colliID,size_t fontSize)
+		:elipmocframework::FontObject(L"’e", fontSize), m_speed(speedv), m_vspeed(vspeedv),
 		m_colli(std::make_unique<CollisionCircle>(GetRefPos(), 
 			[this,colliID](const CollisionID id) {
 				if (colliID==CollisionID::EnemyBulletID 

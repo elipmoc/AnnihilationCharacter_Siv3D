@@ -28,6 +28,8 @@ namespace game {
 		void(*func)(Bullet&)=nullptr;
 		//’e‚Ì“–‚½‚è”»’èID
 		CollisionID colliID=CollisionID::EnemyBulletID;
+		//’e‚ÌƒtƒHƒ“ƒg‘å‚«‚³
+		size_t fontSize = 17;
 
 		BulletInfo(const siv::Vec2& pos, const siv::Vec2& speed, const siv::Vec2& vspeed) {
 			this->pos = pos;
