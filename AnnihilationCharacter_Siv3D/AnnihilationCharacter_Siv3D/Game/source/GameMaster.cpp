@@ -119,7 +119,7 @@ namespace game {
 			//siv::Println(elipmocframework::ObjectPoolCount::count);
 			game::CollisionControl::GetInstance().Update();
 			siv::PutText(L"fps", siv::Profiler::FPS()).from(50, 0);
-			game::CollisionControl::GetInstance().DebugDraw();
+			//game::CollisionControl::GetInstance().DebugDraw();
 		}
 	}
 

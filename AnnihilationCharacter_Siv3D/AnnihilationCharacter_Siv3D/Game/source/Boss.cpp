@@ -17,11 +17,11 @@ namespace game {
 			this->m_hp--;
 	}))
 	{
-		m_collision->SetR(50);
+		m_collision->SetR(80);
 		m_collision->SetCollisionID(CollisionID::EnemyID);
 		BossModel b;
 		m_fontObject->SetText(b.GenerateEnemyModelInfo().text);
-		m_fontObject->SetPos({ 500, 80 });
+		m_fontObject->SetPos({ 570, 160 });
 	}
 	Boss::~Boss() = default;
 
@@ -38,6 +38,6 @@ namespace game {
 	}
 	void Boss::Draw() const
 	{
-		m_fontObject->Draw();
+		m_fontObject->DrawCenter();
 	}
 }
