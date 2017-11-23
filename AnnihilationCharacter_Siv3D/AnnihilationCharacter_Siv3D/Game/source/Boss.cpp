@@ -32,6 +32,7 @@ namespace game {
 
 	void Boss::Update()
 	{
+		m_collision->DoColliQueue();
 		if (m_bossBehavior != nullptr) {
 			m_bossBehavior->Update();
 		}
