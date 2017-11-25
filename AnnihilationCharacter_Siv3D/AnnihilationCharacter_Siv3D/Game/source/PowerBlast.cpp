@@ -40,10 +40,12 @@ namespace game {
 					}
 				};
 
-				if (count < 10 * 18) {
-					if (count % 10 == 0) {
+				constexpr int interval=10;
+
+				if (count < interval * 18) {
+					if (count % interval == 0) {
 						bInfo.pos = m_playerPosRef;
-						double angle = 20 * count / 10 / 180.0*math::Pi;
+						double angle = 20 * count / interval / 180.0*math::Pi;
 						bInfo.speed = { math::Cos(angle) * 3,math::Sin(angle) * 3 };
 						m_bulletList->MakeBullet(bInfo);
 					}
