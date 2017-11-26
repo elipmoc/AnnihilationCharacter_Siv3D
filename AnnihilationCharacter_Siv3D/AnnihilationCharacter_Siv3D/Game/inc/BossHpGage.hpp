@@ -3,7 +3,7 @@
 namespace game {
 
 	class BossHpGage {
-		size_t m_maxhp;
+		int m_maxhp;
 		siv::Rect rect;
 	public:
 		BossHpGage() {
@@ -11,11 +11,11 @@ namespace game {
 			rect.setSize(0, 0);
 		}
 
-		void SetMaxHp(size_t maxhp) {
+		void SetMaxHp(int maxhp) {
 			m_maxhp = maxhp;
 		}
 
-		void SetSizeFromHp(size_t hp) {
+		void SetSizeFromHp(int hp) {
 			if (hp < 0)hp = 0;
 			rect.setSize(150 * hp / m_maxhp, 5);
 		}
