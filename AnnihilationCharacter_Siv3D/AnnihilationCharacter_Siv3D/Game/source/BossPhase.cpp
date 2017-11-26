@@ -13,10 +13,12 @@ namespace game {
 		m_terrainControl(terrainControl),
 		m_boss(std::make_unique<Boss>(level,playerRefPos,bulletListCreator)),
 		m_powerSpawn(std::make_unique<PowerSpawn>()),
-		m_bossHpGage(std::make_unique<BossHpGage>(50))
+		m_bossHpGage(std::make_unique<BossHpGage>())
 
 	{
 		m_terrainControl.SetTerrainData(GameMaster::GetInstance().GetTerrainData(m_terrainNameList[listIndex]));
+		m_boss->SetHp(m_hpList[listIndex]);
+		m_bossHpGage->SetMaxHp(m_hpList[listIndex]);
 	}
 
 	BossPhase::~BossPhase() = default;

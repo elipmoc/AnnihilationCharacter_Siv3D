@@ -3,15 +3,20 @@
 namespace game {
 
 	class BossHpGage {
-		const size_t m_maxhp;
+		size_t m_maxhp;
 		siv::Rect rect;
 	public:
-		BossHpGage(size_t maxhp):m_maxhp(maxhp) {
+		BossHpGage() {
 			rect.setPos(530, 80);
 			rect.setSize(0, 0);
 		}
 
+		void SetMaxHp(size_t maxhp) {
+			m_maxhp = maxhp;
+		}
+
 		void SetSizeFromHp(size_t hp) {
+			if (hp < 0)hp = 0;
 			rect.setSize(150 * hp / m_maxhp, 5);
 		}
 
