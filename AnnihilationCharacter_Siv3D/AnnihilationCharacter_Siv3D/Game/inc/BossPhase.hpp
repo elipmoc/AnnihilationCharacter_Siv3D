@@ -12,6 +12,10 @@ namespace game {
 	class BossPhase :public BasePhase{
 		std::array<int,2> m_hpList = { 50,50 };
 		std::array<std::string, 2> m_terrainNameList = { "Boss1","Boss2" };
+
+		//Œ»İ‚ÌhpList‚ÆterrainNameList‚Ì—v‘f‚ğ•Û‘¶‚·‚é‚½‚ß‚Ég—p
+		size_t listIndex=0;
+
 		std::unique_ptr<PowerSpawn> m_powerSpawn;
 		std::unique_ptr<Boss> m_boss;
 		std::unique_ptr<BossTalk> m_test;

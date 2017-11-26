@@ -6,7 +6,7 @@
 #include "BulletListCreator.hpp"
 #include "PowerSpawn.hpp"
 #include "BossHpGage.hpp"
-
+#include "GameMaster.hpp"
 namespace game {
 	BossPhase::BossPhase(Level level, const siv::Vec2 & playerRefPos, BulletListCreator & bulletListCreator,TerrainControl& terrainControl):
 		m_test(std::make_unique<BossTalk>(siv::Vec2(100,70))),
@@ -16,6 +16,7 @@ namespace game {
 		m_bossHpGage(std::make_unique<BossHpGage>(50))
 
 	{
+		m_terrainControl.SetTerrainData(GameMaster::GetInstance().GetTerrainData(m_terrainNameList[listIndex]));
 	}
 
 	BossPhase::~BossPhase() = default;

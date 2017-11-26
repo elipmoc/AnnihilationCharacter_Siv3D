@@ -3,7 +3,6 @@
 #include "BossPhase.hpp"
 #include "BulletList.hpp"
 #include "TerrainControl.hpp"
-#include "GameMaster.hpp"
 #include "BulletListCreator.hpp"
 
 namespace game {
@@ -22,7 +21,7 @@ namespace game {
 	void EnemyPhaseControl::SwitchBossPhase()
 	{
 		m_phase = std::make_unique<BossPhase>(m_level, m_playerRefPos,BulletListCreator( *m_bulletList),m_terrainControl);
-		m_terrainControl.SetTerrainData(GameMaster::GetInstance().GetTerrainData("Boss1"));
+	
 	}
 
 	void EnemyPhaseControl::Draw() const
