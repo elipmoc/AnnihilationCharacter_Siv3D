@@ -42,6 +42,12 @@ namespace game {
 			}
 		}
 		else{
+			if (m_boss->GetHp() <= 0) {
+				listIndex++;
+				m_boss->SetHp(m_hpList[listIndex]);
+				m_bossHpGage->SetMaxHp(m_hpList[listIndex]);
+				m_terrainControl.SetTerrainData(GameMaster::GetInstance().GetTerrainData(m_terrainNameList[listIndex]));
+			}
 			m_bossHpGage->SetSizeFromHp(m_boss->GetHp());
 			m_boss->Update();
 			m_powerSpawn->Update();
