@@ -298,6 +298,8 @@
     <None Include="Example\Well\Well.wavefrontobj" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="BossTerrain1.txt" />
+    <Text Include="BossTerrain2.txt" />
     <Text Include="Engine\dll(x64)\libmpg123\COPYING.txt" />
     <Text Include="Engine\dll(x64)\SoundTouch\COPYING.TXT" />
     <Text Include="Engine\dll(x86)\libmpg123\COPYING.txt" />

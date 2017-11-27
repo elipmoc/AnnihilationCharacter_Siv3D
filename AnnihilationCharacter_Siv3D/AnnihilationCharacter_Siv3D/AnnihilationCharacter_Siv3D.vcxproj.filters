@@ -515,6 +515,8 @@
     <Text Include="Example\Shaders\Wave2DPointSprites.hlsl">
       <Filter>リソース ファイル\Example\Shaders</Filter>
     </Text>
+    <Text Include="BossTerrain2.txt" />
+    <Text Include="BossTerrain1.txt" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="Example\Sound.mp3">

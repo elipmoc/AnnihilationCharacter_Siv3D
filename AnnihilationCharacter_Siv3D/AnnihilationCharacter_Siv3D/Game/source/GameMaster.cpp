@@ -100,7 +100,8 @@ namespace game {
 		try
 		{
 			m_terrainDataMap["ZakoEnemy"] = LoadFileTerrainData("terrain.txt");
-			m_terrainDataMap["Boss1"]=LoadFileTerrainData("BossTerrain1.txt");
+			m_terrainDataMap["Boss1"] = LoadFileTerrainData("BossTerrain1.txt");
+			m_terrainDataMap["Boss2"]=LoadFileTerrainData("BossTerrain2.txt");
 			m_loadFileEnemyInfo->LoadFile();
 			m_loadFileConfig->LoadFile();
 		}
