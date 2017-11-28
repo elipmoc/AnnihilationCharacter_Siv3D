@@ -26,6 +26,7 @@ namespace game {
 	public:
 		BossPhase(Level level, const siv::Vec2& playerRefPos, BulletListCreator&,TerrainControl&);
 		~BossPhase();
+		bool IsClear()const noexcept;
 		virtual void Draw()const override final;
 		virtual void Update() override final;
 

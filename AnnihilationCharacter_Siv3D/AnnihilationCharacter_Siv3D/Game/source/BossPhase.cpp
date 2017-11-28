@@ -26,6 +26,11 @@ namespace game {
 
 	BossPhase::~BossPhase() = default;
 
+	bool BossPhase::IsClear() const noexcept
+	{
+		return listIndex >= m_bossBehaviorMakeList->GetSize();
+	}
+
 	void BossPhase::Draw() const
 	{
 		if (m_test != nullptr)

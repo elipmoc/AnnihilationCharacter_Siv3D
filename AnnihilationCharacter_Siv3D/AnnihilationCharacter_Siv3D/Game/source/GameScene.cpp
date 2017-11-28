@@ -32,6 +32,8 @@ namespace game {
 	{
 		if (m_player->GetHp() == 0)
 			changeScene(L"GameOver");
+		if (m_enemyControl->IsClear())
+			changeScene(L"Clear");
 		/*if (m_terrainControl->IsFinished())
 			m_enemyControl->SwitchBossPhase();*/
 	    m_terrainControl->Update();

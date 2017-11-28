@@ -43,6 +43,9 @@ namespace game {
 	}
 	bool EnemyPhaseControl::IsClear()
 	{
-		return false;
+		if (m_bossPhase == nullptr)
+			return false;
+		else
+			return m_bossPhase->IsClear();
 	}
 }
