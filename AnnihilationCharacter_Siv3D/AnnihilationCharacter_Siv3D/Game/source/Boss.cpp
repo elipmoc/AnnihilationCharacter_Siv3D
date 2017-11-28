@@ -6,6 +6,7 @@
 #include "BulletListCreator.hpp"
 #include "BossBehavior01.hpp"
 #include "CollisionCircle.hpp"
+#include "BossBehaviorMake.hpp"
 
 namespace game {
 	Boss::Boss(Level level, const siv::Vec2 & playerRefPos, BulletListCreator& bulletListCreator):
@@ -27,7 +28,9 @@ namespace game {
 
 	void Boss::SetBossBehavior()
 	{
-		m_bossBehavior =std::make_unique<BossBehavior01>(*m_bulletListCreator);
+		BossBehaviorMake<BossBehavior01> test;
+		m_bossBehavior= test.Create(*m_bulletListCreator);
+		//m_bossBehavior =std::make_unique<BossBehavior01>(*m_bulletListCreator);
 	}
 
 	void Boss::Update()
