@@ -7,6 +7,9 @@
 #include "PowerSpawn.hpp"
 #include "BossHpGage.hpp"
 #include "GameMaster.hpp"
+#include "BossBehaviorMake.hpp"
+#include "BossBehavior01.hpp"//Ç†Ç∆Ç≈è¡Ç∑
+
 namespace game {
 	BossPhase::BossPhase(Level level, const siv::Vec2 & playerRefPos, BulletListCreator & bulletListCreator,TerrainControl& terrainControl):
 		m_test(std::make_unique<BossTalk>(siv::Vec2(100,70))),
@@ -38,7 +41,7 @@ namespace game {
 			m_test->Update();
 			if (m_test->IsFinished()) {
 				m_test = nullptr;
-				m_boss->SetBossBehavior();
+				m_boss->SetBossBehavior(*std::make_unique<BossBehaviorMake<BossBehavior01>>());
 			}
 		}
 		else{

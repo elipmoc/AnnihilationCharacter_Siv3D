@@ -15,7 +15,7 @@ namespace game {
 
 	//上記のクラスをテンプレートで実現
 	template<class T>
-	class BossBehaviorMake:BossBehaviorMakeBase {
+	class BossBehaviorMake : public BossBehaviorMakeBase {
 	public:
 		virtual std::unique_ptr<BossBehavior> Create(const BulletListCreator& bulletListCreator) override final {
 			return std::make_unique<T>(bulletListCreator);

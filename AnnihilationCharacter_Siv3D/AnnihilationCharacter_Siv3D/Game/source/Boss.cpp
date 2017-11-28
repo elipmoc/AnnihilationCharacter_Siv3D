@@ -26,10 +26,9 @@ namespace game {
 	}
 	Boss::~Boss() = default;
 
-	void Boss::SetBossBehavior()
+	void Boss::SetBossBehavior(BossBehaviorMakeBase& bossBehaviorMakeBase)
 	{
-		BossBehaviorMake<BossBehavior01> test;
-		m_bossBehavior= test.Create(*m_bulletListCreator);
+		m_bossBehavior= bossBehaviorMakeBase.Create(*m_bulletListCreator);
 		//m_bossBehavior =std::make_unique<BossBehavior01>(*m_bulletListCreator);
 	}
 

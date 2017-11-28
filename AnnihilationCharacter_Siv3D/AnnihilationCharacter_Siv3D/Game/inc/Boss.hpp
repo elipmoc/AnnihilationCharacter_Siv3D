@@ -10,6 +10,7 @@ namespace game {
 	class BulletListCreator;
 	class BossBehavior;
 	class CollisionCircle;
+	class BossBehaviorMakeBase;
 
 	//ボスクラス
 	class Boss {
@@ -27,7 +28,7 @@ namespace game {
 		~Boss();
 		int GetHp() { return m_hp; }
 		int SetHp(int hp) { return m_hp = hp; }
-		void SetBossBehavior();
+		void SetBossBehavior(BossBehaviorMakeBase&);
 		void Update();
 		void Draw()const;
 	};
