@@ -20,19 +20,29 @@ namespace game {
 
 	void EnemyPhaseControl::SwitchBossPhase()
 	{
-		m_phase = std::make_unique<BossPhase>(m_level, m_playerRefPos,BulletListCreator( *m_bulletList),m_terrainControl);
-	
+		m_bossPhase = std::make_unique<BossPhase>(m_level, m_playerRefPos,BulletListCreator( *m_bulletList),m_terrainControl);
 	}
 
 	void EnemyPhaseControl::Draw() const
 	{
-		m_phase->Draw();
+		if (m_bossPhase == nullptr)
+			m_phase->Draw();
+		else
+			m_bossPhase->Draw();
+
 		m_bulletList->Draw();
 	}
 
 	void EnemyPhaseControl::Update()
 	{
-		m_phase->Update();
+		if (m_bossPhase == nullptr)
+			m_phase->Update();
+		else
+			m_bossPhase->Update();
 		m_bulletList->Update();
+	}
+	bool EnemyPhaseControl::IsClear()
+	{
+		return false;
 	}
 }
