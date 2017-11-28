@@ -363,6 +363,7 @@
     <ClInclude Include="Game\inc\Bullet.hpp" />
     <ClInclude Include="Game\inc\BulletListCreator.hpp" />
     <ClInclude Include="Game\inc\BulletListUpdator.hpp" />
+    <ClInclude Include="Game\inc\ClearScene.hpp" />
     <ClInclude Include="Game\inc\CollisionCircle.hpp" />
     <ClInclude Include="Game\inc\CollisionControl.hpp" />
     <ClInclude Include="Game\inc\define.hpp" />

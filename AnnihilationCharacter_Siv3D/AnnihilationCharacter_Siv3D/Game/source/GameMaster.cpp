@@ -4,6 +4,7 @@
 #include "SelectPlayerScene.hpp"
 #include "GameOverScene.hpp"
 #include "GameScene.hpp"
+#include "ClearScene.hpp"
 #include "ObjectPoolUtil.hpp"
 #include "CollisionControl.hpp"
 #include "LoadFileTerrainData.hpp"
@@ -95,6 +96,7 @@ namespace game {
 		m_mySceneManager->add<LevelSelectScene>(L"LevelSelect");
 		m_mySceneManager->add<GameScene>(L"Game");
 		m_mySceneManager->add<GameOverScene>(L"GameOver");
+		m_mySceneManager->add<ClearScene>(L"Clear");
 
 		//ファイルデータロード
 		try
