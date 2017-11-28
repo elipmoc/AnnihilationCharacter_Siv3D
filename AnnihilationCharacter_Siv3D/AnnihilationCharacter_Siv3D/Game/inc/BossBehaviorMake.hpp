@@ -9,7 +9,7 @@ namespace game {
 	//”CˆÓ‚ÌBossBehavior‚ğ¶¬‚·‚éŠî’ê‚ÌƒNƒ‰ƒX
 	class BossBehaviorMakeBase {
 	public:
-		virtual std::unique_ptr<BossBehavior> Create(const BulletListCreator&)=0;
+		virtual std::unique_ptr<BossBehavior> Create(const BulletListCreator&) const =0;
 
 	};
 
@@ -17,7 +17,7 @@ namespace game {
 	template<class T>
 	class BossBehaviorMake : public BossBehaviorMakeBase {
 	public:
-		virtual std::unique_ptr<BossBehavior> Create(const BulletListCreator& bulletListCreator) override final {
+		virtual std::unique_ptr<BossBehavior> Create(const BulletListCreator& bulletListCreator) const override final {
 			return std::make_unique<T>(bulletListCreator);
 		}
 

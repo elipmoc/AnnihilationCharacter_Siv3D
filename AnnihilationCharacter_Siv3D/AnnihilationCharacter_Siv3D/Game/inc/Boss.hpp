@@ -28,7 +28,7 @@ namespace game {
 		~Boss();
 		int GetHp() { return m_hp; }
 		int SetHp(int hp) { return m_hp = hp; }
-		void SetBossBehavior(BossBehaviorMakeBase&);
+		void SetBossBehavior(const BossBehaviorMakeBase&);
 		void Update();
 		void Draw()const;
 	};
