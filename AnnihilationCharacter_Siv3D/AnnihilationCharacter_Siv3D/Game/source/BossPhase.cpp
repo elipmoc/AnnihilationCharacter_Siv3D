@@ -48,10 +48,15 @@ namespace game {
 			//hpが0になったら、ボスの状態を次に移行する
 			if (m_boss->GetHp() <= 0) {
 				listIndex++;
-				m_boss->SetBossBehavior(*m_bossBehaviorMakeList->Next());
-				m_boss->SetHp(m_hpList[listIndex]);
-				m_bossHpGage->SetMaxHp(m_hpList[listIndex]);
-				m_terrainControl.SetTerrainData(GameMaster::GetInstance().GetTerrainData(m_terrainNameList[listIndex]));
+				if (listIndex >= m_bossBehaviorMakeList->GetSize()) {
+
+				}
+				else {
+					m_boss->SetBossBehavior(*m_bossBehaviorMakeList->Next());
+					m_boss->SetHp(m_hpList[listIndex]);
+					m_bossHpGage->SetMaxHp(m_hpList[listIndex]);
+					m_terrainControl.SetTerrainData(GameMaster::GetInstance().GetTerrainData(m_terrainNameList[listIndex]));
+				}
 			}
 			m_bossHpGage->SetSizeFromHp(m_boss->GetHp());
 			m_boss->Update();
