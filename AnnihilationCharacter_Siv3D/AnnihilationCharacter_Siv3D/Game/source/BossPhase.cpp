@@ -8,7 +8,7 @@
 #include "BossHpGage.hpp"
 #include "GameMaster.hpp"
 #include "BossBehaviorMake.hpp"
-#include "BossBehavior01.hpp"//Ç†Ç∆Ç≈è¡Ç∑
+#include "BossBehaviorMakeList.hpp"
 
 namespace game {
 	BossPhase::BossPhase(Level level, const siv::Vec2 & playerRefPos, BulletListCreator & bulletListCreator,TerrainControl& terrainControl):
@@ -16,8 +16,8 @@ namespace game {
 		m_terrainControl(terrainControl),
 		m_boss(std::make_unique<Boss>(level,playerRefPos,bulletListCreator)),
 		m_powerSpawn(std::make_unique<PowerSpawn>()),
-		m_bossHpGage(std::make_unique<BossHpGage>())
-
+		m_bossHpGage(std::make_unique<BossHpGage>()),
+		m_bossBehaviorMakeList(std::make_unique<BossBehaviorMakeList>())
 	{
 		m_terrainControl.SetTerrainData(GameMaster::GetInstance().GetTerrainData(m_terrainNameList[listIndex]));
 		m_boss->SetHp(m_hpList[listIndex]);
@@ -41,7 +41,7 @@ namespace game {
 			m_test->Update();
 			if (m_test->IsFinished()) {
 				m_test = nullptr;
-				m_boss->SetBossBehavior(*std::make_unique<BossBehaviorMake<BossBehavior01>>());
+				m_boss->SetBossBehavior(*m_bossBehaviorMakeList->Next());
 			}
 		}
 		else{

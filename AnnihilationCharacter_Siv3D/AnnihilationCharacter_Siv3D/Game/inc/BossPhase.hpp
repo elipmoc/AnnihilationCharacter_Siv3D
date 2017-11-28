@@ -6,6 +6,7 @@ namespace game {
 	class TerrainControl;
 	class BossTalk;
 	class BulletListCreator;
+	class BossBehaviorMakeList;
 	class Boss;
 	class PowerSpawn;
 	class BossHpGage;
@@ -16,6 +17,7 @@ namespace game {
 		//åªç›ÇÃhpListÇ∆terrainNameListÇÃóvëfÇï€ë∂Ç∑ÇÈÇΩÇﬂÇ…égóp
 		size_t listIndex=0;
 
+		std::unique_ptr<BossBehaviorMakeList> m_bossBehaviorMakeList;
 		std::unique_ptr<PowerSpawn> m_powerSpawn;
 		std::unique_ptr<Boss> m_boss;
 		std::unique_ptr<BossTalk> m_test;
