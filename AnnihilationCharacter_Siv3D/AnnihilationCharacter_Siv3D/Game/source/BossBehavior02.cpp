@@ -3,8 +3,8 @@
 #include "BulletInfo.hpp"
 
 namespace game {
-	BossBehavior02::BossBehavior02(const Level level, const BulletListCreator& bulletListCreator) :
-		BossBehavior(level, bulletListCreator)
+	BossBehavior02::BossBehavior02(const Level level,const siv::Vec2& playerRefPos, const BulletListCreator& bulletListCreator) :
+		BossBehavior(level, playerRefPos,bulletListCreator)
 	{
 	}
 	void BossBehavior02::YawarakaUpdate()

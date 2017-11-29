@@ -2,9 +2,11 @@
 #include "BulletListCreator.hpp"
 
 namespace game {
-	BossBehavior::BossBehavior(const Level level ,const BulletListCreator & bulletListCreator):
-		m_bulletListCreator(std::make_unique<BulletListCreator>(bulletListCreator)),
-		m_level(level)
+	BossBehavior::BossBehavior(const Level level,const siv::Vec2& playerRefPos ,const BulletListCreator & bulletListCreator):
+		m_level(level),
+		m_playerRefPos(playerRefPos),
+		m_bulletListCreator(std::make_unique<BulletListCreator>(bulletListCreator))
+
 	{
 	}
 	void BossBehavior::Update()
