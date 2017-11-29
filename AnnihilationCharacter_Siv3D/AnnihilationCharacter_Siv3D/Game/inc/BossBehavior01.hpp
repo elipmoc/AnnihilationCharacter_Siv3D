@@ -5,7 +5,9 @@ namespace game {
 	class BossBehavior01 :public BossBehavior {
 		int count = 0;
 	public:
-		BossBehavior01(const BulletListCreator&);
-		virtual void Update()override final;
+		BossBehavior01(const Level,const BulletListCreator&);
+		virtual void YawarakaUpdate() override final;
+		virtual void NormalUpdate()override final;
+		virtual void RengokuUpdate() override final;
 	};
 }
