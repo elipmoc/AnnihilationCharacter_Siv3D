@@ -7,7 +7,7 @@ namespace game {
 		siv::Rect rect;
 	public:
 		BossHpGage() {
-			rect.setPos(530, 80);
+			rect.setPos(500, 60);
 			rect.setSize(0, 0);
 		}
 
