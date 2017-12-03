@@ -35,7 +35,7 @@ namespace game {
 						siv::Vec2 addPos = 
 							(Boss::BOSS_POS - bullet.GetPos()) / bullet.GetPos().distanceFrom(Boss::BOSS_POS);
 						bullet.SetSpeed({ 0,0 });
-						bullet.SetVspeed(addPos/5);
+						bullet.SetcontinuationForce(addPos/5);
 						
 					}
 				};
