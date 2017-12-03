@@ -14,6 +14,10 @@ namespace game {
 		siv::Vec2 speed = {0,0};
 		//’e‰Á‘¬“x
 		siv::Vec2 vspeed = {0,0};
+		//Œp‘±‚µ‚Ä‚©‚©‚è‘±‚¯‚é—Í
+		siv::Vec2 continuationForce = {0,0};
+		//uŠÔ‚É‚©‚©‚é—Í
+		siv::Vec2 momentForce = { 0,0 };
 		//‹ó‹C’ïRŒW”
 		double k=0;
 		//’eF

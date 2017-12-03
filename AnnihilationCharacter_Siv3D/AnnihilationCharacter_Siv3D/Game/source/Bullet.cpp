@@ -39,8 +39,8 @@ namespace game {
 		SetPos(GetPos() + m_speed);
 		m_speed += m_vspeed;
 		m_counter++;
-		m_vspeed = -m_k*m_speed;
-
+		m_vspeed =m_continuationForce+m_momentForce -m_k*m_speed;
+		m_momentForce = siv::Vec2::Zero;
 	}
 
 }

@@ -34,6 +34,8 @@ namespace game {
 			bullet.SetGlow(bInfo.blur, bInfo.gamma);
 			bullet.SetGlowColor(bInfo.glowColor);
 		}
+		bullet.SetcontinuationForce(bInfo.continuationForce);
+		bullet.SetmomentForce(bInfo.momentForce);
 		bullet.SetK(bInfo.k);
 		bullet.SetFunc(bInfo.func);
 	}

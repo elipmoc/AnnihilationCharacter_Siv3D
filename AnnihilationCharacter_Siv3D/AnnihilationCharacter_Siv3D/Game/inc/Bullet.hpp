@@ -14,6 +14,10 @@ namespace game {
 		siv::Vec2 m_vspeed;
 		//空気抵抗係数
 		double m_k;
+		//瞬間にかかる力
+		siv::Vec2 m_momentForce = {0,0};
+		//継続してかかり続ける力
+		siv::Vec2 m_continuationForce;
 		//カウンター
 		size_t m_counter=0;
 		//あたり判定
@@ -23,6 +27,12 @@ namespace game {
 		func_type m_func=nullptr;
 
 	public:
+
+		Bullet& SetmomentForce(const siv::Vec2& momentForce) { m_momentForce = momentForce; return *this; };
+		siv::Vec2 GetmomentForce()const noexcept { return m_momentForce; }
+
+		Bullet& SetcontinuationForce(const siv::Vec2& continuationForce) { m_continuationForce = continuationForce; return *this; };
+		siv::Vec2 GetcontinuationForce()const noexcept { return m_continuationForce; }
 
 		//空気抵抗係数のゲッタセッター
 		Bullet& SetK(double k) { m_k = k; return *this; }
