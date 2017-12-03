@@ -10,7 +10,7 @@ namespace game {
 	class CollisionCircle;
 	class Barrier {
 		//バリア有効時間
-		static constexpr size_t ENABLE_TIME = 180;
+		static constexpr size_t ENABLE_TIME = 230;
 		//バリア有効時間カウント
 		size_t count=ENABLE_TIME;
 		//壁の数
