@@ -29,6 +29,7 @@ namespace game {
 		siv::Vec2 GetVspeed()const noexcept { return m_vspeed; }
 
 		size_t GetCounter() { return m_counter; }
+		void ReSetCounter() { m_counter = 0; }
 
 		void Delete() {
 			delete_flag = true;
