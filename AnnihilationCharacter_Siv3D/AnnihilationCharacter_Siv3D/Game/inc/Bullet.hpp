@@ -12,6 +12,8 @@ namespace game {
 		siv::Vec2 m_speed;
 		//加速度ベクトル
 		siv::Vec2 m_vspeed;
+		//空気抵抗係数
+		double m_k;
 		//カウンター
 		size_t m_counter=0;
 		//あたり判定
@@ -21,6 +23,10 @@ namespace game {
 		func_type m_func=nullptr;
 
 	public:
+
+		//空気抵抗係数のゲッタセッター
+		Bullet& SetK(double k) { m_k = k; return *this; }
+		double GetK() { return m_k; }
 
 		Bullet& SetSpeed(const siv::Vec2& speed) { m_speed = speed; return *this; };
 		siv::Vec2 GetSpeed()const noexcept { return m_speed; }

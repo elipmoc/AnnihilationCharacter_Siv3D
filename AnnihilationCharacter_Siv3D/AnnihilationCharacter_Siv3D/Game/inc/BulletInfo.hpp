@@ -14,6 +14,8 @@ namespace game {
 		siv::Vec2 speed = {0,0};
 		//弾加速度
 		siv::Vec2 vspeed = {0,0};
+		//空気抵抗係数
+		double k=0;
 		//弾色
 		siv::Color color=siv::Palette::White;
 		//ブラー

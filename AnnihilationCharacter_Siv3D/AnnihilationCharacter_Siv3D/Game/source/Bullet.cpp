@@ -39,6 +39,7 @@ namespace game {
 		SetPos(GetPos() + m_speed);
 		m_speed += m_vspeed;
 		m_counter++;
+		m_vspeed = -m_k*m_speed;
 
 	}
 
