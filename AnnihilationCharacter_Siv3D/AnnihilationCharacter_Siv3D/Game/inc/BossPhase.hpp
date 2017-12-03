@@ -11,7 +11,7 @@ namespace game {
 	class PowerSpawn;
 	class BossHpGage;
 	class BossPhase :public BasePhase{
-		const std::array<int,2> m_hpList = { 50,50 };
+		const std::array<int,2> m_hpList = { 50,100 };
 		const std::array<std::string, 2> m_terrainNameList = { "Boss1","Boss2" };
 
 		//Œ»İ‚ÌhpList‚ÆterrainNameList‚Ì—v‘f‚ğ•Û‘¶‚·‚é‚½‚ß‚Ég—p

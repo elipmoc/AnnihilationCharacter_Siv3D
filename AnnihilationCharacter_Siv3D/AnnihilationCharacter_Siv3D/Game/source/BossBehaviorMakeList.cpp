@@ -8,7 +8,7 @@ namespace game {
 	BossBehaviorMakeList::BossBehaviorMakeList()
 		:list
 	{
-		std::make_unique<BossBehaviorMake<BossBehavior02>>(),
+		std::make_unique<BossBehaviorMake<BossBehavior01>>(),
 		std::make_unique<BossBehaviorMake<BossBehavior02>>()
 	}
 	{
