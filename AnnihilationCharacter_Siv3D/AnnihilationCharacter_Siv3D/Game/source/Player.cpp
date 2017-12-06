@@ -55,6 +55,9 @@ namespace game {
 			//急速落下
 			if (siv::Input::KeyDown.pressed)
 				m_yv += 0.3;
+			//パラシュート
+			else if (siv::Input::KeyLShift.pressed && m_yv>0)
+				m_yv = 0.5;
 		}
 		//ジャンプ
 		if (m_jumpCount < 3) {
