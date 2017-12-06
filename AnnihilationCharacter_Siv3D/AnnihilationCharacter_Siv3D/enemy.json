@@ -575,6 +575,126 @@
       "Barrage": "HorizontalShotOne",
       "BarrageStartTime": 200,
       "Model": "Model01"
+    },
+    {
+      "Action": "Action1",
+      "StartPos": {"x": 800,"y": 280},
+      "StopPos": {"x": 600,"y": 280},
+      "EndPos": {"x": 800,"y": 280},
+      "WaitTime": 120,
+      "BornTime": 4300,
+      "LifeTime": 400,
+      "Barrage": "GuruGuruShot",
+      "BarrageStartTime": 100,
+      "Model": "Model01"
+    },
+    {
+      "Action": "Action1",
+      "StartPos": {"x": 800,"y": 400},
+      "StopPos": {"x": 600,"y": 400},
+      "EndPos": {"x": 600,"y": -50},
+      "WaitTime": 120,
+      "BornTime": 4650,
+      "LifeTime": 400,
+      "Barrage": "HorizontalShot3Way",
+      "BarrageStartTime": 200,
+      "Model": "Model02"
+    },
+    {
+      "Action": "Action1",
+      "StartPos": {"x": 800,"y": 400},
+      "StopPos": {"x": 400,"y": 200},
+      "EndPos": {"x": 600,"y": -50},
+      "WaitTime": 80,
+      "BornTime": 4650,
+      "LifeTime": 400,
+      "Barrage": "HorizontalShot3Way",
+      "BarrageStartTime": 200,
+      "Model": "Model02"
+    },
+    {
+      "Action": "Action1",
+      "StartPos": {"x": 800,"y": 400},
+      "StopPos": {"x": 600,"y": 50},
+      "EndPos": {"x": 600,"y": -50},
+      "WaitTime": 40,
+      "BornTime": 4750,
+      "LifeTime": 400,
+      "Barrage": "HorizontalShot3Way",
+      "BarrageStartTime": 200,
+      "Model": "Model02"
+    },
+    {
+      "Action": "Action1",
+      "StartPos": {"x": 800,"y": 400},
+      "StopPos": {"x": 400,"y": 450},
+      "EndPos": {"x": 600,"y": -50},
+      "WaitTime": 40,
+      "BornTime": 4750,
+      "LifeTime": 400,
+      "Barrage": "HorizontalShot3Way",
+      "BarrageStartTime": 200,
+      "Model": "Model02"
+    },
+    {
+      "Action": "Action1",
+      "StartPos": {"x": 800,"y": 400},
+      "StopPos": {"x": 600,"y": 250},
+      "EndPos": {"x": 600,"y": -50},
+      "WaitTime": 40,
+      "BornTime": 4750,
+      "LifeTime": 400,
+      "Barrage": "HorizontalShot3Way",
+      "BarrageStartTime": 200,
+      "Model": "Model02"
+    },
+    {
+      "Action": "Action1",
+      "StartPos": {"x": 800,"y": 400},
+      "StopPos": {"x": 550,"y": 300},
+      "EndPos": {"x": 600,"y": -50},
+      "WaitTime": 40,
+      "BornTime": 4750,
+      "LifeTime": 400,
+      "Barrage": "HorizontalShot3Way",
+      "BarrageStartTime": 200,
+      "Model": "Model02"
+    },
+    {
+      "Action": "Action1",
+      "StartPos": {"x": 800,"y": 280},
+      "StopPos": {"x": 630,"y": 100},
+      "EndPos": {"x": 800,"y": 280},
+      "WaitTime": 220,
+      "BornTime": 4900,
+      "LifeTime": 400,
+      "Barrage": "GuruGuruShot",
+      "BarrageStartTime": 100,
+      "Model": "Model01"
+    },
+    {
+      "Action": "Action2",
+      "StartPos": {"x": 630,"y": 600},
+      "StopPos": {"x": 0,"y": -3},
+      "EndPos": {"x": 800,"y": 280},
+      "WaitTime": 220,
+      "BornTime": 5200,
+      "LifeTime": 400,
+      "Barrage": "GuruGuruShot",
+      "BarrageStartTime": 100,
+      "Model": "Model01"
+    },
+    {
+      "Action": "Action2",
+      "StartPos": {"x": 450,"y": -50},
+      "StopPos": {"x": 0,"y": 3},
+      "EndPos": {"x": 800,"y": 280},
+      "WaitTime": 220,
+      "BornTime": 5500,
+      "LifeTime": 400,
+      "Barrage": "GuruGuruShot",
+      "BarrageStartTime": 100,
+      "Model": "Model01"
     }
   ]
 }
