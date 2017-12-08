@@ -14,3 +14,4 @@
 
 #include <iostream>
 #include "../AnnihilationCharacter_Siv3D/Game/inc/GameCounter.hpp"
+#include "../AnnihilationCharacter_Siv3D//Game//inc//GamePadConfigLoader.hpp"

@@ -26,5 +26,19 @@ namespace UnitTest1
 
 		}
 
+		TEST_METHOD(GamePadConfigLoaderTest)
+		{
+			
+			game::GamePadData gpd{ 99,99,99,99,99,99,99 };
+			game::GamePadConfigLoader gpl;
+			gpl.Load("GamePadConfig.json", [&gpd](game::GamePadData new_gpd) {gpd = new_gpd; });
+			Assert::IsTrue(gpd.right == 0, L"gpd.right");
+			Assert::IsTrue(gpd.left == 1, L"gpd.left");
+			Assert::IsTrue(gpd.up == 2, L"gpd.up");
+			Assert::IsTrue(gpd.down == 3, L"gpd.down");
+			Assert::IsTrue(gpd.jump == 4, L"gpd.jump");
+			Assert::IsTrue(gpd.barrier == 5, L"gpd.barrier");
+			Assert::IsTrue(gpd.fuwari==6,L"gpd.fuwari");
+		}
 	};
 }
