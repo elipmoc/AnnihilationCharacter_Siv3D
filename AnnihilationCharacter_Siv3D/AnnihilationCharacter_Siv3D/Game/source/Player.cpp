@@ -74,10 +74,11 @@ namespace game {
 		//d—Í‚Ì‰e‹¿
 		m_yv += m_g;
 
+		siv::Println(siv::Gamepad(0).x);
 		//¶‰EˆÚ“®
-		if (siv::Input::KeyRight.pressed)
+		if (siv::Input::KeyRight.pressed || siv::Gamepad(0).x>0.5)
 			SetPos({ GetPos().x + m_speed, GetPos().y });
-		if (siv::Input::KeyLeft.pressed)
+		if (siv::Input::KeyLeft.pressed || siv::Gamepad(0).x<-0.5)
 			SetPos({ GetPos().x - m_speed, GetPos().y });
 
 		//Œ©‚¦‚È‚¢•Ç”»’è

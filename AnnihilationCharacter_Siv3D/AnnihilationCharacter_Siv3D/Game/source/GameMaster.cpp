@@ -116,8 +116,7 @@ namespace game {
 	}
 
 	//ゲームループスタート
-	void GameMaster::Start()
-	{
+	void GameMaster::Start(){
 		while (siv::System::Update() && m_mySceneManager->updateAndDraw()) {
 			//siv::Println(elipmocframework::ObjectPoolCount::count);
 			game::CollisionControl::GetInstance().Update();
