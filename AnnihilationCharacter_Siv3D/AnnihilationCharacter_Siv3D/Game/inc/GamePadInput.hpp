@@ -15,7 +15,7 @@ namespace game {
 
 	public:
 
-		void LoadGamePadData(GamePadData);
+		void LoadGamePadData(GamePadConfigLoader);
 
 		static GamePadInput & GetInstance() { return instance; }
 

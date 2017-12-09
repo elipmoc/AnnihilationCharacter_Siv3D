@@ -185,6 +185,7 @@
     <ClCompile Include="Game\source\EnemyBarrage\UpShot.cpp" />
     <ClCompile Include="Game\source\EnemyBuilder.cpp" />
     <ClCompile Include="Game\source\GameMaster.cpp" />
+    <ClCompile Include="Game\source\GamePadConfigLoader.cpp" />
     <ClCompile Include="Game\source\LevelSelectScene.cpp" />
     <ClCompile Include="Game\source\LoadFileEnemyInfo.cpp" />
     <ClCompile Include="Game\source\GamePadInput.cpp" />
