@@ -6,7 +6,7 @@ namespace game {
 
 
 	class GamePadInput {
-		GamePadData gamePadData{0,1,5};
+		GamePadData m_gamePadData{0,1,5};
 		GamePadInput() {};
 		~GamePadInput() {};
 		int right = 0;
@@ -18,7 +18,8 @@ namespace game {
 
 	public:
 
-		void LoadGamePadData(GamePadData gamePadData) {
+		void LoadGamePadData(const GamePadData& gamePadData) {
+			m_gamePadData = gamePadData;
 		}
 
 		void Update() {
@@ -55,13 +56,13 @@ namespace game {
 			return down;
 		}
 		siv::Key GetJump()const noexcept {
-			return siv::Gamepad(0).button(gamePadData.jump);
+			return siv::Gamepad(0).button(m_gamePadData.jump);
 		}
 		siv::Key GetBarrier()const noexcept {
-			return siv::Gamepad(0).button(gamePadData.barrier);
+			return siv::Gamepad(0).button(m_gamePadData.barrier);
 		}
 		siv::Key GetFuwari()const noexcept {
-			return siv::Gamepad(0).button(gamePadData.fuwari);
+			return siv::Gamepad(0).button(m_gamePadData.fuwari);
 		}
 	};
 }

@@ -103,7 +103,7 @@ namespace game {
 		try
 		{
 			GamePadConfigLoader gpcl;
-			gpcl.Load(L"gamePadConfig.json");
+			GamePadInput::GetInstance().LoadGamePadData(gpcl.Load(L"gamePadConfig.json"));
 			m_terrainDataMap["ZakoEnemy"] = LoadFileTerrainData("terrain.txt");
 			m_terrainDataMap["Boss1"] = LoadFileTerrainData("BossTerrain1.txt");
 			m_terrainDataMap["Boss2"]=LoadFileTerrainData("BossTerrain2.txt");
