@@ -39,6 +39,9 @@ namespace game {
 			changeScene(L"SelectPlayer");
 		}
 
+		if ((siv::Input::KeyX | GamePadInput::GetInstance().GetBarrier()).clicked)
+			changeScene(L"ModeSelect");
+
 		//上下キーの処理。押されてたら、文字に拡大縮小アニメーションを設定する
 		if ((siv::Input::KeyUp.clicked || siv::Input::KeyDown.clicked ||GamePadInput::GetInstance().GetUp()==1 || GamePadInput::GetInstance().GetDown() == 1)
 			&& m_actionInterval == 0) {

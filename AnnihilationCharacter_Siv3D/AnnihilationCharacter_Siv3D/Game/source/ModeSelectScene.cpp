@@ -44,6 +44,8 @@ namespace game {
 			if(m_selectIndex%2==0)
 				changeScene(L"LevelSelect");
 		}
+		if ((siv::Input::KeyX | GamePadInput::GetInstance().GetBarrier()).clicked)
+			changeScene(L"Title");
 		m_gameStartFont->Update();
 		m_keyConfigFont->Update();
 	}

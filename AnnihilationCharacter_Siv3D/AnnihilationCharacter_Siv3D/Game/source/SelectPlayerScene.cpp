@@ -31,6 +31,9 @@ namespace game {
 			changeScene(L"Game");
 		}
 
+		if ((siv::Input::KeyX | GamePadInput::GetInstance().GetBarrier()).clicked)
+			changeScene(L"LevelSelect");
+
 		//左右キーの処理。押されてたら、文字に拡大縮小アニメーションを設定する
 		if ((siv::Input::KeyRight.clicked || siv::Input::KeyLeft.clicked || GamePadInput::GetInstance().GetRight()==1 || GamePadInput::GetInstance().GetLeft() == 1) && m_actionInterval == 0) {
 			m_actionInterval = 5;
