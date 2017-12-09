@@ -10,6 +10,7 @@ namespace game {
 	class ModeSelectScene : public MySceneBase {
 		std::unique_ptr<elipmocframework::FontObject> m_gameStartFont;
 		std::unique_ptr<elipmocframework::FontObject> m_keyConfigFont;
+		int m_selectIndex = 0;
 	public:
 		ModeSelectScene();
 		~ModeSelectScene();
