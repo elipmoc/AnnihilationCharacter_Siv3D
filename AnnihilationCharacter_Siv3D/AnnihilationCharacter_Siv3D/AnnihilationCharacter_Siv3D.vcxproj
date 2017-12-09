@@ -189,6 +189,7 @@
     <ClCompile Include="Game\source\LevelSelectScene.cpp" />
     <ClCompile Include="Game\source\LoadFileEnemyInfo.cpp" />
     <ClCompile Include="Game\source\GamePadInput.cpp" />
+    <ClCompile Include="Game\source\ModeSelectScene.cpp" />
     <ClCompile Include="Game\source\Power.cpp" />
     <ClCompile Include="Game\source\PowerBlast.cpp" />
     <ClCompile Include="Game\source\PowerSpawn.cpp" />
@@ -398,6 +399,7 @@
     <ClInclude Include="Game\inc\LoadFileEnemyInfo.hpp" />
     <ClInclude Include="Game\inc\LoadFileTerrainData.hpp" />
     <ClInclude Include="Game\inc\GamePadInput.hpp" />
+    <ClInclude Include="Game\inc\ModeSelectScene.hpp" />
     <ClInclude Include="Game\inc\Player.hpp" />
     <ClInclude Include="Game\inc\PlayerDeadParticle.hpp" />
     <ClInclude Include="Game\inc\Power.hpp" />

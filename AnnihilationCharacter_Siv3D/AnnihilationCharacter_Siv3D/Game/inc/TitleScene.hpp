@@ -23,7 +23,7 @@ namespace game {
 			m_titleParticle.Update();
 			if ((siv::Input::KeyZ| GamePadInput::GetInstance().GetJump()).clicked) {
 				siv::SoundAsset(L"Œˆ’è‰¹").play();
-				changeScene(L"LevelSelect");
+				changeScene(L"ModeSelect");
 			}
 			m_angle+=3;
 		}
