@@ -13,7 +13,7 @@ namespace game {
 		}
 
 		virtual void update()override {
-			if (siv::Input::KeyZ.clicked)
+			if ((siv::Input::KeyZ| GamePadInput::GetInstance().GetJump()).clicked)
 				changeScene(L"Title");
 			font1(L"クリア！！").drawCenter(siv::Window::Center());
 			font2(L"(*^^*)").drawCenter(siv::Window::Center().x, siv::Window::Center().y + 50);

@@ -6,6 +6,7 @@
 #include "define.hpp"
 #include "Barrier.hpp"
 #include "PowerBlast.hpp"
+#include "GamePadInput.hpp"
 
 namespace game {
 
@@ -19,7 +20,7 @@ namespace game {
 		}
 
 		//バリア起動
-		if (siv::Input::KeyX.clicked && m_barrier->IsBarrier()==false && m_barrierCount!=0) {
+		if ((siv::Input::KeyX| GamePadInput::GetInstance().GetBarrier()).clicked && m_barrier->IsBarrier()==false && m_barrierCount!=0) {
 			m_barrier->SetBarrier();
 			m_barrierCount--;
 			siv::SoundAsset(L"バリア").play();
@@ -39,7 +40,7 @@ namespace game {
 			m_jumpCount = 0;
 			SetUnderY(terrainControl->GetTerrainY(m_underLane));
 			m_yv = 0;
-			if (siv::Input::KeyDown.clicked && m_underLane != -1)
+			if ((siv::Input::KeyDown.clicked || GamePadInput::GetInstance().GetDown()>0) && m_underLane != -1)
 				m_underLane--;
 		}
 
@@ -53,17 +54,17 @@ namespace game {
 				}
 			if (i == -1)m_underLane = -1;
 			//急速落下
-			if (siv::Input::KeyDown.pressed)
+			if (siv::Input::KeyDown.pressed || GamePadInput::GetInstance().GetDown()>0)
 				m_yv += 0.3;
 			//パラシュート
-			else if (siv::Input::KeyLShift.pressed && m_yv>0)
+			else if ((siv::Input::KeyLShift| GamePadInput::GetInstance().GetFuwari()).pressed && m_yv>0)
 				m_yv = 0.5;
 		}
 		//ジャンプ
 		if (m_jumpCount < 3) {
 			if (
-				(siv::Input::KeyZ.clicked)
-				|| (siv::Input::KeyZ.pressed && m_yv >= 0)
+				((siv::Input::KeyZ|GamePadInput::GetInstance().GetJump()).clicked)
+				|| ((siv::Input::KeyZ|GamePadInput::GetInstance().GetJump()).pressed && m_yv >= 0)
 				) {
 				m_yv = -7;
 				m_jumpCount++;
@@ -75,9 +76,9 @@ namespace game {
 		m_yv += m_g;
 
 		//左右移動
-		if (siv::Input::KeyRight.pressed )
+		if (siv::Input::KeyRight.pressed || GamePadInput::GetInstance().GetRight()>0)
 			SetPos({ GetPos().x + m_speed, GetPos().y });
-		if (siv::Input::KeyLeft.pressed )
+		if (siv::Input::KeyLeft.pressed || GamePadInput::GetInstance().GetLeft()>0)
 			SetPos({ GetPos().x - m_speed, GetPos().y });
 
 		//見えない壁判定

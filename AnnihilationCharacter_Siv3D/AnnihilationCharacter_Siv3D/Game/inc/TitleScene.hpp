@@ -1,6 +1,7 @@
 #pragma once
 #include "SceneBase.hpp"
 #include "TitleParticle.hpp"
+#include "GamePadInput.hpp"
 
 namespace game {
 	
@@ -20,7 +21,7 @@ namespace game {
 
 		virtual void update()override {
 			m_titleParticle.Update();
-			if (siv::Input::KeyZ.clicked) {
+			if ((siv::Input::KeyZ| GamePadInput::GetInstance().GetJump()).clicked) {
 				siv::SoundAsset(L"Œˆ’è‰¹").play();
 				changeScene(L"LevelSelect");
 			}

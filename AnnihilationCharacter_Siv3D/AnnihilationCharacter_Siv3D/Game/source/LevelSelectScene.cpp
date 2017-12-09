@@ -1,6 +1,7 @@
 #include "LevelSelectScene.hpp"
 #include "GlowText.hpp"
 #include "Actions.hpp"
+#include "GamePadInput.hpp"
 
 namespace game {
 	using elipmocframework::GlowText;
@@ -30,7 +31,7 @@ namespace game {
 	void LevelSelectScene::update() {
 
 		//enterキーの処理
-		if (siv::Input::KeyZ.clicked) {
+		if ((siv::Input::KeyZ|GamePadInput::GetInstance().GetJump()).clicked) {
 
 			//難易度を設定してシーンを遷移する
 			m_data->level = static_cast<Level>(m_selectIndex);
@@ -39,13 +40,14 @@ namespace game {
 		}
 
 		//上下キーの処理。押されてたら、文字に拡大縮小アニメーションを設定する
-		if ((siv::Input::KeyUp.clicked || siv::Input::KeyDown.clicked) && m_actionInterval == 0) {
+		if ((siv::Input::KeyUp.clicked || siv::Input::KeyDown.clicked ||GamePadInput::GetInstance().GetUp()==1 || GamePadInput::GetInstance().GetDown() == 1)
+			&& m_actionInterval == 0) {
 			siv::SoundAsset(L"カーソル音").stop();
 			siv::SoundAsset(L"カーソル音").play();
 			m_actionInterval = 5;
 			auto pos=m_levelFonts[m_selectIndex]->GetPos();
 			m_levelFonts[m_selectIndex]->AddAction(MoveAction::Create(pos + siv::Vec2{-50,0}, 10));
-			if(siv::Input::KeyDown.clicked)
+			if(siv::Input::KeyDown.clicked || GamePadInput::GetInstance().GetDown() == 1)
 				m_selectIndex = (m_selectIndex + 1) % 3;
 			else 
 				m_selectIndex = (m_selectIndex + 2) % 3;

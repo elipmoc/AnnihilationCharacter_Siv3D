@@ -12,6 +12,7 @@
 #include "LoadFileConfig.hpp"
 #include "EnemyInfo.hpp"
 #include "GamePadConfigLoader.hpp"
+#include "GamePadInput.hpp"
 
 
 int elipmocframework::ObjectPoolCount::count = 0;
@@ -120,6 +121,7 @@ namespace game {
 	//ゲームループスタート
 	void GameMaster::Start(){
 		while (siv::System::Update() && m_mySceneManager->updateAndDraw()) {
+			game::GamePadInput::GetInstance().Update();
 			//siv::Println(elipmocframework::ObjectPoolCount::count);
 			game::CollisionControl::GetInstance().Update();
 			siv::PutText(L"fps", siv::Profiler::FPS()).from(50, 0);

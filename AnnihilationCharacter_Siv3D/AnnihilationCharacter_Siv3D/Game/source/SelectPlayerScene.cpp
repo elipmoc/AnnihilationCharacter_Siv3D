@@ -1,6 +1,7 @@
 #include "SelectPlayerScene.hpp"
 #include "FontObject.hpp"
 #include "Actions.hpp"
+#include "GamePadInput.hpp"
 
 namespace game {
 	using elipmocframework::FontObject;
@@ -22,7 +23,7 @@ namespace game {
 	void SelectPlayerScene::update() {
 
 		//enterキーの処理
-		if (siv::Input::KeyZ.clicked) {
+		if ((siv::Input::KeyZ| GamePadInput::GetInstance().GetJump()).clicked) {
 
 			//主人公の文字を設定してシーンを遷移する
 			m_data->player = m_playerFonts[m_selectIndex]->GetText();
@@ -31,12 +32,12 @@ namespace game {
 		}
 
 		//左右キーの処理。押されてたら、文字に拡大縮小アニメーションを設定する
-		if ((siv::Input::KeyRight.clicked || siv::Input::KeyLeft.clicked) && m_actionInterval == 0) {
+		if ((siv::Input::KeyRight.clicked || siv::Input::KeyLeft.clicked || GamePadInput::GetInstance().GetRight()==1 || GamePadInput::GetInstance().GetLeft() == 1) && m_actionInterval == 0) {
 			m_actionInterval = 5;
 			m_playerFonts[m_selectIndex]->AddAction(ScaleAction::Create(25, 5));
 			siv::SoundAsset(L"カーソル音").stop();
 			siv::SoundAsset(L"カーソル音").play();
-			if (siv::Input::KeyRight.clicked)
+			if (siv::Input::KeyRight.clicked || GamePadInput::GetInstance().GetRight()==1)
 				m_selectIndex = (m_selectIndex + 1) % 3;
 			else
 				m_selectIndex = (m_selectIndex + 2) % 3;
