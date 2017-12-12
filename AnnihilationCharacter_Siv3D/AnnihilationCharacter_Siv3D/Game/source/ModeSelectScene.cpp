@@ -43,6 +43,7 @@ namespace game {
 			siv::SoundAsset(L"Œˆ’è‰¹").play();
 			if(m_selectIndex%2==0)
 				changeScene(L"LevelSelect");
+			else changeScene(L"KeyConfig");
 		}
 		if ((siv::Input::KeyX | GamePadInput::GetInstance().GetBarrier()).clicked)
 			changeScene(L"Title");
