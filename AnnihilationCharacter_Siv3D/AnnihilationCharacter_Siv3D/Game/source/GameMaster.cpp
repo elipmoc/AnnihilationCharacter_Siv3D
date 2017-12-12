@@ -14,6 +14,7 @@
 #include "GamePadConfigLoader.hpp"
 #include "GamePadInput.hpp"
 #include "ModeSelectScene.hpp"
+#include "KeyConfigScene.hpp"
 
 
 int elipmocframework::ObjectPoolCount::count = 0;
@@ -100,6 +101,7 @@ namespace game {
 		m_mySceneManager->add<GameOverScene>(L"GameOver");
 		m_mySceneManager->add<ClearScene>(L"Clear");
 		m_mySceneManager->add<ModeSelectScene>(L"ModeSelect");
+		m_mySceneManager->add<KeyConfigScene>(L"KeyConfig");
 		//ファイルデータロード
 		try
 		{
