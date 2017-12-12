@@ -1,5 +1,7 @@
 #include "KeyConfigScene.hpp"
 #include "FontObject.hpp"
+#include "GamePadInput.hpp"
+#include "Actions.hpp"
 
 namespace game {
 	void KeyConfigScene::draw() const
@@ -10,6 +12,26 @@ namespace game {
 	}
 	void KeyConfigScene::update()
 	{
+		using namespace elipmocframework;
+
+		if (siv::Input::KeyUp.clicked ||
+			siv::Input::KeyDown.clicked ||
+			GamePadInput::GetInstance().GetUp() == 1 ||
+			GamePadInput::GetInstance().GetDown() == 1) {
+			siv::SoundAsset(L"カーソル音").stop();
+			siv::SoundAsset(L"カーソル音").play();
+			m_keyName[m_selectIndex]->AddAction(ScaleAction::Create(20, 5));
+			if (siv::Input::KeyDown.clicked || GamePadInput::GetInstance().GetDown() == 1)
+				m_selectIndex++;
+			else
+				m_selectIndex += 2;
+			m_selectIndex %= 3;
+			m_keyName[m_selectIndex]->AddAction(ScaleAction::Create(40, 5));
+		}
+
+		for (size_t i = 0; i < 3; i++) {
+			m_keyName[i]->Update();
+		}
 
 	}
 	void KeyConfigScene::init()
@@ -20,5 +42,6 @@ namespace game {
 			m_keyName[i] = std::make_unique<elipmocframework::FontObject>(str[i]);
 			m_keyName[i]->SetPos({ Center().x-150, Center().y-100 + 80*i });
 		}
+		m_keyName[0]->SetScale(30);
 	}
 }
