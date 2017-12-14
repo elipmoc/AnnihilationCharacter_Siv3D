@@ -2,8 +2,12 @@
 #include "FontObject.hpp"
 #include "GamePadInput.hpp"
 #include "Actions.hpp"
+#include "GamePadInput.hpp"
 
 namespace game {
+	KeyConfigScene::KeyConfigScene() = default;
+	KeyConfigScene::~KeyConfigScene() = default;
+
 	void KeyConfigScene::draw() const
 	{
 		for (size_t i = 0; i < 3; i++) {
@@ -36,6 +40,7 @@ namespace game {
 	}
 	void KeyConfigScene::init()
 	{
+		m_gamePadData = std::make_unique<GamePadData>(GamePadInput::GetInstance().GetGamePadData());
 		siv::String str[] = { L"ジャンプ:",L"バリア:",L"ふわり:" };
 		using namespace siv::Window;
 		for (size_t i = 0; i < 3; i++) {
