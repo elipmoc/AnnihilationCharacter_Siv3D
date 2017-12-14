@@ -18,6 +18,10 @@ namespace game {
 
 	public:
 
+		GamePadData GetGamePadData() {
+			return m_gamePadData;
+		}
+
 		void LoadGamePadData(const GamePadData& gamePadData) {
 			m_gamePadData = gamePadData;
 		}
