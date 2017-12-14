@@ -32,6 +32,8 @@ namespace game {
 			m_selectIndex %= 3;
 			m_keyName[m_selectIndex]->AddAction(ScaleAction::Create(40, 5));
 		}
+		if ((siv::Input::KeyX | GamePadInput::GetInstance().GetBarrier()).clicked)
+			changeScene(L"ModeSelect");
 
 		for (size_t i = 0; i < 3; i++) {
 			m_keyName[i]->Update();
