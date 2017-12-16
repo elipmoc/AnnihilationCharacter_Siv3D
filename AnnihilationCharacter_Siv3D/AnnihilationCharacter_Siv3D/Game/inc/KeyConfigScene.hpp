@@ -15,6 +15,7 @@ namespace game {
 		std::unique_ptr<GamePadData> m_gamePadData;
 		std::unique_ptr<elipmocframework::FontObject> m_keyName[3];
 		std::unique_ptr<elipmocframework::FontObject> m_keyCode[3];
+		std::unique_ptr<elipmocframework::FontObject> m_decision;
 		int m_selectIndex = 0;
 
 	public:
