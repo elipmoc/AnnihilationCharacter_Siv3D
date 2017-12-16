@@ -12,6 +12,7 @@ namespace game {
 	{
 		for (size_t i = 0; i < 3; i++) {
 			m_keyName[i]->DrawCenter();
+			m_keyCode[i]->DrawCenter();
 		}
 	}
 	void KeyConfigScene::update()
@@ -25,18 +26,21 @@ namespace game {
 			siv::SoundAsset(L"カーソル音").stop();
 			siv::SoundAsset(L"カーソル音").play();
 			m_keyName[m_selectIndex]->AddAction(ScaleAction::Create(20, 5));
+			m_keyCode[m_selectIndex]->AddAction(ScaleAction::Create(20, 5));
 			if (siv::Input::KeyDown.clicked || GamePadInput::GetInstance().GetDown() == 1)
 				m_selectIndex++;
 			else
 				m_selectIndex += 2;
 			m_selectIndex %= 3;
 			m_keyName[m_selectIndex]->AddAction(ScaleAction::Create(40, 5));
+			m_keyCode[m_selectIndex]->AddAction(ScaleAction::Create(40, 5));
 		}
 		if ((siv::Input::KeyX | GamePadInput::GetInstance().GetBarrier()).clicked)
 			changeScene(L"ModeSelect");
 
 		for (size_t i = 0; i < 3; i++) {
 			m_keyName[i]->Update();
+			m_keyCode[i]->Update();
 		}
 
 	}
@@ -47,8 +51,11 @@ namespace game {
 		using namespace siv::Window;
 		for (size_t i = 0; i < 3; i++) {
 			m_keyName[i] = std::make_unique<elipmocframework::FontObject>(str[i]);
-			m_keyName[i]->SetPos({ Center().x-150, Center().y-100 + 80*i });
+			m_keyCode[i] = std::make_unique<elipmocframework::FontObject>(siv::Format(reinterpret_cast<unsigned int*>(m_gamePadData.get())[i]));
+			m_keyName[i]->SetPos({ Center().x - 150, Center().y - 100 + 80 * i });
+			m_keyCode[i]->SetPos({ Center().x, Center().y-100 + 80*i });
 		}
 		m_keyName[0]->SetScale(30);
+		m_keyCode[1]->SetScale(30);
 	}
 }
