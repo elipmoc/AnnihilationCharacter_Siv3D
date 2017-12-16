@@ -15,4 +15,21 @@ namespace game {
 			throw siv::String(fileName+L"でエラーが発生しました");
 		}
 	}
+	void GamePadConfigLoader::Save(const GamePadData & gpd,const siv::String& fileName)
+	{
+		try {
+			siv::TextWriter writer(fileName);
+			writer.write(L"{");
+			writer.write(L"\"jump\":");
+			writer.write(gpd.jump);
+			writer.write(L",\"barrier\":");
+			writer.write(gpd.barrier);
+			writer.write(L",\"fuwari\":");
+			writer.write(gpd.fuwari);
+			writer.write(L"}");
+		}
+		catch (...) {
+			throw siv::String(fileName + L"でエラーが発生しました");
+		}
+	}
 }

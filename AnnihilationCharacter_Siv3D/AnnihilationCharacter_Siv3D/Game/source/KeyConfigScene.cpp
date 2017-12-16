@@ -77,6 +77,16 @@ namespace game {
 		m_decision->Update();
 
 		if (m_selectIndex == 3 && (siv::Input::KeyZ.clicked || GamePadInput::GetInstance().GetJump().clicked)) {
+
+			try {
+				auto gpcl = GamePadConfigLoader();
+				gpcl.Save(*m_gamePadData, L"gamePadConfig.json");
+				GamePadInput::GetInstance().LoadGamePadData(gpcl.Load(L"gamePadConfig.json"));
+			}
+			catch (const siv::String& str)
+			{
+				siv::MessageBox::Show(str);
+			}
 			changeScene(L"ModeSelect");
 		}
 

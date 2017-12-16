@@ -12,5 +12,6 @@ namespace game {
 	public:
 		GamePadConfigLoader() {};
 		GamePadData Load(siv::String fileName);
+		void Save(const GamePadData&, const siv::String&);
 	};
 }
