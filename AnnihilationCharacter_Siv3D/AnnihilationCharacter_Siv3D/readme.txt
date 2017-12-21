@@ -17,7 +17,10 @@
 【管理者】ユーフルカ
 【アドレス】https://wingless-seraph.net/
 
-
 【サイト名】On-Jin ～音人～
 【管理者】栄樹
 【アドレス】https://on-jin.com/ 
+
+【サイト名】PANICPUMPKIN
+【管理者】みそか
+【アドレス】http://pansound.com/panicpumpkin/index.html

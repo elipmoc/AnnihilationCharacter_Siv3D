@@ -22,6 +22,7 @@ namespace game {
 			bInfos[1].glowFlag = true;
 			bInfos[0].glowColor = siv::Palette::Lightyellow;
 			bInfos[1].glowColor = siv::Palette::Lightyellow;
+			siv::SoundAsset(L"シャイーン").playMulti();
 			for (int j = 0; j < 2; j++) {
 				GetBulletListCreator().MakeBullet(bInfos[j]);
 				for (int i = 1; i < 2; i++) {
@@ -42,6 +43,7 @@ namespace game {
 				bInfo.glowFlag = true;
 				bInfo.glowColor = siv::Palette::Lightyellow;
 				GetBulletListCreator().MakeBullet(bInfo);
+				siv::SoundAsset(L"シャイーン").playMulti();
 				for (int i = 1; i < 3; i++) {
 					for (int e = -1; e < 2; e += 2) {
 						double angle = e*i * 15 / 180.0*siv::Math::Pi;
@@ -89,6 +91,7 @@ namespace game {
 			bInfos[1].glowFlag = true;
 			bInfos[0].glowColor = siv::Palette::Lightyellow;
 			bInfos[1].glowColor = siv::Palette::Lightyellow;
+			siv::SoundAsset(L"シャイーン").playMulti();
 			for (int j = 0; j < 2; j++) {
 				GetBulletListCreator().MakeBullet(bInfos[j]);
 				for (int i = 1; i < 3; i++) {
@@ -109,6 +112,7 @@ namespace game {
 				bInfo.glowFlag = true;
 				bInfo.glowColor = siv::Palette::Lightyellow;
 				GetBulletListCreator().MakeBullet(bInfo);
+				siv::SoundAsset(L"シャイーン").playMulti();
 				for (int i = 1; i < 4; i++) {
 					for (int e = -1; e < 2; e += 2) {
 						double angle = e*i * 12 / 180.0*siv::Math::Pi;
@@ -158,6 +162,7 @@ namespace game {
 			bInfos[1].glowFlag = true;
 			bInfos[0].glowColor = siv::Palette::Lightyellow;
 			bInfos[1].glowColor = siv::Palette::Lightyellow;
+			siv::SoundAsset(L"シャイーン").playMulti();
 			for (int j = 0; j < 2; j++) {
 				GetBulletListCreator().MakeBullet(bInfos[j]);
 				for (int i = 1; i < 3; i++) {
@@ -178,6 +183,7 @@ namespace game {
 				bInfo.glowFlag = true;
 				bInfo.glowColor = siv::Palette::Lightyellow;
 				GetBulletListCreator().MakeBullet(bInfo);
+				siv::SoundAsset(L"シャイーン").playMulti();
 				for (int i = 1; i < 5; i++) {
 					for (int e = -1; e < 2; e += 2) {
 						double angle = e*i * 8 / 180.0*siv::Math::Pi;

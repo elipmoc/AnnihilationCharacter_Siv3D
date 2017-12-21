@@ -72,11 +72,21 @@ namespace game {
 			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/MUSIC/boss.mp3")
 		);
 		siv::SoundAsset::Preload(L"bossBgm");
+		siv::SoundAsset(L"bossBgm").setVolume(0.06);
 		siv::SoundAsset::Register(
 			L"シャイーン",
-			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/MUSIC/シャイーン.mp3")
+			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/SE/シャイーン.mp3")
 		);
 		siv::SoundAsset::Preload(L"シャイーン");
+		siv::SoundAsset(L"シャイーン").setVolume(1);
+		siv::SoundAsset::Register(
+			L"powerGet",
+			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/SE/パワー取得音.wav")
+		);
+		siv::SoundAsset::Register(
+			L"blast",
+			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/SE/blast.mp3")
+		);
 		siv::SoundAsset::Register(
 			L"決定音",
 			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/SE/決定音.wav")
