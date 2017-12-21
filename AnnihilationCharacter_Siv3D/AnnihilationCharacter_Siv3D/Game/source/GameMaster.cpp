@@ -68,6 +68,16 @@ namespace game {
 			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/MUSIC/bgm.mp3")
 		);
 		siv::SoundAsset::Register(
+			L"bossBgm",
+			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/MUSIC/boss.mp3")
+		);
+		siv::SoundAsset::Preload(L"bossBgm");
+		siv::SoundAsset::Register(
+			L"シャイーン",
+			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/MUSIC/シャイーン.mp3")
+		);
+		siv::SoundAsset::Preload(L"シャイーン");
+		siv::SoundAsset::Register(
 			L"決定音",
 			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/SE/決定音.wav")
 		);

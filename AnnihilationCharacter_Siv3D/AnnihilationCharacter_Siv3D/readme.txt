@@ -12,3 +12,12 @@
 【サイト名】THE MATCH-MAKERS
 【管理者】OSA
 【アドレス】http://osabisi.sakura.ne.jp/m2/
+
+【サイト名】Wingless Seraph
+【管理者】ユーフルカ
+【アドレス】https://wingless-seraph.net/
+
+
+【サイト名】On-Jin ～音人～
+【管理者】栄樹
+【アドレス】https://on-jin.com/ 

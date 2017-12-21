@@ -19,6 +19,7 @@ namespace game {
 		m_bossHpGage(std::make_unique<BossHpGage>()),
 		m_bossBehaviorMakeList(std::make_unique<BossBehaviorMakeList>())
 	{
+		siv::SoundAsset(L"bgm").stop();
 		m_terrainControl.SetTerrainData(GameMaster::GetInstance().GetTerrainData(m_terrainNameList[listIndex]));
 		m_boss->SetHp(m_hpList[listIndex]);
 		m_bossHpGage->SetMaxHp(m_hpList[listIndex]);
@@ -43,13 +44,15 @@ namespace game {
 	void BossPhase::Update()
 	{
 		//会話スキップ
-		if (siv::Input::KeyV.clicked) {
+	/*	if (siv::Input::KeyV.clicked) {
 			m_test = nullptr;
 			m_boss->SetBossBehavior(*m_bossBehaviorMakeList->Next());
-		}
+		}*/
 		if (m_test != nullptr) {
 			m_test->Update();
 			if (m_test->IsFinished()) {
+				siv::SoundAsset(L"bossBgm").setLoop(true);
+				siv::SoundAsset(L"bossBgm").play();
 				m_test = nullptr;
 				m_boss->SetBossBehavior(*m_bossBehaviorMakeList->Next());
 			}

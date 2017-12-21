@@ -17,7 +17,7 @@ namespace game {
 	void GameScene::init()
 	{
 		siv::SoundAsset(L"bgm").setLoop(true);
-		siv::SoundAsset(L"bgm").setVolume(0.1);
+		siv::SoundAsset(L"bgm").setVolume(0.3);
 		siv::SoundAsset(L"bgm").play();
 		m_gameCounter = std::make_unique<GameCounter>(GameMaster::GetInstance().GetStartTime());
 		m_terrainControl = std::make_unique<TerrainControl>(GameMaster::GetInstance().GetTerrainData("ZakoEnemy"),m_gameCounter->GetCount());
