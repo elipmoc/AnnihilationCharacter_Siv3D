@@ -117,9 +117,12 @@ namespace game {
 		if (id == CollisionID::EnemyID || id == CollisionID::EnemyBulletID)
 			PlayerDead();
 		else if (id == CollisionID::PowerID)
-			if(m_powerNum<MAX_POWERNUM)
+			if (m_powerNum < MAX_POWERNUM) {
 				m_powerNum++;
+				siv::SoundAsset(L"powerGet").playMulti();
+			}
 			else {
+				siv::SoundAsset(L"blast").playMulti();
 				m_powerBlast->Start();
 				m_powerNum=0;
 			}

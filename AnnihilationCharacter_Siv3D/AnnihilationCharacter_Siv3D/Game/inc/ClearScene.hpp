@@ -10,6 +10,7 @@ namespace game {
 
 		virtual void init()override {
 			siv::SoundAsset(L"bgm").stop();
+			siv::SoundAsset(L"bossBgm").stop();
 		}
 
 		virtual void update()override {
