@@ -25,6 +25,7 @@ namespace game {
 					bullet.ReSetCounter();
 				}
 			};
+			siv::SoundAsset(L"シャイーン").playMulti();
 			for (size_t i = 0; i < 7; i++) {
 				double angle = (siv::Random(0, 200) + 100) / 180.0 * siv::Math::Pi;
 				binfo.speed = siv::Vec2{ Cos(angle),Sin(angle) }*6;
@@ -47,6 +48,7 @@ namespace game {
 					bullet.ReSetCounter();
 				}
 			};
+			siv::SoundAsset(L"シャイーン").playMulti();
 			for (size_t i = 0; i < 10; i++) {
 				double angle = (siv::Random(0, 200) + 100) / 180.0 * siv::Math::Pi;
 				binfo.speed = siv::Vec2{ Cos(angle),Sin(angle) }*6;
@@ -70,6 +72,7 @@ namespace game {
 					bullet.ReSetCounter();
 				}
 			};
+			siv::SoundAsset(L"シャイーン").playMulti();
 			for (size_t i = 0; i < 15; i++) {
 				double angle = (siv::Random(0, 200)+100) / 180.0 * siv::Math::Pi;
 				binfo.speed = siv::Vec2{ Cos(angle),Sin(angle) }*6;
