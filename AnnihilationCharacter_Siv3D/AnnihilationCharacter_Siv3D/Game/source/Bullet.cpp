@@ -8,7 +8,7 @@ namespace game {
 		m_colli(std::make_unique<CollisionCircle>(GetRefPos(), 
 			[this,colliID](const CollisionID id) {
 				if (colliID==CollisionID::EnemyBulletID 
-					&&(id == CollisionID::PlayerID || id == CollisionID::BarrierID))this->Delete();
+					&&(id == CollisionID::PlayerID || id == CollisionID::BarrierID || id==CollisionID::PowerBlastID))this->Delete();
 				else if (colliID == CollisionID::PowerBlastID && id == CollisionID::EnemyID)this->Delete();
 	}))
 	{
