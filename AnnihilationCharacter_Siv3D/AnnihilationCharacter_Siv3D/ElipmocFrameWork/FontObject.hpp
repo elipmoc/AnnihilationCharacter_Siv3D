@@ -37,6 +37,8 @@ namespace elipmocframework {
 		void SetGlowColor(const siv::Color color) {
 			if (m_glowTextImage)
 				m_glowTextImage->SetColor(color);
+			else
+				throw(L"‚Ê‚é‚Û");
 		}
 
 		//pos‚ÌQÆ‚ğ“¾‚é
