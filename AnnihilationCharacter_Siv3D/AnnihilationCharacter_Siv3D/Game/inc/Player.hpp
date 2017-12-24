@@ -18,7 +18,7 @@ namespace game {
 		static constexpr int MUTEKI_TIME = 150;
 
 		//€–S—P—\ŠÔ
-		static constexpr int DEAD_DELAY_TIME = 5;
+		static constexpr int DEAD_DELAY_TIME = 6;
 
 		//–³“GŠÔƒJƒEƒ“ƒg
 		int m_mutekiCount=0;
@@ -36,7 +36,7 @@ namespace game {
 		std::unique_ptr<Barrier> m_barrier;
 
 		//hp
-		size_t m_hp=6;
+		size_t m_hp=5;
 
 		//poweræ“¾”
 		size_t m_powerNum = 0;

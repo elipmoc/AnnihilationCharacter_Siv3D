@@ -102,17 +102,21 @@ namespace game {
 		m_yv = 0;
 		m_jumpCount = 0;
 		m_mutekiCount = MUTEKI_TIME;
+		if (m_barrierCount < 3)
+			m_barrierCount++;
 	}
 
 	void Player::PlayerFallDead()
 	{
-		siv::SoundAsset(L"damage").play();
+		siv::SoundAsset(L"damage").playMulti();
 		if (m_hp != 0)m_hp--;
 		m_jumpCount = 0;
 		m_deadParticle->Set(GetPos());
 		SetPos({ 0,0 });
 		m_yv = 0;
 		m_mutekiCount = MUTEKI_TIME;
+		if (m_barrierCount < 3)
+			m_barrierCount++;
 
 	}
 
