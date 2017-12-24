@@ -28,18 +28,35 @@ namespace game {
 		m_barrierUi = std::make_unique<BarrierUi>();
 		m_powerGage = std::make_unique<PowerGage>(Player::MAX_POWERNUM);
 	}
+
+	void GameScene::SetSlow() {
+		if (m_slowFlag)return;
+		m_slowFlag = true;
+		m_slowCount = 0;
+	}
+
+	void GameScene::UnSetSlow() {
+		m_slowFlag = false;
+	}
+
 	void GameScene::update()
 	{
 		if (m_player->GetHp() == 0)
 			changeScene(L"GameOver");
 		if (m_enemyControl->IsClear())
 			changeScene(L"Clear");
-		/*if (m_terrainControl->IsFinished())
-			m_enemyControl->SwitchBossPhase();*/
-	    m_terrainControl->Update();
-		m_player->Update2(m_terrainControl);
-		m_enemyControl->Update();
-		m_gameCounter->CountDown();
+		if (m_player->IsPlayerDeadStarted())
+			SetSlow();
+		else UnSetSlow();
+		if (m_slowFlag==false || m_slowCount % 6 == 0) {
+			m_terrainControl->Update();
+			m_player->Update2(m_terrainControl);
+			m_enemyControl->Update();
+			m_gameCounter->CountDown();
+
+		}
+		m_player->BarrierButtonUpdate();
+		m_slowCount++;
 	}
 	void GameScene::draw() const
 	{

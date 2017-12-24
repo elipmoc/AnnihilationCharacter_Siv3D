@@ -18,9 +18,13 @@ namespace game {
 		std::unique_ptr<HpUi> m_hpUi;
 		std::unique_ptr<BarrierUi> m_barrierUi;
 		std::unique_ptr<GameCounter> m_gameCounter;
+		int m_slowCount = 0;
+		bool m_slowFlag = false;
 	public:
 		GameScene();
 		~GameScene();
+		void SetSlow();
+		void UnSetSlow();
 		virtual void init()override;
 		virtual void update()override;
 		virtual void draw() const override;

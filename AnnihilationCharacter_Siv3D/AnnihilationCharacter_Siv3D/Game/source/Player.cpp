@@ -20,15 +20,6 @@ namespace game {
 			m_powerBlast->Start();
 		}
 
-		//バリア起動
-		if ((siv::Input::KeyX| GamePadInput::GetInstance().GetBarrier()).clicked && m_barrier->IsBarrier()==false && m_barrierCount!=0) {
-			m_barrier->SetBarrier();
-			m_barrierCount--;
-			siv::SoundAsset(L"バリア").play();
-			m_dedCount = 0;
-			UnSetGlow();
-		}
-
 		//落下判定
 		if (GetPos().y>siv::Window::Size().y+40) {
 			PlayerFallDead();
@@ -97,7 +88,7 @@ namespace game {
 	void Player::PlayerDeadStart() {
 		if (m_mutekiCount != 0)return;
 		if (m_dedCount == 0) {
-			siv::SoundAsset(L"damage").play();
+			siv::SoundAsset(L"damage").playMulti();
 			m_dedCount = DEAD_DELAY_TIME;
 			SetGlow(70,4.0);
 			SetGlowColor(siv::Palette::Red);
@@ -155,6 +146,18 @@ namespace game {
 	}
 
 	Player::~Player(){}
+
+	void Player::BarrierButtonUpdate()
+	{
+		//バリア起動
+		if ((siv::Input::KeyX | GamePadInput::GetInstance().GetBarrier()).clicked && m_barrier->IsBarrier() == false && m_barrierCount != 0) {
+			m_barrier->SetBarrier();
+			m_barrierCount--;
+			siv::SoundAsset(L"バリア").play();
+			m_dedCount = 0;
+			UnSetGlow();
+		}
+	}
 
 	void Player::Update2(const std::unique_ptr<TerrainControl>& terrainControl) {
 		if (m_mutekiCount != 0)m_mutekiCount--;

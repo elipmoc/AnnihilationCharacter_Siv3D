@@ -18,7 +18,7 @@ namespace game {
 		static constexpr int MUTEKI_TIME = 150;
 
 		//Ž€–S—P—\ŽžŠÔ
-		static constexpr int DEAD_DELAY_TIME = 20;
+		static constexpr int DEAD_DELAY_TIME = 5;
 
 		//–³“GŽžŠÔƒJƒEƒ“ƒg
 		int m_mutekiCount=0;
@@ -92,14 +92,15 @@ namespace game {
 	public:
 
 		static constexpr size_t MAX_POWERNUM = 15;
-
+		bool IsPlayerDeadStarted() { return m_dedCount != 0; }
 		size_t GetPowerNum()const noexcept { return m_powerNum; }
 		size_t GetHp()const noexcept { return m_hp; }
 		size_t GetBarrierCount()const noexcept { return m_barrierCount; }
 		Player();
 		~Player();
 
-
+		//Barrierƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½‚©‚Ç‚¤‚©‚ð”»’è‚·‚é
+		void BarrierButtonUpdate();
 
 		void Update2(const std::unique_ptr<TerrainControl>&);
 	};
