@@ -17,9 +17,13 @@ namespace game {
 		//無敵時間
 		static constexpr int MUTEKI_TIME = 150;
 
+		//死亡猶予時間
+		static constexpr int DEAD_DELAY_TIME = 60;
+
 		//無敵時間カウント
 		int m_mutekiCount=0;
-
+		//死亡猶予時間
+		int m_dedCount = 0;
 		//死亡時のパーティクル
 		std::unique_ptr<elipmocframework::ParticleList> m_deadParticle;
 
@@ -56,6 +60,9 @@ namespace game {
 
 		//移動アクション
 		void Move(const std::unique_ptr<TerrainControl>&);
+
+		//主人公死亡カウント開始
+		void PlayerDeadStart();
 
 		//主人公死亡処理
 		void PlayerDead();
