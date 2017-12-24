@@ -181,6 +181,6 @@ namespace game {
 		m_deadParticle->Draw();
 		m_powerBlast->Update();
 		m_powerBlast->Draw();
-		circle.setPos(GetPos().x,GetUnderY()).draw(siv::Palette::Red);
+		//circle.setPos(GetPos().x,GetUnderY()).draw(siv::Palette::Red);
 	}
 }

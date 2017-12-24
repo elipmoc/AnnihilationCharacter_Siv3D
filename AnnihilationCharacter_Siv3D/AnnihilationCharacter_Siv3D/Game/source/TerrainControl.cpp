@@ -40,7 +40,7 @@ namespace game {
 				if (m_activeTerrains[j][i]) {
 					m_terrainFont(L"□").draw(i*TERRAIN_SIZE - m_offset, GetTerrainY(j)-FIX_TERRAIN_Y);
 					//地形の座標デバッグ用
-					circle.setPos({ i*TERRAIN_SIZE - m_offset, GetTerrainY(j)}).draw(siv::Palette::Red);
+					//circle.setPos({ i*TERRAIN_SIZE - m_offset, GetTerrainY(j)}).draw(siv::Palette::Red);
 				}
 			}
 		}
