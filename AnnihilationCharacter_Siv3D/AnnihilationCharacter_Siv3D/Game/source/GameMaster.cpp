@@ -84,6 +84,10 @@ namespace game {
 			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/SE/パワー取得音.wav")
 		);
 		siv::SoundAsset::Register(
+			L"damage",
+			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/SE/ダメージ.wav")
+		);
+		siv::SoundAsset::Register(
 			L"blast",
 			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/SE/blast.mp3")
 		);
