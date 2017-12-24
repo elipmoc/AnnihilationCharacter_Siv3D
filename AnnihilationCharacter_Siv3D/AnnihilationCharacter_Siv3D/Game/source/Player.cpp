@@ -14,6 +14,7 @@ namespace game {
 	//移動アクション
 	void Player::Move(const std::unique_ptr<TerrainControl>& terrainControl) {		
 
+
 		//デバッグ用
 		if (siv::Input::KeyC.clicked) {
 			m_powerBlast->Start();
@@ -24,6 +25,8 @@ namespace game {
 			m_barrier->SetBarrier();
 			m_barrierCount--;
 			siv::SoundAsset(L"バリア").play();
+			m_dedCount = 0;
+			UnSetGlow();
 		}
 
 		//落下判定
@@ -91,8 +94,17 @@ namespace game {
 		SetPos({ GetPos().x,GetPos().y + m_yv });
 	}
 
-	void Player::PlayerDead(){
+	void Player::PlayerDeadStart() {
 		if (m_mutekiCount != 0)return;
+		if (m_dedCount == 0) {
+			siv::SoundAsset(L"damage").play();
+			m_dedCount = DEAD_DELAY_TIME;
+			SetGlow(70,4.0);
+			SetGlowColor(siv::Palette::Red);
+		}
+	}
+
+	void Player::PlayerDead(){
 		if(m_hp!=0)m_hp--;
 		m_deadParticle->Set(GetPos());
 		SetPos({ 0,0 });
@@ -103,6 +115,7 @@ namespace game {
 
 	void Player::PlayerFallDead()
 	{
+		siv::SoundAsset(L"damage").play();
 		if (m_hp != 0)m_hp--;
 		m_jumpCount = 0;
 		m_deadParticle->Set(GetPos());
@@ -115,7 +128,7 @@ namespace game {
 	void Player::CollisionCheck(const CollisionID& id)
 	{
 		if (id == CollisionID::EnemyID || id == CollisionID::EnemyBulletID)
-			PlayerDead();
+			PlayerDeadStart();
 		else if (id == CollisionID::PowerID)
 			if (m_powerNum < MAX_POWERNUM) {
 				m_powerNum++;
@@ -145,6 +158,13 @@ namespace game {
 
 	void Player::Update2(const std::unique_ptr<TerrainControl>& terrainControl) {
 		if (m_mutekiCount != 0)m_mutekiCount--;
+		if (m_dedCount != 0) {
+			m_dedCount--;
+			if (m_dedCount == 0) {
+				UnSetGlow();
+				PlayerDead();
+			}
+		}
 		elipmocframework::FontObject::Update();
 		Move(terrainControl);
 		m_barrier->Update();

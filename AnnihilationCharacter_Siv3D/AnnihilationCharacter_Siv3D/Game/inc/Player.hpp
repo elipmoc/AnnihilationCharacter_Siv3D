@@ -18,7 +18,7 @@ namespace game {
 		static constexpr int MUTEKI_TIME = 150;
 
 		//Ž€–S—P—\ŽžŠÔ
-		static constexpr int DEAD_DELAY_TIME = 60;
+		static constexpr int DEAD_DELAY_TIME = 20;
 
 		//–³“GŽžŠÔƒJƒEƒ“ƒg
 		int m_mutekiCount=0;
