@@ -16,8 +16,11 @@ namespace game {
 		}
 
 		void SetSizeFromHp(int hp) {
-			if (hp < 0)hp = 0;
-			rect.setSize(150 * hp / m_maxhp, 5);
+			if (hp <= 0)hp = 0;
+			if (m_maxhp <= 0)
+				rect.setSize(0,5);
+			else
+				rect.setSize(150 * hp / m_maxhp, 5);
 		}
 
 		void Draw()const {
