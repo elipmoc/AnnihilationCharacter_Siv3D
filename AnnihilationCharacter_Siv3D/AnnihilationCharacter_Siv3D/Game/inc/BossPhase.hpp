@@ -11,12 +11,13 @@ namespace game {
 	class PowerSpawn;
 	class BossHpGage;
 	class BossPhase :public BasePhase{
-		const std::array<int,2> m_hpList = { 50,100 };
-		const std::array<std::string, 2> m_terrainNameList = { "Boss1","Boss2" };
+		const std::array<int,3> m_hpList = { 50,100,0 };
+		const std::array<std::string, 3> m_terrainNameList = { "Boss1","Boss2","Boss2" };
 
 		//現在のhpListとterrainNameListの要素を保存するために使用
 		size_t listIndex=0;
-
+		//ボスが死ぬまでの遅延時間
+		int m_bossEndCount=240;
 		std::unique_ptr<BossBehaviorMakeList> m_bossBehaviorMakeList;
 		std::unique_ptr<PowerSpawn> m_powerSpawn;
 		std::unique_ptr<Boss> m_boss;

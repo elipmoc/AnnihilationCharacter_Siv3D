@@ -6,7 +6,7 @@ namespace game {
 	class BossBehaviorMakeBase;
 
 	class BossBehaviorMakeList {
-		std::array<std::unique_ptr<BossBehaviorMakeBase>, 2> list;
+		std::array<std::unique_ptr<BossBehaviorMakeBase>, 3> list;
 		//Ÿ‚ÉNext‚Å“n‚·list‚Ì—v‘f”‚ğ•Û‘¶‚·‚é
 		size_t index=0;
 	public:

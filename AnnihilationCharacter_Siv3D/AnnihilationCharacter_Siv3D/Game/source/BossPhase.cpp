@@ -29,7 +29,8 @@ namespace game {
 
 	bool BossPhase::IsClear() const noexcept
 	{
-		return listIndex >= m_bossBehaviorMakeList->GetSize();
+		return m_bossEndCount <= 0;
+//		return listIndex >= m_bossBehaviorMakeList->GetSize();
 	}
 
 	void BossPhase::Draw() const
@@ -57,7 +58,7 @@ namespace game {
 			if (m_boss->GetHp() <= 0) {
 				listIndex++;
 				if (listIndex >= m_bossBehaviorMakeList->GetSize()) {
-
+					m_bossEndCount--;
 				}
 				else {
 					m_boss->SetBossBehavior(*m_bossBehaviorMakeList->Next());

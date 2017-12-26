@@ -2,6 +2,7 @@
 #include "BossBehaviorMake.hpp"
 #include "BossBehavior01.hpp"
 #include "BossBehavior02.hpp"
+#include "BossBehaviorWait.hpp"
 #include "BulletListCreator.hpp"
 
 namespace game {
@@ -9,7 +10,8 @@ namespace game {
 		:list
 	{
 		std::make_unique<BossBehaviorMake<BossBehavior01>>(),
-		std::make_unique<BossBehaviorMake<BossBehavior02>>()
+		std::make_unique<BossBehaviorMake<BossBehavior02>>(),
+		std::make_unique<BossBehaviorMake<BossBehaviorWait>>()
 	}
 	{
 		
