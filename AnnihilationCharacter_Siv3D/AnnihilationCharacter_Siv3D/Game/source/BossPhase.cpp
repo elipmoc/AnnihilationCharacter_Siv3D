@@ -43,11 +43,6 @@ namespace game {
 	}
 	void BossPhase::Update()
 	{
-		//会話スキップ
-	/*	if (siv::Input::KeyV.clicked) {
-			m_test = nullptr;
-			m_boss->SetBossBehavior(*m_bossBehaviorMakeList->Next());
-		}*/
 		if (m_test != nullptr) {
 			m_test->Update();
 			if (m_test->IsFinished()) {
