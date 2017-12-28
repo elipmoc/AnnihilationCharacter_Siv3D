@@ -38,7 +38,7 @@ namespace game {
 		for (size_t i = 0; i < m_activeTerrains[0].size(); i++) {
 			for (size_t j = 0; j < LANE_NUM; j++) {
 				if (m_activeTerrains[j][i]) {
-					m_terrainFont(L"□").draw(i*TERRAIN_SIZE - m_offset, GetTerrainY(j)-FIX_TERRAIN_Y);
+					m_terrainFont(L"□").draw(i*TERRAIN_SIZE - m_offset, GetTerrainY(j) - FIX_TERRAIN_Y, siv::Color{255,255,255,100});
 					//地形の座標デバッグ用
 					//circle.setPos({ i*TERRAIN_SIZE - m_offset, GetTerrainY(j)}).draw(siv::Palette::Red);
 				}
