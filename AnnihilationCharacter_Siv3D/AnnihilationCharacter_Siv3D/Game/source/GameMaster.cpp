@@ -113,6 +113,11 @@ namespace game {
 			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/SE/jump.wav")
 		);
 
+		siv::SoundAsset::Register(
+			L"bossDead",
+			siv::SoundAssetData::FromFileArchive(L"/810", L"Resource/SE/ボス撃破.wav")
+		);
+
 		//ウインドウ設定
 		siv::Window::SetTitle(L"消滅文字 ver 1919810114514");
 		siv::Window::Resize(700, 580);
