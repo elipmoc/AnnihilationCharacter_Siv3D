@@ -4,6 +4,7 @@
 #include "BossBehavior02.hpp"
 #include "BossBehaviorWait.hpp"
 #include "BulletListCreator.hpp"
+#include "ParticleList.hpp"
 
 namespace game {
 	BossBehaviorMakeList::BossBehaviorMakeList()
