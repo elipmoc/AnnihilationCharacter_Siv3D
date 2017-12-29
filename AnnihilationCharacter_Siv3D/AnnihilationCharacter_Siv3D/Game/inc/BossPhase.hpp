@@ -17,7 +17,7 @@ namespace game {
 		//現在のhpListとterrainNameListの要素を保存するために使用
 		size_t listIndex=0;
 		//ボスが死ぬまでの遅延時間
-		int m_bossEndCount=240;
+		int m_bossEndCount=860;
 		std::unique_ptr<BossBehaviorMakeList> m_bossBehaviorMakeList;
 		std::unique_ptr<PowerSpawn> m_powerSpawn;
 		std::unique_ptr<Boss> m_boss;

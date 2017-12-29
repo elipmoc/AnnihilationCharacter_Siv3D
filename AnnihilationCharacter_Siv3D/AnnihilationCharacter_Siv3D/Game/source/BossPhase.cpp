@@ -37,7 +37,8 @@ namespace game {
 	{
 		if (m_test != nullptr)
 			m_test->Draw();
-		m_boss->Draw();
+		if(m_bossEndCount>260)
+			m_boss->Draw();
 		m_powerSpawn->Draw();
 		if (m_test == nullptr)
 			m_bossHpGage->Draw();
