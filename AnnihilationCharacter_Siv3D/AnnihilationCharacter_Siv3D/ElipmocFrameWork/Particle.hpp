@@ -19,6 +19,8 @@ namespace elipmocframework {
 		size_t particleMaxNum=100;
 		//初速度
 		double speed=0;
+		//初速度ブレ幅
+		double speedBlur = 0;
 		//加速度
 		double vspeed=0;
 		//粒子の色
@@ -88,7 +90,7 @@ namespace elipmocframework {
 				double angle = siv::Math::Radians(siv::Random(0, 359));
 				siv::Vec2 e = { siv::Math::Cos(angle),siv::Math::Sin(angle) };
 				m_particleFobjList.New(
-					m_state.text, m_state.color, m_font, m_pos, m_state.particleLifeTime, e*m_state.speed, e*m_state.vspeed, m_state.vopacity, m_state.g);
+					m_state.text, m_state.color, m_font, m_pos, m_state.particleLifeTime, e*(m_state.speed+siv::Random(-1,1)*m_state.speedBlur), e*m_state.vspeed, m_state.vopacity, m_state.g);
 			}
 		}
 
