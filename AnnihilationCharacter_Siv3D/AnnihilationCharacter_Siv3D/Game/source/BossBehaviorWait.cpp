@@ -12,7 +12,7 @@ namespace game {
 		:BossBehavior(level,playerRefPos,bulletListCreator)
 	{
 		ParticleState state;
-		state.color = siv::Palette::Darkred;
+		state.color = siv::Palette::Orangered;
 		state.lifeTime = 200;
 		state.particleLifeTime = 200;
 		state.particleNum = 15;
