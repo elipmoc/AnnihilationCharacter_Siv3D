@@ -12,6 +12,7 @@ namespace game {
 		:BossBehavior(level,playerRefPos,bulletListCreator)
 	{
 		ParticleState state;
+		state.fontSize = 30;
 		state.color = siv::Palette::Orangered;
 		state.lifeTime = 200;
 		state.particleLifeTime = 200;
@@ -24,6 +25,7 @@ namespace game {
 		state.vopacity = -2.5;
 		state.speedBlur = 5;
 		m_particleList = std::make_unique<ParticleList>(30, state);
+		state.fontSize = 40;
 		state.text = L"–Å";
 		state.color = siv::Palette::White;
 		state.particleNum = 50;

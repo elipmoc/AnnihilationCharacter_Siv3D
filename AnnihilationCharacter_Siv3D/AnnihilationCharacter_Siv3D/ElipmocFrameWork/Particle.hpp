@@ -31,6 +31,7 @@ namespace elipmocframework {
 		int fireInterval=99999;
 		//d—Í‰Á‘¬“x‚Ìİ’è
 		siv::Vec2 g = {0,0};
+
 	};
 
 	class Particle {
