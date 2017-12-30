@@ -44,6 +44,7 @@ namespace game {
 		}
 		if(m_interval<5 &&m_interval!=-1)
 		{
+			siv::SoundAsset(L"bossDead2").playMulti();
 			m_interval = -1;
 			m_particleList2->Set(Boss::BOSS_POS);
 		}
