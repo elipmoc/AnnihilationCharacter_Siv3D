@@ -100,7 +100,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <ForcedIncludeFiles>UseSiv3D.hpp</ForcedIncludeFiles>
-      <AdditionalIncludeDirectories>C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\Game;C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\ElipmocFrameWork;C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D;%(AdditionalIncludeDirectories);C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\Game\inc;C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\Game\source</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\ElipmocFrameWork;$(MSBuildProjectDirectory);%(AdditionalIncludeDirectories);$(MSBuildProjectDirectory)\Game\inc;$(MSBuildProjectDirectory)\Game\source;$(MSBuildProjectDirectory)\Game</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -136,7 +136,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <ForcedIncludeFiles>UseSiv3D.hpp</ForcedIncludeFiles>
-      <AdditionalIncludeDirectories>C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\Game;C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\ElipmocFrameWork;%(AdditionalIncludeDirectories);C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\Game\inc;C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D\Game\source;C:\Users\elipmoc\Source\Repos\AnnihilationCharacter_Siv3D\AnnihilationCharacter_Siv3D</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\ElipmocFrameWork;$(MSBuildProjectDirectory);%(AdditionalIncludeDirectories);$(MSBuildProjectDirectory)\Game\inc;$(MSBuildProjectDirectory)\Game\source;$(MSBuildProjectDirectory)\Game</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
