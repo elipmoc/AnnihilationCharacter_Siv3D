@@ -4,7 +4,7 @@
 namespace game {
 
 
-
+	//キー＆ボタン入力を管理するシングルトンクラス
 	class GamePadInput {
 		GamePadData m_gamePadData{0,1,5};
 		GamePadInput() {};

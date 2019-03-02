@@ -136,7 +136,7 @@ namespace game {
 		m_mySceneManager->add<ClearScene>(L"Clear");
 		m_mySceneManager->add<ModeSelectScene>(L"ModeSelect");
 		m_mySceneManager->add<KeyConfigScene>(L"KeyConfig");
-		//ファイルデータロード
+		//ファイルデータロードとセット
 		try
 		{
 			GamePadConfigLoader gpcl;

@@ -14,7 +14,7 @@ namespace game {
 		GameMaster();
 		~GameMaster();
 		static GameMaster instance;
-		//myシーン
+		//シーン管理クラスの保持
 		std::unique_ptr<MySceneManager> m_mySceneManager;
 		//地形データ保持
 		std::unordered_map<std::string,std::unique_ptr<TerrainData>> m_terrainDataMap;

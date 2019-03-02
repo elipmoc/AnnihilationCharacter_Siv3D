@@ -92,7 +92,7 @@ namespace game {
 			m_colliQueue.clear();
 		}
 
-		//座標と関数をバインドする
+		//座標とhitした時に呼ばれる関数をバインドする
 		template<class F>
 		CollisionCircle(const siv::Vec2& pos,F func)
 			:bind_pos(pos),m_hitFunc(func),m_colliData(*(new CollisionData(*this))){

@@ -61,7 +61,7 @@ namespace elipmocframework {
 		template<class T=SuperT,class ...Args>
 		T& New(Args&&... args) {
 			static_assert(variadic_is_sames_v<T, SuperT, SubsT...>, "生成できない型です");
-			if (m_nextIndex == m_maxSize)throw std::exception("サイズがいっぱいだよおおお！！");
+			if (m_nextIndex == m_maxSize)throw std::exception("サイズがいっぱいだよ");
 			m_nextIndex++;
 			m_size++;
 			return *new(m_storagePtr[m_nextIndex - 1].ptr.get()) T(std::forward<Args>(args)...);
@@ -70,7 +70,7 @@ namespace elipmocframework {
 		//メモリリリース
 		void DeleteAt(const size_t at) {
 			(*this)[at].~SuperT();
-			if (at >= m_size)throw std::exception("範囲外じゃぼけええええ！");
+			if (at >= m_size)throw std::exception("範囲外！");
 			if (at != m_size - 1)
 				m_storagePtr[at].Swap(std::move(m_storagePtr[m_size - 1]));
 			m_size--;
